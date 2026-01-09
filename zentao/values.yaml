@@ -1,0 +1,157 @@
+replicas: 1
+scalable: true
+
+image:
+  repository: app/zentao
+  tag: "21.7.5"
+  pullPolicy: Always
+
+service:
+  enabled: true
+  type: NodePort
+
+ports:
+  - name: web
+    protocol: tcp
+    port: 80
+  - name: probe
+    protocol: tcp
+    port: 80
+
+probe:
+  readiness:
+    enabled: true
+    type: http
+    methods:
+      http:
+        httpGet:
+          path: /check.html
+          port: 80
+  startup:
+    enabled: true
+    type: tcp
+    methods:
+      tcp:
+        tcpSocket:
+          port: 80
+
+resources:
+  cpu: 1000m
+  memory: 1024Mi
+
+oversold:
+  cpu: 500m
+  memory: 512Mi
+
+ingress:
+  enabled: false
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+  host: "zentao.local"
+  paths:
+  - path: /
+    port: 80
+    type: Prefix
+
+env:
+  ZT_MYSQL_PASSWORD:
+    source: secret
+    key: mysql_password
+    subChartRefs:
+    - when: mysql.enabled
+      name: mysql
+  ZT_MYSQL_DB: "$ref:mysql.auth.database"
+  ZT_MYSQL_PORT: "$ref:mysql.auth.port"
+  ZT_MYSQL_USER: "$ref:mysql.auth.user"
+  ZT_MYSQL_HOST: '{{ include "lib-common.utils.depServiceName.withOverride" (dict "condition" "mysql.enabled" "subchart" "mysql" "default" "$ref:mysql.auth.host" "ctx" $)}}'
+  # redis
+  ZT_REDIS_HOST: '{{ include "lib-common.utils.depServiceName.withOverride" (dict "condition" "redis.enabled" "subchart" "redis" "default" "$ref:redis.auth.host" "ctx" $)}}'
+  ZT_REDIS_PORT: "$ref:redis.auth.port"
+  ZT_REDIS_PASSWORD:
+    source: secret
+    key: redis_password
+    subChartRefs:
+    - when: redis.enabled
+      name: redis
+  ZT_REDIS_SERIALIZER: "igbinary" #"php"
+  IS_CONTAINER: "true"
+  SMTP_ENABLED: '$ref:mail.enabled'
+  SMTP_FROMNAME: "ZenTao"
+  APP_DOMAIN: "$ref:ingress.host"
+
+mysql:
+  enabled: true
+  auth:
+    rootPassword: pass4zenTao
+    user: "root"
+    password: "pass4zenTao"
+    database: "zentao"
+    port: 3306
+    host: ""
+
+redis:
+  enabled: true
+  auth:
+    host: ""
+    port: 6379
+    password: "pass4zenTaoCache"
+
+cache:
+  enabled: true
+  driver: "" # auto detect, redis | apcu
+  scope: "" # private 本应用独享|shared多应用共享
+  namespace: "" # default to release name
+  lifetime: "" # default to 0
+
+secret:
+  data:
+    mysql_password:
+      value: "$ref:mysql.auth.password"
+      length: 20
+      allowOverride: true
+    redis_password:
+      value: "$ref:redis.auth.password"
+      length: 20
+      allowOverride: true
+
+mail:
+  enabled: false
+  smtp: {}
+
+configmaps:
+  config:
+    mode: kv
+    dataTpl: "files/config.tpl"
+  mail:
+    mode: kv
+    data:
+      SMTP_HOST: '$ref:mail.smtp.host'
+      SMTP_PORT: '$ref:mail.smtp.port'
+      SMTP_USER: '$ref:mail.smtp.user'
+      SMTP_PASS: '$ref:mail.smtp.pass'
+
+envFrom:
+  configmaps:
+   - mail
+   - config
+
+db:
+  config:
+    grant_super_privilege: "true"
+
+global:
+  repodomain: hub.zentao.net
+  allowOverSold: true
+  cleanPolicy:
+    workflow: true
+
+volumes:
+  data:
+    type: pvc
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 8Gi
+    mounts:
+    - mountPath: /data
+      subPath: ""

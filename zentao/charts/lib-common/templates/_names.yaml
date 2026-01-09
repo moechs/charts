@@ -1,0 +1,100 @@
+{{- define "app.name" -}}
+{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{- define "app.chart" -}}
+{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{- define "app.fullname" -}}
+{{- if .Values.fullnameOverride -}}
+{{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- $name := default .Chart.Name .Values.nameOverride -}}
+{{- if contains $name .Release.Name -}}
+{{- .Release.Name | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Usage:
+{{ include "app.dependency.fullname" (list . "chartName") }}
+*/}}
+{{- define "app.dependency.fullname" -}}
+{{- $top := first . -}}
+{{- $depName := index . 1 -}}
+{{- $depValues := (get $top.Values $depName) | default (dict) -}}
+{{- if $depValues.fullnameOverride -}}
+{{- $depValues.fullnameOverride | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- $name := default $depName $depValues.nameOverride -}}
+{{- if contains $name $top.Release.Name -}}
+{{- $top.Release.Name | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- printf "%s-%s" $top.Release.Name $name | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Usage:
+{{ include "app.component.fullname" . }}
+*/}}
+{{- define "app.component.fullname" -}}
+{{- if .Component.Values.fullnameOverride -}}
+{{- .Component.Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- $name := default .Component.Name .Component.Values.nameOverride -}}
+{{- if contains $name .Release.Name -}}
+{{- .Release.Name | trunc 63 | trimSuffix "-" -}}
+{{- else if contains .Chart.Name .Release.Name -}}
+{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- printf "%s-%s-%s" .Release.Name .Chart.Name $name | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+{{- define "lib-common.name.fullname" -}}
+{{- if .Component -}}
+  {{- if .Component.Name -}}
+    {{- include "app.component.fullname" . }}
+  {{- else -}}
+    {{- include "app.fullname" . }}
+  {{- end -}}
+{{- else -}}
+  {{- include "app.fullname" . }}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Usage: {{ include "lib-common.name.component.resource" (dict "component" "" "suffix" "" "ctx" $) }}
+*/}}
+{{- define "lib-common.name.component.resource" -}}
+{{- if .component -}}
+  {{- if .suffix -}}
+    {{- printf "%s-%s-%s" (include "app.fullname" .ctx) .component .suffix -}}
+  {{- else -}}
+    {{- printf "%s-%s" (include "app.fullname" .ctx) .component -}}
+  {{- end -}}
+{{- else if .suffix -}}
+  {{- printf "%s-%s" (include "app.fullname" .ctx) .suffix -}}
+{{- else -}}
+  {{- printf "required fields 'component' and 'suffix' is missing" | fail -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Usage: {{ include "lib-common.name.resource" (dict "suffix" "" "ctx" $) }}
+*/}}
+{{- define "lib-common.name.resource" -}}
+{{- if or (empty .suffix) (eq .suffix "_") -}}
+  {{- include "lib-common.name.fullname" .ctx -}}
+{{- else -}}
+  {{- printf "%s-%s" (include "lib-common.name.fullname" .ctx) .suffix -}}
+{{- end -}}
+{{- end -}}
+

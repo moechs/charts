@@ -1,0 +1,46 @@
+{{- define "lib-common.configmap.render" }}
+{{- $name := include "lib-common.name.resource" (dict "suffix" .name "ctx" .ctx) }}
+{{- $cm := (lookup "v1" "ConfigMap" .ctx.Release.Namespace $name) }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $name }}
+  labels: {{- include "lib-common.labels.standard" .ctx | nindent 4 }}
+  namespace: {{ .ctx.Release.Namespace | quote }}
+  annotations:
+    {{- if .opts.annotations }}{{ toYaml .opts.annotations | nindent 4 }}{{ end }}
+    {{- if .opts.disableOverride }}
+    "easycorp.io/custom_resource": "true"
+    {{- end }}
+data:
+  {{- if and $cm.data .opts.disableOverride }}
+    {{- toYaml $cm.data | nindent 2 }}
+  {{- else }}
+    {{- if eq .opts.mode "file" }}
+      {{- range .opts.files }}
+      {{- base . | nindent 2 }}: |
+      {{- tpl ($.ctx.Files.Get .) $.ctx | nindent 4 }}
+      {{- end }}
+    {{- else }}{{/* mode == kv */}}
+      {{- if .opts.dataTpl }}
+        {{- tpl ($.ctx.Files.Get .opts.dataTpl) $.ctx | nindent 2 }}
+      {{- else }}
+        {{- range $k, $v := .opts.data }}
+        {{- $k | nindent 2 }}: {{ include "lib-common.utils.readRef" (dict "value" $v "ctx" $.ctx) | quote }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- define "lib-common.configmap.v2.tpl" -}}
+{{- range $k, $opts := .values.configmaps }}
+{{- include "lib-common.configmap.render" (dict "name" $k "opts" $opts "ctx" $.ctx) }}
+{{- end }}
+{{- end }}
+
+{{- define "lib-common.configmap.v2" -}}
+{{- include "lib-common.values.merge" . -}}
+{{- include "lib-common.configmap.v2.tpl" (dict "values" (default .Values .Component.Values) "ctx" .) -}}
+{{- end -}}

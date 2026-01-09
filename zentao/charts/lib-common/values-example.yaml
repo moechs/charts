@@ -1,0 +1,17 @@
+_custom:
+- name: site
+- name: site
+  label: "站点名称"
+- name: site
+  label: "站点名称"
+  default: "hahaha"
+- name: site
+  label: "站点名称"
+  default: "hahaha"
+  default: ""
+  section: ""
+
+env:
+  ENV_FIELDREF:
+    source: fieldRef
+    path: status.podIP

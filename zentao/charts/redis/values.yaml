@@ -1,0 +1,93 @@
+image:
+  repository: app/redis
+  tag: 7.0.11-debian-11-r17
+
+auth:
+  enabled: true
+  password:
+
+secret:
+  data:
+    redis_password:
+      value: "$ref:auth.password"
+      length: 20
+      allowOverride: false
+
+configmaps:
+  config:
+    mode: file
+    disableOverride: true
+    files:
+    - files/redis.conf
+
+env:
+  REDIS_PASSWORD:
+    source: secret
+    key: redis_password
+    enabled: '$ref:auth.enabled'
+  ALLOW_EMPTY_PASSWORD: '{{ ternary "no" "yes" .Values.auth.enabled }}'
+
+service:
+  enabled: true
+
+ports:
+  - name: redis
+    protocol: tcp
+    port: 6379
+
+probe:
+  readiness:
+    enabled: true
+    type: tcp
+    methods:
+      tcp:
+        tcpSocket:
+          port: 6379
+  startup:
+    enabled: true
+    type: tcp
+    methods:
+      tcp:
+        tcpSocket:
+          port: 6379
+
+resources:
+  cpu: 1
+  memory: 1Gi
+
+oversold:
+  cpu: 100m
+  memory: 256Mi
+
+initContainers:
+  dir-perm:
+    enabled: true
+    image:
+      repository: app/busybox
+      tag: latest
+      pullPolicy: IfNotPresent
+    command:
+    - sh
+    - -c
+    - chown 1001 /data ; test -d /data/lost+found && (rm -rf /data/lost+found) || true
+    mounts:
+    - name: data
+      mountPath: /data
+
+volumes:
+  data:
+    type: pvc
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 1Gi
+    annotations:
+      easycorp.io/pvc_backup_exclude: "true"
+    mounts:
+    - mountPath: /bitnami/redis/data
+      subPath: ""
+  conf:
+    type: configmap
+    name: config
+    mounts:
+    - mountPath: /opt/bitnami/redis/mounted-etc/overrides.conf
+      subPath: redis.conf

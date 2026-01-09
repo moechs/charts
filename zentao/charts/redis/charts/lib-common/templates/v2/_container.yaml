@@ -1,0 +1,112 @@
+{{- define "lib-common.container.v2" -}}
+{{- include "lib-common.values.merge" . -}}
+{{- include "lib-common.container.v2.tpl" (dict "values" (default .Values .Component.Values) "ctx" .) -}}
+{{- end -}}
+
+{{/*
+Usage: include "lib-common.container.ports.v2" (dict "values" .Values "ctx" .)
+*/}}
+{{- define "lib-common.container.ports.v2" }}
+{{- range .values.ports }}
+- name: {{ .name }}
+  containerPort: {{ .port }}
+{{- end }}
+{{- end }}
+
+{{/*
+Usage: include "lib-common.container.image.v2" (dict "values" .Values "ctx" .)
+*/}}
+{{- define "lib-common.container.image.v2" -}}
+{{- $nodomain := not (contains "." .values.image.repository) -}}
+{{- if and .values.global.repodomain $nodomain -}}
+{{- printf "%s/%s:%s" .values.global.repodomain .values.image.repository .values.image.tag -}}
+{{- else -}}
+{{- printf "%s:%s" .values.image.repository .values.image.tag -}}
+{{- end -}}
+{{- end -}}
+
+
+{{/*
+Usage: include "lib-common.container.v2.tpl" (dict "values" .Values "ctx" .)
+*/}}
+{{- define "lib-common.container.v2.tpl" -}}
+spec:
+  template:
+    spec:
+      containers:
+      - name: {{ default .ctx.Chart.Name .ctx.Component.Name }}
+        imagePullPolicy: {{ .values.image.pullPolicy }}
+        image: {{ template "lib-common.container.image.v2" (dict "values" .values "ctx" .ctx) }}
+        {{- if .values.command }}
+        command: {{ toYaml .values.command | nindent 8 }}
+        {{- end }}
+        {{- if .values.args }}
+        args: {{ toYaml .values.args | nindent 8 }}
+        {{- end }}
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        {{ block "app.custom.env" .ctx }}{{ end }}
+        {{- if or .values.env .values.global.env }}
+        {{ include "lib-common.env.container.v2" (dict "values" .values "ctx" .ctx) | nindent 8 }}
+        {{- end }}
+        {{- if or .values.envFrom.configmaps .values.envFrom.secrets }}
+        envFrom: {{ include "lib-common.env.from" (dict "configmaps" .values.envFrom.configmaps "secrets" .values.envFrom.secrets "ctx" .ctx) | nindent 8 }}
+        {{- end }}
+        {{- if .values.ports }}
+        ports: {{ include "lib-common.container.ports.v2" (dict "values" .values "ctx" .ctx) | nindent 8 }}
+        {{- end }}
+        {{- if .values.resources }}
+        resources: {{ include "lib-common.utils.generateResources.v2" (dict "values" .values "ctx" .ctx) | nindent 10 }}
+        {{- end }}
+        {{- with .values.lifecycle }}
+        {{- if .enabled }}
+        lifecycle:
+          postStart: {{ .postStart | indent 12 }}
+          preStop: {{ .preStop | indent 12 }}
+        {{- end }}
+        {{- end }}
+        {{- with .values.probe.liveness }}
+        {{- if .enabled }}
+        livenessProbe:
+{{ toYaml (get .methods .type) | indent 10 }}
+{{ toYaml .options | indent 10 }}
+        {{- end }}
+        {{- end }}
+        {{- with .values.probe.readiness }}
+        {{- if .enabled }}
+        readinessProbe:
+{{ toYaml (get .methods .type) | indent 10 }}
+{{ toYaml .options | indent 10 }}
+        {{- end }}
+        {{- end }}
+        {{- with .values.probe.startup }}
+        {{- if .enabled }}
+        startupProbe:
+{{ toYaml (get .methods .type) | indent 10 }}
+{{ toYaml .options | indent 10 }}
+        {{- end }}
+        {{- end }}
+        {{- if .values.volumes }}
+        volumeMounts:
+        {{- range $k, $v := .values.volumes }}
+        {{- $vloumeName := $k -}}
+        {{- range $v.mounts }}
+        - name: {{ $vloumeName }}
+          mountPath: {{ .mountPath }}
+          {{- if .subPath }}
+          subPath: {{ .subPath }}
+          {{- end }}
+        {{- end }}
+        {{- end }}
+        {{- end }}
+      {{- if .values.volumes }}
+      volumes: {{ include "lib-common.storage.volumes.v2" (dict "values" .values "ctx" .ctx) | nindent 6 }}
+      {{- end }}
+{{- end -}}

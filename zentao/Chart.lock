@@ -1,0 +1,12 @@
+dependencies:
+- name: lib-common
+  repository: https://hub.qucheng.com/chartrepo/library
+  version: 1.1.23
+- name: mysql
+  repository: https://hub.qucheng.com/chartrepo/library
+  version: 0.2.9
+- name: redis
+  repository: https://hub.qucheng.com/chartrepo/library
+  version: 2024.12.1601
+digest: sha256:886e382fc95c56cfffe6437cbf630f7902b2f3e73f899910e4e78f67d8e2c9dd
+generated: "2025-04-14T13:42:16.710555+08:00"

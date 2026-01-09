@@ -1,0 +1,10 @@
+apiVersion: v2
+appVersion: 7.0.11
+dependencies:
+- name: lib-common
+  repository: file://../lib-common
+  version: 1.*.*
+description: A Helm chart for Kubernetes
+name: redis
+type: application
+version: 2024.12.1601

@@ -1,0 +1,248 @@
+name: Sync Helm Repository
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'charts.txt'
+
+concurrency:
+  group: helm-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  sync-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: 'latest'
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Validate charts.txt
+        run: |
+          if [[ ! -f "charts.txt" ]]; then
+            echo "Error: charts.txt not found!"
+            exit 1
+          fi
+          echo "charts.txt validation passed"
+
+      - name: Sync Charts to Main Branch
+        id: sync_main
+        run: |
+          #!/usr/bin/env bash
+          set -eo pipefail
+
+          RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; BLUE='\033[0;34m'; NC='\033[0m'
+
+          declare -A repos
+          UPDATED_CHARTS_MAIN=(); FAILED_CHARTS=(); SKIPPED_CHARTS_MAIN=()
+
+          WORK_DIR=$(mktemp -d)
+
+          echo -e "${BLUE}========================================"
+          echo -e "  Syncing Charts to Main Branch"
+          echo -e "========================================${NC}"
+
+          log_info() { echo -e "${BLUE}[INFO]${NC} $1"; }
+          log_warn() { echo -e "${YELLOW}[WARN]${NC} $1"; }
+          log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
+          log_success() { echo -e "${GREEN}[SUCCESS]${NC} $1"; }
+
+          add_repo() {
+            local url="$1"
+            if [[ -n "${repos[$url]}" ]]; then
+              echo "${repos[$url]}"
+              return
+            fi
+            local repo_name="repo-$(echo -n "$url" | md5sum | cut -c1-8)"
+            if helm repo add "$repo_name" "$url" &>/dev/null; then
+              repos["$url"]="$repo_name"
+              echo "$repo_name"
+            else
+              return 1
+            fi
+          }
+
+          get_chart_version() {
+            local chart_dir="$1"
+            awk '/^version: /{print $NF}' "$chart_dir/Chart.yaml" 2>/dev/null | tr -d '"' | tr -d "'"
+          }
+
+          CHART_COUNT=$(grep -v '^#' charts.txt | grep -v '^[[:space:]]*$' | wc -l)
+          log_info "Found $CHART_COUNT charts to process"
+
+          echo ""
+          log_info "Processing charts on main branch..."
+          CURRENT=0
+
+          while IFS='|' read -r chart_name repo_url; do
+            [[ -z "$chart_name" || "$chart_name" == \#* ]] && continue
+
+            chart_name=$(echo "$chart_name" | xargs)
+            repo_url=$(echo "$repo_url" | xargs)
+            [[ -z "$chart_name" || -z "$repo_url" ]] && continue
+
+            CURRENT=$((CURRENT + 1))
+
+            echo ""
+            log_info "[$CURRENT/$CHART_COUNT] Processing: $chart_name"
+
+            if ! repo_id=$(add_repo "$repo_url"); then
+              log_error "Failed to add repository: $repo_url"
+              FAILED_CHARTS+=("$chart_name: repository unavailable")
+              continue
+            fi
+
+            remote_ver=$(helm search repo "$repo_id/$chart_name" -o json 2>/dev/null | jq -r '.[0].version // empty' 2>/dev/null)
+
+            if [[ -z "$remote_ver" ]]; then
+              log_error "Chart not found"
+              FAILED_CHARTS+=("$chart_name: not found")
+              continue
+            fi
+
+            local_ver=""
+            if [[ -d "$chart_name" && -f "$chart_name/Chart.yaml" ]]; then
+              local_ver=$(get_chart_version "$chart_name")
+            fi
+
+            if [[ "$local_ver" == "$remote_ver" ]]; then
+              log_success "$chart_name $remote_ver (up-to-date)"
+              SKIPPED_CHARTS_MAIN+=("$chart_name: $remote_ver")
+              continue
+            fi
+
+            log_info "Updating $chart_name: $local_ver → $remote_ver"
+
+            if helm pull "$repo_id/$chart_name" --version "$remote_ver" --destination "$WORK_DIR" 2>/dev/null; then
+              downloaded_tgz=$(find "$WORK_DIR" -name "${chart_name}-*${remote_ver}.tgz" -type f | head -1)
+
+              if [[ -n "$downloaded_tgz" ]]; then
+                rm -rf "$chart_name"
+
+                if tar -xzf "$downloaded_tgz" -C . && rm -f "$downloaded_tgz"; then
+                  git add "$chart_name"
+
+                  if [[ -n "$local_ver" ]]; then
+                    git commit -m "chore(${chart_name}): update to ${remote_ver}" \
+                               -m "Previous version: ${local_ver}" \
+                               -m "Repository: ${repo_url}"
+                    log_success "Updated $chart_name to $remote_ver"
+                    UPDATED_CHARTS_MAIN+=("$chart_name: $local_ver → $remote_ver")
+                  else
+                    git commit -m "feat(${chart_name}): add version ${remote_ver}" \
+                               -m "Repository: ${repo_url}"
+                    log_success "Added $chart_name $remote_ver"
+                    UPDATED_CHARTS_MAIN+=("$chart_name: $remote_ver (new)")
+                  fi
+                else
+                  log_error "Failed to extract"
+                  FAILED_CHARTS+=("$chart_name: extraction failed")
+                fi
+              else
+                log_error "Downloaded file not found"
+                FAILED_CHARTS+=("$chart_name: file not found")
+              fi
+            else
+              log_error "Failed to download"
+              FAILED_CHARTS+=("$chart_name: download failed")
+            fi
+          done < charts.txt
+
+          {
+            echo "# Helm Charts"
+            echo ""
+            echo "|  Chart  |  Version  |   Description   |"
+            echo "| ------- | --------- | --------------- |"
+
+            for dir in */; do
+              [[ -f "${dir}Chart.yaml" ]] || continue
+              name="${dir%/}"
+              ver=$(get_chart_version "$name")
+              desc=$(helm show chart "$dir" 2>/dev/null | awk -F': ' '/^description:/ {print $2}')
+              desc=$(echo "$desc" | sed 's/|/\\|/g' | cut -c1-240)
+              echo "| $name | $ver | $desc |"
+            done
+          } > README.md
+
+          if git ls-files --error-unmatch README.md >/dev/null 2>&1; then
+            if ! git diff --quiet README.md; then
+              git add README.md
+              git commit -m "docs: update README" || true
+            fi
+          else
+            git add README.md
+            git commit -m "docs: add README" || true
+          fi
+
+          rm -rf "$WORK_DIR"
+
+          {
+            echo "UPDATED_COUNT_MAIN=${#UPDATED_CHARTS_MAIN[@]}"
+            echo "FAILED_COUNT=${#FAILED_CHARTS[@]}"
+            echo "SKIPPED_COUNT_MAIN=${#SKIPPED_CHARTS_MAIN[@]}"
+          } >> $GITHUB_OUTPUT
+
+          [ ${#UPDATED_CHARTS_MAIN[@]} -gt 0 ] && printf '%s\n' "${UPDATED_CHARTS_MAIN[@]}" > /tmp/updated_main.txt
+          [ ${#FAILED_CHARTS[@]} -gt 0 ] && printf '%s\n' "${FAILED_CHARTS[@]}" > /tmp/failed.txt
+          [ ${#SKIPPED_CHARTS_MAIN[@]} -gt 0 ] && printf '%s\n' "${SKIPPED_CHARTS_MAIN[@]}" > /tmp/skipped_main.txt
+
+          echo ""
+          echo -e "${GREEN}========================================"
+          echo -e "  Main Branch Sync Completed!"
+          echo -e "========================================${NC}"
+          printf "${GREEN}Updated:  %d | Skipped: %d | Failed: %d${NC}\n" \
+            "${#UPDATED_CHARTS_MAIN[@]}" "${#SKIPPED_CHARTS_MAIN[@]}" "${#FAILED_CHARTS[@]}"
+
+      - name: Push Main Branch Changes
+        if: steps.sync_main.outputs.UPDATED_COUNT_MAIN > 0
+        run: |
+          echo "Pushing changes to main branch..."
+          git push origin main
+          echo "✓ Successfully pushed to main branch"
+
+      - name: Generate Summary
+        if: always()
+        run: |
+          cat >> $GITHUB_STEP_SUMMARY << 'EOF'
+          # 📊 Helm Repository Sync Summary
+
+          ## Main Branch (Source Charts)
+          EOF
+
+          echo "- 🎯 **Updated**: ${{ steps.sync_main.outputs.UPDATED_COUNT_MAIN }} charts" >> $GITHUB_STEP_SUMMARY
+          echo "- ⏭️ **Skipped**: ${{ steps.sync_main.outputs.SKIPPED_COUNT_MAIN }} charts (already up-to-date)" >> $GITHUB_STEP_SUMMARY
+          echo "- ❌ **Failed**: ${{ steps.sync_main.outputs.FAILED_COUNT }} charts" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [[ -f /tmp/updated_main.txt ]]; then
+            echo "## ✅ Updated Charts (Main Branch)" >> $GITHUB_STEP_SUMMARY
+            cat /tmp/updated_main.txt | sed 's/^/- /' >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [[ -f /tmp/failed.txt ]]; then
+            echo "## ❌ Failed Charts" >> $GITHUB_STEP_SUMMARY
+            cat /tmp/failed.txt | sed 's/^/- /' >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi

@@ -1,0 +1,47 @@
+{{- define "lib-common.service.v2.tpl" -}}
+
+{{- $serviceType := default "ClusterIP" .values.service.type -}}
+
+{{- if .values.service.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "lib-common.name.fullname" .ctx }}
+  namespace: {{ .ctx.Release.Namespace | quote }}
+  labels: {{- include "lib-common.labels.standard" .ctx | nindent 4 }}
+    {{- if .values.service.labels }}
+{{ toYaml .values.service.labels | indent 4 }}
+    {{- end }}
+  {{- if .values.service.annotations }}
+  annotations: {{ toYaml .values.service.annotations | nindent 4 }}
+  {{- end }}
+spec:
+  selector:
+    app: {{ template "app.name" .ctx }}
+    release: {{ .ctx.Release.Name | quote }}
+    component: {{ default .ctx.Chart.Name .ctx.Component.Name }}
+  type: {{ $serviceType }}
+  {{- if and (or (eq $serviceType "LoadBalancer") (eq $serviceType "NodePort")) (not (empty .values.service.externalTrafficPolicy)) }}
+  externalTrafficPolicy: {{ .values.service.externalTrafficPolicy | quote }}
+  {{- end }}
+  ports:
+    {{- range .values.ports }}
+    {{- if ne .name "probe" }}
+    - name: {{ default .port .name | quote }}
+      port: {{ .port }}
+      protocol: {{ .protocol | default "tcp" | upper }}
+      targetPort: {{ default .port .targetPort }}
+      {{- if (and (or (eq $serviceType "NodePort") (eq $serviceType "LoadBalancer")) (not (empty .nodePort))) }}
+      nodePort: {{ .nodePort }}
+      {{- end }}
+    {{- end }}
+    {{- end }}
+{{- end -}}
+{{- end -}}
+
+{{- define "lib-common.service.v2" -}}
+{{- include "lib-common.values.merge" . -}}
+{{- if not (or .Values.global.stoped .Values.global.stopped) }}
+{{- include "lib-common.service.v2.tpl" (dict "values" (default .Values .Component.Values) "ctx" .) -}}
+{{- end }}
+{{- end -}}
