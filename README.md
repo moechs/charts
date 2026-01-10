@@ -47,7 +47,7 @@
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openspeedtest | 0.1.2 | SpeedTest by OpenSpeedTest |
-| photoprism | 1.3.8 | A Photoprism Helm chart for Kubernetes |
+| photoprism | 1.4.2 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.0 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
 | prometheus-blackbox-exporter | 11.7.0 | Prometheus Blackbox Exporter |
@@ -64,9 +64,9 @@
 | uptime-kuma | 2.24.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.31.0 | Official HashiCorp Vault Chart |
 | vector | 0.49.0 | A lightweight, ultra-fast tool for building observability pipelines |
-| victoria-logs-agent | 0.0.4 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
-| victoria-logs-cluster | 0.0.24 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
-| victoria-logs-collector | 0.2.4 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
-| victoria-logs-single | 0.11.23 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
+| victoria-logs-agent | 0.0.5 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
+| victoria-logs-cluster | 0.0.25 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
+| victoria-logs-collector | 0.2.5 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
+| victoria-logs-single | 0.11.24 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
 | zentao | 2025.9.1101 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
 | zookeeper | 13.8.7 | Apache ZooKeeper provides a reliable, centralized register of configuration |
