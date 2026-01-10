@@ -1,9 +1,5 @@
 # Helm Charts
 
----
-
-## Available Charts
-
 |  Chart  |  Version  |   Description   |
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
@@ -35,6 +31,7 @@
 | kube-prometheus-stack | 80.13.3 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.3 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.16.3 | General-purpose logging dashboard for Kubernetes |
+| lobe-chat | 1.143.2 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.10.1 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.6.3 | This chart installs the Mailu mail system on Kubernetes |
 | minio | 17.0.21 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
@@ -45,11 +42,12 @@
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.37.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.2 | OpenCost and OpenCost UI |
+| opencost | 2.5.3 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openspeedtest | 0.1.2 | SpeedTest by OpenSpeedTest |
+| photoprism | 1.3.8 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.0 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
 | prometheus-blackbox-exporter | 11.7.0 | Prometheus Blackbox Exporter |
@@ -70,5 +68,5 @@
 | victoria-logs-cluster | 0.0.24 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.2.4 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
 | victoria-logs-single | 0.11.23 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
-| zentao | 2025.9.1101 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项 |
+| zentao | 2025.9.1101 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
 | zookeeper | 13.8.7 | Apache ZooKeeper provides a reliable, centralized register of configuration |
