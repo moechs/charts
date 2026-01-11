@@ -27,6 +27,7 @@ kafka|https://charts.bitnami.com/bitnami
 kube-prometheus-stack|https://prometheus-community.github.io/helm-charts
 kube-starrocks|https://starrocks.github.io/starrocks-kubernetes-operator
 kubetail|https://kubetail-org.github.io/helm-charts
+lobe-chat|https://moechs.github.io/lobe-chat-helm
 longhorn|https://charts.longhorn.io
 mailu|https://mailu.github.io/helm-charts
 minio|https://charts.bitnami.com/bitnami
