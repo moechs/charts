@@ -55,12 +55,12 @@ readOnlyReplicaCount: 0
 
 image:
   # From repository https://hub.docker.com/r/bitnami/openldap/
-  #repository: bitnami/openldap
+  #repository: bitnamilegacy/openldap
   #tag: 2.6.3
   # Temporary fix
   repository: jpgouin/openldap
   tag: 2.6.9-fix
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
   pullSecrets: []
 
 # Set the container log level
@@ -71,7 +71,7 @@ initSchema:
   image: 
     repository: debian
     tag: latest
-    pullPolicy: Always
+    pullPolicy: IfNotPresent
     pullSecrets: []
 
 extraLabels: {}
@@ -494,8 +494,8 @@ volumePermissions:
   ##
   image:
     registry: docker.io
-    repository: bitnami/bitnami-shell
-    tag: 10-debian-10
+    repository: bitnamilegacy/os-shell
+    tag: 12-debian-12-r51
     pullPolicy: IfNotPresent
 
   ## Command to execute during the volumePermission startup
