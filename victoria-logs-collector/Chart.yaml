@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - add ability to configure license for VictoriaLogs enterprise. See [#2649](https://github.com/VictoriaMetrics/helm-charts/issues/2649).
+    - support extraArgs parameter for additional command line arguments
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -36,4 +36,4 @@ name: victoria-logs-collector
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.2.5
+version: 0.2.6
