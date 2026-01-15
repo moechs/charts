@@ -1,5 +1,5 @@
 apiVersion: v2
-appVersion: 0.16.3
+appVersion: 0.17.0
 description: General-purpose logging dashboard for Kubernetes
 home: https://github.com/kubetail-org/kubetail
 icon: https://assets.kubetail.com/helm/icon-40dad90a08.svg
@@ -15,4 +15,4 @@ maintainers:
   url: https://github.com/kubetail-org
 name: kubetail
 type: application
-version: 0.16.3
+version: 0.17.0
