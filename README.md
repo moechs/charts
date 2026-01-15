@@ -16,7 +16,7 @@
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 1.2.1 | External secrets management for Kubernetes |
 | gitea | 12.4.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 9.7.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 9.8.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana-loki | 6.0.6 | Grafana Loki is a horizontally scalable, highly available, and multi-tenant |
 | grafana | 12.1.8 | Grafana is an open source metric analytics and visualization suite for |
 | haproxy-ingress | 0.15.1 | Ingress controller for HAProxy loadbalancer |
@@ -28,9 +28,9 @@
 | jira | 2.0.8 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.14 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 80.14.3 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 80.14.4 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.3 | kube-starrocks includes two subcharts, operator and starrocks |
-| kubetail | 0.16.3 | General-purpose logging dashboard for Kubernetes |
+| kubetail | 0.17.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.2 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.10.1 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.6.3 | This chart installs the Mailu mail system on Kubernetes |
@@ -46,7 +46,7 @@
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
-| openspeedtest | 0.1.2 | SpeedTest by OpenSpeedTest |
+| openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | photoprism | 1.4.2 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.0 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
