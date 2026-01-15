@@ -222,15 +222,15 @@ config:
       # @schema type:[boolean, null]
       table: null
       # @schema type:[integer, null]
-      maxIdleConnections: null
+      maxIdleConnections: 2
       # @schema type:[integer, null]
-      maxParallel: null
+      maxParallel: 5
       # @schema type:[string, null]
       haTable: null
       # @schema type:[boolean, null]
       skipCreateTable:  null
       # @schema type:[integer, null]
-      maxConnectRetries: null
+      maxConnectRetries: 20
       haEnabled: true
       connection:
         host: "localhost"
@@ -303,7 +303,7 @@ readinessProbe:
 # @schema additionalProperties: false
 autoscaling:
   minReplicas: 2
-  maxReplicas: 4
+  maxReplicas: 2
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 

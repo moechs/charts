@@ -31,6 +31,12 @@ Render PostgreSQL storage configuration.
   {{- with .maxConnectRetries -}}
   {{ $_ := set $psql "max_connect_retries" . -}}
   {{- end -}}
+  {{- with .maxIdleConnections -}}
+  {{ $_ := set $psql "max_idle_connections" . -}}
+  {{- end -}}
+  {{- with .maxParallel -}}
+  {{ $_ := set $psql "max_parallel" . -}}
+  {{- end -}}
   {{- with .haEnabled -}}
   {{ $_ := set $psql "ha_enabled" . -}}
   {{- end -}}

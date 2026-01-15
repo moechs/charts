@@ -2,6 +2,29 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 9.8.0 (2026-01-14)
+
+### Added (2 changes)
+
+- [allow annotations to traefik IngressRouteTCP](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/b86d2fadf9dbe831fea483816372964ff0a71358) by @victormignot ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4718))
+- [KAS: enable dedicated gRPC ingress](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/409034890f59fe3afe8c298e30bde44b6d7e9e29) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4634))
+
+### Changed (9 changes)
+
+- [Update gateway-helm Docker tag to v1.6.2](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/022656679ddff3627c6bcf03863c3a1c9f2af9cd) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4738))
+- [Update Helm release gitlab-runner to v0.84.2](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/14c8bf584320afcb063b5b168cf36cf5ae6e276e) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4732))
+- [Update Helm release gitlab-zoekt to v3.8.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/beda9586d2ce50b81f3ec115bb61926830cb4278) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4726))
+- [docs: clarify PostgreSQL upgrade requirements and password configuration](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/e4b1edd6e92d34c89aae165d47cbfdc7bb5808f0) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4700))
+- [Update Helm release gitlab-runner to v0.84.1](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/3ea2f2eaf67592f58932ade5df0839f865a7f0aa) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4709))
+- [Update dependency container-registry to v4.33.0-gitlab](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/9a72bc557d05a2d13eb2dc7e538617186ccd8d68) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4721))
+- [Update Helm release openbao to v0.11.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/1522f58570c93b0579148d91134b1ce4f0e3f196) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4707))
+- [Update gateway-helm Docker tag to v1.6.1](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/09cf71f3edee75be48c970df9521e8e87ccd60e6) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4695))
+- [Update dependency gitlab-qa to v15.7.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/986324bb80d21b5093e9854009ec42201b921e87) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4592))
+
+### Removed (1 change)
+
+- [Remove suggested reviewers secret and config](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/bcdce46616a5f76a12514615497e7d290b22a11b) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4643))
+
 ## 9.7.1 (2026-01-07)
 
 No changes.
@@ -26,6 +49,10 @@ No changes.
 - [Update Helm release openbao to v0.9.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/e8edf9bf84403a826d34163a505697c7c6a890a5) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4661))
 - [Update Helm release gitlab-runner to v0.83.1](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/bd1bc85cf2ea47931cf3dc5363a87f8d261566e0) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4659))
 - [Update Helm release gitlab-runner to v0.83.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/ff93cc6c6b49b2d3a2bda5ff8d8bbdaedfa01dfb) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4654))
+
+## 9.6.3 (2026-01-07)
+
+No changes.
 
 ## 9.6.2 (2025-12-10)
 
@@ -64,6 +91,10 @@ No changes.
 - [Update dependency container-registry to v4.29.0-gitlab](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/ef7b3911840c12e282ae1c1f032833ecb06214c6) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4579))
 - [Update Helm release gitlab-zoekt to v3.6.1](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/bc26720416f3bdec8e02b3772df379343293dc9d) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4563))
 - [Update dependency container-registry to v4.28.0-gitlab](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/b6ad075821eb5a68056f37607c87c1d04b3e34ef) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/4530))
+
+## 9.5.5 (2026-01-07)
+
+No changes.
 
 ## 9.5.4 (2025-12-10)
 
