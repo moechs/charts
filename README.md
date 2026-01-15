@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.12.5 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 9.3.3 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 9.3.4 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.19 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.5 | A Helm chart for Argo Rollouts |
 | argo-workflows | 0.47.0 | A Helm chart for Argo Workflows |
@@ -28,7 +28,7 @@
 | jira | 2.0.8 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.14 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 80.14.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 80.14.3 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.3 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.16.3 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.2 | A Helm chart for deploying lobe-chat on Kubernetes |
