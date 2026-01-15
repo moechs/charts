@@ -37,7 +37,7 @@
 | minio | 17.0.21 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
-| nexus-repository-manager | 64.2.0 | DEPRECATED Sonatype Nexus Repository Manager - Universal Binary repository |
+| nexus-repository-manager | 88.1.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.37.0 | Get up and running with large language models locally. |
