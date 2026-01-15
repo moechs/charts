@@ -27,7 +27,7 @@ kubetail|https://kubetail-org.github.io/helm-charts
 lobe-chat|https://moechs.github.io/lobe-chat-helm
 longhorn|https://charts.longhorn.io
 mailu|https://mailu.github.io/helm-charts
-nexus-repository-manager|https://sonatype.github.io/helm3-charts
+nexus-repository-manager|https://moechs.github.io/nexus-repository-manager
 nfs-subdir-external-provisioner|https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner
 node-feature-discovery|https://kubernetes-sigs.github.io/node-feature-discovery/charts
 ollama|https://otwld.github.io/ollama-helm
