@@ -1,7 +1,7 @@
 apiVersion: v2
-appVersion: 3.64.0
+appVersion: 3.88.0
 deprecated: true
-description: DEPRECATED Sonatype Nexus Repository Manager - Universal Binary repository
+description: Nexus Repository Manager 3 Single‑Instance Helm Chart
 home: https://www.sonatype.com/nexus-repository-oss
 icon: https://sonatype.github.io/helm3-charts/NexusRepo_Vertical.svg
 keywords:
@@ -19,4 +19,4 @@ name: nexus-repository-manager
 sources:
 - https://github.com/sonatype/nexus-public
 type: application
-version: 64.2.0
+version: 88.1.0
