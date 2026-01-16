@@ -57,7 +57,7 @@
 | redis | 24.1.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.18.9 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.18.9 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.0.79 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.0.80 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.29.0 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.3 | Installs the Tigera operator for Calico |
