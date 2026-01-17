@@ -28,7 +28,7 @@
 | jira | 2.0.8 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.14 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 80.14.4 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 81.0.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.3 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.17.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.2 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -63,7 +63,7 @@
 | tigera-operator | v3.31.3 | Installs the Tigera operator for Calico |
 | traefik | 38.0.2 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 2.24.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
-| vault | 0.31.0 | Official HashiCorp Vault Chart |
+| vault | 0.32.0 | Official HashiCorp Vault Chart |
 | vector | 0.49.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.0.7 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.0.25 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
