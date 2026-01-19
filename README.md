@@ -46,6 +46,9 @@
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
+| openobserve-collector | 0.4.1 | An opinionated installation of OTEL Collector for OpenObserve |
+| openobserve-standalone | 0.40.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve | 0.40.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | photoprism | 1.4.2 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.0 | phpMyAdmin is a free software tool written in PHP, intended to handle |
