@@ -35,6 +35,9 @@ onedev|https://dl.cloudsmith.io/public/onedev/onedev/helm/charts
 opencost|https://opencost.github.io/opencost-helm-chart
 openebs|https://openebs.github.io/openebs
 openldap|https://jp-gouin.github.io/helm-openldap
+openobserve-collector|https://charts.openobserve.ai
+openobserve-standalone|https://charts.openobserve.ai
+openobserve|https://charts.openobserve.ai
 photoprism|https://moechs.github.io/photoprism-helm
 prometheus-blackbox-exporter|https://prometheus-community.github.io/helm-charts
 prometheus-pushgateway|https://prometheus-community.github.io/helm-charts
