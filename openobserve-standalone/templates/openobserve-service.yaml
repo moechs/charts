@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "openobserve.fullname" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  {{- with .Values.service.annotations }}
+  annotations:
+    {{- toYaml . | nindent 8 }}
+  {{- end }}
+  labels:
+    {{- include "openobserve.labels" . | nindent 4 }}
+    prometheus.io/scrape: "true"
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.http_port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+      {{- if .Values.service.http_nodePort }}
+      nodePort: {{ .Values.service.http_nodePort }}
+      {{- end }}
+    - port: {{ .Values.service.grpc_port }}
+      targetPort: grpc
+      protocol: TCP
+      name: grpc
+      {{- if .Values.service.grpc_nodePort }}
+      nodePort: {{ .Values.service.grpc_nodePort }}
+      {{- end }}
+  selector:
+    {{- include "openobserve.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: openobserve
