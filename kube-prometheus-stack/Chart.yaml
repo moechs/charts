@@ -58,9 +58,6 @@ maintainers:
 - email: github@jkroepke.de
   name: jkroepke
   url: https://github.com/jkroepke
-- email: scott@r6by.com
-  name: scottrigby
-  url: https://github.com/scottrigby
 - email: miroslav.hadzhiev@gmail.com
   name: Xtigyro
   url: https://github.com/Xtigyro
@@ -72,4 +69,4 @@ sources:
 - https://github.com/prometheus-community/helm-charts
 - https://github.com/prometheus-operator/kube-prometheus
 type: application
-version: 81.0.0
+version: 81.0.1
