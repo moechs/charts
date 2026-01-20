@@ -3,7 +3,7 @@
 |  Chart  |  Version  |   Description   |
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
-| apisix | 2.12.5 | A Helm chart for Apache APISIX v3 |
+| apisix | 2.12.6 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 9.3.4 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.19 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.5 | A Helm chart for Argo Rollouts |
@@ -16,7 +16,7 @@
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 1.2.1 | External secrets management for Kubernetes |
 | gitea | 12.4.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 9.8.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 9.8.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana-loki | 6.0.6 | Grafana Loki is a horizontally scalable, highly available, and multi-tenant |
 | grafana | 12.1.8 | Grafana is an open source metric analytics and visualization suite for |
 | haproxy-ingress | 0.15.1 | Ingress controller for HAProxy loadbalancer |
@@ -28,7 +28,7 @@
 | jira | 2.0.8 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.14 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 81.0.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 81.0.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.3 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.17.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.2 | A Helm chart for deploying lobe-chat on Kubernetes |
