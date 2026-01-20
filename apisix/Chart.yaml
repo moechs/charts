@@ -11,7 +11,7 @@ dependencies:
   condition: ingress-controller.enabled
   name: apisix-ingress-controller
   repository: https://apache.github.io/apisix-helm-chart
-  version: 1.1.0
+  version: 1.1.1
 description: A Helm chart for Apache APISIX v3
 icon: https://apache.org/logos/res/apisix/apisix.png
 maintainers:
@@ -28,4 +28,4 @@ name: apisix
 sources:
 - https://github.com/apache/apisix-helm-chart
 type: application
-version: 2.12.5
+version: 2.12.6
