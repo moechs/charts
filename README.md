@@ -5,9 +5,9 @@
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.12.6 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 9.3.4 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
-| argo-events | 2.4.19 | A Helm chart for Argo Events, the event-driven workflow automation framework |
+| argo-events | 2.4.20 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.5 | A Helm chart for Argo Rollouts |
-| argo-workflows | 0.47.0 | A Helm chart for Argo Workflows |
+| argo-workflows | 0.47.1 | A Helm chart for Argo Workflows |
 | cert-manager | v1.19.2 | A Helm chart for cert-manager |
 | cilium | 1.18.6 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.8 | A chart for installing Confluence Data Center on Kubernetes |
@@ -42,7 +42,7 @@
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.38.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.3 | OpenCost and OpenCost UI |
+| opencost | 2.5.4 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
