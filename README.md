@@ -26,10 +26,10 @@
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.14.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
 | jira | 2.0.8 | A chart for installing Jira Data Center on Kubernetes |
-| jumpserver | v4.10.14 | A Helm chart for Deploying Jumpserver on Kubernetes |
+| jumpserver | v4.10.15 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 81.2.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
-| kube-starrocks | 1.11.3 | kube-starrocks includes two subcharts, operator and starrocks |
+| kube-prometheus-stack | 81.2.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.17.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.2 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.10.1 | Longhorn is a distributed block storage system for Kubernetes. |
@@ -42,11 +42,11 @@
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.38.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.4 | OpenCost and OpenCost UI |
+| opencost | 2.5.5 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
-| openobserve-collector | 0.4.1 | An opinionated installation of OTEL Collector for OpenObserve |
+| openobserve-collector | 0.4.2 | An opinionated installation of OTEL Collector for OpenObserve |
 | openobserve-standalone | 0.40.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openobserve | 0.40.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
@@ -60,7 +60,7 @@
 | redis | 24.1.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.0 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.0.80 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.0.81 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.29.0 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.3 | Installs the Tigera operator for Calico |
