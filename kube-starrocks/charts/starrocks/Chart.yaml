@@ -20,4 +20,4 @@ name: starrocks
 sources:
 - https://github.com/StarRocks/starrocks
 type: application
-version: 1.11.3
+version: 1.11.4
