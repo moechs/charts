@@ -31,7 +31,7 @@
 | kube-prometheus-stack | 81.2.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.17.0 | General-purpose logging dashboard for Kubernetes |
-| lobe-chat | 1.143.2 | A Helm chart for deploying lobe-chat on Kubernetes |
+| lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.10.1 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.6.3 | This chart installs the Mailu mail system on Kubernetes |
 | minio | 17.0.21 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
