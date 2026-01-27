@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.12.6 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 9.3.5 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 9.3.6 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.20 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.5 | A Helm chart for Argo Rollouts |
 | argo-workflows | 0.47.1 | A Helm chart for Argo Workflows |
@@ -20,11 +20,11 @@
 | grafana-loki | 6.0.6 | Grafana Loki is a horizontally scalable, highly available, and multi-tenant |
 | grafana | 12.1.8 | Grafana is an open source metric analytics and visualization suite for |
 | haproxy-ingress | 0.15.1 | Ingress controller for HAProxy loadbalancer |
-| harbor | 1.18.1 | An open source trusted cloud native registry that stores, signs, and |
+| harbor | 1.18.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.39.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.1.9 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
-| ingress-nginx | 4.14.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
+| ingress-nginx | 4.14.2 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
 | jira | 2.0.8 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.15 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
@@ -40,7 +40,7 @@
 | nexus-repository-manager | 88.2.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
-| ollama | 1.38.0 | Get up and running with large language models locally. |
+| ollama | 1.39.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.5 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
