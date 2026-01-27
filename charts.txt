@@ -19,6 +19,7 @@ headlamp|https://kubernetes-sigs.github.io/headlamp
 higress|https://higress.io/helm-charts
 imgproxy|https://helm.imgproxy.net/
 ingress-nginx|https://kubernetes.github.io/ingress-nginx
+jenkins|https://charts.jenkins.io
 jira|https://atlassian.github.io/data-center-helm-charts
 jumpserver|https://jumpserver.github.io/helm-charts
 kube-prometheus-stack|https://prometheus-community.github.io/helm-charts
