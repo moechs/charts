@@ -3,7 +3,7 @@ scalable: true
 
 image:
   repository: app/zentao
-  tag: "21.7.5"
+  tag: "21.7.8"
   pullPolicy: Always
 
 service:
