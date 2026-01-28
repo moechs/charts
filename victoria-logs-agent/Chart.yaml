@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - add service and container ports, when syslog.listenAddr.tcp or syslog.listenAddr.udp flags are defined.
+    - bump vlagent version to [v1.44.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.44.0).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -15,7 +15,7 @@ annotations:
 
     Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-agent/)
 apiVersion: v2
-appVersion: v1.43.1
+appVersion: v1.44.0
 dependencies:
 - name: victoria-metrics-common
   repository: https://victoriametrics.github.io/helm-charts
@@ -36,4 +36,4 @@ name: victoria-logs-agent
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.0.7
+version: 0.0.8
