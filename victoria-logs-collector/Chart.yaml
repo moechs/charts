@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - TODO
+    - bump vlagent version to [v1.44.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.44.0).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -15,7 +15,7 @@ annotations:
 
     Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-collector/)
 apiVersion: v2
-appVersion: v1.43.1
+appVersion: v1.44.0
 dependencies:
 - name: victoria-metrics-common
   repository: https://victoriametrics.github.io/helm-charts
@@ -36,4 +36,4 @@ name: victoria-logs-collector
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.2.7
+version: 0.2.8
