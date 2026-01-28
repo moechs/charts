@@ -32,6 +32,9 @@ renderHelmLabels: true
 # -- Configures extra labels for the agent all objects
 extraLabels: {}
 
+# -- Configures extra manifests
+extraObjects:
+
 controller:
   # -- Used for label app.kubernetes.io/component
   componentName: "jenkins-controller"
@@ -413,8 +416,8 @@ controller:
   installPlugins:
     - kubernetes:4423.vb_59f230b_ce53
     - workflow-aggregator:608.v67378e9d3db_1
-    - git:5.8.1
-    - configuration-as-code:2031.veb_a_fdda_b_3ffd
+    - git:5.9.0
+    - configuration-as-code:2036.v0b_c2de701dcb_
 
   # If set to false, Jenkins will download the minimum required version of all dependencies.
   # -- Download the minimum required version or latest version of all dependencies

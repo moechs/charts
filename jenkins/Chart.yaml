@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Update `jenkins/inbound-agent` to version `3355.v388858a_47b_33-7`
+    - Update `configuration-as-code` to version `2036.v0b_c2de701dcb_`
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.541.1-jdk21
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.8.130
+version: 5.8.133
