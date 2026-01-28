@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.12.6 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 9.3.6 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 9.3.7 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.20 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.5 | A Helm chart for Argo Rollouts |
 | argo-workflows | 0.47.1 | A Helm chart for Argo Workflows |
@@ -25,7 +25,7 @@
 | higress | 2.1.9 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.14.2 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.8.130 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.8.133 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.8 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.15 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
@@ -68,10 +68,10 @@
 | traefik | 39.0.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 2.24.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
-| vector | 0.49.0 | A lightweight, ultra-fast tool for building observability pipelines |
-| victoria-logs-agent | 0.0.7 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
-| victoria-logs-cluster | 0.0.25 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
-| victoria-logs-collector | 0.2.7 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
-| victoria-logs-single | 0.11.24 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
-| zentao | 2025.9.1101 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
+| vector | 0.50.0 | A lightweight, ultra-fast tool for building observability pipelines |
+| victoria-logs-agent | 0.0.8 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
+| victoria-logs-cluster | 0.0.26 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
+| victoria-logs-collector | 0.2.8 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
+| victoria-logs-single | 0.11.25 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
+| zentao | 2026.1.1201 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
 | zookeeper | 13.8.7 | Apache ZooKeeper provides a reliable, centralized register of configuration |
