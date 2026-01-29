@@ -11,7 +11,7 @@
 | cert-manager | v1.19.2 | A Helm chart for cert-manager |
 | cilium | 1.18.6 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.8 | A chart for installing Confluence Data Center on Kubernetes |
-| consul | 1.9.2 | Official HashiCorp Consul Chart |
+| consul | 1.9.3 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 1.3.1 | External secrets management for Kubernetes |
@@ -29,11 +29,11 @@
 | jira | 2.0.8 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.15 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 81.2.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 81.3.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.17.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
-| longhorn | 1.10.1 | Longhorn is a distributed block storage system for Kubernetes. |
+| longhorn | 1.10.2 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.6.3 | This chart installs the Mailu mail system on Kubernetes |
 | minio | 17.0.21 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
@@ -54,7 +54,7 @@
 | photoprism | 1.4.2 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.0 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
-| prometheus-blackbox-exporter | 11.7.0 | Prometheus Blackbox Exporter |
+| prometheus-blackbox-exporter | 11.7.1 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.6.0 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.16.0 | A Helm chart for Kubernetes |
 | rancher | 2.13.1 | Install Rancher Server to manage Kubernetes clusters across providers. |
