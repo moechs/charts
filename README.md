@@ -25,15 +25,15 @@
 | higress | 2.1.9 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.14.2 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.8.133 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.8.134 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.8 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.15 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 81.3.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 81.3.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.17.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
-| longhorn | 1.10.2 | Longhorn is a distributed block storage system for Kubernetes. |
+| longhorn | 1.11.0 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.6.3 | This chart installs the Mailu mail system on Kubernetes |
 | minio | 17.0.21 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
@@ -57,7 +57,7 @@
 | prometheus-blackbox-exporter | 11.7.1 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.6.0 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.16.0 | A Helm chart for Kubernetes |
-| rancher | 2.13.1 | Install Rancher Server to manage Kubernetes clusters across providers. |
+| rancher | 2.13.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.1.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.0 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
@@ -69,7 +69,7 @@
 | uptime-kuma | 2.24.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
 | vector | 0.50.0 | A lightweight, ultra-fast tool for building observability pipelines |
-| victoria-logs-agent | 0.0.8 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
+| victoria-logs-agent | 0.0.9 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.0.26 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.2.8 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
 | victoria-logs-single | 0.11.25 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
