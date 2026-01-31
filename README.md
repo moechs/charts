@@ -7,7 +7,7 @@
 | argo-cd | 9.3.7 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.20 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.5 | A Helm chart for Argo Rollouts |
-| argo-workflows | 0.47.1 | A Helm chart for Argo Workflows |
+| argo-workflows | 0.47.2 | A Helm chart for Argo Workflows |
 | cert-manager | v1.19.2 | A Helm chart for cert-manager |
 | cilium | 1.18.6 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.8 | A chart for installing Confluence Data Center on Kubernetes |
@@ -29,7 +29,7 @@
 | jira | 2.0.8 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.15 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 81.3.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 81.4.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.17.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -41,7 +41,7 @@
 | nexus-repository-manager | 88.2.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
-| ollama | 1.39.0 | Get up and running with large language models locally. |
+| ollama | 1.40.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.5 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
@@ -61,7 +61,7 @@
 | redis | 24.1.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.0 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.0.81 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.0.82 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.29.0 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.3 | Installs the Tigera operator for Calico |
