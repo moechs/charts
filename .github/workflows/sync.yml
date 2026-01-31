@@ -2,7 +2,7 @@ name: Sync Helm Repository
 
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 1 * * *'
   workflow_dispatch:
   push:
     paths:
