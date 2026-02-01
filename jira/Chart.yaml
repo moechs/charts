@@ -1,7 +1,5 @@
 annotations:
-  artifacthub.io/changes: |-
-    - "Update appVersions for DC apps (#1071)"
-    - "feat: Added scrape timeout configuration on servicemonitor (#1067)"
+  artifacthub.io/changes: '- "Update Helm chart version"'
   artifacthub.io/containsSecurityUpdates: "false"
 apiVersion: v2
 appVersion: 11.3.1
@@ -25,4 +23,4 @@ sources:
 - https://github.com/atlassian/data-center-helm-charts
 - https://bitbucket.org/atlassian-docker/docker-atlassian-jira/
 type: application
-version: 2.0.8
+version: 2.0.9
