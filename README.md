@@ -10,7 +10,7 @@
 | argo-workflows | 0.47.2 | A Helm chart for Argo Workflows |
 | cert-manager | v1.19.2 | A Helm chart for cert-manager |
 | cilium | 1.18.6 | eBPF-based Networking, Security, and Observability |
-| confluence | 2.0.8 | A chart for installing Confluence Data Center on Kubernetes |
+| confluence | 2.0.9 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 1.9.3 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
@@ -26,7 +26,7 @@
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.14.2 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
 | jenkins | 5.8.134 | 'Jenkins - Build great things at any scale! As the leading open source |
-| jira | 2.0.8 | A chart for installing Jira Data Center on Kubernetes |
+| jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.15 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
 | kube-prometheus-stack | 81.4.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
