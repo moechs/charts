@@ -1,9 +1,9 @@
 apiVersion: v2
-appVersion: 2.1.9
+appVersion: 2.1.10
 dependencies:
 - name: higress-core
   repository: file://../core
-  version: 2.1.9
+  version: 2.1.10
 - name: higress-console
   repository: https://higress.io/helm-charts/
   version: 2.1.9
@@ -17,4 +17,4 @@ name: higress
 sources:
 - http://github.com/alibaba/higress
 type: application
-version: 2.1.9
+version: 2.1.10
