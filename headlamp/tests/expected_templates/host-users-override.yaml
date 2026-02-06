@@ -94,7 +94,7 @@ spec:
     spec:
       serviceAccountName: headlamp
       automountServiceAccountToken: true
-      hostUsers: true
+      hostUsers: false
       securityContext:
         {}
       containers:

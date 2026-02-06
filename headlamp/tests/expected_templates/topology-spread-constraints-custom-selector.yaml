@@ -127,3 +127,14 @@ spec:
               port: http
           resources:
             {}
+      topologySpreadConstraints:
+        - 
+          labelSelector:
+            matchLabels:
+              app.kubernetes.io/name: headlamp
+              custom-label: custom-value
+          matchLabelKeys:
+          - pod-template-hash
+          maxSkew: 2
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: ScheduleAnyway
