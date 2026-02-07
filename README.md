@@ -14,7 +14,7 @@
 | consul | 1.9.3 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
-| external-secrets | 1.3.2 | External secrets management for Kubernetes |
+| external-secrets | 2.0.0 | External secrets management for Kubernetes |
 | gitea | 12.5.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 9.8.3 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana-loki | 6.0.6 | Grafana Loki is a horizontally scalable, highly available, and multi-tenant |
@@ -54,7 +54,7 @@
 | photoprism | 1.4.2 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.0 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
-| prometheus-blackbox-exporter | 11.7.1 | Prometheus Blackbox Exporter |
+| prometheus-blackbox-exporter | 11.8.0 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.6.0 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.16.0 | A Helm chart for Kubernetes |
 | rancher | 2.13.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
