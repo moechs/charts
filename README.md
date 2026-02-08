@@ -25,7 +25,7 @@
 | higress | 2.1.10 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.14.3 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.8.135 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.8.136 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.15 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
