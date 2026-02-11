@@ -38,6 +38,14 @@ rules:
     resources: ["*"]
     verbs: ["get", "watch", "list", "create", "update", "delete", "patch"]
 
+  # Gateway api inference extension
+  - apiGroups: ["inference.networking.k8s.io"]
+    resources: ["*"]
+    verbs: ["get", "watch", "list", "create", "update", "delete", "patch"]
+  - apiGroups: ["inference.networking.x-k8s.io"]
+    resources: ["*"]
+    verbs: ["get", "watch", "list", "create", "update", "delete", "patch"]
+
   # Needed for multicluster secret reading, possibly ingress certs in the future
   - apiGroups: [""]
     resources: ["secrets"]
@@ -136,3 +144,7 @@ rules:
   - apiGroups: [""]
     verbs: [ "get", "watch", "list", "update", "patch", "create", "delete" ]
     resources: [ "serviceaccounts"]
+  # istio leader election need
+  - apiGroups: ["coordination.k8s.io"]
+    resources: ["leases"]
+    verbs: ["get", "update", "patch", "create"]

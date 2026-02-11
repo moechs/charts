@@ -9,6 +9,8 @@ global:
   xdsMaxRecvMsgSize: "104857600"
   defaultUpstreamConcurrencyThreshold: 10000
   enableSRDS: true
+  # -- Whether to enable Istio delta xDS, default is false.
+  enableDeltaXDS: true
   # -- Whether to enable Redis(redis-stack-server) for Higress, default is false.
   enableRedis: false
   enablePluginServer: false
@@ -44,7 +46,9 @@ global:
   # -- If true, Higress Controller will monitor istio resources as well
   enableIstioAPI: true
   # -- If true, Higress Controller will monitor Gateway API resources as well
-  enableGatewayAPI: false
+  enableGatewayAPI: true
+  # -- If true, enable Gateway API Inference Extension support
+  enableInferenceExtension: false
   # -- Used to locate istiod.
   istioNamespace: istio-system
   # -- enable pod disruption budget for the control plane, which is used to
