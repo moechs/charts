@@ -16,20 +16,20 @@
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.0.0 | External secrets management for Kubernetes |
 | gitea | 12.5.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 9.8.3 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 9.8.4 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana-loki | 6.0.6 | Grafana Loki is a horizontally scalable, highly available, and multi-tenant |
 | grafana | 12.1.8 | Grafana is an open source metric analytics and visualization suite for |
 | haproxy-ingress | 0.15.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.18.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.40.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
-| higress | 2.1.10 | Helm chart for deploying Higress gateways |
+| higress | 2.2.0 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.14.3 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.8.138 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.8.139 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.15 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 81.6.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 81.6.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.18.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -41,7 +41,7 @@
 | nexus-repository-manager | 88.3.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
-| ollama | 1.41.0 | Get up and running with large language models locally. |
+| ollama | 1.42.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.8 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
