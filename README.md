@@ -6,7 +6,7 @@
 | apisix | 2.13.0 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 9.4.2 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.20 | A Helm chart for Argo Events, the event-driven workflow automation framework |
-| argo-rollouts | 2.40.5 | A Helm chart for Argo Rollouts |
+| argo-rollouts | 2.40.6 | A Helm chart for Argo Rollouts |
 | argo-workflows | 0.47.3 | A Helm chart for Argo Workflows |
 | cert-manager | v1.19.3 | A Helm chart for cert-manager |
 | cilium | 1.19.0 | eBPF-based Networking, Security, and Observability |
