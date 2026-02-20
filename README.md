@@ -16,7 +16,7 @@
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.0.0 | External secrets management for Kubernetes |
 | gitea | 12.5.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 9.8.4 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 9.9.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana-loki | 6.0.6 | Grafana Loki is a horizontally scalable, highly available, and multi-tenant |
 | grafana | 12.1.8 | Grafana is an open source metric analytics and visualization suite for |
 | haproxy-ingress | 0.15.1 | Ingress controller for HAProxy loadbalancer |
@@ -29,7 +29,7 @@
 | jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.15 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 82.1.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 82.1.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.18.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
