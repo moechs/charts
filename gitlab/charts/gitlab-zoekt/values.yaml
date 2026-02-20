@@ -1,3 +1,11 @@
+# -- Enable certificate init containers for custom CA injection.
+# When true (default), includes certificate init containers when global.certificates.customCAs is configured.
+# Set to false in performance-sensitive deployments where custom CAs are not needed by Zoekt.
+# This can significantly reduce pod startup time during rolling updates.
+certificates:
+  initContainers:
+    enabled: true
+
 # --  The size of storage mounted to the gitlab-zoekt-indexer and zoekt-webserver that will be used to store index files.<br>
 # The index files are those with the `.zoekt` extension and used to serve
 # search results.
@@ -173,3 +181,24 @@ networkpolicy:
     enabled: false
     rules: []
   annotations: {}
+
+# Extra configurations using GitLab chart patterns
+# When used as GitLab subchart: certificate management handled automatically
+# When used standalone: use extraInitContainers for custom certificate injection
+extraInitContainers: ""
+extraVolumes: ""
+extraVolumeMounts: ""
+extraContainers: ""
+
+# Init container configuration (required for GitLab certificate integration)
+init:
+  image: {}
+  resources:
+    requests:
+      cpu: 50m
+  containerSecurityContext:
+    runAsUser: 1000
+    allowPrivilegeEscalation: false
+    runAsNonRoot: true
+    capabilities:
+      drop: [ "ALL" ]

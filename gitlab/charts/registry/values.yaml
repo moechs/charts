@@ -1,6 +1,6 @@
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-container-registry
-  tag: 'v4.33.0-gitlab'
+  tag: 'v4.36.0-gitlab'
   # pullPolicy: IfNotPresent
   # pullSecrets: []
 
@@ -83,6 +83,7 @@ gatewayRoute:
   enabled: null
   sectionName: "registry-web"
   gatewayName: ""
+  gatewayNamespace: ""
   annotations: {}
   timeouts:
     request: 900s

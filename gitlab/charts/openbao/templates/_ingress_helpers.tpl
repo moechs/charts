@@ -5,7 +5,12 @@ The GitLab helm chart overrides these with it's own implementation.
 
 {{/* Check if the Ingress should be enabled */}}
 {{- define "gitlab.ingress.enabled" -}}
-{{- .Values.ingress.enabled -}}
+{{- $ing := .Values.ingress.enabled -}}
+{{- if eq nil $ing -}}
+true
+{{- else -}}
+{{- $ing -}}
+{{- end -}}
 {{- end -}}
 
 {{/* Renders the ingressClassName field. */}}

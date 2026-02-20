@@ -111,7 +111,9 @@ enabled: true
 gatewayRoute:
   enabled: null
   sectionName: "gitlab-web"
+  geoSectionName: "gitlab-web-geo"
   gatewayName: ""
+  gatewayNamespace: ""
   annotations: {}
 
 ingress:
@@ -271,6 +273,14 @@ workhorse:
     maxConsecutiveFailures: 1
     minSuccessfulProbes: 1
     railsSkipInterval: 0s
+  loadShedding:
+    enabled: false
+    backlogThreshold: 50
+    backlogHysteresis: 0.8
+    retryAfterSeconds: 0
+    strategy: "max"
+    checkInterval: "1s"
+    timeout: "5s"
   imageScaler:
     maxProcs: 2 # aim for max(2, requested_cpus / 2)
     maxFileSizeBytes: 250000
@@ -533,6 +543,13 @@ deployments: {}
   # default:
   #   ingress:
   #     path: /
+  #   gatewayRoute:
+  #     rule:
+  #       enabled: true
+  #       matches:
+  #       - path:
+  #           type: PathPrefix
+  #           value: /
 
 antiAffinity: "" # options: "hard", "soft"
 

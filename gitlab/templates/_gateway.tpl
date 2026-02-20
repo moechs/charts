@@ -8,16 +8,51 @@ Returns name of the Gateway class. Consumed by chart managed Gateway and Gateway
 {{/*
 Returns the name of the EnvoyProxy resource.
 */}}
-{{- define "gitlab.gatewayApi.envoyProxy.config.name" -}}
+{{- define "gitlab.gatewayApi.envoy.config.name" -}}
 {{- printf "%s-envoy-proxy" .Release.Name -}}
 {{- end -}}
 
-{{/*
-Returns name of the managed Gateway resource.
-*/}}
-{{- define "gitlab.gatewayApi.gateway" -}}
-{{ printf "%s-gw" .Release.Name }}
+{{- define "gitlab.gatewayApi.gateway.name.default" -}}
+{{- printf "%s-gw" .Release.Name -}}
 {{- end -}}
+
+{{/*
+Returns a target ref to the Gateway resource without namespace and sectionName
+for usage in Envoy policy custom resources.
+*/}}
+{{- define "gitlab.gatewayApi.gatewayRef.local" -}}
+- group: gateway.networking.k8s.io
+  kind: Gateway
+  name: {{ coalesce (.Values.gatewayRoute).gatewayName .Values.global.gatewayApi.gatewayRef.name (include "gitlab.gatewayApi.gateway.name.default" .) | quote }}
+{{- end -}}
+
+{{/*
+Returns true if envoy policies should be installed. Policies are installed if bundled envoy is installed
+and if Gateway is in same namespace.
+*/}}
+{{- define "gitlab.gatewayApi.envoy.installPolicies" -}}
+{{- $installEnvoy := and .Values.global.gatewayApi.enabled .Values.global.gatewayApi.installEnvoy -}}
+{{- $gatewayNamespace := (include "gitlab.gatewayApi.gatewayRef" . | fromYamlArray | first).namespace -}}
+{{- $gatewayInSameNamespace := eq .Release.Namespace $gatewayNamespace -}}
+{{- if and $installEnvoy $gatewayInSameNamespace -}}
+true
+{{- else -}}
+false
+{{- end -}}
+{{- end -}}
+
+{{/*
+Returns a target refs to the Gateway resource with a namespace and optionally a section name.
+*/}}
+{{- define "gitlab.gatewayApi.gatewayRef" -}}
+{{- template "gitlab.gatewayApi.gatewayRef.local" . }}
+  namespace: {{ coalesce (.Values.gatewayRoute).gatewayNamespace .Values.global.gatewayApi.gatewayRef.namespace .Release.Namespace | quote }}
+{{- with .Values.gatewayRoute }}
+{{-   with .sectionName }}
+  sectionName: {{ . | quote }}
+{{-   end }}
+{{- end }}
+{{- end }}
 
 {{/*
 Renders a single listener configuration for the managed Gateway resource.
@@ -65,14 +100,6 @@ Port assignment is automatically determined based on the selected protocol.
 {{- end -}}
 
 {{/*
-Renders the Gateway name referenced from a Route resource.
-Defaults to the GitLab chart managed Gateway but can be overriden per Route.
-*/}}
-{{- define "gitlab.gatewayApi.route.gateway" -}}
-{{ .Values.gatewayRoute.gatewayName | default (include "gitlab.gatewayApi.gateway" .) }}
-{{- end -}}
-
-{{/*
 Checks if a Route should be enabled. Defaults to global GatewayAPI toggle but can be 
 configured per Route by setting true/false explicitly.
 */}}
@@ -99,5 +126,16 @@ https://cert-manager.io/docs/usage/gateway/
 {{- define "gitlab.gatewayApi.certmanager.annotations" -}}
 {{- if .Values.global.gatewayApi.configureCertmanager -}}
 cert-manager.io/issuer: {{ include "gitlab.gatewayApi.certmanager.issuer" . }}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Renders true if Gateway resources should be configured for Geo traffic.
+*/}}
+{{- define "gitlab.gatewayApi.gateway.geo.configure" -}}
+{{ if and .Values.global.geo.enabled .Values.global.geo.gatewayApi.additionalHostname .Values.global.gatewayApi.enabled -}}
+true
+{{- else -}}
+false
 {{- end -}}
 {{- end -}}

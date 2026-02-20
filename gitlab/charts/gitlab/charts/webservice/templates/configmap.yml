@@ -89,9 +89,7 @@ data:
       {{-     include "gitlab.appConfig.service_desk_email" . | nindent 6 }}
       {{-   end }}
       {{-   include "gitlab.appConfig.cronJobs" . | nindent 6 }}
-      gravatar:
-        plain_url: {{ .gravatar.plainUrl }}
-        ssl_url: {{ .gravatar.sslUrl }}
+      {{-   include "gitlab.appConfig.gravatar" . | nindent 6 }}
       {{-   include "gitlab.appConfig.extra" . | nindent 6 }}
       {{- end }}
 
@@ -278,6 +276,22 @@ data:
       max_consecutive_failures = {{ .maxConsecutiveFailures | int }}
       min_successful_probes = {{ .minSuccessfulProbes | int }}
       rails_skip_interval = {{ .railsSkipInterval | quote }}
+    {{-   end }}
+    {{- end }}
+    {{- if .workhorse.loadShedding.enabled -}}
+    {{-   with .workhorse.loadShedding }}
+    # Load shedding configuration
+    # When enabled, Workhorse will return 503 Service Unavailable when Puma's
+    # request backlog exceeds the configured threshold
+    [load_shedding]
+      enabled = true
+      backlog_threshold = {{ .backlogThreshold | int }}
+      backlog_hysteresis = {{ .backlogHysteresis | float64 }}
+      retry_after_seconds = {{ .retryAfterSeconds | int }}
+      strategy = {{ .strategy | quote }}
+      check_interval = {{ .checkInterval | quote }}
+      puma_control_url = "http://localhost:{% env.Getenv "PUMA_CONTROL_PORT" "9293" %}"
+      timeout = {{ .timeout | quote }}
     {{-   end }}
     {{- end }}
   configure: |

@@ -41,8 +41,14 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       terminationGracePeriodSeconds: 60
-      {{- if .Values.gateway.basicAuth.enabled }}
+      {{- $commonInitContainers := include "gitlab-zoekt.commonInitContainers" . }}
+      {{- $hasBasicAuth := .Values.gateway.basicAuth.enabled }}
+      {{- if or $hasBasicAuth $commonInitContainers }}
       initContainers:
+        {{- if $commonInitContainers }}
+        {{-   $commonInitContainers | nindent 8 }}
+        {{- end }}
+        {{- if $hasBasicAuth }}
         - name: create-htpasswd
           image: {{ include "gitlab-zoekt.gatewayImage" . }}
           imagePullPolicy: {{ coalesce .Values.gateway.image.pullPolicy .Values.image.pullPolicy }}
@@ -56,6 +62,7 @@ spec:
               mountPath: /etc/nginx/basicauth
             - name: basicauth-credentials
               mountPath: /etc/nginx/basicauth-credentials
+        {{- end }}
       {{- end }}
       containers:
         - name: zoekt-indexer
@@ -83,6 +90,10 @@ spec:
             readOnly: true
             mountPath: /.gitlab_shell_secret
             subPath: .gitlab_shell_secret
+          {{- if include "gitlab-zoekt.hasCertificates" . }}
+          {{-   include "gitlab.certificates.volumeMount" . | nindent 10 }}
+          {{- end }}
+          {{- include "gitlab.extraVolumeMounts" . | nindent 10 }}
           env:
           - name: GITLAB_ZOEKT_MODE
             value: "indexer"
@@ -123,6 +134,10 @@ spec:
             readOnly: true
             mountPath: /.gitlab_shell_secret
             subPath: .gitlab_shell_secret
+          {{- if include "gitlab-zoekt.hasCertificates" . }}
+          {{-   include "gitlab.certificates.volumeMount" . | nindent 10 }}
+          {{- end }}
+          {{- include "gitlab.extraVolumeMounts" . | nindent 10 }}
           env:
           - name: GITLAB_ZOEKT_MODE
             value: "webserver"
@@ -181,6 +196,11 @@ spec:
             - name: basicauth
               mountPath: /etc/nginx/basicauth
             {{- end }}
+            {{- if include "gitlab-zoekt.hasCertificates" . }}
+            {{-   include "gitlab.certificates.volumeMount" . | nindent 12 }}
+            {{- end }}
+            {{- include "gitlab.extraVolumeMounts" . | nindent 12 }}
+        {{- include "gitlab.extraContainers" . | nindent 8 }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -228,6 +248,10 @@ spec:
             items:
               - key: {{ template "gitlab-zoekt.internalApi.secretKey" . }}
                 path: ".gitlab_shell_secret"
+        {{- if include "gitlab-zoekt.hasCertificates" . }}
+        {{-   include "gitlab.certificates.volumes" . | nindent 8 }}
+        {{- end }}
+        {{- include "gitlab.extraVolumes" . | nindent 8 }}
   volumeClaimTemplates:
   - metadata:
       name: zoekt-index

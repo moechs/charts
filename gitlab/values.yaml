@@ -51,7 +51,7 @@ global:
   edition: ee
 
   ## https://docs.gitlab.com/charts/charts/globals#gitlab-version
-  gitlabVersion: "18.8.4"
+  gitlabVersion: "18.9.0"
 
   ## https://docs.gitlab.com/charts/charts/globals#application-resource
   application:
@@ -83,6 +83,17 @@ global:
         kubernetes:
           envoyService:
             type: LoadBalancer
+          envoyDeployment:
+            pod:
+              annotations:
+                gitlab.com/prometheus_scrape: "true"
+                gitlab.com/prometheus_port: "19001"
+                gitlab.com/prometheus_path: "/stats/prometheus"
+    envoyClientTrafficPolicySpec: {}
+    envoySecurityPolicySpec: {}
+    gatewayRef: {}
+      # name: ""
+      # namespace: ""
     class:
       name: "gitlab-gw"
       controllerName: "gateway.envoyproxy.io/gitlab-gatewayclass-controller"
@@ -99,6 +110,12 @@ global:
           mode: Terminate
           certificateRefs:
             - name: gitlab-tls
+      gitlab-web-geo:
+        protocol: ""
+        tls:
+          mode: Terminate
+          certificateRefs:
+            - name: gitlab-web-geo-tls
       gitlab-ssh:
         protocol: "TCP"
       registry-web:
@@ -125,18 +142,18 @@ global:
           mode: Terminate
           certificateRefs:
             - name: kas-workspaces-tls
-      kas-registry-web:
-        protocol: ""
-        tls:
-          mode: Terminate
-          certificateRefs:
-            - name: kas-workspaces-tls
       minio-web:
         protocol: ""
         tls:
           mode: Terminate
           certificateRefs:
             - name: minio-tls
+      openbao-web:
+        protocol: ""
+        tls:
+          mode: Terminate
+          certificateRefs:
+            - name: openbao-tls
 
   ## https://docs.gitlab.com/charts/charts/globals#configure-ingress-settings
   ingress:
@@ -274,6 +291,10 @@ global:
     tls:
       enabled: false
       # secretName:
+    client:
+      maxAttempts: 4
+      initialBackoff: '0.4s'
+      maxBackoff: '1.4s'
 
   praefect:
     enabled: false
@@ -683,6 +704,11 @@ global:
     # nodeName allows multiple instances behind a load balancer.
     nodeName: # defaults to `gitlab.gitlab.host`
     # ingressClass:
+    gatewayApi:
+      # Additional hostname for GitLab Geo.
+      # Should be set to the "Internal URL" (URL for inter-site communication) on
+      # primary Geo sites, and to the external/unified URL on secondary Geo sites.
+      additionalHostname: ""
     # PostgreSQL connection details only needed for `secondary`
     psql:
       password: {}
@@ -1084,8 +1110,8 @@ nginx-ingress: &nginx-ingress
     image:
       registry: registry.gitlab.com
       image: gitlab-org/cloud-native/mirror/images/ingress-nginx/controller
-      tag: "v1.11.8"
-      digest: "sha256:695d79381ee6af00c7f5c9fd434f50851d7d32838ad5b2c507e416cf2084fc79"
+      tag: v1.14.3
+      digest: "sha256:82917be97c0939f6ada1717bb39aa7e66c229d6cfb10dcfc8f1bd42f9efe0f81"
     addHeaders:
       Referrer-Policy: strict-origin-when-cross-origin
     config: &nginx-ingress-controller-config
@@ -1627,6 +1653,11 @@ openbao:
           sslMode: ''
 
 envoy-gateway:
+  deployment:
+    pod:
+      annotations:
+        gitlab.com/prometheus_scrape: "true"
+        gitlab.com/prometheus_port: "19001"
   config:
     envoyGateway:
       gateway:

@@ -310,6 +310,29 @@
         "fullnameOverride": {
             "type": "string"
         },
+        "gatewayRoute": {
+            "type": "object",
+            "properties": {
+                "annotations": {
+                    "type": "object"
+                },
+                "enabled": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "gatewayName": {
+                    "type": "string"
+                },
+                "sectionName": {
+                    "type": "string"
+                },
+                "timeouts": {
+                    "type": "object"
+                }
+            }
+        },
         "global": {
             "type": "object",
             "properties": {
@@ -387,7 +410,10 @@
                     ]
                 },
                 "enabled": {
-                    "type": "boolean"
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
                 },
                 "hostname": {
                     "type": "string"

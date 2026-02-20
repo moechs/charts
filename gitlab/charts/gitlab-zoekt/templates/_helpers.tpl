@@ -127,7 +127,7 @@ Create the name of the service account to use
 {{- end }}
 
 {{/*
-Placeholder label definitions.
+Placeholder template definitions.
 These are overridden when this chart is used as a sub-chart of gitlab/gitlab
 */}}
 {{- define "gitlab.standardLabels" -}}
@@ -135,6 +135,38 @@ These are overridden when this chart is used as a sub-chart of gitlab/gitlab
 {{- define "gitlab.commonLabels" -}}
 {{- end -}}
 {{- define "gitlab.serviceLabels" -}}
+{{- end -}}
+
+{{/*
+GitLab-aligned extra container templates
+These follow the same patterns as the main GitLab chart and are overridden when used as a subchart
+*/}}
+{{- define "gitlab.extraInitContainers" -}}
+{{ tpl (default "" .Values.extraInitContainers) . }}
+{{- end -}}
+
+{{- define "gitlab.extraVolumes" -}}
+{{ tpl (default "" .Values.extraVolumes) . }}
+{{- end -}}
+
+{{- define "gitlab.extraVolumeMounts" -}}
+{{ tpl (default "" .Values.extraVolumeMounts) . }}
+{{- end -}}
+
+{{- define "gitlab.extraContainers" -}}
+{{ tpl (default "" .Values.extraContainers) . }}
+{{- end -}}
+
+{{/*
+GitLab certificate template stubs - these are overridden by main GitLab chart when used as subchart
+*/}}
+{{- define "gitlab.certificates.initContainer" -}}
+{{- end -}}
+
+{{- define "gitlab.certificates.volumeMount" -}}
+{{- end -}}
+
+{{- define "gitlab.certificates.volumes" -}}
 {{- end -}}
 
 {{/*
@@ -193,4 +225,34 @@ Template used in NOTES.txt for the default pod name
 */}}
 {{- define "gitlab-zoekt.notesDefaultPodName" -}}
 {{ printf "%s-0" (include "gitlab-zoekt.backendSvc" .) }}
+{{- end }}
+
+{{/*
+Common initContainers template for certificates and extra init containers
+Used by both deployment and stateful set
+*/}}
+{{- define "gitlab-zoekt.commonInitContainers" -}}
+{{- $certificateInitContainersEnabled := dig "initContainers" "enabled" true .Values.certificates -}}
+{{- $hasCertificates := (and $certificateInitContainersEnabled .Values.global .Values.global.certificates .Values.global.certificates.customCAs (gt (len .Values.global.certificates.customCAs) 0)) -}}
+{{- $hasExtraInitContainers := .Values.extraInitContainers -}}
+{{- if or $hasCertificates $hasExtraInitContainers }}
+{{-   if $hasCertificates }}
+{{-     include "gitlab.certificates.initContainer" . | nindent 0 }}
+{{-   end }}
+{{-   if $hasExtraInitContainers }}
+{{-     include "gitlab.extraInitContainers" . | nindent 0 }}
+{{-   end }}
+{{- end -}}
+{{- end }}
+
+{{/*
+Check if certificate volumes should be added
+Returns true if certificates init container will run
+*/}}
+{{- define "gitlab-zoekt.hasCertificates" -}}
+{{- $certificateInitContainersEnabled := dig "initContainers" "enabled" true .Values.certificates -}}
+{{- $hasCertificates := (and $certificateInitContainersEnabled .Values.global .Values.global.certificates .Values.global.certificates.customCAs (gt (len .Values.global.certificates.customCAs) 0)) -}}
+{{- if $hasCertificates -}}
+true
+{{- end -}}
 {{- end }}

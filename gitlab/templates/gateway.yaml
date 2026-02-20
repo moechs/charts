@@ -1,10 +1,9 @@
-
-{{- if .Values.global.gatewayApi.enabled }}
+{{- if and .Values.global.gatewayApi.enabled (not .Values.global.gatewayApi.gatewayRef) }}
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
-  name: {{ include "gitlab.gatewayApi.gateway" . }}
-  namespace: "{{ .Release.Namespace }}"
+  name: {{ include "gitlab.gatewayApi.gateway.name.default" . }}
+  namespace: {{ .Release.Namespace | quote }}
   labels:
     {{- include "gitlab.standardLabels" . | nindent 4 }}
     {{- include "gitlab.commonLabels" . | nindent 4 }}
@@ -34,6 +33,12 @@ spec:
     {{- $listener = index $listeners "gitlab-web" }}
     {{- $_ := set $listener "name" "gitlab-web" }}
     {{- $_ := set $listener "hostname" (include "gitlab.gitlab.hostname" .) }}
+    {{- include "gitlab.gatewayApi.gateway.listener" (dict "local" $listener "root" $root) | nindent 2 }}
+  {{- end }}
+  {{- if eq "true" (include "gitlab.gatewayApi.gateway.geo.configure" .) -}}
+    {{- $listener = index $listeners "gitlab-web-geo" }}
+    {{- $_ := set $listener "name" "gitlab-web-geo" }}
+    {{- $_ := set $listener "hostname" .Values.global.geo.gatewayApi.additionalHostname }}
     {{- include "gitlab.gatewayApi.gateway.listener" (dict "local" $listener "root" $root) | nindent 2 }}
   {{- end }}
   {{- if .Values.global.pages.enabled }}
@@ -73,6 +78,12 @@ spec:
     {{- $listener = index $listeners "minio-web" }}
     {{- $_ := set $listener "name" "minio-web" }}
     {{- $_ := set $listener "hostname" (include "gitlab.minio.hostname" .) }}
+    {{- include "gitlab.gatewayApi.gateway.listener" (dict "local" $listener "root" $root) | nindent 2 }}
+  {{- end }}
+  {{- if .Values.openbao.install }}
+    {{- $listener = index $listeners "openbao-web" }}
+    {{- $_ := set $listener "name" "openbao-web" }}
+    {{- $_ := set $listener "hostname" (include "gitlab.openbao.hostname" .) }}
     {{- include "gitlab.gatewayApi.gateway.listener" (dict "local" $listener "root" $root) | nindent 2 }}
   {{- end }}
 {{ end }}

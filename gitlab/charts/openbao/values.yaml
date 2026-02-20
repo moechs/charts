@@ -72,7 +72,8 @@ serviceInactive:
   annotations: {}
 
 ingress:
-  enabled: true
+  # @schema type:[boolean, null]
+  enabled: null
   className: ""
   annotations: {}
     # kubernetes.io/ingress.class: nginx
@@ -85,6 +86,14 @@ ingress:
   # @schema type:[boolean, null]
   configureCertmanager: null
   certmanagerIssuer: '{{ printf "%s-issuer" .Release.Name }}'
+
+gatewayRoute:
+  # @schema type:[boolean, null]
+  enabled: null
+  sectionName: "openbao-web"
+  gatewayName: ""
+  annotations: {}
+  timeouts: {}
 
 # @schema $ref: $k8s/_definitions.json#/definitions/io.k8s.api.core.v1.ResourceRequirements
 resources: {}
