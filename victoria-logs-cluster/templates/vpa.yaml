@@ -1,29 +1,32 @@
 {{- $ctx := dict "helm" . }}
 {{- $ns := include "vm.namespace" . }}
 {{- range $name, $app := .Values }}
-{{- if and (kindIs "map" $app) $app.enabled ($app.horizontalPodAutoscaler).enabled }}
+{{- if and ($.Capabilities.APIVersions.Has "autoscaling.k8s.io/v1") (kindIs "map" $app) $app.enabled ($app.verticalPodAutoscaler).enabled }}
 {{- $isStatefulSet := eq $name "vlstorage" }}
-{{- $hpa := $app.horizontalPodAutoscaler }}
+{{- $vpa := $app.verticalPodAutoscaler }}
 {{- $_ := set $ctx "extraLabels" $app.extraLabels }}
 {{- $_ := set $ctx "appKey" $name }}
 {{- $fullname := include "vm.plain.fullname" $ctx }}
 ---
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
 metadata:
   labels: {{ include "vm.labels" $ctx | nindent 4 }}
   name: {{ $fullname }}
   namespace: {{ $ns }}
 spec:
-  maxReplicas: {{ $hpa.maxReplicas }}
-  minReplicas: {{ $hpa.minReplicas }}
-  scaleTargetRef:
+  {{- with $vpa.recommenders }}
+  recommenders: {{ toYaml . | nindent 4 }}
+  {{- end }}
+  targetRef:
     apiVersion: apps/v1
     kind: {{ ternary "StatefulSet" "Deployment" $isStatefulSet }}
     name: {{ $fullname }}
-  metrics: {{ toYaml $hpa.metrics | nindent 4 }}
-  {{- with $hpa.behavior }}
-  behavior: {{ toYaml . | nindent 4 }}
-  {{- end -}}
+  {{- with $vpa.updatePolicy }}
+  updatePolicy: {{ toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with $vpa.resourcePolicy }}
+  resourcePolicy: {{ toYaml . | nindent 4 }}
+  {{- end }}
 {{- end }}
 {{- end }}
