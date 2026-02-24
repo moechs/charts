@@ -1,7 +1,8 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - bump vlagent version to [v1.45.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.45.0).
+    - bump vlagent version to [v1.46.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.46.0).
+    - support vertical pod autoscaler
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -15,7 +16,7 @@ annotations:
 
     Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-agent/)
 apiVersion: v2
-appVersion: v1.45.0
+appVersion: v1.46.0
 dependencies:
 - name: victoria-metrics-common
   repository: https://victoriametrics.github.io/helm-charts
@@ -36,4 +37,4 @@ name: victoria-logs-agent
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.0.10
+version: 0.0.11
