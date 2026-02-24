@@ -7,6 +7,9 @@ metadata:
   namespace: {{ include "vm.namespace" $ctx }}
   labels: {{ include "vm.labels" $ctx | nindent 4 }}
 spec:
+  {{- with .Values.updateStrategy }}
+  updateStrategy: {{ toYaml . | nindent 4 }}
+  {{- end }}
   selector:
     matchLabels: {{ include "vm.selectorLabels" $ctx | nindent 6 }}
   template:
@@ -54,19 +57,15 @@ spec:
           {{- $args := (include "victoria-logs-collector.args" . | fromYaml) }}
           {{- include "vm.args" $args | nindent 10 }}
           {{- with .Values.env }}
-          env: {{ toYaml . | nindent 12}}
+          env: {{ tpl (toYaml .) $ | nindent 12 }}
           {{- end }}
           volumeMounts:
             {{- with .Values.extraVolumeMounts }}
             {{- toYaml . | nindent 12 }}
             {{- end }}
-            - name: varlog
-              mountPath: /var/log
-              readOnly: true
-              # /var/lib is needed in environments like Minikube, where logs may symlink to /var/lib paths.
-            - name: varlib
-              mountPath: /var/lib
-              readOnly: true
+            {{- with .Values.defaultVolumeMounts }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
             - name: vl-collector-data
               mountPath: {{ $args.tmpDataPath }}
             {{- include "vm.license.mount" . | nindent 12 }}
@@ -74,13 +73,14 @@ spec:
         {{- with .Values.extraVolumes }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
-        - name: varlog
-          hostPath:
-            path: /var/log
-        - name: varlib
-          hostPath:
-            path: /var/lib
+        {{- with .Values.defaultVolumes }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
         - name: vl-collector-data
+          {{- if .Values.persistence.volume }}
+          {{- tpl (toYaml .Values.persistence.volume | nindent 10) . }}
+          {{- else }}
           hostPath:
-            path: {{ $args.tmpDataPath }}
+            path: {{ .Values.extraArgs.tmpDataPath }}
+          {{- end }}
         {{- include "vm.license.volume" . | nindent 8 }}

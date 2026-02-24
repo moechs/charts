@@ -160,6 +160,12 @@ annotations: {}
 # -- Annotations to be added to pod
 podAnnotations: {}
 
+# -- DaemonSet update strategy
+updateStrategy: {}
+#   type: RollingUpdate
+#   rollingUpdate:
+#     maxUnavailable: 1
+
 # -- Pod's node selector. Details are [here](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector)
 nodeSelector: {}
 
@@ -193,6 +199,7 @@ extraArgs:
   envflag.enable: true
   envflag.prefix: VL_
   loggerFormat: json
+  tmpDataPath: /var/lib/vl-collector
 
 # -- Enterprise license key configuration for VictoriaLogs enterprise.
 # Required only for VictoriaLogs enterprise. Check docs [here](https://docs.victoriametrics.com/victoriametrics/enterprise/#victorialogs-enterprise-features),
@@ -207,3 +214,26 @@ license:
     name: ""
     # -- Key in secret with license key
     key: ""
+
+persistence:
+  volume: {}
+
+# -- Default volumes that are mounted into pods. In most cases, these should not be changed.
+# Use `extraVolumes`/`extraVolumeMounts` for additional custom volumes.
+defaultVolumes:
+  - name: varlog
+    hostPath:
+      path: /var/log
+  - name: varlib
+    hostPath:
+      path: /var/lib
+
+# -- Mounts for defaultVolumes
+defaultVolumeMounts:
+  - name: varlog
+    mountPath: /var/log
+    readOnly: true
+    # /var/lib is needed in environments like Minikube, where logs may symlink to /var/lib paths.
+  - name: varlib
+    mountPath: /var/lib
+    readOnly: true
