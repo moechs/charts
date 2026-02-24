@@ -1,7 +1,8 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - bump VictoriaLogs version to [v1.45.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.45.0).
+    - bump VictoriaLogs version to [v1.46.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.46.0).
+    - 'feature: support `tpl` in `envFrom` and `env` fields. See [#2690](https://github.com/VictoriaMetrics/helm-charts/issues/2690)'
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -17,7 +18,7 @@ annotations:
 
     Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-single/)
 apiVersion: v2
-appVersion: v1.45.0
+appVersion: v1.46.0
 dependencies:
 - condition: vector.enabled
   name: vector
@@ -41,4 +42,4 @@ name: victoria-logs-single
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.11.26
+version: 0.11.27
