@@ -8,7 +8,7 @@
 | argo-events | 2.4.20 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.6 | A Helm chart for Argo Rollouts |
 | argo-workflows | 0.47.4 | A Helm chart for Argo Workflows |
-| cert-manager | v1.19.3 | A Helm chart for cert-manager |
+| cert-manager | v1.19.4 | A Helm chart for cert-manager |
 | cilium | 1.19.1 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.9 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 1.9.3 | Official HashiCorp Consul Chart |
@@ -29,7 +29,7 @@
 | jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.15 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 82.2.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 82.3.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.18.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -60,8 +60,8 @@
 | prometheus-smartctl-exporter | 0.16.0 | A Helm chart for Kubernetes |
 | rancher | 2.13.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.1.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.19.1 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | v1.19.1 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph-cluster | v1.19.2 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph | v1.19.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 0.0.83 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.29.0 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
