@@ -1,10 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - bump vlagent version to [v1.46.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.46.0).
-    - 'feature: add support for `tpl` into `remoteWrite[]` values. See [#2690](https://github.com/VictoriaMetrics/helm-charts/issues/2690)'
-    - add support for daemonSet updateStrategy
-    - add defaultVolumes and defaultVolumeMounts to provide ability to update default volumes and mounts. See [#2707](https://github.com/VictoriaMetrics/helm-charts/issues/2707).
+    - bump vlagent version to [v1.47.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.47.0).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -18,7 +15,7 @@ annotations:
 
     Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-collector/)
 apiVersion: v2
-appVersion: v1.46.0
+appVersion: v1.47.0
 dependencies:
 - name: victoria-metrics-common
   repository: https://victoriametrics.github.io/helm-charts
@@ -39,4 +36,4 @@ name: victoria-logs-collector
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.2.10
+version: 0.2.11
