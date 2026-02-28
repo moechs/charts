@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Update `jenkins/jenkins` to version `2.541.2-jdk21`
+    - Add support for annotations on the HTTPRoute resource
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.541.2-jdk21
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.8.142
+version: 5.9.2
