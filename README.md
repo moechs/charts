@@ -11,7 +11,7 @@
 | cert-manager | v1.19.4 | A Helm chart for cert-manager |
 | cilium | 1.19.1 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.9 | A chart for installing Confluence Data Center on Kubernetes |
-| consul | 1.9.3 | Official HashiCorp Consul Chart |
+| consul | 1.9.5 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.0.1 | External secrets management for Kubernetes |
