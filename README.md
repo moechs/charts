@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.13.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 9.4.5 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 9.4.6 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.20 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.6 | A Helm chart for Argo Rollouts |
 | argo-workflows | 0.47.4 | A Helm chart for Argo Workflows |
@@ -62,7 +62,7 @@
 | redis | 24.1.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.2 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.0.83 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.0.84 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.29.0 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.4 | Installs the Tigera operator for Calico |
