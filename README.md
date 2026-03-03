@@ -31,7 +31,7 @@
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
 | kube-prometheus-stack | 82.4.3 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
-| kubetail | 0.18.0 | General-purpose logging dashboard for Kubernetes |
+| kubetail | 0.18.1 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.11.0 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.6.3 | This chart installs the Mailu mail system on Kubernetes |
@@ -41,7 +41,7 @@
 | nexus-repository-manager | 88.3.1 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
-| ollama | 1.46.0 | Get up and running with large language models locally. |
+| ollama | 1.47.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.9 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
@@ -62,7 +62,7 @@
 | redis | 24.1.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.2 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.0.84 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.0.85 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.29.0 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.4 | Installs the Tigera operator for Calico |
