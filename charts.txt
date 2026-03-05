@@ -13,6 +13,7 @@ external-dns|https://kubernetes-sigs.github.io/external-dns
 external-secrets|https://charts.external-secrets.io
 gitea|https://dl.gitea.com/charts
 gitlab|https://charts.gitlab.io
+grafana|https://grafana-community.github.io/helm-charts
 haproxy-ingress|https://haproxy-ingress.github.io/charts
 harbor|https://helm.goharbor.io
 headlamp|https://kubernetes-sigs.github.io/headlamp
@@ -37,8 +38,8 @@ opencost|https://opencost.github.io/opencost-helm-chart
 openebs|https://openebs.github.io/openebs
 openldap|https://jp-gouin.github.io/helm-openldap
 openobserve-collector|https://charts.openobserve.ai
-openobserve|https://charts.openobserve.ai
 openobserve-standalone|https://charts.openobserve.ai
+openobserve|https://charts.openobserve.ai
 pgadmin4|https://helm.runix.net
 photoprism|https://moechs.github.io/photoprism-helm
 prometheus-blackbox-exporter|https://prometheus-community.github.io/helm-charts
