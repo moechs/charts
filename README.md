@@ -17,8 +17,7 @@
 | external-secrets | 2.0.1 | External secrets management for Kubernetes |
 | gitea | 12.5.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 9.9.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana-loki | 6.0.6 | Grafana Loki is a horizontally scalable, highly available, and multi-tenant |
-| grafana | 12.1.8 | Grafana is an open source metric analytics and visualization suite for |
+| grafana | 11.3.0 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.15.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.18.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.40.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -28,14 +27,14 @@
 | jenkins | 5.9.2 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
-| kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
+| kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
 | kube-prometheus-stack | 82.9.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.18.1 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.11.0 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.6.3 | This chart installs the Mailu mail system on Kubernetes |
-| minio | 17.0.21 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
+| minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
 | nexus-repository-manager | 88.3.1 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
@@ -53,7 +52,7 @@
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.59.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.2 | A Photoprism Helm chart for Kubernetes |
-| phpmyadmin | 20.0.0 | phpMyAdmin is a free software tool written in PHP, intended to handle |
+| phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
 | prometheus-blackbox-exporter | 11.8.0 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.6.0 | A Helm chart for prometheus pushgateway |
@@ -66,7 +65,7 @@
 | step-certificates | 1.29.0 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.4 | Installs the Tigera operator for Calico |
-| traefik | 39.0.2 | A Traefik based Kubernetes ingress controller |
+| traefik | 39.0.4 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.0.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
 | vector | 0.50.0 | A lightweight, ultra-fast tool for building observability pipelines |
