@@ -27,9 +27,9 @@
 | ingress-nginx | 4.14.3 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
 | jenkins | 5.9.2 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
-| jumpserver | v4.10.15 | A Helm chart for Deploying Jumpserver on Kubernetes |
+| jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.4.3 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 82.8.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 82.9.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.18.1 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -48,8 +48,8 @@
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.4.2 | An opinionated installation of OTEL Collector for OpenObserve |
-| openobserve-standalone | 0.60.0 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
-| openobserve | 0.60.1 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve-standalone | 0.60.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve | 0.60.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.59.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.2 | A Photoprism Helm chart for Kubernetes |
