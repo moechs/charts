@@ -1,255 +1,281 @@
-{{/*
-Copyright Broadcom, Inc. All Rights Reserved.
-SPDX-License-Identifier: APACHE-2.0
-*/}}
-
 {{/* vim: set filetype=mustache: */}}
-
 {{/*
-Return the proper Grafana image name
+Expand the name of the chart.
 */}}
-{{- define "grafana.image" -}}
-{{- include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) -}}
-{{- end -}}
-
-{{/*
-Return the proper image name (for the init container volume-permissions image)
-*/}}
-{{- define "volumePermissions.image" -}}
-{{- include "common.images.image" ( dict "imageRoot" .Values.volumePermissions.image "global" .Values.global ) -}}
-{{- end -}}
-
-{{/*
-Return the proper Docker Image Registry Secret Names
-*/}}
-{{- define "grafana.imagePullSecrets" -}}
-{{- include "common.images.renderPullSecrets" (dict "images" (list .Values.image) "context" $) -}}
+{{- define "grafana.name" -}}
+{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
-Return  the proper Storage Class
+Create a default fully qualified app name.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+If release name contains chart name it will be used as a full name.
 */}}
-{{- define "grafana.storageClass" -}}
-{{- include "common.storage.class" (dict "persistence" .Values.persistence "global" .Values.global) -}}
-{{- end -}}
+{{- define "grafana.fullname" -}}
+{{- if .Values.fullnameOverride }}
+{{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
+{{- else }}
+{{- $name := default .Chart.Name .Values.nameOverride }}
+{{- if contains $name .Release.Name }}
+{{- .Release.Name | trunc 63 | trimSuffix "-" }}
+{{- else }}
+{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" }}
+{{- end }}
+{{- end }}
+{{- end }}
 
 {{/*
-Return the Grafana admin credentials secret
+Create chart name and version as used by the chart label.
 */}}
-{{- define "grafana.adminSecretName" -}}
-{{- if .Values.admin.existingSecret -}}
-    {{- printf "%s" (tpl .Values.admin.existingSecret $) -}}
-{{- else -}}
-    {{- printf "%s-admin" (include "common.names.fullname" .) -}}
-{{- end -}}
-{{- end -}}
+{{- define "grafana.chart" -}}
+{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
+{{- end }}
 
 {{/*
-Return the Grafana admin password key
-*/}}
-{{- define "grafana.adminSecretPasswordKey" -}}
-{{- if and .Values.admin.existingSecret .Values.admin.existingSecretPasswordKey -}}
-    {{- printf "%s" (tpl .Values.admin.existingSecretPasswordKey $) -}}
-{{- else -}}
-    {{- printf "GF_SECURITY_ADMIN_PASSWORD" -}}
-{{- end -}}
-{{- end -}}
-
-{{/*
-Return true if a secret object should be created
-*/}}
-{{- define "grafana.createAdminSecret" -}}
-{{- if not .Values.admin.existingSecret }}
-    {{- true -}}
-{{- else -}}
-{{- end -}}
-{{- end -}}
-
-{{/*
-Return the Grafana SMTP credentials secret
-*/}}
-{{- define "grafana.smtpSecretName" -}}
-{{- if .Values.smtp.existingSecret }}
-    {{- printf "%s" (tpl .Values.smtp.existingSecret $) -}}
-{{- else -}}
-    {{- printf "%s-smtp" (include "common.names.fullname" .) -}}
-{{- end -}}
-{{- end -}}
-
-{{/*
-Return the Grafana SMTP user key
-*/}}
-{{- define "grafana.smtpSecretUserKey" -}}
-{{- if and .Values.smtp.existingSecret .Values.smtp.existingSecretUserKey -}}
-    {{- printf "%s" (tpl .Values.smtp.existingSecretUserKey $) -}}
-{{- else -}}
-    {{- printf "GF_SMTP_USER" -}}
-{{- end -}}
-{{- end -}}
-
-{{/*
-Return the Grafana SMTP password key
-*/}}
-{{- define "grafana.smtpSecretPasswordKey" -}}
-{{- if and .Values.smtp.existingSecret .Values.smtp.existingSecretPasswordKey -}}
-    {{- printf "%s" (tpl .Values.smtp.existingSecretPasswordKey $) -}}
-{{- else -}}
-    {{- printf "GF_SMTP_PASSWORD" -}}
-{{- end -}}
-{{- end -}}
-
-{{/*
-Return true if a secret object should be created
-*/}}
-{{- define "grafana.createSMTPSecret" -}}
-{{- if and .Values.smtp.enabled (not .Values.smtp.existingSecret) }}
-    {{- true -}}
-{{- else -}}
-{{- end -}}
-{{- end -}}
-
-{{/*
-Returns the proper service account name depending if an explicit service account name is set
-in the values file. If the name is not set it will default to either common.names.fullname if serviceAccount.create
-is true or default otherwise.
+Create the name of the service account
 */}}
 {{- define "grafana.serviceAccountName" -}}
-    {{- if .Values.serviceAccount.create -}}
-        {{ default (include "common.names.fullname" .) .Values.serviceAccount.name }}
-    {{- else -}}
-        {{ default "default" .Values.serviceAccount.name }}
+{{- if .Values.serviceAccount.create }}
+{{- default (include "grafana.fullname" .) .Values.serviceAccount.name }}
+{{- else }}
+{{- default "default" .Values.serviceAccount.name }}
+{{- end }}
+{{- end }}
+
+{{- define "grafana.serviceAccountNameTest" -}}
+{{- if .Values.serviceAccount.create }}
+{{- default (print (include "grafana.fullname" .) "-test") .Values.serviceAccount.nameTest }}
+{{- else }}
+{{- default "default" .Values.serviceAccount.nameTest }}
+{{- end }}
+{{- end }}
+
+{{/*
+Allow the release namespace to be overridden for multi-namespace deployments in combined charts
+*/}}
+{{- define "grafana.namespace" -}}
+{{- if .Values.namespaceOverride }}
+{{- .Values.namespaceOverride }}
+{{- else }}
+{{- .Release.Namespace }}
+{{- end }}
+{{- end }}
+
+{{/*
+Common labels
+*/}}
+{{- define "grafana.labels" -}}
+helm.sh/chart: {{ include "grafana.chart" . }}
+{{ include "grafana.selectorLabels" . }}
+{{- if or .Chart.AppVersion .Values.image.tag }}
+app.kubernetes.io/version: {{ mustRegexReplaceAllLiteral "@sha.*" .Values.image.tag "" | default .Chart.AppVersion | trunc 63 | trimSuffix "-" | quote }}
+{{- end }}
+{{- with .Values.extraLabels }}
+{{ toYaml . }}
+{{- end }}
+{{- end }}
+
+{{/*
+Selector labels
+*/}}
+{{- define "grafana.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "grafana.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+Common labels
+*/}}
+{{- define "grafana.imageRenderer.labels" -}}
+helm.sh/chart: {{ include "grafana.chart" . }}
+{{ include "grafana.imageRenderer.selectorLabels" . }}
+{{- if or .Chart.AppVersion .Values.image.tag }}
+app.kubernetes.io/version: {{ mustRegexReplaceAllLiteral "@sha.*" .Values.image.tag "" | default .Chart.AppVersion | trunc 63 | trimSuffix "-" | quote }}
+{{- end }}
+{{- end }}
+
+{{/*
+Selector labels ImageRenderer
+*/}}
+{{- define "grafana.imageRenderer.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "grafana.name" . }}-image-renderer
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+Looks if there's an existing secret and reuse its password. If not it generates
+new password and use it.
+*/}}
+{{- define "grafana.password" -}}
+{{- $secret := (lookup "v1" "Secret" (include "grafana.namespace" .) (include "grafana.fullname" .) ) }}
+{{- if $secret }}
+{{- index $secret "data" "admin-password" }}
+{{- else }}
+{{- (randAlphaNum 40) | b64enc | quote }}
+{{- end }}
+{{- end }}
+
+{{/*
+Return the appropriate apiVersion for Horizontal Pod Autoscaler.
+*/}}
+{{- define "grafana.hpa.apiVersion" -}}
+{{- if .Capabilities.APIVersions.Has "autoscaling/v2" }}
+{{- print "autoscaling/v2" }}
+{{- else }}
+{{- print "autoscaling/v2beta2" }}
+{{- end }}
+{{- end }}
+
+
+{{/*
+Formats imagePullSecrets. Input is (dict "root" . "imagePullSecrets" .{specific imagePullSecrets})
+*/}}
+{{- define "grafana.imagePullSecrets" -}}
+{{- $root := .root }}
+{{- range (concat .root.Values.global.imagePullSecrets .imagePullSecrets) }}
+{{- if eq (typeOf .) "map[string]interface {}" }}
+- {{ toYaml (dict "name" (tpl .name $root)) | trim }}
+{{- else }}
+- name: {{ tpl . $root }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+
+{{/*
+ Checks whether or not the configSecret secret has to be created
+ */}}
+{{- define "grafana.shouldCreateConfigSecret" -}}
+{{- $secretFound := false -}}
+{{- range $key, $value := .Values.datasources }}
+  {{- if hasKey $value "secret" }}
+    {{- $secretFound = true}}
+  {{- end }}
+{{- end }}
+{{- range $key, $value := .Values.notifiers }}
+  {{- if hasKey $value "secret" }}
+    {{- $secretFound = true}}
+  {{- end }}
+{{- end }}
+{{- range $key, $value := .Values.alerting }}
+  {{- if (or (hasKey $value "secret") (hasKey $value "secretFile")) }}
+    {{- $secretFound = true}}
+  {{- end }}
+{{- end }}
+{{- $secretFound}}
+{{- end -}}
+
+{{/*
+    Checks whether the user is attempting to store secrets in plaintext
+    in the grafana.ini configmap
+*/}}
+{{/* grafana.assertNoLeakedSecrets checks for sensitive keys in values */}}
+{{- define "grafana.assertNoLeakedSecrets" -}}
+      {{- $sensitiveKeysYaml := `
+sensitiveKeys:
+- path: ["database", "password"]
+- path: ["smtp", "password"]
+- path: ["security", "secret_key"]
+- path: ["security", "admin_password"]
+- path: ["auth.basic", "password"]
+- path: ["auth.ldap", "bind_password"]
+- path: ["auth.google", "client_secret"]
+- path: ["auth.github", "client_secret"]
+- path: ["auth.gitlab", "client_secret"]
+- path: ["auth.generic_oauth", "client_secret"]
+- path: ["auth.okta", "client_secret"]
+- path: ["auth.azuread", "client_secret"]
+- path: ["auth.grafana_com", "client_secret"]
+- path: ["auth.grafananet", "client_secret"]
+- path: ["azure", "user_identity_client_secret"]
+- path: ["unified_alerting", "ha_redis_password"]
+- path: ["metrics", "basic_auth_password"]
+- path: ["external_image_storage.s3", "secret_key"]
+- path: ["external_image_storage.webdav", "password"]
+- path: ["external_image_storage.azure_blob", "account_key"]
+` | fromYaml -}}
+  {{- if $.Values.assertNoLeakedSecrets -}}
+      {{- $grafanaIni := index .Values "grafana.ini" -}}
+      {{- range $_, $secret := $sensitiveKeysYaml.sensitiveKeys -}}
+        {{- $currentMap := $grafanaIni -}}
+        {{- $shouldContinue := true -}}
+        {{- range $index, $elem := $secret.path -}}
+          {{- if and $shouldContinue (hasKey $currentMap $elem) -}}
+            {{- if eq (len $secret.path) (add1 $index) -}}
+              {{- if not (regexMatch "\\$(?:__(?:env|file|vault))?{[^}]+}" (index $currentMap $elem)) -}}
+                {{- fail (printf "Sensitive key '%s' should not be defined explicitly in values. Use variable expansion instead. You can disable this client-side validation by changing the value of assertNoLeakedSecrets." (join "." $secret.path)) -}}
+              {{- end -}}
+            {{- else -}}
+              {{- $currentMap = index $currentMap $elem -}}
+            {{- end -}}
+          {{- else -}}
+              {{- $shouldContinue = false -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/*
+ Sidecars health port
+ */}}
+
+{{/*
+ Give health port for alerts sidecar
+ */}}
+{{- define "grafana.sidecar.alerts.healthPort" -}}
+{{- $healthPort := 8081 -}}
+{{- if hasKey .Values.sidecar.alerts "startupProbe" -}}
+  {{- if hasKey .Values.sidecar.alerts.startupProbe "httpGet" -}}
+    {{- if hasKey .Values.sidecar.alerts.startupProbe.httpGet "port" -}}
+      {{- $healthPort = .Values.sidecar.alerts.startupProbe.httpGet.port -}}
     {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $healthPort | quote -}}
 {{- end -}}
 
 {{/*
-Return LDAP configuration generated from ldap properties.
-*/}}
-{{- define "grafana.ldap.config" -}}
-{{- $hostPort := get (urlParse (required "You must set ldap.uri" .Values.ldap.uri)) "host" -}}
-[[servers]]
-# Ldap server host (specify multiple hosts space separated)
-host = {{ index (splitList ":" $hostPort) 0 | quote }}
-# Default port is 389 or 636 if use_ssl = true
-port = {{ index (splitList ":" $hostPort) 1 | default 389 }}
-# Set to true if LDAP server should use an encrypted TLS connection (either with STARTTLS or LDAPS)
-{{- if .Values.ldap.tls.enabled }}
-use_ssl = {{ .Values.ldap.tls.enabled }}
-ssl_skip_verify = {{ .Values.ldap.tls.skipVerify }}
-# If set to true, use LDAP with STARTTLS instead of LDAPS
-start_tls = {{ .Values.ldap.tls.startTls }}
-{{- if .Values.ldap.tls.CAFilename }}
-# set to the path to your root CA certificate or leave unset to use system defaults
-root_ca_cert = {{ printf "%s/%s" .Values.ldap.tls.certificatesMountPath .Values.ldap.tls.CAFilename | quote }}
-{{- end }}
-{{- if .Values.ldap.tls.certFilename }}
-# Authentication against LDAP servers requiring client certificates
-client_cert = {{ printf "%s/%s" .Values.ldap.tls.certificatesMountPath .Values.ldap.tls.certFilename | quote }}
-client_key = {{ printf "%s/%s" .Values.ldap.tls.certificatesMountPath (required "ldap.tls.certKeyFilename is required when ldap.tls.certFilename is defined" .Values.ldap.tls.certKeyFilename) | quote }}
-{{- end }}
-{{- end }}
-{{- if .Values.ldap.binddn }}
-# Search user bind dn
-bind_dn = {{ .Values.ldap.binddn | quote }}
-{{- end }}
-{{- if .Values.ldap.bindpw }}
-# Search user bind password
-# If the password contains # or ; you have to wrap it with triple quotes. Ex """#password;"""
-bind_password = {{ .Values.ldap.bindpw | quote }}
-{{- end }}
-
-# User search filter, for example "(cn=%s)" or "(sAMAccountName=%s)" or "(uid=%s)"
-# Allow login from email or username, example "(|(sAMAccountName=%s)(userPrincipalName=%s))"
-{{- if .Values.ldap.searchFilter }}
-search_filter = {{ .Values.ldap.searchFilter | quote }}
-{{- else if .Values.ldap.searchAttribute }}
-search_filter = "({{ .Values.ldap.searchAttribute }}=%s)"
-{{- end }}
-# An array of base dns to search through
-search_base_dns = [{{ (required "You must set ldap.basedn" .Values.ldap.basedn) | quote }}]
-
-{{ .Values.ldap.extraConfiguration }}
+ Give health port for datasources sidecar
+ */}}
+{{- define "grafana.sidecar.datasources.healthPort" -}}
+{{- $healthPort := 8082 -}}
+{{- if hasKey .Values.sidecar.datasources "startupProbe" -}}
+  {{- if hasKey .Values.sidecar.datasources.startupProbe "httpGet" -}}
+    {{- if hasKey .Values.sidecar.datasources.startupProbe.httpGet "port" -}}
+      {{- $healthPort = .Values.sidecar.datasources.startupProbe.httpGet.port -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $healthPort | quote -}}
 {{- end -}}
 
 {{/*
-Validate values for Grafana.
-*/}}
-{{- define "grafana.validateValues" -}}
-# Note: Do not include grafana.validateValues.database here. See https://github.com/bitnami/charts/issues/20629
-{{- $messages := list -}}
-{{- $messages := append $messages (include "grafana.validateValues.configmapsOrSecrets" .) -}}
-{{- $messages := append $messages (include "grafana.validateValues.ldap.configuration" .) -}}
-{{- $messages := append $messages (include "grafana.validateValues.ldap.configmapsecret" .) -}}
-{{- $messages := append $messages (include "grafana.validateValues.ldap.tls" .) -}}
-{{- $messages := append $messages (include "grafana.validateValues.imageRenderer" .) -}}
-{{- $messages := append $messages (include "grafana.validateValues.grafana.kind" .) -}}
-{{- $messages := without $messages "" -}}
-{{- $message := join "\n" $messages -}}
-
-{{- if $message -}}
-{{-   printf "\nVALUES VALIDATION:\n%s" $message | fail -}}
+ Give health port for notifiers sidecar
+ */}}
+{{- define "grafana.sidecar.notifiers.healthPort" -}}
+{{- $healthPort := 8083 -}}
+{{- if hasKey .Values.sidecar.notifiers "startupProbe" -}}
+  {{- if hasKey .Values.sidecar.notifiers.startupProbe "httpGet" -}}
+    {{- if hasKey .Values.sidecar.notifiers.startupProbe.httpGet "port" -}}
+      {{- $healthPort = .Values.sidecar.notifiers.startupProbe.httpGet.port -}}
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
+{{- $healthPort | quote -}}
 {{- end -}}
 
-{{/* Validate values of Grafana - A ConfigMap or Secret name must be provided when loading a custom grafana.ini file */}}
-{{- define "grafana.validateValues.configmapsOrSecrets" -}}
-{{- if and .Values.config.useGrafanaIniFile (not .Values.config.grafanaIniSecret) (not .Values.config.grafanaIniConfigMap) -}}
-grafana: config.useGrafanaIniFile config.grafanaIniSecret and config.grafanaIniConfigMap
-        You enabled config.useGrafanaIniFile but did not specify config.grafanaIniSecret nor config.grafanaIniConfigMap
+{{/*
+ Give health port for dashboards sidecar
+ */}}
+{{- define "grafana.sidecar.dashboards.healthPort" -}}
+{{- $healthPort := 8084 -}}
+{{- if hasKey .Values.sidecar.dashboards "startupProbe" -}}
+  {{- if hasKey .Values.sidecar.dashboards.startupProbe "httpGet" -}}
+    {{- if hasKey .Values.sidecar.dashboards.startupProbe.httpGet "port" -}}
+      {{- $healthPort = .Values.sidecar.dashboards.startupProbe.httpGet.port -}}
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
-{{- end -}}
-
-{{/* Validate values of Grafana - A custom ldap.toml file must be provided when enabling LDAP */}}
-{{- define "grafana.validateValues.ldap.configuration" -}}
-{{- if and .Values.ldap.enabled (empty .Values.ldap.uri) (empty .Values.ldap.basedn) (empty .Values.ldap.configuration) (empty .Values.ldap.configMapName) (empty .Values.ldap.secretName) -}}
-grafana: ldap.enabled ldap.uri ldap.basedn ldap.configuration ldap.configMapName and ldap.secretName
-        You must provide the uri and basedn of your LDAP Sever (--set ldap.uri="aaa" --set ldap.basedn="bbb")
-        or the  content of your custom ldap.toml file when enabling LDAP (--set ldap.configuration="xxx")
-        As an alternative, you can set the name of an existing ConfigMap (--set ldap.configMapName="yyy") or
-        an an existing Secret (--set ldap.secretName="zzz") containging the custom ldap.toml file.
-{{- end -}}
-{{- end -}}
-
-{{/* Validate values of Grafana - Only a ConfigMap or Secret name must be provided when loading a custom ldap.toml file */}}
-{{- define "grafana.validateValues.ldap.configmapsecret" -}}
-{{- if and .Values.ldap.enabled (not (empty .Values.ldap.configMapName)) (not (empty .Values.ldap.secretName)) -}}
-grafana: ldap.enabled ldap.configMapName and ldap.secretName
-        You cannot load a custom ldap.toml file both from a ConfigMap and a Secret simultaneously
-{{- end -}}
-{{- end -}}
-
-{{/* Validate values of Grafana - LDAP TLS validation */}}
-{{- define "grafana.validateValues.ldap.tls" -}}
-{{- if and .Values.ldap.enabled .Values.ldap.tls.enabled (empty .Values.ldap.tls.certificatesSecret) (or (not (empty .Values.ldap.tls.CAFilename)) (not (empty .Values.ldap.tls.certFilename)) (not (empty .Values.ldap.tls.certKeyFilename))) -}}
-grafana: ldap.enabled ldap.tls.enabled ldap.tls.certificatesSecret ldap.tls.CAFilename ldap.tls.certFilename and ldap.tls.certKeyFilename
-        You must set ldap.tls.certificatesSecret if you want to specify any certificate for LDAP TLS connection
-{{- end -}}
-{{- end -}}
-
-{{/* Validate values of Grafana - Requirements to use an external database */}}
-{{- define "grafana.validateValues.database" -}}
-{{- $replicaCount := int .Values.grafana.replicaCount }}
-{{- if gt $replicaCount 1 -}}
-grafana: replicaCount
-        Using more than one replica requires using an external database to share data between Grafana instances.
-        By default Grafana uses an internal sqlite3 per instance but you can configure an external MySQL or PostgreSQL.
-        Please, ensure you provide a configuration file configuring the external database to share data between replicas.
-{{- end -}}
-{{- end -}}
-
-{{/* Validate values of Grafana - Requirements to use Grafana Image Renderer */}}
-{{- define "grafana.validateValues.imageRenderer" -}}
-{{- if and .Values.imageRenderer.enabled (or (empty .Values.imageRenderer.serverURL) (empty .Values.imageRenderer.callbackURL)) -}}
-grafana: imageRenderer.enabled imageRenderer.serverURL and imageRenderer.callbackURL
-        You must provide the serverURL and callbackURL for Grafana Image Renderer when enabling it.
-        (--set imageRenderer.serverURL="http://image-renderer-url/render" --set imageRenderer.callbackURL="http://grafana-url:3000/")
-{{- end -}}
-{{- end -}}
-
-{{/* Validate values of Grafana - must provide a valid resourceType ("deployment" or "statefulset") */}}
-{{- define "grafana.validateValues.grafana.kind" -}}
-{{- if and (ne (lower .Values.grafana.kind) "deployment") (ne (lower .Values.grafana.kind) "statefulset") -}}
-grafana: kind
-    Invalid kind selected. Valid values are "deployment" and
-    "statefulset". Please set a valid mode (--set grafana.kind="xxxx")
-{{- end -}}
+{{- $healthPort | quote -}}
 {{- end -}}
