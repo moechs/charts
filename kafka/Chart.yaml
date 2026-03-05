@@ -4,7 +4,7 @@ annotations:
     - name: jmx-exporter
       image: docker.io/bitnami/jmx-exporter:1.4.0-debian-12-r0
     - name: kafka
-      image: docker.io/bitnami/kafka:4.0.0-debian-12-r10
+      image: docker.io/moechs/bitnami-kafka:4.2.0-debian-12-r0
     - name: kubectl
       image: docker.io/bitnami/kubectl:1.33.4-debian-12-r0
     - name: os-shell
@@ -12,7 +12,7 @@ annotations:
   licenses: Apache-2.0
   tanzuCategory: service
 apiVersion: v2
-appVersion: 4.0.0
+appVersion: 4.2.0
 dependencies:
 - name: common
   repository: oci://registry-1.docker.io/bitnamicharts
@@ -35,4 +35,4 @@ maintainers:
 name: kafka
 sources:
 - https://github.com/bitnami/charts/tree/main/bitnami/kafka
-version: 32.4.3
+version: 32.5.0

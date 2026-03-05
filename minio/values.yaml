@@ -22,7 +22,7 @@ global:
   ##
   security:
     ## @param global.security.allowInsecureImages Allows skipping image verification
-    allowInsecureImages: false
+    allowInsecureImages: true
   ## Compatibility adaptations for Kubernetes platforms
   ##
   compatibility:
@@ -77,8 +77,8 @@ extraDeploy: []
 ##
 image:
   registry: docker.io
-  repository: bitnamilegacy/minio
-  tag: 2025.7.23-debian-12-r3
+  repository: moechs/bitnami-minio
+  tag: 2025.10.15-debian-12-r9
   digest: ""
   ## Specify a imagePullPolicy
   ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
@@ -104,8 +104,8 @@ image:
 ##
 clientImage:
   registry: docker.io
-  repository: bitnamilegacy/minio-client
-  tag: 2025.7.21-debian-12-r2
+  repository: moechs/bitnami-minio-client
+  tag: 2025.8.13-debian-12-r12
   digest: ""
 ## MinIO&reg; authentication parameters
 ##
@@ -510,8 +510,8 @@ defaultInitContainers:
     ##
     image:
       registry: docker.io
-      repository: bitnamilegacy/os-shell
-      tag: 12-debian-12-r50
+      repository: moechs/bitnami-os-shell
+      tag: 12-debian-12-r60
       digest: ""
       pullPolicy: IfNotPresent
       ## Optionally specify an array of imagePullSecrets.
@@ -943,8 +943,8 @@ console:
   ##
   image:
     registry: docker.io
-    repository: bitnamilegacy/minio-object-browser
-    tag: 2.0.2-debian-12-r3
+    repository: moechs/minio-object-browser
+    tag: v1.7.6
     digest: ""
     ## Specify a imagePullPolicy
     ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
