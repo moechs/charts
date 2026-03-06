@@ -16,7 +16,7 @@
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.0.1 | External secrets management for Kubernetes |
 | gitea | 12.5.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 9.9.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 9.9.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 11.3.0 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.15.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.18.2 | An open source trusted cloud native registry that stores, signs, and |
@@ -24,25 +24,25 @@
 | higress | 2.2.0 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.14.3 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.2 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.9.3 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
 | kube-prometheus-stack | 82.9.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
-| kubetail | 0.18.1 | General-purpose logging dashboard for Kubernetes |
+| kubetail | 0.18.2 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.11.0 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.6.3 | This chart installs the Mailu mail system on Kubernetes |
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
-| nexus-repository-manager | 88.3.1 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
+| nexus-repository-manager | 88.4.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.48.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.9 | OpenCost and OpenCost UI |
+| opencost | 2.5.10 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
@@ -51,14 +51,14 @@
 | openobserve | 0.60.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.59.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
-| photoprism | 1.4.2 | A Photoprism Helm chart for Kubernetes |
+| photoprism | 1.4.3 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
 | prometheus-blackbox-exporter | 11.8.0 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.6.0 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.16.0 | A Helm chart for Kubernetes |
 | rancher | 2.13.3 | Install Rancher Server to manage Kubernetes clusters across providers. |
-| redis | 24.1.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
+| redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.2 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 0.0.85 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
@@ -74,4 +74,4 @@
 | victoria-logs-collector | 0.2.11 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
 | victoria-logs-single | 0.11.28 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
 | zentao | 2026.1.1201 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
-| zookeeper | 13.8.7 | Apache ZooKeeper provides a reliable, centralized register of configuration |
+| zookeeper | 13.8.8 | Apache ZooKeeper provides a reliable, centralized register of configuration |
