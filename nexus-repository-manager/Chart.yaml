@@ -19,4 +19,4 @@ name: nexus-repository-manager
 sources:
 - https://github.com/sonatype/nexus-public
 type: application
-version: 88.4.1
+version: 88.3.1
