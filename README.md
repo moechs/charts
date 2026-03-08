@@ -14,7 +14,7 @@
 | consul | 1.9.5 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
-| external-secrets | 2.0.1 | External secrets management for Kubernetes |
+| external-secrets | 2.1.0 | External secrets management for Kubernetes |
 | gitea | 12.5.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 9.9.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 11.3.0 | The leading tool for querying and visualizing time series and metrics. |
