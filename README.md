@@ -8,7 +8,7 @@
 | argo-events | 2.4.20 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.6 | A Helm chart for Argo Rollouts |
 | argo-workflows | 0.47.4 | A Helm chart for Argo Workflows |
-| cert-manager | v1.19.4 | A Helm chart for cert-manager |
+| cert-manager | v1.20.0 | A Helm chart for cert-manager |
 | cilium | 1.19.1 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.9 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 1.9.5 | Official HashiCorp Consul Chart |
@@ -17,7 +17,7 @@
 | external-secrets | 2.1.0 | External secrets management for Kubernetes |
 | gitea | 12.5.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 9.9.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 11.3.1 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 11.3.2 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.15.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.18.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.40.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -28,7 +28,7 @@
 | jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 82.10.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 82.10.3 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.18.2 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -46,7 +46,7 @@
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
-| openobserve-collector | 0.4.2 | An opinionated installation of OTEL Collector for OpenObserve |
+| openobserve-collector | 0.4.3 | An opinionated installation of OTEL Collector for OpenObserve |
 | openobserve-standalone | 0.60.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openobserve | 0.60.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
@@ -68,7 +68,7 @@
 | traefik | 39.0.5 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.0.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
-| vector | 0.50.0 | A lightweight, ultra-fast tool for building observability pipelines |
+| vector | 0.51.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.0.12 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.0.29 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.2.11 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
