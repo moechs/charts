@@ -1,7 +1,8 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - bump VictoriaLogs version to [v1.47.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.47.0).
+    - bump VictoriaLogs version to [v1.48.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.48.0).
+    - support unhealthyPodEvictionPolicy for PodDisruptionBudget. See [#2747](https://github.com/VictoriaMetrics/helm-charts/issues/2747).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -15,9 +16,10 @@ annotations:
   artifacthub.io/readme: |
     # VictoriaLogs Cluster Helm chart
 
-    Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-cluster/)
+    Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-cluster/).
+    Changelog is [here](https://docs.victoriametrics.com/helm/victoria-logs-cluster/changelog/).
 apiVersion: v2
-appVersion: v1.47.0
+appVersion: v1.48.0
 dependencies:
 - condition: vector.enabled
   name: vector
@@ -41,4 +43,4 @@ name: victoria-logs-cluster
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.0.29
+version: 0.0.30
