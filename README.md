@@ -7,7 +7,7 @@
 | argo-cd | 9.4.10 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.20 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.6 | A Helm chart for Argo Rollouts |
-| argo-workflows | 1.0.1 | A Helm chart for Argo Workflows |
+| argo-workflows | 1.0.2 | A Helm chart for Argo Workflows |
 | cert-manager | v1.20.0 | A Helm chart for cert-manager |
 | cilium | 1.19.1 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.9 | A chart for installing Confluence Data Center on Kubernetes |
@@ -20,7 +20,7 @@
 | grafana | 11.3.2 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.15.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.18.2 | An open source trusted cloud native registry that stores, signs, and |
-| headlamp | 0.40.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
+| headlamp | 0.40.1 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.2.0 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.0 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
