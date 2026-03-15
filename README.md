@@ -28,7 +28,7 @@
 | jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 82.10.3 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 82.10.4 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.18.2 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -50,7 +50,7 @@
 | openobserve-standalone | 0.60.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openobserve | 0.60.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
-| pgadmin4 | 1.59.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
+| pgadmin4 | 1.60.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.3 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
@@ -61,7 +61,7 @@
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.2 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.0.85 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.0.86 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.29.0 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.4 | Installs the Tigera operator for Calico |
