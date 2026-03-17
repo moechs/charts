@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - bump vlagent version to [v1.48.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.48.0).
+    - add an ability to configure `-kubernetesCollector.*` flags using the `collector` object
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -37,4 +37,4 @@ name: victoria-logs-collector
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.2.12
+version: 0.2.13
