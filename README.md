@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.13.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 9.4.10 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 9.4.11 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.20 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.6 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.2 | A Helm chart for Argo Workflows |
@@ -17,7 +17,7 @@
 | external-secrets | 2.1.0 | External secrets management for Kubernetes |
 | gitea | 12.5.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 9.9.3 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 11.3.2 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 11.3.3 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.15.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.18.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.40.1 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -28,11 +28,11 @@
 | jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 82.10.4 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 82.10.5 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.18.2 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
-| longhorn | 1.11.0 | Longhorn is a distributed block storage system for Kubernetes. |
+| longhorn | 1.11.1 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.6.3 | This chart installs the Mailu mail system on Kubernetes |
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
@@ -40,7 +40,7 @@
 | nexus-repository-manager | 88.4.1 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
-| ollama | 1.50.0 | Get up and running with large language models locally. |
+| ollama | 1.51.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.11 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
@@ -70,8 +70,8 @@
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
 | vector | 0.51.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.0.13 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
-| victoria-logs-cluster | 0.0.30 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
-| victoria-logs-collector | 0.2.12 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
-| victoria-logs-single | 0.11.29 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
+| victoria-logs-cluster | 0.0.31 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
+| victoria-logs-collector | 0.2.13 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
+| victoria-logs-single | 0.11.30 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
 | zentao | 2026.1.1201 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
 | zookeeper | 13.8.8 | Apache ZooKeeper provides a reliable, centralized register of configuration |
