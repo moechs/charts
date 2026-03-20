@@ -103,13 +103,6 @@ cell:
 {{- end -}}
 {{- end -}}
 
-{{- define "gitlab.appConfig.zoekt" -}}
-# Zoekt secrets are present, load them.
-zoekt:
-  username_file: /etc/gitlab/zoekt/.gitlab_zoekt_username
-  password_file: /etc/gitlab/zoekt/.gitlab_zoekt_password
-{{- end -}}
-
 {{- define "gitlab.appConfig.shell" -}}
 gitlab_shell:
   path: /home/git/gitlab-shell/
@@ -242,6 +235,9 @@ openbao:
   url: {{ include "gitlab.openbao.url" $ | quote }}
   {{- if include "gitlab.openbao.internal_url" . }}
   internal_url: {{ include "gitlab.openbao.internal_url" . | quote }}
+  {{- end }}
+  {{- if include "gitlab.openbao.jwt_audience" . }}
+  jwt_audience: {{ include "gitlab.openbao.jwt_audience" . | quote }}
   {{- end }}
   authentication_token_secret_file_path: /etc/gitlab/openbao/.gitlab_openbao_authentication_token_secret
 {{- end }}

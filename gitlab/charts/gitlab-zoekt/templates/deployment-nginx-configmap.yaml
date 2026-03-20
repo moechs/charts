@@ -14,6 +14,10 @@ data:
     }
 
     http {
+        {{- if .Values.gateway.clientMaxBodySize }}
+        client_max_body_size {{ .Values.gateway.clientMaxBodySize }};
+        {{- end }}
+
         {{- if .Values.gateway.http2 }}
         http2 on;
         {{- end }}

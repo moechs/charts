@@ -183,14 +183,6 @@ Create the name of the map to use for zoekt gateway
 {{- printf "%s-nginx-conf" (include "gitlab-zoekt.fullname" .) }}
 {{- end }}
 
-{{- define "gitlab-zoekt.basicAuth.secretName" -}}
-{{- if .Values.gateway.basicAuth.secretName }}
-{{- printf "%s" (tpl .Values.gateway.basicAuth.secretName $) -}}
-{{- else -}}
-{{- printf "%s-basicauth" .Release.Name -}}
-{{- end -}}
-{{- end -}}
-
 {{- define "gitlab-zoekt.internalApi.secretName" -}}
 {{- if empty .Values.indexer.internalApi.secretName }}
   {{- fail "indexer.internalApi.secretName is required and cannot be empty. Please provide the name of the secret containing your GitLab shell secret." -}}

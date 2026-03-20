@@ -14,6 +14,10 @@ data:
     }
 
     http {
+        {{- if .Values.gateway.clientMaxBodySize }}
+        client_max_body_size {{ .Values.gateway.clientMaxBodySize }};
+        {{- end }}
+
         upstream indexer {
           server 127.0.0.1:{{ .Values.indexer.listen.port }};
         }
@@ -35,10 +39,6 @@ data:
             {{- else }}
             listen       {{ .Values.gateway.listen.port }};
             {{- end }}
-            {{- if .Values.gateway.basicAuth.enabled }}
-            auth_basic "Zoekt Basic Authentication required";
-            auth_basic_user_file /etc/nginx/basicauth/.htpasswd;
-            {{- end }}
             server_tokens off;
             proxy_next_upstream off;
             proxy_set_header Authorization $http_authorization;
@@ -46,31 +46,26 @@ data:
 
             # Internal gateway healthcheck
             location = /health {
-              auth_basic off;
               return 200;
             }
 
             # Webserver healthcheck
             location = / {
-              auth_basic off;
               proxy_pass http://webserver/;
             }
 
             # Webserver metrics
             location = /metrics {
-              auth_basic off;
               proxy_pass http://webserver/metrics;
             }
 
             # Webserver metrics (alias)
             location = /webserver/metrics {
-              auth_basic off;
               proxy_pass http://webserver/metrics;
             }
 
             # Indexer metrics
             location = /indexer/metrics {
-              auth_basic off;
               proxy_pass http://indexer;
             }
 

@@ -124,10 +124,10 @@ data:
       backup:
         path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
       {{- include "gitlab.appConfig.kas" . | nindent 6 }}
+      {{- include "gitlab.appConfig.knowledgeGraph" . | nindent 6 }}
       {{- include "gitlab.appConfig.workspaces" . | nindent 6 }}
       {{- include "gitlab.appConfig.databaseTrafficCapture" . | nindent 6 }}
       {{- include "gitlab.appConfig.cell" . | nindent 6 }}
-      {{- include "gitlab.appConfig.zoekt" . | nindent 6 }}
       {{- include "gitlab.appConfig.shell" . | nindent 6 }}
         {{- include "gitlab.appConfig.shell.ssh_port" . | nindent 8 }}
       workhorse:

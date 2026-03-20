@@ -156,6 +156,7 @@ auditTpl: |
         description: "Audit device for GitLab rails audit event streaming"
         options:
           uri: "{{ tpl .streamingUri $ }}"
+          skip_test: "true"
           headers: |
             {
               "Gitlab-Openbao-Auth-Token": ["file://{{ .authTokenPath }}"],

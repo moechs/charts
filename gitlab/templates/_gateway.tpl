@@ -76,7 +76,7 @@ Port assignment is automatically determined based on the selected protocol.
 */}}
 {{- define "gitlab.gatewayApi.gateway.listener" -}}
 {{- $name := .local.name }}
-{{- $protocol := .local.protocol | default .root.protocol }}
+{{- $protocol := .local.protocol | default .root.protocol | upper }}
 {{- $port := 443 }}
 {{- if eq "HTTP" $protocol }}
 {{-   $port = 80 }}
@@ -85,7 +85,7 @@ Port assignment is automatically determined based on the selected protocol.
 {{-   $port = 22 }}
 {{- end }}
 - name: {{ $name }}
-  protocol: {{ $protocol | upper }}
+  protocol: {{ $protocol }}
   port: {{ $port }}
   allowedRoutes:
     namespaces:
@@ -93,10 +93,40 @@ Port assignment is automatically determined based on the selected protocol.
 {{- with .local.hostname }}
   hostname: {{ . | quote }}
 {{- end }}
-{{- with .local.tls }} 
+{{- if or (eq "HTTPS" $protocol) (eq "TLS" $protocol) }}
+{{-   with .local.tls }}
   tls:
-{{- toYaml . | nindent 4 }}
+{{-     toYaml . | nindent 4 }}
+{{-   end }}
 {{- end }}
+{{- end -}}
+
+{{/*
+Returns true if the http-default listener should be included on the managed Gateway.
+Enabled when either configureCertmanager or httpToHttpsRedirect (with HTTPS protocol)
+is active, and the Gateway is managed (no external gatewayRef).
+*/}}
+{{- define "gitlab.gatewayApi.httpDefault.enabled" -}}
+{{- $managed := and .Values.global.gatewayApi.enabled (not .Values.global.gatewayApi.gatewayRef) -}}
+{{- $certmanager := .Values.global.gatewayApi.configureCertmanager -}}
+{{- $redirect := and .Values.global.gatewayApi.httpToHttpsRedirect (eq (upper .Values.global.gatewayApi.protocol) "HTTPS") -}}
+{{- if and $managed (or $certmanager $redirect) -}}
+true
+{{- end -}}
+{{- end -}}
+
+{{/*
+Returns true if the HTTP-to-HTTPS redirect HTTPRoute should be rendered.
+Enabled when gatewayApi is enabled, httpToHttpsRedirect is true, protocol
+is HTTPS, and the Gateway is managed (no external gatewayRef).
+*/}}
+{{- define "gitlab.gatewayApi.httpRedirect.enabled" -}}
+{{- $enabled := and .Values.global.gatewayApi.enabled .Values.global.gatewayApi.httpToHttpsRedirect -}}
+{{- $httpsProtocol := eq (upper .Values.global.gatewayApi.protocol) "HTTPS" -}}
+{{- $managedGateway := not .Values.global.gatewayApi.gatewayRef -}}
+{{- if and $enabled $httpsProtocol $managedGateway -}}
+true
+{{- end -}}
 {{- end -}}
 
 {{/*

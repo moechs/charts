@@ -59,11 +59,12 @@ gateway:
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 10%
-  basicAuth:
-    enabled: false
-    secretName: '' # Defaults to {{ .Release.Name }}-basicauth and it must be created outside this chart
   dnsResolver: 'kube-dns.kube-system.svc.cluster.local'
   http2: true # Whether to enable HTTP/2 support in nginx
+  # -- Maximum allowed size of the client request body, passed directly to nginx's client_max_body_size directive.
+  # Increase this if you experience 413 (Request Entity Too Large) errors with large payloads.
+  # Set to an empty string to omit the directive and rely on nginx's default (1m).
+  clientMaxBodySize: 10m
   tls:
     certificate:
       enabled: false # Whether to use TLS for the gateway

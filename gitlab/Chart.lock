@@ -12,10 +12,10 @@ dependencies:
   repository: ""
   version: '*.*.*'
 - name: cert-manager
-  repository: https://charts.jetstack.io/
-  version: v1.17.4
+  repository: oci://quay.io/jetstack/charts
+  version: v1.19.4
 - name: prometheus
-  repository: https://prometheus-community.github.io/helm-charts
+  repository: oci://ghcr.io/prometheus-community/charts
   version: 27.52.0
 - name: postgresql
   repository: https://charts.bitnami.com/bitnami
@@ -34,10 +34,10 @@ dependencies:
   version: '*.*.*'
 - name: gitlab-zoekt
   repository: https://charts.gitlab.io/
-  version: 3.8.1
+  version: 3.8.2
 - name: openbao
   repository: https://charts.gitlab.io/
-  version: 0.12.2
+  version: 0.12.3
 - name: traefik
   repository: https://helm.traefik.io/traefik
   version: 10.19.4
@@ -46,6 +46,6 @@ dependencies:
   version: 1.39.4
 - name: gateway-helm
   repository: oci://registry-1.docker.io/envoyproxy
-  version: 1.7.0
-digest: sha256:11201bd47283c3c095845f0a019d92005c54babbd09c4dfc874de2c304eef11c
-generated: "2026-02-20T22:11:21.843406445Z"
+  version: 1.7.1
+digest: sha256:8eb80813ffd9eef6455953f3a8b3aec546013d2415cea2f76181cd621ecceedd
+generated: "2026-03-17T18:10:32.151918094Z"
