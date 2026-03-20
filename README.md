@@ -7,7 +7,7 @@
 | argo-cd | 9.4.15 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.21 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.6 | A Helm chart for Argo Rollouts |
-| argo-workflows | 1.0.4 | A Helm chart for Argo Workflows |
+| argo-workflows | 1.0.5 | A Helm chart for Argo Workflows |
 | cert-manager | v1.20.0 | A Helm chart for cert-manager |
 | cilium | 1.19.1 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.9 | A chart for installing Confluence Data Center on Kubernetes |
@@ -65,7 +65,7 @@
 | step-certificates | 1.30.0 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.4 | Installs the Tigera operator for Calico |
-| traefik | 39.0.5 | A Traefik based Kubernetes ingress controller |
+| traefik | 39.0.6 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.0.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
 | vector | 0.51.0 | A lightweight, ultra-fast tool for building observability pipelines |
