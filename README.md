@@ -6,7 +6,7 @@
 | apisix | 2.13.0 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 9.4.15 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.21 | A Helm chart for Argo Events, the event-driven workflow automation framework |
-| argo-rollouts | 2.40.7 | A Helm chart for Argo Rollouts |
+| argo-rollouts | 2.40.8 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.5 | A Helm chart for Argo Workflows |
 | cert-manager | v1.20.0 | A Helm chart for cert-manager |
 | cilium | 1.19.1 | eBPF-based Networking, Security, and Observability |
@@ -28,7 +28,7 @@
 | jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 82.13.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 82.13.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.18.2 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
