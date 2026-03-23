@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - add an ability to configure `-kubernetesCollector.*` flags using the `collector` object
+    - URL with format=jsonline no longer incorrectly routes to /insert/native
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -37,4 +37,4 @@ name: victoria-logs-collector
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.2.13
+version: 0.2.14
