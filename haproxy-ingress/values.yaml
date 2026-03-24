@@ -28,7 +28,7 @@ controller:
   image:
     registry: quay.io
     repository: jcmoraisjr/haproxy-ingress
-    tag: v0.15.1
+    tag: v0.16.0
     pullPolicy: IfNotPresent
 
   imagePullSecrets: []
@@ -232,6 +232,13 @@ controller:
       # List of ports from controller.tcp map
       tcp: []
 
+    # Configure additional host ports mapping on DaemonSet deployment.
+    # Only hostIP field is optional, all the others should be provided.
+    extraHostPorts: []
+    # - containerPort: 8080
+    #   hostPort: 8080
+    #   hostIP: 10.1.0.1
+
   # The update strategy to apply to the Deployment or DaemonSet
   ##
   updateStrategy:
@@ -363,7 +370,7 @@ controller:
     image:
       registry: docker.io
       repository: haproxy
-      tag: "2.6.23-alpine"
+      tag: "2.8.20-alpine"
       pullPolicy: IfNotPresent
 
     ## Additional command line arguments to pass to haproxy
