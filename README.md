@@ -9,7 +9,7 @@
 | argo-rollouts | 2.40.8 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.5 | A Helm chart for Argo Workflows |
 | cert-manager | v1.20.0 | A Helm chart for cert-manager |
-| cilium | 1.19.1 | eBPF-based Networking, Security, and Observability |
+| cilium | 1.19.2 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.9 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 1.9.5 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
@@ -17,8 +17,8 @@
 | external-secrets | 2.2.0 | External secrets management for Kubernetes |
 | gitea | 12.5.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 9.10.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 11.3.3 | The leading tool for querying and visualizing time series and metrics. |
-| haproxy-ingress | 0.15.1 | Ingress controller for HAProxy loadbalancer |
+| grafana | 11.3.4 | The leading tool for querying and visualizing time series and metrics. |
+| haproxy-ingress | 0.16.0 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.18.3 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.40.1 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.2.0 | Helm chart for deploying Higress gateways |
@@ -28,7 +28,7 @@
 | jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 82.13.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 82.13.6 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.18.2 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -37,7 +37,7 @@
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
-| nexus-repository-manager | 88.4.1 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
+| nexus-repository-manager | 88.4.2 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.52.0 | Get up and running with large language models locally. |
