@@ -1,5 +1,5 @@
 apiVersion: v2
-appVersion: 3.90.1
+appVersion: 3.90.2
 deprecated: true
 description: Nexus Repository Manager 3 Single‑Instance Helm Chart
 home: https://www.sonatype.com/nexus-repository-oss
@@ -19,4 +19,4 @@ name: nexus-repository-manager
 sources:
 - https://github.com/sonatype/nexus-public
 type: application
-version: 88.4.1
+version: 88.4.2
