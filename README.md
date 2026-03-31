@@ -40,15 +40,15 @@
 | nexus-repository-manager | 88.4.2 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
-| ollama | 1.53.0 | Get up and running with large language models locally. |
+| ollama | 1.54.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.12 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.4.3 | An opinionated installation of OTEL Collector for OpenObserve |
-| openobserve-standalone | 0.60.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
-| openobserve | 0.60.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve-standalone | 0.70.1 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve | 0.70.1 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.60.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.3 | A Photoprism Helm chart for Kubernetes |
@@ -65,7 +65,7 @@
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.4 | Installs the Tigera operator for Calico |
-| traefik | 39.0.6 | A Traefik based Kubernetes ingress controller |
+| traefik | 39.0.7 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.0.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
 | vector | 0.51.0 | A lightweight, ultra-fast tool for building observability pipelines |
