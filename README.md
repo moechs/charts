@@ -17,7 +17,7 @@
 | external-secrets | 2.2.0 | External secrets management for Kubernetes |
 | gitea | 12.5.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 9.10.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 11.3.6 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 11.3.7 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.0 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.18.3 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.41.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -28,7 +28,7 @@
 | jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 82.16.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 82.16.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.18.2 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -50,7 +50,7 @@
 | openobserve-standalone | 0.70.1 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openobserve | 0.70.1 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
-| pgadmin4 | 1.60.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
+| pgadmin4 | 1.61.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.3 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
