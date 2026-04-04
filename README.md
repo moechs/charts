@@ -7,10 +7,10 @@
 | argo-cd | 9.4.17 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.21 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.9 | A Helm chart for Argo Rollouts |
-| argo-workflows | 1.0.6 | A Helm chart for Argo Workflows |
+| argo-workflows | 1.0.7 | A Helm chart for Argo Workflows |
 | cert-manager | v1.20.1 | A Helm chart for cert-manager |
 | cilium | 1.19.2 | eBPF-based Networking, Security, and Observability |
-| confluence | 2.0.9 | A chart for installing Confluence Data Center on Kubernetes |
+| confluence | 2.0.10 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 1.9.6 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
@@ -25,10 +25,10 @@
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
 | jenkins | 5.9.12 | 'Jenkins - Build great things at any scale! As the leading open source |
-| jira | 2.0.9 | A chart for installing Jira Data Center on Kubernetes |
+| jira | 2.0.10 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 82.16.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 82.17.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.18.2 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -69,9 +69,9 @@
 | uptime-kuma | 4.0.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
 | vector | 0.51.0 | A lightweight, ultra-fast tool for building observability pipelines |
-| victoria-logs-agent | 0.0.14 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
-| victoria-logs-cluster | 0.0.31 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
-| victoria-logs-collector | 0.2.14 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
-| victoria-logs-single | 0.11.30 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
+| victoria-logs-agent | 0.0.15 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
+| victoria-logs-cluster | 0.0.32 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
+| victoria-logs-collector | 0.2.15 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
+| victoria-logs-single | 0.11.31 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
 | zentao | 2026.1.1201 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
 | zookeeper | 13.8.8 | Apache ZooKeeper provides a reliable, centralized register of configuration |
