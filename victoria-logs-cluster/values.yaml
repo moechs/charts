@@ -304,7 +304,7 @@ vlselect:
     # -- HTTPRoute annotations
     annotations: {}
     # -- HTTPRoute extra labels
-    labels: {}
+    extraLabels: {}
     # -- HTTPGateway objects refs
     parentRefs: []
     # -- Array of hostnames
@@ -606,7 +606,7 @@ vlinsert:
     # -- HTTPRoute annotations
     annotations: {}
     # -- HTTPRoute extra labels
-    labels: {}
+    extraLabels: {}
     # -- HTTPGateway objects refs
     parentRefs: []
     # -- Array of hostnames
@@ -753,6 +753,9 @@ vlstorage:
     # -- Array of access modes. Must match those of existing PV or dynamic provisioner. Details are [here](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
     accessModes:
       - ReadWriteOnce
+
+    # -- VolumeClassAttribute to user for persistent volume 
+    volumeAttributesClassName:
 
     # -- Persistent volume annotations
     annotations: {}
@@ -1168,7 +1171,7 @@ vmauth:
     # -- HTTPRoute annotations
     annotations: {}
     # -- HTTPRoute extra labels
-    labels: {}
+    extraLabels: {}
     # -- HTTPGateway objects refs
     parentRefs: []
     # -- Array of hostnames
