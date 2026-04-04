@@ -164,6 +164,9 @@ server:
     accessModes:
       - ReadWriteOnce
 
+    # -- VolumeClassAttribute to user for persistent volume 
+    volumeAttributesClassName:
+
     # -- Persistent volume annotations
     annotations: {}
 
@@ -285,7 +288,7 @@ server:
     # -- HTTPRoute annotations
     annotations: {}
     # -- HTTPRoute extra labels
-    labels: {}
+    extraLabels: {}
     # -- HTTPGateway objects refs
     parentRefs: []
     # -- Array of hostnames

@@ -1,7 +1,9 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - updated vector dependency 0.46.0 -> 0.51.0
+    - bump VictoriaLogs version to [v1.49.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.49.0).
+    - 'fix: rename `route.labels` to `route.extraLabels` in values.yaml to match the route template'
+    - support volumeAttributesClassName PVC attribute. See [#2782](https://github.com/VictoriaMetrics/helm-charts/issues/2782).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -18,7 +20,7 @@ annotations:
     Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-single/).
     Changelog is [here](https://docs.victoriametrics.com/helm/victoria-logs-single/changelog/).
 apiVersion: v2
-appVersion: v1.48.0
+appVersion: v1.49.0
 dependencies:
 - condition: vector.enabled
   name: vector
@@ -42,4 +44,4 @@ name: victoria-logs-single
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.11.30
+version: 0.11.31
