@@ -1,1 +1,5 @@
-* Update Helm chart version
+* DEVPROD-3870: update common_templates location  to out of charts (#1103)
+* [skip ci] Prepare release 2.0.10 (#1102)
+* DEVPROD-3580: Add gateway api support (#1084)
+* Update appVersions for DC apps (#1100)
+* TR-534 Make jira server xml tomcat 11 compatibile (#1091)
