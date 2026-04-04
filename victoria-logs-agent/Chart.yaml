@@ -1,7 +1,8 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - URL with format=jsonline no longer incorrectly routes to /insert/native
+    - bump vlagent version to [v1.49.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.49.0).
+    - support volumeAttributesClassName PVC attribute. See [#2782](https://github.com/VictoriaMetrics/helm-charts/issues/2782).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -16,7 +17,7 @@ annotations:
     Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-agent/).
     Changelog is [here](https://docs.victoriametrics.com/helm/victoria-logs-agent/changelog/).
 apiVersion: v2
-appVersion: v1.48.0
+appVersion: v1.49.0
 dependencies:
 - name: victoria-metrics-common
   repository: https://victoriametrics.github.io/helm-charts
@@ -37,4 +38,4 @@ name: victoria-logs-agent
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.0.14
+version: 0.0.15
