@@ -1,8 +1,5 @@
 annotations:
-  artifacthub.io/changes: |-
-    - "DEVPROD-3580: Add gateway api support (#1084)"
-    - "Update appVersions for DC apps (#1100)"
-    - "TR-534 Make jira server xml tomcat 11 compatibile (#1091)"
+  artifacthub.io/changes: '- "Update Helm chart version"'
   artifacthub.io/containsSecurityUpdates: "false"
 apiVersion: v2
 appVersion: 11.3.3
@@ -26,4 +23,4 @@ sources:
 - https://github.com/atlassian/data-center-helm-charts
 - https://bitbucket.org/atlassian-docker/docker-atlassian-jira/
 type: application
-version: 2.0.10
+version: 2.0.11
