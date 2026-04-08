@@ -1,10 +1,8 @@
 annotations:
-  artifacthub.io/changes: |-
-    - "DEVPROD-3580: Add gateway api support (#1084)"
-    - "DCDORA-2747 Use OpenSearch 3.5.0 for Confluence (#1092)"
+  artifacthub.io/changes: '- "Update appVersions for DC apps (#1107)"'
   artifacthub.io/containsSecurityUpdates: "true"
 apiVersion: v2
-appVersion: 10.2.7
+appVersion: 10.2.8
 dependencies:
 - name: common
   repository: https://atlassian.github.io/data-center-helm-charts
@@ -28,4 +26,4 @@ sources:
 - https://github.com/atlassian/data-center-helm-charts
 - https://bitbucket.org/atlassian-docker/docker-atlassian-confluence-server/
 type: application
-version: 2.0.10
+version: 2.0.11
