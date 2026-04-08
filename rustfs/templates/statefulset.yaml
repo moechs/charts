@@ -108,6 +108,10 @@ spec:
               containerPort: {{ .Values.service.endpoint.port }}
             - name: console
               containerPort: {{ .Values.service.console.port }}
+          {{- with .Values.extraEnv }}
+          env:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           envFrom:
             - configMapRef:
                 name: {{ include "rustfs.fullname" . }}-config
@@ -188,6 +192,8 @@ spec:
         name: logs
         labels:
           {{- toYaml .Values.commonLabels | nindent 10 }}
+        annotations:
+          {{- toYaml .Values.storageclass.pvcAnnotations | nindent 10 }}
       spec:
         accessModes: ["ReadWriteOnce"]
         storageClassName: {{ .Values.storageclass.name }}
@@ -200,6 +206,8 @@ spec:
         name: data-rustfs-{{ $i }}
         labels:
           {{- toYaml $.Values.commonLabels | nindent 10 }}
+        annotations:
+          {{- toYaml $.Values.storageclass.pvcAnnotations | nindent 10 }}
       spec:
         accessModes: ["ReadWriteOnce"]
         storageClassName: {{ $.Values.storageclass.name }}
@@ -212,6 +220,8 @@ spec:
         name: data
         labels:
           {{- toYaml .Values.commonLabels | nindent 10 }}
+        annotations:
+          {{- toYaml .Values.storageclass.pvcAnnotations | nindent 10 }}
       spec:
         accessModes: ["ReadWriteOnce"]
         storageClassName: {{ .Values.storageclass.name }}
