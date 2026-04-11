@@ -14,7 +14,7 @@
 | consul | 1.9.6 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
-| external-secrets | 2.2.0 | External secrets management for Kubernetes |
+| external-secrets | 2.3.0 | External secrets management for Kubernetes |
 | gitea | 12.5.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 9.10.3 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 11.6.0 | The leading tool for querying and visualizing time series and metrics. |
@@ -61,7 +61,7 @@
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.3 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.3 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.0.91 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.0.93 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.4 | Installs the Tigera operator for Calico |
