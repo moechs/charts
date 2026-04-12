@@ -33,7 +33,7 @@
 | kubetail | 0.20.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.11.1 | Longhorn is a distributed block storage system for Kubernetes. |
-| mailu | 2.6.3 | This chart installs the Mailu mail system on Kubernetes |
+| mailu | 2.7.0 | This chart installs the Mailu mail system on Kubernetes |
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
