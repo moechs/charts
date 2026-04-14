@@ -3,12 +3,12 @@
 |  Chart  |  Version  |   Description   |
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
-| apisix | 2.13.0 | A Helm chart for Apache APISIX v3 |
+| apisix | 2.14.0 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 9.5.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.21 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.9 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.7 | A Helm chart for Argo Workflows |
-| cert-manager | v1.20.1 | A Helm chart for cert-manager |
+| cert-manager | v1.20.2 | A Helm chart for cert-manager |
 | cilium | 1.19.2 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.12 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 1.9.6 | Official HashiCorp Consul Chart |
@@ -24,11 +24,11 @@
 | higress | 2.2.1 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.12 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.9.14 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.12 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 83.4.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 83.4.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.20.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
