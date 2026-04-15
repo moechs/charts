@@ -1,7 +1,9 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - bump vlagent version to [v1.49.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.49.0).
+    - '**Update node 1**: due to change in label name pods will be restarted.'
+    - replace custom app label with app.kubernetes.io/component. See [#2785](https://github.com/VictoriaMetrics/helm-charts/issues/2785).
+    - bump vlagent version to [v1.50.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.50.0).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -16,11 +18,11 @@ annotations:
     Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-collector/).
     Changelog is [here](https://docs.victoriametrics.com/helm/victoria-logs-collector/changelog/).
 apiVersion: v2
-appVersion: v1.49.0
+appVersion: v1.50.0
 dependencies:
 - name: victoria-metrics-common
-  repository: https://victoriametrics.github.io/helm-charts
-  version: 0.0.*
+  repository: oci://ghcr.io/victoriametrics/helm-charts
+  version: 0.1.*
 description: VictoriaLogs Collector - collects logs from Kubernetes containers and
   stores them to VictoriaLogs
 home: https://github.com/VictoriaMetrics/helm-charts
@@ -37,4 +39,4 @@ name: victoria-logs-collector
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.2.15
+version: 0.2.16
