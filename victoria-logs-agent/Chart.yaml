@@ -1,8 +1,9 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - bump vlagent version to [v1.49.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.49.0).
-    - support volumeAttributesClassName PVC attribute. See [#2782](https://github.com/VictoriaMetrics/helm-charts/issues/2782).
+    - '**Update node 1**: due to change in label name pods will be restarted.'
+    - replace custom app label with app.kubernetes.io/component. See [#2785](https://github.com/VictoriaMetrics/helm-charts/issues/2785).
+    - bump vlagent version to [v1.50.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.50.0).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -17,11 +18,11 @@ annotations:
     Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-agent/).
     Changelog is [here](https://docs.victoriametrics.com/helm/victoria-logs-agent/changelog/).
 apiVersion: v2
-appVersion: v1.49.0
+appVersion: v1.50.0
 dependencies:
 - name: victoria-metrics-common
-  repository: https://victoriametrics.github.io/helm-charts
-  version: 0.0.*
+  repository: oci://ghcr.io/victoriametrics/helm-charts
+  version: 0.1.*
 description: VictoriaLogs Agent - accepts logs from various protocols and replicates
   them across multiple VictoriaLogs instances.
 home: https://github.com/VictoriaMetrics/helm-charts
@@ -38,4 +39,4 @@ name: victoria-logs-agent
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.0.15
+version: 0.0.16
