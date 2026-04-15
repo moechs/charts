@@ -1,7 +1,10 @@
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: Bump argo-workflows to v4.0.4
+    - kind: fixed
+      description: Fix missing service account secrets
+      links:
+        - name: GitHub Issue
+          url: https://github.com/argoproj/argo-helm/issues/3236
   artifacthub.io/signKey: |
     fingerprint: 2B8F22F57260EFA67BE1C5824B11F800CD9D2252
     url: https://argoproj.github.io/argo-helm/pgp_keys.asc
@@ -17,4 +20,4 @@ name: argo-workflows
 sources:
 - https://github.com/argoproj/argo-workflows
 type: application
-version: 1.0.7
+version: 1.0.8
