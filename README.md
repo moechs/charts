@@ -7,15 +7,15 @@
 | argo-cd | 9.5.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.21 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.9 | A Helm chart for Argo Rollouts |
-| argo-workflows | 1.0.8 | A Helm chart for Argo Workflows |
+| argo-workflows | 1.0.9 | A Helm chart for Argo Workflows |
 | cert-manager | v1.20.2 | A Helm chart for cert-manager |
-| cilium | 1.19.2 | eBPF-based Networking, Security, and Observability |
+| cilium | 1.19.3 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.12 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 1.9.6 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.3.0 | External secrets management for Kubernetes |
-| gitea | 12.5.1 | Gitea Helm chart for Kubernetes |
+| gitea | 12.5.3 | Gitea Helm chart for Kubernetes |
 | gitlab | 9.10.3 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 11.6.1 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.0 | Ingress controller for HAProxy loadbalancer |
@@ -24,13 +24,13 @@
 | higress | 2.2.1 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.14 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.9.17 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.12 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 83.4.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 83.4.3 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
-| kubetail | 0.20.0 | General-purpose logging dashboard for Kubernetes |
+| kubetail | 0.21.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.11.1 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.7.0 | This chart installs the Mailu mail system on Kubernetes |
@@ -42,7 +42,7 @@
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.54.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.12 | OpenCost and OpenCost UI |
+| opencost | 2.5.14 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
@@ -61,7 +61,7 @@
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.4 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.4 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.0.93 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.0.94 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.5 | Installs the Tigera operator for Calico |
