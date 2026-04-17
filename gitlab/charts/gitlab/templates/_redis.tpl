@@ -119,10 +119,26 @@ Build the structure describing sentinels
 {{- define "gitlab.redis.sentinelsList" -}}
 {{- include "gitlab.redis.selectedMergedConfig" . -}}
 {{- if .redisMergedConfig.sentinels -}}
-{{- range $i, $entry := .redisMergedConfig.sentinels }}
+{{-   $sentinelTLS := .redisMergedConfig.sentinelTLS | default (dict) -}}
+{{-   range $i, $entry := .redisMergedConfig.sentinels }}
 - host: {{ $entry.host }}
   port: {{ default 26379 $entry.port }}
-{{- end }}
+  {{- if or $sentinelTLS.enabled $entry.ssl }}
+  ssl: true
+  {{- end }}
+  {{- if $sentinelTLS.enabled }}
+  ssl_params:
+    {{- if (kindIs "map" $sentinelTLS.cert) }}
+    cert: /etc/gitlab/redis-sentinel/{{ $sentinelTLS.cert.key }}
+    {{- end }}
+    {{- if (kindIs "map" $sentinelTLS.key) }}
+    key: /etc/gitlab/redis-sentinel/{{ $sentinelTLS.key.key }}
+    {{- end }}
+    {{- if (kindIs "map" $sentinelTLS.caFile) }}
+    ca_file: /etc/gitlab/redis-sentinel/{{ $sentinelTLS.caFile.key }}
+    {{- end }}
+  {{- end }}
+{{-   end }}{{/* range end */}}
 {{- end -}}
 {{- end -}}
 
@@ -134,15 +150,39 @@ sentinels:
 {{- end }}
 {{- end -}}
 
+{{- define "gitlab.redis.sslParams" -}}
+{{- include "gitlab.redis.selectedMergedConfig" . -}}
+{{- if eq (default "redis" .redisMergedConfig.scheme) "rediss" }}
+{{-   $redisTLS := .redisMergedConfig.redisTLS | default (dict) -}}
+{{-   if $redisTLS }}
+{{-     $paramName := .sslParamName | default "ssl_params" }}
+{{ $paramName }}:
+  {{- if (kindIs "map" $redisTLS.cert) }}
+  cert: /etc/gitlab/redis/{{ $redisTLS.cert.key }}
+  {{- end }}
+  {{- if (kindIs "map" $redisTLS.key) }}
+  key: /etc/gitlab/redis/{{ $redisTLS.key.key }}
+  {{- end }}
+  {{- if (kindIs "map" $redisTLS.caFile) }}
+  ca_file: /etc/gitlab/redis/{{ $redisTLS.caFile.key }}
+  {{- end }}
+{{-   end }}
+{{- end }}
+{{- end -}}
+
 {{/*Set redisMergedConfig*/}}
 {{- define "gitlab.redis.selectedMergedConfig" -}}
 {{- if .redisConfigName }}
-{{-   $_ := set . "redisMergedConfig" ( index .Values.global.redis .redisConfigName ) -}}
+{{-   $_ := set . "redisMergedConfig" ( index .Values.global.redis .redisConfigName | deepCopy ) -}}
 {{- else -}}
-{{-   $_ := set . "redisMergedConfig" .Values.global.redis -}}
+{{-   $_ := set . "redisMergedConfig" (.Values.global.redis | deepCopy) -}}
 {{- end -}}
 {{-   if not (kindIs "map" (get $.redisMergedConfig "password")) -}}
-{{-     $_ := set $.redisMergedConfig "password" $.Values.global.redis.auth -}}
+{{-     if and .redisConfigName (kindIs "map" (get $.redisMergedConfig "auth")) -}}
+{{-       $_ := set $.redisMergedConfig "password" (get $.redisMergedConfig "auth") -}}
+{{-     else -}}
+{{-       $_ := set $.redisMergedConfig "password" $.Values.global.redis.auth -}}
+{{-     end -}}
 {{-   end -}}
 {{- $_ := set $.redisMergedConfig "database" (default 0 .Values.global.redis.database) -}}
 {{- range $key := keys $.Values.global.redis.auth -}}
@@ -164,7 +204,11 @@ Return Sentinel list in format for Workhorse
 {{- $sentinelList := list }}
 {{- $scheme := default "redis" .redisMergedConfig.scheme }}
 {{- range $i, $entry := .redisMergedConfig.sentinels }}
-  {{- $sentinel := printf "%s://%s:%d" $scheme (trim $entry.host) ($entry.port | default 26379 | int) }}
+  {{- $entryScheme := $scheme }}
+  {{- if $entry.ssl }}
+    {{- $entryScheme = "rediss" }}
+  {{- end }}
+  {{- $sentinel := printf "%s://%s:%d" $entryScheme (trim $entry.host) ($entry.port | default 26379 | int) }}
   {{- $sentinelList = append $sentinelList ($sentinel | quote) }}
 {{- end }}
 {{- $sentinelList | join "," }}
@@ -183,7 +227,7 @@ instances.
 {{- if hasKey . "mountRedisYmlOverrideSecrets" }}
 {{- $mountRedisYmlOverrideSecrets = .mountRedisYmlOverrideSecrets }}
 {{- end }}
-{{- $redisInstances := list "cache" "clusterCache" "sharedState" "queues" "actioncable" "actionCablePrimary" "traceChunks" "rateLimiting" "clusterRateLimiting" "sessions" "repositoryCache" "workhorse" }}
+{{- $redisInstances := list "cache" "clusterCache" "sharedState" "queues" "actioncable" "traceChunks" "rateLimiting" "clusterRateLimiting" "sessions" "repositoryCache" "workhorse" }}
 {{- if .instances }}
 {{- $redisInstances = splitList " " .instances }}
 {{- end }}
@@ -208,7 +252,7 @@ instances.
 {{/* Include global Redis secrets */}}
 {{/* reset 'redisConfigName', to get global.redis.auth's Secret item */}}
 {{- $_ := set $ "redisConfigName" "" }}
-{{- if eq (include "gitlab.redis.password.enabled" $) "true" }}
+{{- if or (eq (include "gitlab.redis.password.enabled" $) "true") (eq (default "redis" $.Values.global.redis.scheme) "rediss") }}
 {{    include "gitlab.redis.secret" $ }}
 {{- end }}
 {{- end -}}
@@ -223,6 +267,30 @@ instances.
       - key: {{ template "gitlab.redis.password.key" . }}
         path: redis/{{ $passwordPath }}
 {{- end }}
+{{- $redisTLS := .redisMergedConfig.redisTLS | default (dict) -}}
+{{- if eq (default "redis" .redisMergedConfig.scheme) "rediss" }}
+{{-   if (kindIs "map" $redisTLS.caFile) }}
+- secret:
+    name: {{ $redisTLS.caFile.secret }}
+    items:
+      - key: {{ $redisTLS.caFile.key }}
+        path: redis/{{ $redisTLS.caFile.key }}
+{{-   end }}
+{{-   if (kindIs "map" $redisTLS.cert) }}
+- secret:
+    name: {{ $redisTLS.cert.secret }}
+    items:
+      - key: {{ $redisTLS.cert.key }}
+        path: redis/{{ $redisTLS.cert.key }}
+{{-   end }}
+{{-   if (kindIs "map" $redisTLS.key) }}
+- secret:
+    name: {{ $redisTLS.key.secret }}
+    items:
+      - key: {{ $redisTLS.key.key }}
+        path: redis/{{ $redisTLS.key.key }}
+{{-   end }}
+{{- end }}
 {{- end -}}
 
 {{- define "gitlab.redisSentinel.secret" -}}
@@ -233,5 +301,29 @@ instances.
     items:
       - key: {{ template "gitlab.redis.sentinelAuth.key" . }}
         path: redis-sentinel/redis-sentinel-password
+{{- end }}
+{{- $sentinelTLS := .redisMergedConfig.sentinelTLS | default (dict) -}}
+{{- if $sentinelTLS.enabled }}
+{{-   if (kindIs "map" $sentinelTLS.caFile) }}
+- secret:
+    name: {{ $sentinelTLS.caFile.secret }}
+    items:
+      - key: {{ $sentinelTLS.caFile.key }}
+        path: redis-sentinel/{{ $sentinelTLS.caFile.key }}
+{{-   end }}
+{{-   if (kindIs "map" $sentinelTLS.cert) }}
+- secret:
+    name: {{ $sentinelTLS.cert.secret }}
+    items:
+      - key: {{ $sentinelTLS.cert.key }}
+        path: redis-sentinel/{{ $sentinelTLS.cert.key }}
+{{-   end }}
+{{-   if (kindIs "map" $sentinelTLS.key) }}
+- secret:
+    name: {{ $sentinelTLS.key.secret }}
+    items:
+      - key: {{ $sentinelTLS.key.key }}
+        path: redis-sentinel/{{ $sentinelTLS.key.key }}
+{{-   end }}
 {{- end }}
 {{- end -}}

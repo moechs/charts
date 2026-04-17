@@ -51,7 +51,7 @@ global:
   edition: ee
 
   ## https://docs.gitlab.com/charts/charts/globals#gitlab-version
-  gitlabVersion: "18.10.3"
+  gitlabVersion: "18.11.0"
 
   ## https://docs.gitlab.com/charts/charts/globals#application-resource
   application:
@@ -77,98 +77,12 @@ global:
 
   gatewayApi:
     enabled: false
-    envoyProxySpec:
-      provider:
-        type: Kubernetes
-        kubernetes:
-          envoyService:
-            type: LoadBalancer
-          envoyDeployment:
-            pod:
-              annotations:
-                gitlab.com/prometheus_scrape: "true"
-                gitlab.com/prometheus_port: "19001"
-                gitlab.com/prometheus_path: "/stats/prometheus"
-    envoyClientTrafficPolicySpec: {}
-    envoySecurityPolicySpec: {}
-    gateway:
-      annotations: {}
-      infrastructure: {}
     gatewayRef: {}
       # name: ""
       # namespace: ""
-    class:
-      name: "gitlab-gw"
-      controllerName: "gateway.envoyproxy.io/gitlab-gatewayclass-controller"
     installEnvoy: false
-    metrics:
-      envoyGateway:
-        serviceMonitor:
-          enabled: false
-          additionalLabels: {}
-          endpointConfig: {}
-      envoyProxy:
-        podMonitor:
-          enabled: false
-          additionalLabels: {}
-          endpointConfig: {}
     configureCertmanager: false
-    protocol: "HTTPS"
     httpToHttpsRedirect: true
-    addresses: []
-    listeners:
-      http-default:
-        protocol: HTTP
-      gitlab-web:
-        protocol: ""
-        tls:
-          mode: Terminate
-          certificateRefs:
-            - name: gitlab-tls
-      gitlab-web-geo:
-        protocol: ""
-        tls:
-          mode: Terminate
-          certificateRefs:
-            - name: gitlab-web-geo-tls
-      gitlab-ssh:
-        protocol: "TCP"
-      registry-web:
-        protocol: ""
-        tls:
-          mode: Terminate
-          certificateRefs:
-            - name: registry-tls
-      pages-web:
-        protocol: ""
-        tls:
-          mode: Terminate
-          certificateRefs:
-            - name: pages-tls
-      kas-web:
-        protocol: ""
-        tls:
-          mode: Terminate
-          certificateRefs:
-            - name: kas-tls
-      kas-workspaces-web:
-        protocol: ""
-        tls:
-          mode: Terminate
-          certificateRefs:
-            - name: kas-workspaces-tls
-      minio-web:
-        protocol: ""
-        tls:
-          mode: Terminate
-          certificateRefs:
-            - name: minio-tls
-      openbao-web:
-        protocol: ""
-        tls:
-          mode: Terminate
-          certificateRefs:
-            - name: openbao-tls
 
   ## https://docs.gitlab.com/charts/charts/globals#configure-ingress-settings
   ingress:
@@ -617,6 +531,21 @@ global:
       # internalUrl:
       # clientTimeoutSeconds:
 
+    ## IAM-Auth service configuration
+    ## Shared secret for authenticating calls from GitLab Rails to the iam-auth service
+    iamAuthService:
+      enabled: false # Eventually this will be mandatory
+      # http:
+        # host:
+        # port:
+      # grpc:
+        # host:
+        # port:
+      # jwtAudience:
+      # authToken:
+        # secret:
+        # key:
+
     workspaces: {}
 
     ## Configure Database Traffic Capture. This is a Gitlab internal-use experiment.
@@ -1038,6 +967,10 @@ global:
     httpAudit:
       secret: ""
       key: "token"
+    psql:
+      # OpenBao database config. Accessible by toolbox for backup/restore. Configure host, database, username, password.
+      database: openbao
+      username: openbao
 
   ## https://docs.gitlab.com/charts/charts/globals
   extraEnv: {}
@@ -1131,8 +1064,8 @@ nginx-ingress: &nginx-ingress
     image:
       registry: registry.gitlab.com
       image: gitlab-org/cloud-native/mirror/images/ingress-nginx/controller
-      tag: v1.14.3
-      digest: "sha256:82917be97c0939f6ada1717bb39aa7e66c229d6cfb10dcfc8f1bd42f9efe0f81"
+      tag: v1.15.1
+      digest: "sha256:594ceea76b01c592858f803f9ff4d2cb40542cae2060410b2c95f75907d659e1"
     addHeaders:
       Referrer-Policy: strict-origin-when-cross-origin
     config: &nginx-ingress-controller-config
@@ -1644,7 +1577,6 @@ openbao:
       mountPath: /srv/openbao/audit/gitlab-auth
       subPath: '{{ template "gitlab.openbao.authenticationTokenSecretFilePath.key" . }}'
       readOnly: true
-  psql: {}
   config:
     unseal:
       static:
@@ -1661,13 +1593,106 @@ openbao:
         streamingUri: '{{ include "gitlab.workhorse.url" . }}/api/v4/internal/secrets_manager/audit_logs'
     storage:
       postgresql:
-        # Set predefined keys to empty values to enable us merging these keys
-        # with the main DB settings.
         connection:
           host: ''
-          database: ''
-          username: ''
+          database: ''  # Empty allows global.openbao.psql.database. Set explicitly to override.
+          username: ''  # Empty allows global.openbao.psql.username. Set explicitly to override.
           sslMode: ''
+
+gatewayApiResources:
+  class:
+    name: "gitlab-gw"
+    controllerName: "gateway.envoyproxy.io/gitlab-gatewayclass-controller"
+  gateway:
+    annotations: {}
+    infrastructure: {}
+    addresses: []
+    protocol: "HTTPS"
+    listeners:
+      http-default:
+        protocol: HTTP
+      gitlab-web:
+        protocol: ""
+        tls:
+          mode: Terminate
+          certificateRefs:
+            - name: gitlab-tls
+      gitlab-web-geo:
+        protocol: ""
+        tls:
+          mode: Terminate
+          certificateRefs:
+            - name: gitlab-web-geo-tls
+      gitlab-smartcard-web:
+        protocol: ""
+        tls:
+          mode: Terminate
+          certificateRefs:
+            - name: gitlab-smartcard-tls
+      gitlab-ssh:
+        protocol: "TCP"
+      registry-web:
+        protocol: ""
+        tls:
+          mode: Terminate
+          certificateRefs:
+            - name: registry-tls
+      pages-web:
+        protocol: ""
+        tls:
+          mode: Terminate
+          certificateRefs:
+          - name: pages-tls
+      kas-web:
+        protocol: ""
+        tls:
+          mode: Terminate
+          certificateRefs:
+            - name: kas-tls
+      kas-workspaces-web:
+        protocol: ""
+        tls:
+          mode: Terminate
+          certificateRefs:
+            - name: kas-workspaces-tls
+      minio-web:
+        protocol: ""
+        tls:
+          mode: Terminate
+          certificateRefs:
+            - name: minio-tls
+      openbao-web:
+        protocol: ""
+        tls:
+          mode: Terminate
+          certificateRefs:
+            - name: openbao-tls
+  envoy:
+    proxySpec:
+      provider:
+        type: Kubernetes
+        kubernetes:
+          envoyService:
+            type: LoadBalancer
+          envoyDeployment:
+            pod:
+              annotations:
+                gitlab.com/prometheus_scrape: "true"
+                gitlab.com/prometheus_port: "19001"
+                gitlab.com/prometheus_path: "/stats/prometheus"
+    clientTrafficPolicySpec: {}
+    securityPolicySpec: {}
+    metrics:
+      envoyGateway:
+        serviceMonitor:
+          enabled: false
+          additionalLabels: {}
+          endpointConfig: {}
+      envoyProxy:
+        podMonitor:
+          enabled: false
+          additionalLabels: {}
+          endpointConfig: {}
 
 envoy-gateway:
   deployment:

@@ -135,16 +135,44 @@ Render active TCP listener configuration.
 {{- end }}
 
 {{- define "openbao.seal.config" -}}
-{{- $conf := dict }}
-{{- with .Values.config.unseal.static }}
-{{-   if .enabled }}
-{{-     $static := dict "current_key_id" .currentKeyId "current_key" (printf "file://%s" .currentKey) }}
-{{-     if .previousKeyId }}
-{{        $_ := set "previous_key_id" .previousKeyId "previous_key" (printf "file://%s" .previousKey) }}
-{{-     end }}
-{{-     $_ := set $conf "static" $static }}
-{{-   end }}
-{{- end }}
+{{- $staticConf := .Values.config.unseal.static | default dict -}}
+{{- $awskmsConf := .Values.config.unseal.awskms | default dict -}}
+{{- $unsealMethods := list
+    ($staticConf.enabled | default false)
+    ($awskmsConf.enabled | default false)
+-}}
+{{- $enabledMethods := without $unsealMethods false -}}
+{{- $conf := dict -}}
+{{- if $staticConf.enabled | default false -}}
+{{-   if empty $staticConf.currentKeyId -}}
+{{-     fail "OpenBao: config.unseal.static.currentKeyId is required when static unsealing is enabled." -}}
+{{-   end -}}
+{{-   if empty $staticConf.currentKey -}}
+{{-     fail "OpenBao: config.unseal.static.currentKey is required when static unsealing is enabled." -}}
+{{-   end -}}
+{{-   $static := dict "current_key_id" $staticConf.currentKeyId "current_key" (printf "file://%s" $staticConf.currentKey) -}}
+{{-   if $staticConf.previousKeyId -}}
+{{-     if empty $staticConf.previousKey -}}
+{{-       fail "OpenBao: config.unseal.static.previousKey is required when previousKeyId is set." -}}
+{{-     end -}}
+{{-     $_ := set $static "previous_key_id" $staticConf.previousKeyId -}}
+{{-     $_ := set $static "previous_key" (printf "file://%s" $staticConf.previousKey) -}}
+{{-   end -}}
+{{-   $_ := set $conf "static" $static -}}
+{{- end -}}
+{{- if $awskmsConf.enabled | default false -}}
+{{-   if empty $awskmsConf.kmsKeyId -}}
+{{-     fail "OpenBao: config.unseal.awskms.kmsKeyId is required when AWS KMS unsealing is enabled." -}}
+{{-   end -}}
+{{-   $awskms := dict "kms_key_id" $awskmsConf.kmsKeyId -}}
+{{-   if not (empty $awskmsConf.region) -}}
+{{-     $_ := set $awskms "region" $awskmsConf.region -}}
+{{-   end -}}
+{{-   if not (empty $awskmsConf.endpoint) -}}
+{{-     $_ := set $awskms "endpoint" $awskmsConf.endpoint -}}
+{{-   end -}}
+{{-   $_ := set $conf "awskms" $awskms -}}
+{{- end -}}
 {{- toPrettyJson $conf }}
 {{- end }}
 

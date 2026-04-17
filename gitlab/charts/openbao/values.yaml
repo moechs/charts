@@ -94,6 +94,7 @@ gatewayRoute:
   gatewayName: ""
   annotations: {}
   timeouts: {}
+  filters: []
 
 # @schema $ref: $k8s/_definitions.json#/definitions/io.k8s.api.core.v1.ResourceRequirements
 resources: {}
@@ -208,14 +209,27 @@ config:
     tlsDisable: true
     port: 8209
     unauthenticatedMetricsAccess: true
+  # @schema oneOf: [{ "properties": { "static": { "properties": { "enabled": { "const": true } } }, "awskms": { "properties": { "enabled": { "const": false }}}}}, { "properties": { "static": { "properties": { "enabled": { "const": false } } }, "awskms": { "properties": { "enabled": { "const": true } } }}}]
   unseal:
     static:
       enabled: true
       currentKeyId: "static-unseal-0"
       currentKey: "/srv/openbao/keys/static-unseal-1"
-      # Optionally configure a previous key for rotation purposes. Needs and extra volume mount to the previous key path and a non-nil id.
+      # Optionally configure a previous key for rotation purposes. Needs an extra volume mount to the previous key path and a non-nil id.
       previousKeyId: ""
       previousKey: "/srv/openbao/keys/static-unseal-0"
+    # AWS KMS auto-unseal. Mutually exclusive with static unsealing.
+    # Set awskms.enabled=true and static.enabled=false to use AWS KMS.
+    # With IRSA, no explicit AWS credentials are required — annotate the
+    # service account with the IAM role ARN via serviceAccount.annotations.
+    awskms:
+      enabled: false
+      # AWS region where the KMS key lives.
+      region: ""
+      # KMS key ID, ARN, or alias (e.g. "alias/my-openbao-key"). Required when awskms.enabled is true.
+      kmsKeyId: ""
+      # Optional custom KMS endpoint (e.g. a VPC endpoint URL).
+      endpoint: ""
   initialize:
     enabled: true
     oidcDiscoveryUrl: "https://gitlab.example.com"

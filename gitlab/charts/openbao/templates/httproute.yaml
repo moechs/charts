@@ -23,6 +23,10 @@ spec:
       name: {{ include "openbao.fullname" . }}-active
       port: {{ .Values.config.apiPort }}
       weight: 1
+    {{- with .Values.gatewayRoute.filters }}
+    filters:
+      {{- . | toYaml | nindent 6 }}
+    {{- end }}
     {{- with .Values.gatewayRoute.timeouts }}
     timeouts: {{ . | toJson }}
     {{- end }}

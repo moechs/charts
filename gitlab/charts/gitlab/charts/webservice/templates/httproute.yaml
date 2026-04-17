@@ -1,3 +1,4 @@
+{{- if .Values.enabled -}}
 {{- if eq "true" (include "gitlab.gatewayApi.route.enabled" .) -}}
 {{- include "webservice.datamodel.prepare" $ -}}
 apiVersion: gateway.networking.k8s.io/v1
@@ -12,17 +13,9 @@ metadata:
     {{ .Values.gatewayRoute.annotations | toYaml | nindent 4 }}
 spec:
   parentRefs:
-  {{- $gatewayRef := (include "gitlab.gatewayApi.gatewayRef" . ) | fromYamlArray }}
-  {{- $gatewayRef | toYaml | nindent 4 }}
-  {{- if .Values.global.geo.gatewayApi.additionalHostname }}
-  {{-   $_ := set ($gatewayRef | first) "sectionName" .Values.gatewayRoute.geoSectionName }}
-  {{-   $gatewayRef | toYaml | nindent 4 }}
-  {{- end }}
+  {{- include "webservice.gatewayApi.gatewayRefs" . | nindent 4 }}
   hostnames:
-    - {{ include "gitlab.gitlab.hostname" . | quote }}
-    {{- with .Values.global.geo.gatewayApi.additionalHostname }}
-    - {{ . | quote }}
-    {{- end }}
+  {{- include "webservice.gatewayApi.hostnames" . | nindent 4 }}
   rules:
   {{- range $.Values.deployments }}
   {{ $port := $.Values.service.workhorseExternalPort }}
@@ -42,4 +35,5 @@ spec:
       {{- .timeouts | toYaml | nindent 6 }}
       {{- end }}
   {{- end }}
+{{- end }}
 {{- end }}

@@ -275,8 +275,62 @@
                     "type": "boolean"
                 },
                 "unseal": {
-                    "type": "object",
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "awskms": {
+                                    "properties": {
+                                        "enabled": {
+                                            "const": false
+                                        }
+                                    }
+                                },
+                                "static": {
+                                    "properties": {
+                                        "enabled": {
+                                            "const": true
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "awskms": {
+                                    "properties": {
+                                        "enabled": {
+                                            "const": true
+                                        }
+                                    }
+                                },
+                                "static": {
+                                    "properties": {
+                                        "enabled": {
+                                            "const": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ],
                     "properties": {
+                        "awskms": {
+                            "type": "object",
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "endpoint": {
+                                    "type": "string"
+                                },
+                                "kmsKeyId": {
+                                    "type": "string"
+                                },
+                                "region": {
+                                    "type": "string"
+                                }
+                            }
+                        },
                         "static": {
                             "type": "object",
                             "properties": {
@@ -321,6 +375,9 @@
                         "boolean",
                         "null"
                     ]
+                },
+                "filters": {
+                    "type": "array"
                 },
                 "gatewayName": {
                     "type": "string"
