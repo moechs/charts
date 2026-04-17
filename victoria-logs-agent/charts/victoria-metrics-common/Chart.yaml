@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - replace custom `app` label with a well known `app.kubernetes.io/component`
+    - reverted usage of `app` label in `vm.selectorLabels`
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -30,4 +30,4 @@ name: victoria-metrics-common
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: library
-version: 0.1.0
+version: 0.3.0
