@@ -1,9 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - '**Update node 1**: due to change in label name pods will be restarted.'
-    - replace custom app label with app.kubernetes.io/component. See [#2785](https://github.com/VictoriaMetrics/helm-charts/issues/2785).
-    - bump VictoriaLogs version to [v1.50.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.50.0).
+    - revert change in Deployment and StatefulSet matchLabels, that was introduced in release 0.0.33
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -28,7 +26,7 @@ dependencies:
   version: 0.51.*
 - name: victoria-metrics-common
   repository: oci://ghcr.io/victoriametrics/helm-charts
-  version: 0.1.*
+  version: 0.3.*
 description: The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database
   in Kubernetes.
 home: https://github.com/VictoriaMetrics/helm-charts
@@ -44,4 +42,4 @@ name: victoria-logs-cluster
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.0.33
+version: 0.1.0
