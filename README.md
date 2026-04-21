@@ -47,8 +47,8 @@
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.4.3 | An opinionated installation of OTEL Collector for OpenObserve |
-| openobserve-standalone | 0.70.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
-| openobserve | 0.70.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve-standalone | 0.70.4 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve | 0.70.4 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.61.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.3 | A Photoprism Helm chart for Kubernetes |
@@ -61,7 +61,7 @@
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.4 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.4 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.0.95 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.0.96 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.5 | Installs the Tigera operator for Calico |
@@ -69,9 +69,9 @@
 | uptime-kuma | 4.0.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
 | vector | 0.51.0 | A lightweight, ultra-fast tool for building observability pipelines |
-| victoria-logs-agent | 0.1.0 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
-| victoria-logs-cluster | 0.1.0 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
-| victoria-logs-collector | 0.3.0 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
-| victoria-logs-single | 0.12.0 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
+| victoria-logs-agent | 0.1.1 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
+| victoria-logs-cluster | 0.1.1 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
+| victoria-logs-collector | 0.3.1 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
+| victoria-logs-single | 0.12.1 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
 | zentao | 2026.1.1201 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
 | zookeeper | 13.8.8 | Apache ZooKeeper provides a reliable, centralized register of configuration |
