@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.14.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 9.5.2 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 9.5.3 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.21 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.9 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.10 | A Helm chart for Argo Workflows |
@@ -16,7 +16,7 @@
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.3.0 | External secrets management for Kubernetes |
 | gitea | 12.5.3 | Gitea Helm chart for Kubernetes |
-| gitlab | 9.11.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 9.11.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.1.1 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.0 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.18.3 | An open source trusted cloud native registry that stores, signs, and |
@@ -28,7 +28,7 @@
 | jira | 2.0.12 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 83.6.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 83.7.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.21.1 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -61,7 +61,7 @@
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.4 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.4 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.0.96 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.0.97 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.5 | Installs the Tigera operator for Calico |
@@ -72,6 +72,6 @@
 | victoria-logs-agent | 0.1.1 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.1.1 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.3.1 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
-| victoria-logs-single | 0.12.1 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
+| victoria-logs-single | 0.12.2 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
 | zentao | 2026.1.1201 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
 | zookeeper | 13.8.8 | Apache ZooKeeper provides a reliable, centralized register of configuration |
