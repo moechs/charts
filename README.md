@@ -4,10 +4,10 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.14.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 9.5.3 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 9.5.4 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.21 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.9 | A Helm chart for Argo Rollouts |
-| argo-workflows | 1.0.10 | A Helm chart for Argo Workflows |
+| argo-workflows | 1.0.11 | A Helm chart for Argo Workflows |
 | cert-manager | v1.20.2 | A Helm chart for cert-manager |
 | cilium | 1.19.3 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.12 | A chart for installing Confluence Data Center on Kubernetes |
@@ -40,7 +40,7 @@
 | nexus-repository-manager | 88.5.1 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
-| ollama | 1.54.0 | Get up and running with large language models locally. |
+| ollama | 1.55.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.14 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
@@ -61,14 +61,14 @@
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.4 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.4 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.0.97 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.0.98 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.31.5 | Installs the Tigera operator for Calico |
 | traefik | 39.0.8 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.0.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
-| vector | 0.51.0 | A lightweight, ultra-fast tool for building observability pipelines |
+| vector | 0.52.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.1.1 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.1.1 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.3.1 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
