@@ -150,6 +150,62 @@ ollama:
       - llama2
 ```
 
+## Knative
+
+When `knative.enabled=true`, this chart deploys a Knative `Service` instead of a standard Kubernetes `Deployment` and `Service`.
+
+### Knative cluster requirements
+
+If you want to mount a PVC in Knative mode, your Knative Serving cluster must enable these feature flags:
+
+- `kubernetes.podspec-persistent-volume-claim`
+- `kubernetes.podspec-persistent-volume-write`
+- `kubernetes.podspec-tolerations`
+
+If these features are disabled, Knative will reject the rendered `Service` with webhook validation errors.
+
+You can verify the current settings with:
+
+```console
+kubectl get configmap/config-features -n knative-serving -o yaml
+```
+
+On a standard Knative Serving installation, you can enable them with:
+
+```console
+kubectl patch configmap/config-features -n knative-serving --type merge --patch '{
+  "data": {
+    "kubernetes.podspec-persistent-volume-claim": "enabled",
+    "kubernetes.podspec-persistent-volume-write": "enabled",
+    "kubernetes.podspec-tolerations": "enabled"
+  }
+}'
+```
+
+If your Knative installation is managed by the Knative Operator, configure these feature flags on the `KnativeServing` resource instead of patching the ConfigMap directly.
+
+### Existing PVC example
+
+To reuse an existing PVC in Knative mode:
+
+```yaml
+knative:
+  enabled: true
+
+persistentVolume:
+  enabled: true
+  existingClaim: ollama-pvc
+```
+
+### Model bootstrap behavior
+
+When `knative.enabled=true` and model bootstrap is configured with `ollama.models.pull`, `ollama.models.run`, or `ollama.models.create`, the chart renders a separate bootstrap `Job`.
+
+- The Job is non-blocking: `helm install` and `helm upgrade` do not wait for model preload to finish.
+- The Job name includes a hash of `ollama.models.pull`, `ollama.models.run`, `ollama.models.create`, and `ollama.models.clean`, so changing those settings on upgrade creates a new Job and reruns bootstrap.
+- Completed bootstrap Jobs are cleaned up according to `knative.modelBootstrap.ttlSecondsAfterFinished`.
+- Knative bootstrap requires `persistentVolume.enabled=true` so the bootstrap Job and Knative `Service` can share the same model data.
+
 ## Helm Values
 
 - See [values.yaml](values.yaml) to see the Chart's default values.
@@ -186,6 +242,7 @@ ollama:
 | knative.containerConcurrency               | int    | `0`                 | Knative service container concurrency                                                                                                                                                                                                                                                                                                                     |
 | knative.enabled                            | bool   | `false`             | Enable Knative integration                                                                                                                                                                                                                                                                                                                                |
 | knative.idleTimeoutSeconds                 | int    | `300`               | Knative service idle timeout seconds                                                                                                                                                                                                                                                                                                                      |
+| knative.modelBootstrap.ttlSecondsAfterFinished | int | `300`               | Time to keep completed Knative model bootstrap Jobs before cleanup. Set to `null` to disable TTL-based cleanup.                                                                                                                                                                                                                                         |
 | knative.responseStartTimeoutSeconds        | int    | `300`               | Knative service response start timeout seconds                                                                                                                                                                                                                                                                                                            |
 | knative.timeoutSeconds                     | int    | `300`               | Knative service timeout seconds                                                                                                                                                                                                                                                                                                                           |
 | lifecycle                                  | object | `{}`                | Lifecycle for pod assignment (override ollama.models startup pull/run)                                                                                                                                                                                                                                                                                    |
@@ -261,6 +318,7 @@ ollama:
 | updateStrategy.type                        | string | `"Recreate"`        | Deployment strategy can be "Recreate" or "RollingUpdate". Default is Recreate                                                                                                                                                                                                                                                                             |
 | volumeMounts                               | list   | `[]`                | Additional volumeMounts on the output Deployment definition.                                                                                                                                                                                                                                                                                              |
 | volumes                                    | list   | `[]`                | Additional volumes on the output Deployment definition.                                                                                                                                                                                                                                                                                                   |
+| podSchedulerName                           | string | `""`                | Scheduler Name e.g. "kai-scheduler". See https://github.com/kai-scheduler/KAI-Scheduler                                                                                                                                                                                                                                                                   |
 
 ----------------------------------------------
 
