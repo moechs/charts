@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.14.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 9.5.5 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 9.5.7 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.21 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.9 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.13 | A Helm chart for Argo Workflows |
@@ -14,7 +14,7 @@
 | consul | 1.9.7 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
-| external-secrets | 2.4.0 | External secrets management for Kubernetes |
+| external-secrets | 2.4.1 | External secrets management for Kubernetes |
 | gitea | 12.5.3 | Gitea Helm chart for Kubernetes |
 | gitlab | 9.11.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.2.1 | The leading tool for querying and visualizing time series and metrics. |
@@ -30,7 +30,7 @@
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
 | kube-prometheus-stack | 84.3.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
-| kubetail | 0.22.0 | General-purpose logging dashboard for Kubernetes |
+| kubetail | 0.23.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.11.1 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.7.0 | This chart installs the Mailu mail system on Kubernetes |
@@ -47,8 +47,8 @@
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.4.3 | An opinionated installation of OTEL Collector for OpenObserve |
-| openobserve-standalone | 0.80.0 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
-| openobserve | 0.80.0 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve-standalone | 0.80.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve | 0.80.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.61.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.3 | A Photoprism Helm chart for Kubernetes |
@@ -59,8 +59,8 @@
 | prometheus-smartctl-exporter | 0.16.0 | A Helm chart for Kubernetes |
 | rancher | 2.14.0 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.19.4 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | v1.19.4 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph-cluster | v1.19.5 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph | v1.19.5 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 0.0.99 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
@@ -71,7 +71,7 @@
 | vector | 0.52.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.1.1 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.1.1 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
-| victoria-logs-collector | 0.3.1 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
+| victoria-logs-collector | 0.3.2 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
 | victoria-logs-single | 0.12.2 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
 | zentao | 2026.1.1201 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
 | zookeeper | 13.8.8 | Apache ZooKeeper provides a reliable, centralized register of configuration |
