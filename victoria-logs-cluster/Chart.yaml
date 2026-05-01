@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - fixed selector for scrape objects. See [#2827](https://github.com/VictoriaMetrics/helm-charts/issues/2827).
+    - properly render topologySpreadConstraints for vlinsert pods. See [#2861](https://github.com/VictoriaMetrics/helm-charts/issues/2861).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -23,7 +23,7 @@ dependencies:
 - condition: vector.enabled
   name: vector
   repository: https://helm.vector.dev
-  version: 0.51.*
+  version: 0.52.*
 - name: victoria-metrics-common
   repository: oci://ghcr.io/victoriametrics/helm-charts
   version: 0.3.*
@@ -42,4 +42,4 @@ name: victoria-logs-cluster
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.1.1
+version: 0.1.3
