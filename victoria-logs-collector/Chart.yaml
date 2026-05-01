@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - support .Values.extraObjects. See [#2848](https://github.com/VictoriaMetrics/helm-charts/issues/2848).
+    - fixed rendering of `.Values.topologySpreadConstraints` in the pod spec.
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -37,4 +37,4 @@ name: victoria-logs-collector
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.3.2
+version: 0.3.3
