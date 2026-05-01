@@ -13,7 +13,7 @@
 | confluence | 2.0.12 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 1.9.7 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
-| external-dns | 1.20.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
+| external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.4.1 | External secrets management for Kubernetes |
 | gitea | 12.5.3 | Gitea Helm chart for Kubernetes |
 | gitlab | 9.11.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
@@ -47,8 +47,8 @@
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.4.3 | An opinionated installation of OTEL Collector for OpenObserve |
-| openobserve-standalone | 0.80.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
-| openobserve | 0.80.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve-standalone | 0.80.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve | 0.80.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.61.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.3 | A Photoprism Helm chart for Kubernetes |
@@ -57,21 +57,21 @@
 | prometheus-blackbox-exporter | 11.9.1 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.6.0 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.16.0 | A Helm chart for Kubernetes |
-| rancher | 2.14.0 | Install Rancher Server to manage Kubernetes clusters across providers. |
+| rancher | 2.14.1 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.5 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.5 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 0.1.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
-| tigera-operator | v3.31.5 | Installs the Tigera operator for Calico |
+| tigera-operator | v3.32.0 | Installs the Tigera operator for Calico |
 | traefik | 39.0.8 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.0.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
 | vector | 0.52.0 | A lightweight, ultra-fast tool for building observability pipelines |
-| victoria-logs-agent | 0.1.1 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
-| victoria-logs-cluster | 0.1.1 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
-| victoria-logs-collector | 0.3.2 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
+| victoria-logs-agent | 0.1.2 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
+| victoria-logs-cluster | 0.1.3 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
+| victoria-logs-collector | 0.3.3 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
 | victoria-logs-single | 0.12.2 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
 | zentao | 2026.1.1201 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
 | zookeeper | 13.8.8 | Apache ZooKeeper provides a reliable, centralized register of configuration |
