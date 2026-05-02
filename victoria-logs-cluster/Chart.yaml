@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - properly render topologySpreadConstraints for vlinsert pods. See [#2861](https://github.com/VictoriaMetrics/helm-charts/issues/2861).
+    - removed vector playground property, which is not supported anymore
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -42,4 +42,4 @@ name: victoria-logs-cluster
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.1.3
+version: 0.1.4
