@@ -54,7 +54,7 @@
 | photoprism | 1.4.3 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
-| prometheus-blackbox-exporter | 11.9.1 | Prometheus Blackbox Exporter |
+| prometheus-blackbox-exporter | 11.9.2 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.6.0 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.16.0 | A Helm chart for Kubernetes |
 | rancher | 2.14.1 | Install Rancher Server to manage Kubernetes clusters across providers. |
@@ -72,6 +72,6 @@
 | victoria-logs-agent | 0.1.2 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.1.4 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.3.3 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
-| victoria-logs-single | 0.12.3 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
+| victoria-logs-single | 0.12.4 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
 | zentao | 2026.1.1201 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
 | zookeeper | 13.8.8 | Apache ZooKeeper provides a reliable, centralized register of configuration |
