@@ -19,7 +19,7 @@ spec:
 {{- end }}
   serviceAccountName: {{ include "haproxy-ingress.serviceAccountName" . }}
 {{- if semverCompare ">= 1.22-0" .Capabilities.KubeVersion.Version }}
-  automountServiceAccountToken: {{ .Values.controller.automountServiceAccountToken }}
+  automountServiceAccountToken: false
 {{- end }}
 {{- if or .Values.controller.haproxy.enabled .Values.controller.initContainers }}
   initContainers:
@@ -38,7 +38,8 @@ spec:
           memory: 32Mi
       volumeMounts:
         - mountPath: /etc/haproxy
-          name: etc
+          name: scratch
+          subPath: etc
 {{- if .Values.controller.securityContextInitContainer }}
       securityContext:
         {{- toYaml .Values.controller.securityContextInitContainer | nindent 8 }}
@@ -104,16 +105,16 @@ spec:
 {{- if .Values.controller.extraEnvs }}
         {{- toYaml .Values.controller.extraEnvs | nindent 8 }}
 {{- end }}
-{{- if or .Values.controller.haproxy.enabled .Values.controller.template .Values.controller.templateFile .Values.controller.extraVolumeMounts .Values.controller.customFiles }}
       volumeMounts:
-{{- if .Values.controller.haproxy.enabled }}
         - mountPath: /etc/haproxy
-          name: etc
+          name: scratch
+          subPath: etc
         - mountPath: /var/lib/haproxy
-          name: lib
+          name: scratch
+          subPath: lib
         - mountPath: /var/run/haproxy
-          name: run
-{{- end }}
+          name: scratch
+          subPath: run
 {{- if or .Values.controller.template .Values.controller.templateFile }}
         - name: haproxy-template
           mountPath: /etc/templates/haproxy
@@ -122,9 +123,13 @@ spec:
         - name: haproxy-custom-files
           mountPath: /etc/haproxy-custom-files
 {{- end }}
+{{- if and (semverCompare ">= 1.22-0" .Capabilities.KubeVersion.Version) .Values.controller.automountServiceAccountToken }}
+        - name: kube-api-access
+          mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          readOnly: true
+{{- end }}
 {{- if .Values.controller.extraVolumeMounts }}
         {{- toYaml .Values.controller.extraVolumeMounts | nindent 8 }}
-{{- end }}
 {{- end }}
       resources:
         {{- toYaml .Values.controller.resources | nindent 8 }}
@@ -160,11 +165,14 @@ spec:
         {{- toYaml .Values.controller.haproxy.resources | nindent 8 }}
       volumeMounts:
         - mountPath: /etc/haproxy
-          name: etc
+          name: scratch
+          subPath: etc
         - mountPath: /var/lib/haproxy
-          name: lib
+          name: scratch
+          subPath: lib
         - mountPath: /var/run/haproxy
-          name: run
+          name: scratch
+          subPath: run
 {{- if .Values.controller.customFiles }}
         - name: haproxy-custom-files
           mountPath: /etc/haproxy-custom-files
@@ -252,15 +260,27 @@ spec:
   imagePullSecrets:
     {{- toYaml .Values.controller.imagePullSecrets | nindent 4 }}
 {{- end }}
-{{- if or .Values.controller.haproxy.enabled .Values.controller.template .Values.controller.templateFile .Values.controller.extraVolumes .Values.controller.customFiles }}
   volumes:
-{{- if .Values.controller.haproxy.enabled }}
-    - name: etc
+    - name: scratch
       emptyDir: {}
-    - name: lib
-      emptyDir: {}
-    - name: run
-      emptyDir: {}
+{{- if and (semverCompare ">= 1.22-0" .Capabilities.KubeVersion.Version) .Values.controller.automountServiceAccountToken }}
+    - name: kube-api-access
+      projected:
+        defaultMode: 0644
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3600
+            path: token
+        - configMap:
+            name: kube-root-ca.crt
+            items:
+            - key: ca.crt
+              path: ca.crt
+        - downwardAPI:
+            items:
+            - path: namespace
+              fieldRef:
+                fieldPath: metadata.namespace
 {{- end }}
 {{- if or .Values.controller.template .Values.controller.templateFile }}
     - name: haproxy-template
@@ -274,7 +294,6 @@ spec:
 {{- end }}
 {{- if .Values.controller.extraVolumes }}
     {{- toYaml .Values.controller.extraVolumes | nindent 4 }}
-{{- end }}
 {{- end }}
   terminationGracePeriodSeconds: {{ .Values.controller.terminationGracePeriodSeconds }}
 {{- if .Values.controller.topologySpreadConstraints }}
