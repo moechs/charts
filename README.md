@@ -18,7 +18,7 @@
 | gitea | 12.5.3 | Gitea Helm chart for Kubernetes |
 | gitlab | 9.11.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.3.0 | The leading tool for querying and visualizing time series and metrics. |
-| haproxy-ingress | 0.16.0 | Ingress controller for HAProxy loadbalancer |
+| haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.18.3 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.41.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.2.1 | Helm chart for deploying Higress gateways |
@@ -65,7 +65,7 @@
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.0 | Installs the Tigera operator for Calico |
-| traefik | 39.0.8 | A Traefik based Kubernetes ingress controller |
+| traefik | 39.0.9 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
 | vector | 0.52.0 | A lightweight, ultra-fast tool for building observability pipelines |
