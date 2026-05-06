@@ -16,7 +16,7 @@
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.4.1 | External secrets management for Kubernetes |
 | gitea | 12.5.3 | Gitea Helm chart for Kubernetes |
-| gitlab | 9.11.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 9.11.3 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.3.0 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.18.3 | An open source trusted cloud native registry that stores, signs, and |
@@ -30,9 +30,9 @@
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
 | kube-prometheus-stack | 84.5.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
-| kubetail | 0.23.0 | General-purpose logging dashboard for Kubernetes |
+| kubetail | 0.24.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
-| longhorn | 1.11.1 | Longhorn is a distributed block storage system for Kubernetes. |
+| longhorn | 1.11.2 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.7.0 | This chart installs the Mailu mail system on Kubernetes |
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
@@ -54,7 +54,7 @@
 | photoprism | 1.4.3 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
-| prometheus-blackbox-exporter | 11.9.2 | Prometheus Blackbox Exporter |
+| prometheus-blackbox-exporter | 11.10.0 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.6.0 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.16.0 | A Helm chart for Kubernetes |
 | rancher | 2.14.1 | Install Rancher Server to manage Kubernetes clusters across providers. |
