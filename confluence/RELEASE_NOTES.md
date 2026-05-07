@@ -1,1 +1,1 @@
-* [skip ci] Prepare release 2.0.12 (#1111)
+* Update appVersions for DC apps (#1113)
