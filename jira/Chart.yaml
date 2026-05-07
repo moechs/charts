@@ -1,12 +1,18 @@
 annotations:
-  artifacthub.io/changes: '- "Update Helm chart version"'
+  artifacthub.io/changes: |-
+    - "DEVPROD-3811 Added support for OpenSearch for Jira. (#1099)"
+    - "Update appVersions for DC apps (#1113)"
   artifacthub.io/containsSecurityUpdates: "false"
 apiVersion: v2
-appVersion: 11.3.3
+appVersion: 11.3.4
 dependencies:
 - name: common
   repository: https://atlassian.github.io/data-center-helm-charts
   version: 1.2.7
+- condition: opensearch.enabled
+  name: opensearch
+  repository: https://opensearch-project.github.io/helm-charts
+  version: 3.5.0
 description: A chart for installing Jira Data Center on Kubernetes
 home: https://atlassian.github.io/data-center-helm-charts/
 icon: https://atlassian.github.io/data-center-helm-charts/icons/jira-software.svg
@@ -23,4 +29,4 @@ sources:
 - https://github.com/atlassian/data-center-helm-charts
 - https://bitbucket.org/atlassian-docker/docker-atlassian-jira/
 type: application
-version: 2.0.12
+version: 2.0.13

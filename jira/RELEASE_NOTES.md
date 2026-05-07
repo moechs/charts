@@ -1,1 +1,2 @@
-* [skip ci] Prepare release 2.0.12 (#1111)
+* DEVPROD-3811 Added support for OpenSearch for Jira. (#1099)
+* Update appVersions for DC apps (#1113)
