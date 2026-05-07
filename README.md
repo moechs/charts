@@ -4,13 +4,13 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.14.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 9.5.11 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 9.5.12 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.21 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.9 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.13 | A Helm chart for Argo Workflows |
 | cert-manager | v1.20.2 | A Helm chart for cert-manager |
 | cilium | 1.19.3 | eBPF-based Networking, Security, and Observability |
-| confluence | 2.0.12 | A chart for installing Confluence Data Center on Kubernetes |
+| confluence | 2.0.13 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 1.9.7 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
@@ -19,13 +19,13 @@
 | gitlab | 9.11.3 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.3.0 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
-| harbor | 1.18.3 | An open source trusted cloud native registry that stores, signs, and |
+| harbor | 1.19.0 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.41.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.2.1 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
 | jenkins | 5.9.18 | 'Jenkins - Build great things at any scale! As the leading open source |
-| jira | 2.0.12 | A chart for installing Jira Data Center on Kubernetes |
+| jira | 2.0.13 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
 | kube-prometheus-stack | 84.5.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
@@ -65,7 +65,7 @@
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.0 | Installs the Tigera operator for Calico |
-| traefik | 39.0.9 | A Traefik based Kubernetes ingress controller |
+| traefik | 40.0.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
 | vector | 0.52.0 | A lightweight, ultra-fast tool for building observability pipelines |
