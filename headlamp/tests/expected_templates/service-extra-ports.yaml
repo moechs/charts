@@ -54,13 +54,23 @@ metadata:
     app.kubernetes.io/version: "0.42.0"
     app.kubernetes.io/managed-by: Helm
 spec:
-  type: ClusterIP
+  type: NodePort
+  externalTrafficPolicy: 
   
   ports:
     - port: 80
       targetPort: http
       protocol: TCP
       name: http
+    - name: metrics
+      port: 9090
+      targetPort: metrics
+      protocol: TCP
+    - name: grpc
+      port: 9091
+      targetPort: 9091
+      protocol: TCP
+      nodePort: 31091
   selector:
     app.kubernetes.io/name: headlamp
     app.kubernetes.io/instance: headlamp
@@ -114,7 +124,6 @@ spec:
             - "-plugins-dir=/headlamp/plugins"
             - "-session-ttl=86400"
             # Check if externalSecret is disabled
-            - -insecure-ssl
           ports:
             - name: http
               containerPort: 4466

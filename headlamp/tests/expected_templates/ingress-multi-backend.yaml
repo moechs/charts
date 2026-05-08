@@ -61,6 +61,10 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+    - name: extra
+      port: 9090
+      targetPort: 9090
+      protocol: TCP
   selector:
     app.kubernetes.io/name: headlamp
     app.kubernetes.io/instance: headlamp
@@ -114,7 +118,6 @@ spec:
             - "-plugins-dir=/headlamp/plugins"
             - "-session-ttl=86400"
             # Check if externalSecret is disabled
-            - -insecure-ssl
           ports:
             - name: http
               containerPort: 4466
@@ -129,3 +132,50 @@ spec:
               port: http
           resources:
             {}
+---
+# Source: headlamp/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: headlamp
+  namespace: default
+  labels:
+    helm.sh/chart: headlamp-0.42.0
+    app.kubernetes.io/name: headlamp
+    app.kubernetes.io/instance: headlamp
+    app.kubernetes.io/version: "0.42.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: "chart-example.local"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: headlamp
+                port:
+                  number: 80
+          - path: /extra-by-name
+            pathType: Prefix
+            backend:
+              service:
+                name: headlamp
+                port:
+                  name: extra
+          - path: /extra-by-number
+            pathType: Prefix
+            backend:
+              service:
+                name: headlamp
+                port:
+                  number: 9090
+          - path: /custom-svc
+            pathType: Prefix
+            backend:
+              service:
+                name: "headlamp-other"
+                port:
+                  number: 8080
