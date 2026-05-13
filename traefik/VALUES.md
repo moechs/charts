@@ -1,6 +1,6 @@
 # traefik
 
-![Version: 40.0.1](https://img.shields.io/badge/Version-40.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.7.0](https://img.shields.io/badge/AppVersion-v3.7.0-informational?style=flat-square)
+![Version: 40.1.0](https://img.shields.io/badge/Version-40.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.7.1](https://img.shields.io/badge/AppVersion-v3.7.1-informational?style=flat-square)
 
 A Traefik based Kubernetes ingress controller
 
@@ -34,6 +34,7 @@ Kubernetes: `>=1.25.0-0`
 | api.dashboard | bool | `true` | Enable the dashboard |
 | api.dashboardName | string | `""` | Custom name for the dashboard (v3.7+). |
 | api.debug | string | `nil` | Enable the debug API |
+| api.disableDashboardAd | string | `nil` | Disable the advertisement from the dashboard. |
 | api.insecure | string | `nil` | Enable the insecure API (HTTP) |
 | autoscaling.behavior | object | `{}` | behavior configures the scaling behavior of the target in both Up and Down directions (scaleUp and scaleDown fields respectively). |
 | autoscaling.enabled | bool | `false` | Create HorizontalPodAutoscaler object. See EXAMPLES.md for more details. |
@@ -493,8 +494,8 @@ Kubernetes: `>=1.25.0-0`
 | providers.kubernetesIngressNGINX.endpoint | string | `""` | Kubernetes server endpoint (required for external cluster client) |
 | providers.kubernetesIngressNGINX.globalAllowedResponseHeaders | list | `[]` | List of allowed response headers inside the custom headers annotations |
 | providers.kubernetesIngressNGINX.globalAuthUrl | string | `""` | URL to the service that provides authentication for all the locations. Per ingress auth-url annotation has precedence over this option. |
-| providers.kubernetesIngressNGINX.httpEntryPoint | string | `""` | Defines the EntryPoint to use for HTTP requests |
-| providers.kubernetesIngressNGINX.httpsEntryPoint | string | `""` | Defines the EntryPoint to use for HTTPS requests |
+| providers.kubernetesIngressNGINX.httpEntryPoint | string | `"web"` | Defines the EntryPoint to use for HTTP requests |
+| providers.kubernetesIngressNGINX.httpsEntryPoint | string | `"websecure"` | Defines the EntryPoint to use for HTTPS requests |
 | providers.kubernetesIngressNGINX.ingressClass | string | `"nginx"` | Name of the ingress class this controller satisfies |
 | providers.kubernetesIngressNGINX.ingressClassByName | bool | `false` | Define if Ingress Controller should watch for Ingress Class by Name together with Controller Class |
 | providers.kubernetesIngressNGINX.ipAllowListStrategy | object | See below | When set, the strategy is applied to every generated IPAllowList middleware. |

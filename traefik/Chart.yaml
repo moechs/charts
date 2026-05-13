@@ -1,12 +1,16 @@
 annotations:
-  artifacthub.io/changes: "- \"feat(hub): :rocket: support traefik hub v3.20.1\"\n-
-    \"chore(release): \U0001F680 publish 40.0.1\"\n"
+  artifacthub.io/changes: |
+    - "fix(ingressroute): :bug: use spec.ingressClassName with Proxy v3.7+"
+    - "feat(provider/kubernetesIngressNGINX): set default values on httpentrypoint & httpsentrypoint"
+    - "feat(deps): update traefik docker tag to v3.7.1"
+    - "feat(api): support disableDashboardAd option"
+    - "chore(release): publish 40.1.0"
   traefik.io/hub-max-version: v3.20.1
   traefik.io/hub-min-version: v3.19.3
-  traefik.io/proxy-max-version: v3.7.0
+  traefik.io/proxy-max-version: v3.7.1
   traefik.io/proxy-min-version: v3.6.0
 apiVersion: v2
-appVersion: v3.7.0
+appVersion: v3.7.1
 description: A Traefik based Kubernetes ingress controller
 home: https://traefik.io/
 icon: https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo.png
@@ -26,4 +30,4 @@ sources:
 - https://github.com/traefik/traefik-helm-chart
 - https://github.com/traefik/traefik
 type: application
-version: 40.0.1
+version: 40.1.0
