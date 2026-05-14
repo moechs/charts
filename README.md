@@ -7,16 +7,16 @@
 | argo-cd | 9.5.14 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.21 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.9 | A Helm chart for Argo Rollouts |
-| argo-workflows | 1.0.13 | A Helm chart for Argo Workflows |
+| argo-workflows | 1.0.14 | A Helm chart for Argo Workflows |
 | cert-manager | v1.20.2 | A Helm chart for cert-manager |
-| cilium | 1.19.3 | eBPF-based Networking, Security, and Observability |
+| cilium | 1.19.4 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.13 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 1.9.7 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.4.1 | External secrets management for Kubernetes |
 | gitea | 12.5.3 | Gitea Helm chart for Kubernetes |
-| gitlab | 9.11.3 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 9.11.4 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.3.1 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.0 | An open source trusted cloud native registry that stores, signs, and |
@@ -33,11 +33,11 @@
 | kubetail | 0.24.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.11.2 | Longhorn is a distributed block storage system for Kubernetes. |
-| mailu | 2.7.0 | This chart installs the Mailu mail system on Kubernetes |
+| mailu | 2.7.1 | This chart installs the Mailu mail system on Kubernetes |
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
-| nexus-repository-manager | 88.6.1 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
+| nexus-repository-manager | 88.6.2 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.56.0 | Get up and running with large language models locally. |
@@ -65,7 +65,7 @@
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.0 | Installs the Tigera operator for Calico |
-| traefik | 40.1.0 | A Traefik based Kubernetes ingress controller |
+| traefik | 40.2.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.32.0 | Official HashiCorp Vault Chart |
 | vector | 0.52.0 | A lightweight, ultra-fast tool for building observability pipelines |
