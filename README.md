@@ -17,18 +17,18 @@
 | external-secrets | 2.4.1 | External secrets management for Kubernetes |
 | gitea | 12.5.3 | Gitea Helm chart for Kubernetes |
 | gitlab | 9.11.4 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 12.3.1 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 12.3.2 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.0 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.42.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.2.1 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.18 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.9.19 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.13 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 85.0.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 85.0.3 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.24.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -56,12 +56,12 @@
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
 | prometheus-blackbox-exporter | 11.10.0 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.6.0 | A Helm chart for prometheus pushgateway |
-| prometheus-smartctl-exporter | 0.16.0 | A Helm chart for Kubernetes |
+| prometheus-smartctl-exporter | 0.16.1 | A Helm chart for Kubernetes |
 | rancher | 2.14.1 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.5 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.5 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.2.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.3.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.0 | Installs the Tigera operator for Calico |
