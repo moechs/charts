@@ -24,7 +24,7 @@
 | higress | 2.2.1 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.19 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.9.22 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.13 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
@@ -42,7 +42,7 @@
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.56.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.14 | OpenCost and OpenCost UI |
+| opencost | 2.5.19 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
