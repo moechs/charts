@@ -1,16 +1,31 @@
 {{- if .Values.apiGateway}}{{fail "[DEPRECATED and REMOVED] the apiGateway stanza is no longer supported as of Consul 1.19.0. Use connectInject.apiGateway instead."}}{{- end -}}
-{{- if .Values.connectInject.enabled }}
+{{- if and .Values.connectInject.enabled 
+      (or (default false .Values.global.crds.consulapi.enabled)
+          (default false .Values.global.openshift.crds.consulapi.enabled)
+          (and
+            (default false .Values.global.openshift.enabled)
+            (default false .Values.global.openshift.upgradeTo419From418)
+            (default false .Values.global.openshift.crds.enableTcpRoute)
+          )
+          (and 
+            (default false .Values.global.openshift.enabled)
+            (default false .Values.global.openshift.isOcpGreaterthan4_18)
+            (default false .Values.global.openshift.crds.enableTcpRoute)
+
+          )
+      )
+}}
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ template "consul.fullname" . }}-gateway-resources
+  name: {{ template "consul.fullname" . }}-gateway-resources-custom
   namespace: {{ .Release.Namespace }}
   labels:
     app: {{ template "consul.name" . }}
     chart: {{ template "consul.chart" . }}
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
-    component: gateway-resources
+    component: gateway-resources-custom
     {{- if .Values.global.extraLabels }}
       {{- toYaml .Values.global.extraLabels | nindent 4 }}
     {{- end }}
@@ -21,12 +36,12 @@ metadata:
 spec:
   template:
     metadata:
-      name: {{ template "consul.fullname" . }}-gateway-resources
+      name: {{ template "consul.fullname" . }}-gateway-resources-custom
       labels:
         app: {{ template "consul.name" . }}
         chart: {{ template "consul.chart" . }}
         release: {{ .Release.Name }}
-        component: gateway-resources
+        component: gateway-resources-custom
         {{- if .Values.global.extraLabels }}
           {{- toYaml .Values.global.extraLabels | nindent 8 }}
         {{- end }}
@@ -35,24 +50,24 @@ spec:
         "consul.hashicorp.com/mesh-inject": "false"
     spec:
       restartPolicy: Never
-      serviceAccountName: {{ template "consul.fullname" . }}-gateway-resources
+      serviceAccountName: {{ template "consul.fullname" . }}-gateway-resources-custom
       containers:
-        - name: gateway-resources
+        - name: gateway-resources-custom
           image: {{ .Values.global.imageK8S }}
           {{ template "consul.imagePullPolicy" . }}
           {{- include "consul.restrictedSecurityContext" . | nindent 10 }}
           command:
             - consul-k8s-control-plane
           args:
-            - gateway-resources
-            - -gateway-class-name=consul
-            - -gateway-class-config-name=consul-api-gateway
-            - -controller-name=consul.hashicorp.com/gateway-controller
+            - gateway-resources-custom
+            - -gateway-class-name=consul-custom-class
+            - -gateway-class-config-name=consul-api-gateway-custom
+            - -controller-name=consul.hashicorp.com/gateway-controller-consul
             - -app={{template "consul.name" .}}
             - -chart={{template "consul.chart" .}}
             - -heritage={{ .Release.Service }}
             - -release-name={{ .Release.Name }}
-            - -component=api-gateway
+            - -component=api-gateway-custom
             {{- if .Values.connectInject.apiGateway.managedGatewayClass.deployment }}
             {{- if .Values.connectInject.apiGateway.managedGatewayClass.deployment.defaultInstances }}
             - -deployment-default-instances={{ .Values.connectInject.apiGateway.managedGatewayClass.deployment.defaultInstances }}
@@ -105,5 +120,5 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: {{ template "consul.fullname" . }}-gateway-resources-config
+            name: {{ template "consul.fullname" . }}-gateway-resources-config-custom
 {{- end }}

@@ -2,14 +2,14 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ template "consul.fullname" . }}-gateway-cleanup
+  name: {{ template "consul.fullname" . }}-gateway-cleanup-custom
   namespace: {{ .Release.Namespace }}
   labels:
     app: {{ template "consul.name" . }}
     chart: {{ template "consul.chart" . }}
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
-    component: gateway-cleanup
+    component: gateway-cleanup-custom
     {{- if .Values.global.extraLabels }}
       {{- toYaml .Values.global.extraLabels | nindent 4 }}
     {{- end }}
@@ -20,12 +20,12 @@ metadata:
 spec:
   template:
     metadata:
-      name: {{ template "consul.fullname" . }}-gateway-cleanup
+      name: {{ template "consul.fullname" . }}-gateway-cleanup-custom
       labels:
         app: {{ template "consul.name" . }}
         chart: {{ template "consul.chart" . }}
         release: {{ .Release.Name }}
-        component: gateway-cleanup
+        component: gateway-cleanup-custom
         {{- if .Values.global.extraLabels }}
           {{- toYaml .Values.global.extraLabels | nindent 8 }}
         {{- end }}
@@ -34,19 +34,18 @@ spec:
         "consul.hashicorp.com/mesh-inject": "false"
     spec:
       restartPolicy: Never
-      serviceAccountName: {{ template "consul.fullname" . }}-gateway-cleanup
+      serviceAccountName: {{ template "consul.fullname" . }}-gateway-cleanup-custom
       containers:
-        - name: gateway-cleanup
+        - name: gateway-cleanup-custom
           image: {{ .Values.global.imageK8S }}
           {{ template "consul.imagePullPolicy" . }}
           {{- include "consul.restrictedSecurityContext" . | nindent 10 }}
           command:
             - consul-k8s-control-plane
           args:
-            - gateway-cleanup
-            - -gateway-class-name=consul
-            - -gateway-class-config-name=consul-api-gateway
-            - -gateway-class-config-namespace={{ .Release.Namespace }}
+            - gateway-cleanup-custom
+            - -gateway-class-name=consul-custom-class
+            - -gateway-class-config-name=consul-api-gateway-custom
           resources:
             requests:
               memory: "50Mi"
@@ -65,5 +64,5 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: {{ template "consul.fullname" . }}-gateway-resources-config
+            name: {{ template "consul.fullname" . }}-gateway-resources-config-custom
 {{- end }}

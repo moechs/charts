@@ -5,14 +5,25 @@
         .Values.connectInject.apiGateway.manageNonStandardCRDs
     )
     (or 
-        (not (default false .Values.global.openshift.enabled))
+        (and 
+            .Values.global.crds.consulapi.enabled 
+            (not (default false .Values.global.openshift.enabled))
+        )
         (and
             (default false .Values.global.openshift.enabled)
-            (not (default false .Values.global.openshift.isOcpGreaterthan4_18))
+            (default false .Values.global.openshift.crds.consulapi.enabled)
         )
-    )
-    (
-      .Values.global.installK8sNetworkingCRDs
+        (and
+            (default false .Values.global.openshift.enabled)
+            (default false .Values.global.openshift.upgradeTo419From418)
+            (default false .Values.global.openshift.crds.enableTcpRoute)
+        )
+        (and 
+            (default false .Values.global.openshift.enabled)
+            (default false .Values.global.openshift.isOcpGreaterthan4_18)
+            (default false .Values.global.openshift.crds.enableTcpRoute)
+
+        )
     )
 }}
 apiVersion: apiextensions.k8s.io/v1
@@ -20,34 +31,32 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     api-approved.kubernetes.io: https://github.com/kubernetes-sigs/gateway-api/pull/1538
-    gateway.networking.k8s.io/bundle-version: v0.6.2
-    gateway.networking.k8s.io/channel: experimental
   creationTimestamp: null
   labels:
-    # app: {{ template "consul.name" . }}
-    # chart: {{ template "consul.chart" . }}
-    # heritage: {{ .Release.Service }}
-    # release: {{ .Release.Name }}
-    name: consul-v1-refrencegrantss
+    app: {{ template "consul.name" . }}
+    chart: {{ template "consul.chart" . }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+    name: consul-custom-referencegrants
     component: crd
-  name: referencegrants.gateway.networking.k8s.io
+  name: creferencegrants.consul.hashicorp.com
 spec:
-  group: gateway.networking.k8s.io
+  group: consul.hashicorp.com
   names:
     categories:
       - gateway-api
     kind: ReferenceGrant
     listKind: ReferenceGrantList
-    plural: referencegrants
+    plural: creferencegrants
+    singular: creferencegrant
     shortNames:
-      - refgrant
-    singular: referencegrant
+      - crefgrant
   scope: Namespaced
   versions:
     - additionalPrinterColumns:
-      - jsonPath: .metadata.creationTimestamp
-        name: Age
-        type: date
+        - jsonPath: .metadata.creationTimestamp
+          name: Age
+          type: date
       name: v1alpha2
       schema:
         openAPIV3Schema:
@@ -128,9 +137,8 @@ spec:
               type: object
           type: object
       served: true
-      storage: false
+      storage: true
       subresources: {}
-  
     - additionalPrinterColumns:
         - jsonPath: .metadata.creationTimestamp
           name: Age
@@ -215,9 +223,8 @@ spec:
               type: object
           type: object
       served: true
-      storage: true
+      storage: false
       subresources: {}
-    
 status:
   acceptedNames:
     kind: ""

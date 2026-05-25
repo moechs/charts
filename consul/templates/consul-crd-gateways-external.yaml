@@ -5,14 +5,25 @@
         .Values.connectInject.apiGateway.manageNonStandardCRDs
     )
     (or 
-        (not (default false .Values.global.openshift.enabled))
+        (and 
+            .Values.global.crds.consulapi.enabled 
+            (not (default false .Values.global.openshift.enabled))
+        )
         (and
             (default false .Values.global.openshift.enabled)
-            (not (default false .Values.global.openshift.isOcpGreaterthan4_18))
+            (default false .Values.global.openshift.crds.consulapi.enabled)
         )
-    )
-    (
-      .Values.global.installK8sNetworkingCRDs
+        (and
+            (default false .Values.global.openshift.enabled)
+            (default false .Values.global.openshift.upgradeTo419From418)
+            (default false .Values.global.openshift.crds.enableTcpRoute)
+        )
+        (and 
+            (default false .Values.global.openshift.enabled)
+            (default false .Values.global.openshift.isOcpGreaterthan4_18)
+            (default false .Values.global.openshift.crds.enableTcpRoute)
+
+        )
     )
 }}
 apiVersion: apiextensions.k8s.io/v1
@@ -20,28 +31,26 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     api-approved.kubernetes.io: https://github.com/kubernetes-sigs/gateway-api/pull/1538
-    gateway.networking.k8s.io/bundle-version: v0.6.2
-    gateway.networking.k8s.io/channel: experimental
   creationTimestamp: null
   labels:
     app: {{ template "consul.name" . }}
     chart: {{ template "consul.chart" . }}
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
-    name: consul-v1-gateway
+    name: consul-custom-gateways
     component: crd
-  name: gateways.gateway.networking.k8s.io
+  name: cgateways.consul.hashicorp.com
 spec:
-  group: gateway.networking.k8s.io
+  group: consul.hashicorp.com
   names:
     categories:
       - gateway-api
     kind: Gateway
     listKind: GatewayList
-    plural: gateways
+    plural: cgateways
+    singular: cgateway
     shortNames:
-      - gtw
-    singular: gateway
+      - cgtw
   scope: Namespaced
   versions:
     - additionalPrinterColumns:
@@ -57,7 +66,9 @@ spec:
         - jsonPath: .metadata.creationTimestamp
           name: Age
           type: date
-      name: v1
+      deprecated: true
+      deprecationWarning: The v1alpha2 version of Gateway has been deprecated and will be removed in a future release of the API. Please upgrade to v1beta1.
+      name: v1alpha2
       schema:
         openAPIV3Schema:
           description: Gateway represents an instance of a service-traffic handling infrastructure by binding Listeners to a set of IP addresses.
@@ -117,7 +128,7 @@ spec:
                               description: RouteGroupKind indicates the group and kind of a Route resource.
                               properties:
                                 group:
-                                  default: gateway.networking.k8s.io
+                                  default: consul.hashicorp.com
                                   description: Group is the group of the Route.
                                   maxLength: 253
                                   pattern: ^$|^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$
@@ -431,7 +442,7 @@ spec:
                           description: RouteGroupKind indicates the group and kind of a Route resource.
                           properties:
                             group:
-                              default: gateway.networking.k8s.io
+                              default: consul.hashicorp.com
                               description: Group is the group of the Route.
                               maxLength: 253
                               pattern: ^$|^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$
@@ -539,7 +550,7 @@ spec:
                               description: RouteGroupKind indicates the group and kind of a Route resource.
                               properties:
                                 group:
-                                  default: gateway.networking.k8s.io
+                                  default: consul.hashicorp.com
                                   description: Group is the group of the Route.
                                   maxLength: 253
                                   pattern: ^$|^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$
@@ -853,7 +864,7 @@ spec:
                           description: RouteGroupKind indicates the group and kind of a Route resource.
                           properties:
                             group:
-                              default: gateway.networking.k8s.io
+                              default: consul.hashicorp.com
                               description: Group is the group of the Route.
                               maxLength: 253
                               pattern: ^$|^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$
