@@ -42,7 +42,7 @@
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.57.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.20 | OpenCost and OpenCost UI |
+| opencost | 2.5.21 | OpenCost and OpenCost UI |
 | openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
@@ -61,7 +61,7 @@
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.19.5 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.19.5 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.4.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.5.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.0 | Installs the Tigera operator for Calico |
