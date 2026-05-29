@@ -72,6 +72,9 @@ spec:
           {{- with $app.containerWorkingDir }}
           workingDir: {{ . }}
           {{- end }}
+          {{- with $app.command }}
+          command: {{ toYaml . | nindent 12 }}
+          {{- end }}
           args: {{ include "vlogs.args" $ctx | nindent 12 }}
           {{- with $app.envFrom }}
           envFrom: {{ tpl (toYaml .) $ctx | nindent 12 }}
@@ -80,8 +83,23 @@ spec:
           env: {{ tpl (toYaml .) $ctx | nindent 12 }}
           {{- end }}
           ports:
-            - name: http
-              containerPort: {{ include "vm.port.from.flag" (dict "flag" $app.extraArgs.httpListenAddr "default" "9428") }}
+            {{- $extraArgs := $app.extraArgs | default dict }}
+            {{- $httpAddr := $extraArgs.httpListenAddr -}}
+            {{- range ternary $app.http (list (dict "name" "http" "value" $httpAddr)) (empty $httpAddr) }}
+            - name: {{ .name }}
+              containerPort: {{ include "vm.port.from.flag" (dict "flag" .value "default" "9428") }}
+            {{- end }}
+            {{- $syslogTCPAddr := index $extraArgs "syslog.listenAddr.tcp" -}}
+            {{- range ternary $app.syslog.tcp (list (dict "name" "syslog-tcp" "value" $syslogTCPAddr)) (empty $syslogTCPAddr) }}
+            - name: {{ .name }}
+              containerPort: {{ include "vm.port.from.flag" (dict "flag" .value "default" "514") }}
+            {{- end }}
+            {{- $syslogUDPAddr := index $extraArgs "syslog.listenAddr.udp" -}}
+            {{- range ternary $app.syslog.udp (list (dict "name" "syslog-udp" "value" $syslogUDPAddr)) (empty $syslogUDPAddr) }}
+            - name: {{ .name }}
+              containerPort: {{ include "vm.port.from.flag" (dict "flag" .value "default" "514") }}
+              protocol: UDP
+            {{- end }}
           {{- with (fromYaml (include "vm.probe" (dict "app" $app "type" "readiness"))) }}
           readinessProbe: {{ toYaml . | nindent 12 }}
           {{- end }}

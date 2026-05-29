@@ -54,13 +54,32 @@ spec:
   ipFamilies: {{ toYaml . | nindent 4 }}
   {{- end }}
   ports:
-    - name: http
-      port: {{ $service.servicePort }}
+    {{- $extraArgs := $app.extraArgs | default dict }}
+    {{- $httpAddr := $extraArgs.httpListenAddr -}}
+    {{- range ternary $app.http (list (dict "name" "http" "value" $httpAddr "primary" true)) (empty $httpAddr) }}
+    - name: {{ .name }}
+      {{- $port := include "vm.port.from.flag" (dict "flag" .value "default" "9428") }}
+      port: {{ ternary ($service.servicePort | default $port) $port (and .primary (not (empty $service.servicePort))) }}
       protocol: TCP
-      targetPort: {{ $service.targetPort }}
-      {{- with $service.nodePort }}
-      nodePort: {{ . }}
+      targetPort: {{ .name }}
+      {{- if and .primary $service.nodePort }}
+      nodePort: {{ $service.nodePort }}
       {{- end }}
+    {{- end }}
+    {{- $syslogTCPAddr := index $extraArgs "syslog.listenAddr.tcp" -}}
+    {{- range ternary $app.syslog.tcp (list (dict "name" "syslog-tcp" "value" $syslogTCPAddr)) (empty $syslogTCPAddr) }}
+    - name: {{ .name }}
+      port: {{ include "vm.port.from.flag" (dict "flag" .value) }}
+      protocol: TCP
+      targetPort: {{ .name }}
+    {{- end }}
+    {{- $syslogUDPAddr := index $extraArgs "syslog.listenAddr.udp" -}}
+    {{- range ternary $app.syslog.udp (list (dict "name" "syslog-udp" "value" $syslogUDPAddr)) (empty $syslogUDPAddr) }}
+    - name: {{ .name }}
+      port: {{ include "vm.port.from.flag" (dict "flag" .value) }}
+      protocol: UDP
+      targetPort: {{ .name }}
+    {{- end }}
     {{- range $service.extraPorts }}
     - name: {{ .name }}
       port: {{ .port }}
