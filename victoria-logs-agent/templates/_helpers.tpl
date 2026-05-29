@@ -1,3 +1,28 @@
+{{- define "vl.syslog.args" -}}
+  {{- $args := dict }}
+  {{- range $kind, $sls := . }}
+    {{- range $i, $sl := $sls -}}
+      {{- if not $sl.value -}}
+        {{- fail (printf "`value` is not set for `syslog.%s` idx %d" $kind $i) -}}
+      {{- end -}}
+      {{- range $slKey, $slValue := (omit $sl "name") -}}
+        {{- $key := ternary "listenAddr" $slKey (eq $slKey "value") -}}
+        {{- $key = ternary (printf "syslog.%s" $key) (printf "syslog.%s.%s" $key $kind) (hasPrefix "tls" $key) -}}
+        {{- $param := index $args $key | default list -}}
+        {{- if $slValue -}}
+          {{- range until (int (sub $i (len $param))) }}
+            {{- $param = append $param "" }}
+          {{- end }}
+          {{- $param = append $param $slValue }}
+          {{- $_ := set $args $key $param -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- toYaml $args -}}
+{{- end -}}
+
+
 {{- define "vlagent.args" -}}
   {{- $Values := (.helm).Values | default .Values }}
   {{- if empty $Values.remoteWrite }}
@@ -53,6 +78,13 @@
       {{- $_ := set $args $key $param }}
     {{- end }}
   {{- end }}
-  {{- $args = mergeOverwrite $args $Values.extraArgs -}}
+  {{- $extraArgs := $Values.extraArgs | default dict }}
+  {{- $args = mergeOverwrite $args $extraArgs -}}
+  {{- if not (hasKey $extraArgs "httpListenAddr") -}}
+    {{- $args = mergeOverwrite $args (fromYaml (include "vm.http.args" $Values.http)) -}}
+  {{- end -}}
+  {{- if not (or (hasKey $extraArgs "syslog.listenAddr.tcp") (hasKey $extraArgs "syslog.listenAddr.udp")) -}}
+    {{- $args = mergeOverwrite $args (fromYaml (include "vl.syslog.args" $Values.syslog)) -}}
+  {{- end -}}
   {{- toYaml (fromYaml (include "vm.args" $args)).args -}}
 {{- end }}

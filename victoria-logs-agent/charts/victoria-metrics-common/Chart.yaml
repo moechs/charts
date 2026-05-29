@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - reverted usage of `app` label in `vm.selectorLabels`
+    - support vl.check.extraArgs template, that validates extra args for VictoriaLogs components.
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -30,4 +30,4 @@ name: victoria-metrics-common
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: library
-version: 0.3.0
+version: 0.3.2
