@@ -55,6 +55,9 @@ spec:
           {{- if $app.securityContext.enabled }}
           securityContext: {{ include "vm.securityContext" (dict "securityContext" $app.securityContext "helm" .) | nindent 12 }}
           {{- end }}
+          {{- with $app.command }}
+          command: {{ toYaml . | nindent 12 }}
+          {{- end }}
           args: {{ include "vlselect.args" $ctx | nindent 12 }}
           {{- with $app.envFrom }}
           envFrom: {{ tpl (toYaml .) $ctx | nindent 12 }}
@@ -63,8 +66,11 @@ spec:
           env: {{ tpl (toYaml .) $ctx | nindent 12 }}
           {{- end }}
           ports:
-            - name: {{ $app.ports.name  | default "http" }}
-              containerPort: {{ include "vm.port.from.flag" (dict "flag" $app.extraArgs.httpListenAddr "default" "9481") }}
+            {{- $httpAddr := ($app.extraArgs | default dict).httpListenAddr -}}
+            {{- range ternary $app.http (list (dict "name" "http" "value" $httpAddr)) (empty $httpAddr) }}
+            - name: {{ .name }}
+              containerPort: {{ include "vm.port.from.flag" (dict "flag" .value "default" "9471") }}
+            {{- end }}
           {{- with (fromYaml (include "vm.probe" (dict "app" $app "type" "readiness"))) }}
           readinessProbe: {{ toYaml . | nindent 12 }}
           {{- end }}

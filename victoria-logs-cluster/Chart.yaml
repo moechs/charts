@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - render Vector dashboard only if subchart is enabled. See [#2896](https://github.com/VictoriaMetrics/helm-charts/issues/2896).
+    - fix invalid YAML rendered by `templates/route.yaml` when `vlinsert.route.enabled=true` or `vlselect.route.enabled=true`. See [#2939](https://github.com/VictoriaMetrics/helm-charts/issues/2939).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -42,4 +42,4 @@ name: victoria-logs-cluster
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.1.5
+version: 0.2.1
