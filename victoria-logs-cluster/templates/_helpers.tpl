@@ -1,28 +1,3 @@
-{{- define "vl.syslog.args" -}}
-  {{- $args := dict }}
-  {{- range $kind, $sls := . }}
-    {{- range $i, $sl := $sls -}}
-      {{- if not $sl.value -}}
-        {{- fail (printf "`value` is not set for `syslog.%s` idx %d" $kind $i) -}}
-      {{- end -}}
-      {{- range $slKey, $slValue := (omit $sl "name") -}}
-        {{- $key := ternary "listenAddr" $slKey (eq $slKey "value") -}}
-        {{- $key = ternary (printf "syslog.%s" $key) (printf "syslog.%s.%s" $key $kind) (hasPrefix "tls" $key) -}}
-        {{- $param := index $args $key | default list -}}
-        {{- if $slValue -}}
-          {{- range until (int (sub $i (len $param))) }}
-            {{- $param = append $param "" }}
-          {{- end }}
-          {{- $param = append $param $slValue }}
-          {{- $_ := set $args $key $param -}}
-        {{- end -}}
-      {{- end -}}
-    {{- end -}}
-  {{- end -}}
-  {{- toYaml $args -}}
-{{- end -}}
-
-
 {{- define "vlinsert.args" -}}
   {{- $Values := (.helm).Values | default .Values -}}
   {{- $app := $Values.vlinsert -}}
@@ -149,7 +124,7 @@
 {{- range $ports }}
 - name: {{ .name }}
   {{- $port := include "vm.port.from.flag" (dict "flag" .value "default" "9471") }}
-  port: {{ ternary ($service.servicePort | default $port) $port (and .primary (not (empty $service.servicePort))) }}
+  port: {{ ternary ($service.servicePort | default $port) $port (and (.primary | default false) (not (empty $service.servicePort))) }}
   protocol: TCP
   targetPort: {{ .name }}
 {{- end }}
@@ -169,7 +144,7 @@
 {{- range $ports }}
 - name: {{ .name }}
   {{- $port := include "vm.port.from.flag" (dict "flag" .value "default" "9481") }}
-  port: {{ ternary ($service.servicePort | default $port) $port (and .primary (not (empty $service.servicePort))) }}
+  port: {{ ternary ($service.servicePort | default $port) $port (and (.primary | default false) (not (empty $service.servicePort))) }}
   protocol: TCP
   targetPort: {{ .name }}
 {{- end }}
@@ -205,7 +180,7 @@
 {{- range $ports }}
 - name: {{ .name }}
   {{- $port := include "vm.port.from.flag" (dict "flag" .value "default" "9491") }}
-  port: {{ ternary ($service.servicePort | default $port) $port (and .primary (not (empty $service.servicePort))) }}
+  port: {{ ternary ($service.servicePort | default $port) $port (and (.primary | default false) (not (empty $service.servicePort))) }}
   protocol: TCP
   targetPort: {{ .name }}
 {{- end }}
@@ -225,7 +200,7 @@
 {{- range $ports }}
 - name: {{ .name }}
   {{- $port := include "vm.port.from.flag" (dict "flag" .value "default" "8427") }}
-  port: {{ ternary ($service.servicePort | default $port) $port (and .primary (not (empty $service.servicePort))) }}
+  port: {{ ternary ($service.servicePort | default $port) $port (and (.primary | default false) (not (empty $service.servicePort))) }}
   protocol: TCP
   targetPort: {{ .name }}
 {{- end }}
