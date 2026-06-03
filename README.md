@@ -32,7 +32,7 @@
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.25.1 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
-| longhorn | 1.11.2 | Longhorn is a distributed block storage system for Kubernetes. |
+| longhorn | 1.12.0 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.7.1 | This chart installs the Mailu mail system on Kubernetes |
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
@@ -59,8 +59,8 @@
 | prometheus-smartctl-exporter | 0.16.1 | A Helm chart for Kubernetes |
 | rancher | 2.14.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.19.6 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | v1.19.6 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph-cluster | v1.20.0 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph | v1.20.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 0.6.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
