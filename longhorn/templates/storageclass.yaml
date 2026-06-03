@@ -1,3 +1,4 @@
+{{- if .Values.persistence.createStorageClass }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -12,6 +13,9 @@ data:
       name: longhorn
       annotations:
         storageclass.kubernetes.io/is-default-class: {{ .Values.persistence.defaultClass | quote }}
+        {{- range $key, $value := .Values.persistence.annotations }}
+        {{ $key }}: {{ $value | quote }}
+        {{- end }}
     provisioner: driver.longhorn.io
     allowVolumeExpansion: true
     reclaimPolicy: "{{ .Values.persistence.reclaimPolicy }}"
@@ -48,6 +52,12 @@ data:
       {{- if .Values.persistence.defaultNodeSelector.enable }}
       nodeSelector: "{{ .Values.persistence.defaultNodeSelector.selector }}"
       {{- end }}
+      {{- if .Values.persistence.shareManagerNodeSelector.enable }}
+      shareManagerNodeSelector: "{{ .Values.persistence.shareManagerNodeSelector.selector }}"
+      {{- end }}
+      {{- if .Values.persistence.shareManagerTolerations.enable }}
+      shareManagerTolerations: "{{ .Values.persistence.shareManagerTolerations.tolerations }}"
+      {{- end }}
       {{- if .Values.persistence.unmapMarkSnapChainRemoved }}
       unmapMarkSnapChainRemoved: "{{ .Values.persistence.unmapMarkSnapChainRemoved }}"
       {{- end }}
@@ -58,3 +68,4 @@ data:
       {{- if .Values.persistence.backupTargetName }}
       backupTargetName: "{{ .Values.persistence.backupTargetName }}"
       {{- end }}
+{{- end }}
