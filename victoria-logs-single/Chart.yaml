@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - bump common chart version 0.3.7 -> 0.3.8
+    - '`serviceMonitor` and `vmServiceScrape` port now defaults to the primary `http` list item name; added explicit `port` field to override it without using `targetPort`.'
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -42,4 +42,4 @@ name: victoria-logs-single
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.13.5
+version: 0.13.6
