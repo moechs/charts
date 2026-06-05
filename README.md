@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.14.1 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 9.5.17 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 9.5.19 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.21 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.40.10 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.14 | A Helm chart for Argo Workflows |
@@ -37,7 +37,7 @@
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
-| nexus-repository-manager | 88.6.3 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
+| nexus-repository-manager | 88.7.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.58.0 | Get up and running with large language models locally. |
@@ -54,14 +54,14 @@
 | photoprism | 1.4.3 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
-| prometheus-blackbox-exporter | 11.10.0 | Prometheus Blackbox Exporter |
+| prometheus-blackbox-exporter | 11.11.0 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.6.1 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.16.1 | A Helm chart for Kubernetes |
 | rancher | 2.14.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.20.0 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.20.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.6.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.7.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.0 | Installs the Tigera operator for Calico |
