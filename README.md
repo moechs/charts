@@ -6,7 +6,7 @@
 | apisix | 2.14.1 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 9.5.19 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.21 | A Helm chart for Argo Events, the event-driven workflow automation framework |
-| argo-rollouts | 2.40.10 | A Helm chart for Argo Rollouts |
+| argo-rollouts | 2.41.0 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.14 | A Helm chart for Argo Workflows |
 | cert-manager | v1.20.2 | A Helm chart for cert-manager |
 | cilium | 1.19.4 | eBPF-based Networking, Security, and Observability |
@@ -28,7 +28,7 @@
 | jira | 2.0.13 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 86.1.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 86.2.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.25.1 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -40,10 +40,10 @@
 | nexus-repository-manager | 88.7.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
-| ollama | 1.58.0 | Get up and running with large language models locally. |
+| ollama | 1.59.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.22 | OpenCost and OpenCost UI |
-| openebs | 4.4.0 | Containerized Attached Storage for Kubernetes |
+| openebs | 4.5.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.4.4 | An opinionated installation of OTEL Collector for OpenObserve |
