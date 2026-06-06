@@ -1,6 +1,6 @@
 # openebs-crds
 
-![Version: 4.4.0](https://img.shields.io/badge/Version-4.4.0-informational?style=flat-square)
+![Version: 4.5.0-develop](https://img.shields.io/badge/Version-4.5.0--develop-informational?style=flat-square)
 
 A Helm chart that collects CustomResourceDefinitions (CRDs) from OpenEBS.
 

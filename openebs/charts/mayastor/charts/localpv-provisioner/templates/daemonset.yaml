@@ -1,10 +1,9 @@
 {{- if .Values.localpv.enabled }}
-{{- if not .Values.localpv.nodeDeployment.enabled }}
+{{- if .Values.localpv.nodeDeployment.enabled }}
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
-  name: {{ template "localpv.fullname" . }}
-  namespace: {{ .Release.Namespace }}
+  name: {{ template "localpv.fullname" . }}-node
   {{- with .Values.localpv.annotations }}
   annotations: {{ toYaml . | nindent 4 }}
   {{- end }}
@@ -14,10 +13,6 @@ metadata:
       {{- toYaml .Values.extraLabels | nindent 4 }}
     {{- end }}
 spec:
-  replicas: {{ .Values.localpv.replicas }}
-  strategy:
-    type: "Recreate"
-    rollingUpdate: null
   selector:
     matchLabels:
       {{- include "localpv.selectorLabels" . | nindent 6 }}
@@ -52,6 +47,10 @@ spec:
       - name: {{ template "localpv.fullname" . }}
         image: {{ include "localpv.common.image" (dict "imageRoot" .Values.localpv.image "global" .Values.global "override" .Values.globalImageRegistryOverride) }}
         imagePullPolicy: {{ default .Values.localpv.image.pullPolicy .Values.global.imagePullPolicy }}
+        {{- if .Values.localpv.privileged }}
+        securityContext:
+          privileged: true
+        {{- end }}
         resources:
 {{ toYaml .Values.localpv.resources | indent 10 }}
         env:
@@ -73,6 +72,14 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: spec.nodeName
+        # POD_NAME is consumed by the analytics leader-election code in
+        # node-deployment mode so that each DaemonSet pod has a stable,
+        # unique lease identity. Required for correct singleton behavior
+        # of install/ping/heartbeat events.
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
         # OPENEBS_SERVICE_ACCOUNT provides the service account of this pod as
         # environment variable
         - name: OPENEBS_SERVICE_ACCOUNT
@@ -92,11 +99,16 @@ spec:
           # decide whether to emit the install event for this Helm release
           # and to persist ping/heartbeat timestamps across pod restarts.
           # The provisioner creates and updates this ConfigMap itself; it
-          # is not managed by Helm. helm uninstall does not remove it, so
-          # reinstalls into the same namespace will not re-fire the install
-          # event unless the ConfigMap is deleted manually.
+          # is not managed by Helm.
         - name: OPENEBS_IO_ANALYTICS_STATE_CM
           value: {{ include "localpv.analyticsStateCM.name" . | quote }}
+          # OPENEBS_IO_ANALYTICS_LEASE names the Lease used to elect a single
+          # analytics emitter across all DaemonSet pods. Release-scoped so
+          # multiple releases in the same namespace do not collide. The
+          # provisioner creates the Lease on-demand via client-go's
+          # leader-election; it is not managed by Helm.
+        - name: OPENEBS_IO_ANALYTICS_LEASE
+          value: {{ include "localpv.analyticsLease.name" . | quote }}
         {{- if .Values.analytics.gaId }}
         - name: GA_ID
           value: {{ .Values.analytics.gaId | quote }}
@@ -114,14 +126,19 @@ spec:
         - name: OPENEBS_IO_HELPER_POD_HOST_NETWORK
           value: "{{ .Values.helperPod.hostNetwork }}"
         - name: OPENEBS_IO_INSTALLER_TYPE
-          value: "localpv-charts-helm-helperpod"
+          value: "localpv-charts-helm-nodedeploy"
         - name: OPENEBS_IO_HELPER_POD_TIMEOUT_SECS
           value: {{ .Values.helperPod.timeoutSecs | quote }}
-        # LEADER_ELECTION_ENABLED is used to enable/disable leader election. By default
-        # leader election is enabled.
+        # Disable leader election in node deployment mode.
+        # Not related to anonymous usage analytics leader election.
         - name: LEADER_ELECTION_ENABLED
-          value: "{{ .Values.localpv.enableLeaderElection }}"
+          value: "false"
+        # Enable node deployment mode
+        - name: NODE_DEPLOYMENT
+          value: "true"
 {{- include "localpv.helper.pullSecrets" . | indent 8 }}
+        args:
+        - "--node-deployment=true"
         # Process name used for matching is limited to the 15 characters
         # present in the pgrep output.
         # So fullname can't be used here with pgrep (>15 chars).A regular expression
@@ -136,6 +153,21 @@ spec:
             - test `pgrep -c "^provisioner-loc.*"` = 1
           initialDelaySeconds: {{ .Values.localpv.healthCheck.initialDelaySeconds }}
           periodSeconds: {{ .Values.localpv.healthCheck.periodSeconds }}
+        volumeMounts:
+        - name: host-root
+          mountPath: /host
+          mountPropagation: HostToContainer
+{{- if .Values.localpv.nodeDeployment.additionalVolumeMounts }}
+{{ toYaml .Values.localpv.nodeDeployment.additionalVolumeMounts | indent 8 }}
+{{- end }}
+      volumes:
+      - name: host-root
+        hostPath:
+          path: /
+          type: Directory
+{{- if .Values.localpv.nodeDeployment.additionalVolumes }}
+{{ toYaml .Values.localpv.nodeDeployment.additionalVolumes | indent 6 }}
+{{- end }}
 {{- if .Values.localpv.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.localpv.nodeSelector | indent 8 }}
