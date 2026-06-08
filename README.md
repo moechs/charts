@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.14.1 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 9.5.19 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 9.5.20 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.21 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.0 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.14 | A Helm chart for Argo Workflows |
@@ -14,7 +14,7 @@
 | consul | 2.0.0 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
-| external-secrets | 2.5.0 | External secrets management for Kubernetes |
+| external-secrets | 2.6.0 | External secrets management for Kubernetes |
 | gitea | 12.6.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.0.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.4.2 | The leading tool for querying and visualizing time series and metrics. |
@@ -40,7 +40,7 @@
 | nexus-repository-manager | 88.7.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
-| ollama | 1.59.0 | Get up and running with large language models locally. |
+| ollama | 1.60.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.22 | OpenCost and OpenCost UI |
 | openebs | 4.5.0 | Containerized Attached Storage for Kubernetes |
