@@ -67,7 +67,7 @@
 | tigera-operator | v3.32.0 | Installs the Tigera operator for Calico |
 | traefik | 40.2.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
-| vault | 0.32.0 | Official HashiCorp Vault Chart |
+| vault | 0.33.0 | Official HashiCorp Vault Chart |
 | vector | 0.56.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.2.5 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.2.5 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
