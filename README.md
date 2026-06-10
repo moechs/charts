@@ -17,7 +17,7 @@
 | external-secrets | 2.6.0 | External secrets management for Kubernetes |
 | gitea | 12.6.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.0.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 12.4.2 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 12.4.4 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.1 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.42.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -28,7 +28,7 @@
 | jira | 2.0.13 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 86.2.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 86.2.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.4 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.25.1 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -65,7 +65,7 @@
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.0 | Installs the Tigera operator for Calico |
-| traefik | 40.2.0 | A Traefik based Kubernetes ingress controller |
+| traefik | 40.3.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.33.0 | Official HashiCorp Vault Chart |
 | vector | 0.56.0 | A lightweight, ultra-fast tool for building observability pipelines |
