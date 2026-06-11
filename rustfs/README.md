@@ -25,7 +25,7 @@ RustFS helm chart supports **standalone and distributed mode**. For standalone m
 | config.rustfs.domains | string | `""` | Enable virtual host mode. |
 | config.rustfs.log_level | string | `"info"` |  |
 | config.rustfs.obs_environment | string | `"development"` |  |
-| config.rustfs.obs_log_directory | string | `"/logs"` |  |
+| config.rustfs.obs_log_directory | string | `"/logs"` | Log directory inside the RustFS container. Set to `""` to disable log PVCs and mounts. |
 | config.rustfs.region | string | `"us-east-1"` |  |
 | config.rustfs.volumes | string | `""` |  |
 | config.rustfs.log_rotation.size | int | `"100"` | Default log rotation size mb for rustfs. |
@@ -61,6 +61,7 @@ RustFS helm chart supports **standalone and distributed mode**. For standalone m
 | containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | containerSecurityContext.readOnlyRootFilesystem | bool | `true` |  |
 | containerSecurityContext.runAsNonRoot | bool | `true` |  |
+| priorityClassName | string | `""` |  |
 | enableServiceLinks | bool | `false` |  |
 | extraManifests | list | `[]` | List of additional k8s manifests. |
 | fullnameOverride | string | `""` |  |
