@@ -10,13 +10,13 @@
 | argo-workflows | 1.0.14 | A Helm chart for Argo Workflows |
 | cert-manager | v1.20.2 | A Helm chart for cert-manager |
 | cilium | 1.19.4 | eBPF-based Networking, Security, and Observability |
-| confluence | 2.0.13 | A chart for installing Confluence Data Center on Kubernetes |
+| confluence | 2.0.14 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 2.0.0 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.6.0 | External secrets management for Kubernetes |
 | gitea | 12.6.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.0.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 10.0.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.4.4 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.1 | An open source trusted cloud native registry that stores, signs, and |
@@ -24,8 +24,8 @@
 | higress | 2.2.2 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.22 | 'Jenkins - Build great things at any scale! As the leading open source |
-| jira | 2.0.13 | A chart for installing Jira Data Center on Kubernetes |
+| jenkins | 5.9.25 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jira | 2.0.14 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
 | kube-prometheus-stack | 86.2.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
@@ -42,7 +42,7 @@
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.60.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.22 | OpenCost and OpenCost UI |
+| opencost | 2.5.23 | OpenCost and OpenCost UI |
 | openebs | 4.5.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
@@ -61,7 +61,7 @@
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.20.0 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.20.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.7.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.8.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.0 | Installs the Tigera operator for Calico |
