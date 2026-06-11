@@ -1,6 +1,6 @@
 # confluence
 
-![Version: 2.0.13](https://img.shields.io/badge/Version-2.0.13-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 10.2.10](https://img.shields.io/badge/AppVersion-10.2.10-informational?style=flat-square)
+![Version: 2.0.14](https://img.shields.io/badge/Version-2.0.14-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 10.2.13](https://img.shields.io/badge/AppVersion-10.2.13-informational?style=flat-square)
 
 A chart for installing Confluence Data Center on Kubernetes
 
@@ -243,6 +243,7 @@ Kubernetes: `>=1.21.x-0`
 | synchrony.readinessProbe.healthcheckPath | string | `"/synchrony/heartbeat"` | The healthcheck path to check against for the Synchrony container useful when configuring behind a reverse-proxy or loadbalancer https://confluence.atlassian.com/confkb/cannot-enable-collaborative-editing-on-synchrony-cluster-962962742.html  |
 | synchrony.readinessProbe.initialDelaySeconds | int | `5` | The initial delay (in seconds) for the Synchrony container readiness probe, after which the probe will start running.  |
 | synchrony.readinessProbe.periodSeconds | int | `1` | How often (in seconds) the Synchrony container readiness probe will run  |
+| synchrony.readinessProbe.timeoutSeconds | int | `1` | Number of seconds after which the Synchrony container readiness probe times out  |
 | synchrony.replicaCount | int | `1` | Number of Synchrony pods  |
 | synchrony.resources.container.requests.cpu | string | `"2"` | Initial CPU request by Synchrony pod. Because the container CPU request value is used in -XX:ActiveProcessorCount argument to Synchrony JVM  only integers are allowed, e.g. 1, 2, 3 etc. If you want to have a small CPU claim, set it to 30m, 50m, etc. Any container cpu request value containing `m` character will be converted to -XX:ActiveProcessorCount=1  See: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#meaning-of-cpu  |
 | synchrony.resources.container.requests.memory | string | `"2.5G"` | Initial Memory request Synchrony pod  |
