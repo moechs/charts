@@ -11,6 +11,9 @@ metadata:
     {{- toYaml .Values.starrocksCluster.annotations | nindent 4 }}
   {{- end }}
 spec:
+  {{- if .Values.starrocksCluster.waitForFullRollout }}
+  waitForFullRollout: {{ .Values.starrocksCluster.waitForFullRollout }}
+  {{- end }}
   {{- if .Values.starrocksCluster.disasterRecovery }}
   disasterRecovery:
     {{- toYaml .Values.starrocksCluster.disasterRecovery | nindent 4 }}
@@ -77,11 +80,7 @@ spec:
     annotations:
       app.starrocks.io/fe-config-hash: "{{template "starrockscluster.fe.config.hash" . }}"
       {{- if .Values.datadog.log.enabled }}
-      {{- if eq (trimAll " {}" .Values.datadog.log.logConfig) "" }}
-      ad.datadoghq.com/fe.logs: '[{"service":"starrocks","source":"fe"}]'
-      {{- else }}
-      ad.datadoghq.com/fe.logs: {{ printf "[%s]" (printf "{%s, \"source\": \"fe\", \"service\": \"starrocks\"}" (trimAll " {}" .Values.datadog.log.logConfig) | fromJson | toJson) | squote }}
-      {{- end }}
+      ad.datadoghq.com/fe.logs: {{ include "starrockscluster.datadog.log.annotation" (dict "root" . "component" "fe" "multilinePattern" "\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d+" "multilineName" "log_start_with_timestamp") }}
       {{- end }}
       {{- if .Values.starrocksFESpec.entrypoint }}
       app.starrocks.io/fe-entrypoint-hash: "{{ template "starrockscluster.fe.entrypoint.script.hash" . }}"
@@ -347,11 +346,7 @@ spec:
     annotations:
       app.starrocks.io/be-config-hash: "{{template "starrockscluster.be.config.hash" . }}"
       {{- if .Values.datadog.log.enabled }}
-      {{- if eq (trimAll " {}" .Values.datadog.log.logConfig) "" }}
-      ad.datadoghq.com/be.logs: '[{"service":"starrocks","source":"be"}]'
-      {{- else }}
-      ad.datadoghq.com/be.logs: {{ printf "[%s]" (printf "{%s, \"source\": \"be\", \"service\": \"starrocks\"}" (trimAll " {}" .Values.datadog.log.logConfig) | fromJson | toJson) | squote }}
-      {{- end }}
+      ad.datadoghq.com/be.logs: {{ include "starrockscluster.datadog.log.annotation" (dict "root" . "component" "be" "multilinePattern" "[IWEF]\\d{8}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d+" "multilineName" "log_start_with_timestamp") }}
       {{- end }}
       {{- if .Values.starrocksBeSpec.annotations }}
       {{- toYaml .Values.starrocksBeSpec.annotations | nindent 6 }}
@@ -792,11 +787,7 @@ spec:
     annotations:
       app.starrocks.io/cn-config-hash: "{{template "starrockscluster.cn.config.hash" . }}"
       {{- if .Values.datadog.log.enabled }}
-      {{- if eq (trimAll " {}" .Values.datadog.log.logConfig) "" }}
-      ad.datadoghq.com/cn.logs: '[{"service":"starrocks","source":"cn"}]'
-      {{- else }}
-      ad.datadoghq.com/cn.logs: {{ printf "[%s]" (printf "{%s, \"source\": \"cn\", \"service\": \"starrocks\"}" (trimAll " {}" .Values.datadog.log.logConfig) | fromJson | toJson) | squote }}
-      {{- end }}
+      ad.datadoghq.com/cn.logs: {{ include "starrockscluster.datadog.log.annotation" (dict "root" . "component" "cn" "multilinePattern" "[IWEF]\\d{8}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d+" "multilineName" "log_start_with_timestamp") }}
       {{- end }}
       {{- if .Values.starrocksCnSpec.annotations }}
       {{- toYaml .Values.starrocksCnSpec.annotations | nindent 6 }}
@@ -905,7 +896,7 @@ spec:
     {{- end }}
     replicas: {{ .Values.starrocksFeProxySpec.replicas }}
     imagePullPolicy: {{ .Values.starrocksFeProxySpec.imagePullPolicy }}
-    resolver: {{ .Values.starrocksFeProxySpec.resolver }}
+    resolver: "{{ .Values.starrocksFeProxySpec.resolver }}"
     {{- if .Values.starrocksFeProxySpec.resources }}
       {{- toYaml .Values.starrocksFeProxySpec.resources | nindent 4 }}
     {{- end }}
