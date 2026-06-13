@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - bump common chart version 0.3.7 -> 0.3.8
+    - bump common chart version 0.3.8 -> 0.3.9
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -11,7 +11,7 @@ annotations:
     - name: Docs
       url: https://docs.victoriametrics.com/victorialogs/cluster/
     - name: Changelog
-      url: https://docs.victoriametrics.com/victorialogs/changelog/
+      url: https://docs.victoriametrics.com/helm/victoria-logs-cluster/changelog/
   artifacthub.io/readme: |
     # VictoriaLogs Cluster Helm chart
 
@@ -23,7 +23,7 @@ dependencies:
 - condition: vector.enabled
   name: vector
   repository: https://helm.vector.dev
-  version: 0.52.*
+  version: 0.56.*
 - name: victoria-metrics-common
   repository: oci://ghcr.io/victoriametrics/helm-charts
   version: 0.3.*
@@ -42,4 +42,4 @@ name: victoria-logs-cluster
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.2.5
+version: 0.2.6
