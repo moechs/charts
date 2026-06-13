@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - '`serviceMonitor` port now defaults to the primary `http` list item name; added explicit `port` field to override it without using `targetPort`.'
+    - bump common chart version 0.3.8 -> 0.3.9
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -9,7 +9,7 @@ annotations:
     - name: Charts repo
       url: https://victoriametrics.github.io/helm-charts/
     - name: Changelog
-      url: https://docs.victoriametrics.com/changelog/
+      url: https://docs.victoriametrics.com/helm/victoria-logs-agent/changelog/
   artifacthub.io/readme: |
     # VictoriaLogs Agent Helm chart
 
@@ -37,4 +37,4 @@ name: victoria-logs-agent
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.2.5
+version: 0.2.6
