@@ -17,7 +17,7 @@
 | external-secrets | 2.6.0 | External secrets management for Kubernetes |
 | gitea | 12.6.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.0.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 12.4.4 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 12.4.5 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.1 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.42.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -28,7 +28,7 @@
 | jira | 2.0.14 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 86.2.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 86.2.3 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.5 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.25.1 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -71,7 +71,7 @@
 | vector | 0.56.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.2.6 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.2.6 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
-| victoria-logs-collector | 0.3.4 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
+| victoria-logs-collector | 0.3.5 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
 | victoria-logs-single | 0.13.7 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
 | zentao | 2026.5.2701 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
 | zookeeper | 13.8.8 | Apache ZooKeeper provides a reliable, centralized register of configuration |
