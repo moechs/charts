@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - fix VMPodMonitor relabelling configuration rendering. See [#2917](https://github.com/VictoriaMetrics/helm-charts/issues/2917).
+    - add `fileCollector` list to support multiple file-based log collection configurations (glob patterns paired with extra fields). Each list entry maps to a set of positional `-fileCollector.*` flags, enabling configurations that were previously impossible with the `extraArgs` dict. See [#2990](https://github.com/VictoriaMetrics/helm-charts/issues/2990).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -9,7 +9,7 @@ annotations:
     - name: Charts repo
       url: https://victoriametrics.github.io/helm-charts/
     - name: Changelog
-      url: https://docs.victoriametrics.com/changelog/
+      url: https://docs.victoriametrics.com/helm/victoria-logs-collector/changelog/
   artifacthub.io/readme: |
     # VictoriaLogs Collector Helm chart
 
@@ -37,4 +37,4 @@ name: victoria-logs-collector
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.3.4
+version: 0.3.5

@@ -39,51 +39,53 @@ Render probe
 {{- define "vm.probe" -}}
   {{- /* undefined value */ -}}
   {{- $null := (fromYaml "value: null").value -}}
-  {{- $probe := dig .type (dict) .app.probe -}}
+  {{- $probe := dig .type (dict) (.app.probe | default dict) -}}
+  {{- /* port name from primary http item */ -}}
+  {{- $port := "http" -}}
+  {{- range (.app).http -}}
+    {{- if .primary -}}
+      {{- $port = .name -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $isSecure := false -}}
+  {{- if and (.app).http (empty ((.app).extraArgs | default dict).httpListenAddr) -}}
+    {{- range (.app).http -}}
+      {{- if and .primary .tls -}}
+        {{- $isSecure = true -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $isSecure -}}
+    {{- with ((.app).extraArgs).tls -}}
+      {{- $isSecure = eq (toString .) "true" -}}
+    {{- end -}}
+  {{- end -}}
   {{- $probeType := "" -}}
   {{- $defaultProbe := dict -}}
   {{- if ne (dig "httpGet" $null $probe) $null -}}
-    {{- /* httpGet probe */ -}}
-    {{- $defaultProbe = dict "path" (include "vm.probe.http.path" .) "scheme" (include "vm.probe.http.scheme" .) "port" (include "vm.probe.port" .) -}}
-    {{- $probeType = "httpGet" -}}
+    {{- $httpGetConfig := dig "httpGet" (dict) $probe -}}
+    {{- if and $isSecure (empty $httpGetConfig) -}}
+      {{- /* TLS with default (empty) httpGet: use tcpSocket instead */ -}}
+      {{- $defaultProbe = dict "port" $port -}}
+      {{- $probeType = "tcpSocket" -}}
+    {{- else -}}
+      {{- $path := index ((.app).extraArgs | default dict) "http.pathPrefix" | default "" | trimSuffix "/" -}}
+      {{- $defaultProbe = dict "path" (printf "%s/health" $path) "scheme" "HTTP" "port" $port -}}
+      {{- $probeType = "httpGet" -}}
+    {{- end -}}
   {{- else if ne (dig "tcpSocket" $null $probe) $null -}}
     {{- /* tcpSocket probe */ -}}
-    {{- $defaultProbe = dict "port" (include "vm.probe.port" .) -}}
+    {{- $defaultProbe = dict "port" $port -}}
     {{- $probeType = "tcpSocket" -}}
   {{- end -}}
   {{- $defaultProbe = ternary (dict) (dict $probeType $defaultProbe) (empty $probeType) -}}
   {{- $probe = mergeOverwrite $defaultProbe $probe -}}
   {{- range $key, $value := $probe -}}
-    {{- if and (has (kindOf $value) (list "object" "map")) (ne $key $probeType) -}}
+    {{- if and (ne $key $probeType) (has (kindOf $value) (list "invalid" "object" "map")) -}}
       {{- $_ := unset $probe $key -}}
     {{- end -}}
   {{- end -}}
   {{- tpl (toYaml $probe) . -}}
-{{- end -}}
-
-{{- /*
-HTTP GET probe path
-*/ -}}
-{{- define "vm.probe.http.path" -}}
-  {{- index .app.extraArgs "http.pathPrefix" | default "" | trimSuffix "/" -}}/health
-{{- end -}}
-
-{{- /*
-HTTP GET probe scheme
-*/ -}}
-{{- define "vm.probe.http.scheme" -}}
-  {{- $isSecure := false -}}
-  {{- with ((.app).extraArgs).tls -}}
-    {{- $isSecure = eq (toString .) "true" -}}
-  {{- end -}}
-  {{- ternary "HTTPS" "HTTP" $isSecure -}}
-{{- end -}}
-
-{{- /*
-Net probe port
-*/ -}}
-{{- define "vm.probe.port" -}}
-  {{- dig "ports" "name" "http" (.app | dict) -}}
 {{- end -}}
 
 {{- define "vm.arg" -}}
