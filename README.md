@@ -40,7 +40,7 @@
 | nexus-repository-manager | 88.7.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
-| ollama | 1.60.0 | Get up and running with large language models locally. |
+| ollama | 1.61.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.23 | OpenCost and OpenCost UI |
 | openebs | 4.5.0 | Containerized Attached Storage for Kubernetes |
