@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: Rename CRD files to match upstream. The contents are unchanged.
+    - kind: added
+      description: Disable controller leader election and use the Recreate deployment strategy when replicas is set to 1.
   artifacthub.io/signKey: |
     fingerprint: 2B8F22F57260EFA67BE1C5824B11F800CD9D2252
     url: https://argoproj.github.io/argo-helm/pgp_keys.asc
@@ -19,4 +19,4 @@ maintainers:
 name: argo-events
 sources:
 - https://github.com/argoproj/argo-events
-version: 2.4.21
+version: 2.4.22
