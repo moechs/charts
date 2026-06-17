@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - add `fileCollector` list to support multiple file-based log collection configurations (glob patterns paired with extra fields). Each list entry maps to a set of positional `-fileCollector.*` flags, enabling configurations that were previously impossible with the `extraArgs` dict. See [#2990](https://github.com/VictoriaMetrics/helm-charts/issues/2990).
+    - bump vlagent version to [v1.51.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.51.0).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -16,7 +16,7 @@ annotations:
     Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-collector/).
     Changelog is [here](https://docs.victoriametrics.com/helm/victoria-logs-collector/changelog/).
 apiVersion: v2
-appVersion: v1.50.0
+appVersion: v1.51.0
 dependencies:
 - name: victoria-metrics-common
   repository: oci://ghcr.io/victoriametrics/helm-charts
@@ -37,4 +37,4 @@ name: victoria-logs-collector
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.3.5
+version: 0.3.6
