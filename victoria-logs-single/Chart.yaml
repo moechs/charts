@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - bump common chart version 0.3.8 -> 0.3.9
+    - bump VictoriaLogs version to [v1.51.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.51.0).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -18,7 +18,7 @@ annotations:
     Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-single/).
     Changelog is [here](https://docs.victoriametrics.com/helm/victoria-logs-single/changelog/).
 apiVersion: v2
-appVersion: v1.50.0
+appVersion: v1.51.0
 dependencies:
 - condition: vector.enabled
   name: vector
@@ -42,4 +42,4 @@ name: victoria-logs-single
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.13.7
+version: 0.13.8
