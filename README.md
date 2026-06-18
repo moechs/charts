@@ -17,10 +17,10 @@
 | external-secrets | 2.6.0 | External secrets management for Kubernetes |
 | gitea | 12.6.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.0.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 12.4.6 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 12.4.8 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.1 | An open source trusted cloud native registry that stores, signs, and |
-| headlamp | 0.42.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
+| headlamp | 0.43.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.2.2 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
@@ -40,7 +40,7 @@
 | nexus-repository-manager | 88.7.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
-| ollama | 1.61.0 | Get up and running with large language models locally. |
+| ollama | 1.62.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.23 | OpenCost and OpenCost UI |
 | openebs | 4.5.0 | Containerized Attached Storage for Kubernetes |
