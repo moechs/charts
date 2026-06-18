@@ -114,8 +114,6 @@ spec:
             - "-plugins-dir=/headlamp/plugins"
             - "-session-ttl=86400"
             # Check if externalSecret is disabled
-            - "-tls-cert-path=/headlamp-cert/headlamp-ca.crt"
-            - "-tls-key-path=/headlamp-cert/headlamp-tls.key"
           ports:
             - name: http
               containerPort: 4466
@@ -124,7 +122,7 @@ spec:
             httpGet:
               path: "/"
               port: http
-              scheme: HTTPS
+              scheme: HTTP
             initialDelaySeconds: 0
             periodSeconds: 10
             timeoutSeconds: 1
@@ -134,7 +132,7 @@ spec:
             httpGet:
               path: "/"
               port: http
-              scheme: HTTPS
+              scheme: HTTP
             initialDelaySeconds: 0
             periodSeconds: 10
             timeoutSeconds: 1
@@ -142,15 +140,11 @@ spec:
             failureThreshold: 3
           resources:
             {}
-          volumeMounts:
-            - mountPath: /headlamp-cert
-              name: headlamp-cert
-      volumes:
-        - name: headlamp-cert
-          secret:
-            items:
-            - key: tls.crt
-              path: headlamp-ca.crt
-            - key: tls.key
-              path: headlamp-tls.key
-            secretName: headlamp-tls
+      hostAliases:
+        - hostnames:
+          - keycloak.test
+          - sso.local
+          ip: 10.0.0.5
+        - hostnames:
+          - registry.internal
+          ip: 192.168.1.10
