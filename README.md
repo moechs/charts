@@ -3,7 +3,7 @@
 |  Chart  |  Version  |   Description   |
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
-| apisix | 2.14.1 | A Helm chart for Apache APISIX v3 |
+| apisix | 2.15.0 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 9.5.21 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.22 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.0 | A Helm chart for Argo Rollouts |
@@ -16,7 +16,7 @@
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.6.0 | External secrets management for Kubernetes |
 | gitea | 12.6.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.0.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 10.1.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.4.8 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.1 | An open source trusted cloud native registry that stores, signs, and |
@@ -28,7 +28,7 @@
 | jira | 2.0.14 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 86.2.3 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 86.3.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.5 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -43,7 +43,7 @@
 | ollama | 1.62.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.23 | OpenCost and OpenCost UI |
-| openebs | 4.5.0 | Containerized Attached Storage for Kubernetes |
+| openebs | 4.5.1 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.4.4 | An opinionated installation of OTEL Collector for OpenObserve |
@@ -54,7 +54,7 @@
 | photoprism | 1.4.4 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
-| prometheus-blackbox-exporter | 11.12.0 | Prometheus Blackbox Exporter |
+| prometheus-blackbox-exporter | 11.13.0 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.6.1 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.16.1 | A Helm chart for Kubernetes |
 | rancher | 2.14.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
