@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.15.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 9.5.22 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 9.6.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.22 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.0 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.16 | A Helm chart for Argo Workflows |
@@ -56,7 +56,7 @@
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
 | prometheus-blackbox-exporter | 11.13.0 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.6.1 | A Helm chart for prometheus pushgateway |
-| prometheus-smartctl-exporter | 0.17.0 | A Helm chart for Kubernetes |
+| prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
 | rancher | 2.14.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.20.1 | Manages a single Ceph cluster namespace for Rook |
