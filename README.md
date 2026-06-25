@@ -16,19 +16,19 @@
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.6.0 | External secrets management for Kubernetes |
 | gitea | 12.6.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.1.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 12.6.0 | The leading tool for querying and visualizing time series and metrics. |
+| gitlab | 10.1.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| grafana | 12.7.1 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.1 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.43.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
-| higress | 2.2.2 | Helm chart for deploying Higress gateways |
+| higress | 2.2.3 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
 | jenkins | 5.9.29 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.14 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 87.1.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 87.2.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.5 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
