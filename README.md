@@ -7,11 +7,11 @@
 | argo-cd | 9.7.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.22 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.0 | A Helm chart for Argo Rollouts |
-| argo-workflows | 1.0.17 | A Helm chart for Argo Workflows |
-| cert-manager | v1.20.2 | A Helm chart for cert-manager |
+| argo-workflows | 1.0.18 | A Helm chart for Argo Workflows |
+| cert-manager | v1.20.3 | A Helm chart for cert-manager |
 | cilium | 1.19.5 | eBPF-based Networking, Security, and Observability |
 | confluence | 2.0.14 | A chart for installing Confluence Data Center on Kubernetes |
-| consul | 2.0.0 | Official HashiCorp Consul Chart |
+| consul | 2.0.1 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.6.0 | External secrets management for Kubernetes |
@@ -37,12 +37,12 @@
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
-| nexus-repository-manager | 88.7.1 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
+| nexus-repository-manager | 88.7.2 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.63.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.23 | OpenCost and OpenCost UI |
+| opencost | 2.5.25 | OpenCost and OpenCost UI |
 | openebs | 4.5.1 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
@@ -69,7 +69,7 @@
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.33.0 | Official HashiCorp Vault Chart |
 | vector | 0.56.0 | A lightweight, ultra-fast tool for building observability pipelines |
-| victoria-logs-agent | 0.2.7 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
+| victoria-logs-agent | 0.2.8 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.2.7 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.3.6 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
 | victoria-logs-single | 0.13.8 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
