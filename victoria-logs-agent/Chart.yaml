@@ -1,7 +1,8 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - bump vlagent version to [v1.51.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.51.0).
+    - added `runtimeClassName` option to the pod spec
+    - do not merge .Values.persistentVolume.extraLabels with default chart labels. See [#2460](https://github.com/VictoriaMetrics/helm-charts/issues/2460).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -10,6 +11,8 @@ annotations:
       url: https://victoriametrics.github.io/helm-charts/
     - name: Changelog
       url: https://docs.victoriametrics.com/helm/victoria-logs-agent/changelog/
+    - name: App Changelog
+      url: https://docs.victoriametrics.com/victorialogs/changelog/
   artifacthub.io/readme: |
     # VictoriaLogs Agent Helm chart
 
@@ -37,4 +40,4 @@ name: victoria-logs-agent
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.2.7
+version: 0.2.8
