@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.15.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 9.7.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.0.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.22 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.0 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.18 | A Helm chart for Argo Workflows |
@@ -14,7 +14,7 @@
 | consul | 2.0.1 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
-| external-secrets | 2.6.0 | External secrets management for Kubernetes |
+| external-secrets | 2.7.0 | External secrets management for Kubernetes |
 | gitea | 12.6.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.1.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.7.1 | The leading tool for querying and visualizing time series and metrics. |
@@ -64,7 +64,7 @@
 | rustfs | 0.8.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
-| tigera-operator | v3.32.0 | Installs the Tigera operator for Calico |
+| tigera-operator | v3.32.1 | Installs the Tigera operator for Calico |
 | traefik | 41.0.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | vault | 0.33.0 | Official HashiCorp Vault Chart |
