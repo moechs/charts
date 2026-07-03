@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.15.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.1.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.1.1 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.22 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.0 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.18 | A Helm chart for Argo Workflows |
@@ -42,7 +42,7 @@
 | node-feature-discovery | 0.18.3 | 'Detects hardware features available on each node in a Kubernetes cluster, |
 | ollama | 1.65.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.25 | OpenCost and OpenCost UI |
+| opencost | 2.5.26 | OpenCost and OpenCost UI |
 | openebs | 4.5.1 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
@@ -67,7 +67,7 @@
 | tigera-operator | v3.32.1 | Installs the Tigera operator for Calico |
 | traefik | 41.0.1 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
-| vault | 0.33.0 | Official HashiCorp Vault Chart |
+| vault | 0.34.0 | Official HashiCorp Vault Chart |
 | vector | 0.56.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.2.8 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.2.7 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
