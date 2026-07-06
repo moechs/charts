@@ -10,6 +10,7 @@
 | argo-workflows | 1.0.18 | A Helm chart for Argo Workflows |
 | cert-manager | v1.20.3 | A Helm chart for cert-manager |
 | cilium | 1.19.5 | eBPF-based Networking, Security, and Observability |
+| cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
 | confluence | 2.0.14 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 2.0.1 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
@@ -68,6 +69,7 @@
 | tigera-operator | v3.32.1 | Installs the Tigera operator for Calico |
 | traefik | 41.0.1 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
+| valkey | 0.10.0 | A Helm chart for Kubernetes |
 | vault | 0.34.0 | Official HashiCorp Vault Chart |
 | vector | 0.56.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.2.8 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
