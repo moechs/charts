@@ -15,6 +15,7 @@
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.7.0 | External secrets management for Kubernetes |
+| forgejo | 17.1.1 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.6.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.1.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.7.2 | The leading tool for querying and visualizing time series and metrics. |
