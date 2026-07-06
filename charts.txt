@@ -11,6 +11,7 @@ consul|https://helm.releases.hashicorp.com
 dellhw_exporter|https://galexrt.github.io/dellhw_exporter
 external-dns|https://kubernetes-sigs.github.io/external-dns
 external-secrets|https://charts.external-secrets.io
+forgejo|oci://code.forgejo.org/forgejo-helm/forgejo
 gitea|https://dl.gitea.com/charts
 gitlab|https://charts.gitlab.io
 grafana|https://grafana-community.github.io/helm-charts

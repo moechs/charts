@@ -68,6 +68,16 @@ jobs:
           log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
           log_success() { echo -e "${GREEN}[SUCCESS]${NC} $1"; }
 
+          is_oci_url() {
+            [[ "$1" == oci://* ]]
+          }
+
+          get_version_from_tgz() {
+            local tgz="$1"
+            tar -xzOf "$tgz" --wildcards '*/Chart.yaml' 2>/dev/null \
+              | awk '/^version: /{print $NF}' | tr -d '"' | tr -d "'"
+          }
+
           add_repo() {
             local url="$1"
             if [[ -n "${repos[$url]}" ]]; then
@@ -107,65 +117,110 @@ jobs:
             echo ""
             log_info "[$CURRENT/$CHART_COUNT] Processing: $chart_name"
 
-            if ! repo_id=$(add_repo "$repo_url"); then
-              log_error "Failed to add repository: $repo_url"
-              FAILED_CHARTS+=("$chart_name: repository unavailable")
-              continue
-            fi
-
-            remote_ver=$(helm search repo "$repo_id/$chart_name" -o json 2>/dev/null | jq -r '.[0].version // empty' 2>/dev/null)
-
-            if [[ -z "$remote_ver" ]]; then
-              log_error "Chart not found"
-              FAILED_CHARTS+=("$chart_name: not found")
-              continue
-            fi
-
             local_ver=""
             if [[ -d "$chart_name" && -f "$chart_name/Chart.yaml" ]]; then
               local_ver=$(get_chart_version "$chart_name")
             fi
 
-            if [[ "$local_ver" == "$remote_ver" ]]; then
-              log_success "$chart_name $remote_ver (up-to-date)"
-              SKIPPED_CHARTS_MAIN+=("$chart_name: $remote_ver")
-              continue
-            fi
+            downloaded_tgz=""
+            remote_ver=""
+            PULL_DIR="${WORK_DIR}/$(echo -n "${chart_name}" | md5sum | cut -c1-12)"
+            mkdir -p "$PULL_DIR"
 
-            log_info "Updating $chart_name: $local_ver → $remote_ver"
+            if is_oci_url "$repo_url"; then
+              pull_ref="$repo_url"
+              log_info "Pulling OCI chart directly: $pull_ref"
 
-            if helm pull "$repo_id/$chart_name" --version "$remote_ver" --destination "$WORK_DIR" 2>/dev/null; then
+              if ! helm pull "$pull_ref" --destination "$PULL_DIR" 2>/tmp/helm_pull_err.log; then
+                log_error "Failed to pull OCI chart: $(tail -n 1 /tmp/helm_pull_err.log 2>/dev/null)"
+                FAILED_CHARTS+=("$chart_name: oci pull failed")
+                rm -rf "$PULL_DIR"
+                continue
+              fi
+
+              downloaded_tgz=$(find "$PULL_DIR" -maxdepth 1 -name "*.tgz" -type f | sort -V | tail -1)
+
+              if [[ -z "$downloaded_tgz" ]]; then
+                log_error "Downloaded tgz not found after oci pull"
+                FAILED_CHARTS+=("$chart_name: file not found (oci)")
+                continue
+              fi
+
+              remote_ver=$(get_version_from_tgz "$downloaded_tgz")
+
+              if [[ -z "$remote_ver" ]]; then
+                log_error "Could not read version from downloaded chart"
+                FAILED_CHARTS+=("$chart_name: version parse failed (oci)")
+                rm -f "$downloaded_tgz"
+                continue
+              fi
+
+              if [[ "$local_ver" == "$remote_ver" ]]; then
+                log_success "$chart_name $remote_ver (up-to-date)"
+                SKIPPED_CHARTS_MAIN+=("$chart_name: $remote_ver")
+                rm -f "$downloaded_tgz"
+                continue
+              fi
+
+              log_info "Updating $chart_name: ${local_ver:-none} → $remote_ver (oci, overwrite from local extract)"
+            else
+              if ! repo_id=$(add_repo "$repo_url"); then
+                log_error "Failed to add repository: $repo_url"
+                FAILED_CHARTS+=("$chart_name: repository unavailable")
+                continue
+              fi
+
+              remote_ver=$(helm search repo "$repo_id/$chart_name" -o json 2>/dev/null | jq -r '.[0].version // empty' 2>/dev/null)
+
+              if [[ -z "$remote_ver" ]]; then
+                log_error "Chart not found"
+                FAILED_CHARTS+=("$chart_name: not found")
+                continue
+              fi
+
+              if [[ "$local_ver" == "$remote_ver" ]]; then
+                log_success "$chart_name $remote_ver (up-to-date)"
+                SKIPPED_CHARTS_MAIN+=("$chart_name: $remote_ver")
+                continue
+              fi
+
+              log_info "Updating $chart_name: $local_ver → $remote_ver"
+
+              if ! helm pull "$repo_id/$chart_name" --version "$remote_ver" --destination "$WORK_DIR" 2>/dev/null; then
+                log_error "Failed to download"
+                FAILED_CHARTS+=("$chart_name: download failed")
+                continue
+              fi
+
               downloaded_tgz=$(find "$WORK_DIR" -name "${chart_name}-*${remote_ver}.tgz" -type f | head -1)
-
-              if [[ -n "$downloaded_tgz" ]]; then
-                rm -rf "$chart_name"
-
-                if tar -xzf "$downloaded_tgz" -C . && rm -f "$downloaded_tgz"; then
-                  git add "$chart_name"
-
-                  if [[ -n "$local_ver" ]]; then
-                    git commit -m "chore(${chart_name}): update to ${remote_ver}" \
-                               -m "Previous version: ${local_ver}" \
-                               -m "Repository: ${repo_url}"
-                    log_success "Updated $chart_name to $remote_ver"
-                    UPDATED_CHARTS_MAIN+=("$chart_name: $local_ver → $remote_ver")
-                  else
-                    git commit -m "feat(${chart_name}): add version ${remote_ver}" \
-                               -m "Repository: ${repo_url}"
-                    log_success "Added $chart_name $remote_ver"
-                    UPDATED_CHARTS_MAIN+=("$chart_name: $remote_ver (new)")
-                  fi
-                else
-                  log_error "Failed to extract"
-                  FAILED_CHARTS+=("$chart_name: extraction failed")
-                fi
-              else
+              if [[ -z "$downloaded_tgz" ]]; then
                 log_error "Downloaded file not found"
                 FAILED_CHARTS+=("$chart_name: file not found")
+                continue
+              fi
+            fi
+
+            # 统一的覆盖写入逻辑（传统仓库和 OCI 仓库都走到这里）
+            rm -rf "$chart_name"
+
+            if tar -xzf "$downloaded_tgz" -C . && rm -f "$downloaded_tgz"; then
+              git add "$chart_name"
+
+              if [[ -n "$local_ver" ]]; then
+                git commit -m "chore(${chart_name}): update to ${remote_ver}" \
+                           -m "Previous version: ${local_ver}" \
+                           -m "Repository: ${repo_url}"
+                log_success "Updated $chart_name to $remote_ver"
+                UPDATED_CHARTS_MAIN+=("$chart_name: $local_ver → $remote_ver")
+              else
+                git commit -m "feat(${chart_name}): add version ${remote_ver}" \
+                           -m "Repository: ${repo_url}"
+                log_success "Added $chart_name $remote_ver"
+                UPDATED_CHARTS_MAIN+=("$chart_name: $remote_ver (new)")
               fi
             else
-              log_error "Failed to download"
-              FAILED_CHARTS+=("$chart_name: download failed")
+              log_error "Failed to extract"
+              FAILED_CHARTS+=("$chart_name: extraction failed")
             fi
           done < charts.txt
 
