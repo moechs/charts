@@ -143,6 +143,7 @@ jobs:
               if [[ -z "$downloaded_tgz" ]]; then
                 log_error "Downloaded tgz not found after oci pull"
                 FAILED_CHARTS+=("$chart_name: file not found (oci)")
+                rm -rf "$PULL_DIR"
                 continue
               fi
 
@@ -152,6 +153,7 @@ jobs:
                 log_error "Could not read version from downloaded chart"
                 FAILED_CHARTS+=("$chart_name: version parse failed (oci)")
                 rm -f "$downloaded_tgz"
+                rm -rf "$PULL_DIR"
                 continue
               fi
 
@@ -159,10 +161,11 @@ jobs:
                 log_success "$chart_name $remote_ver (up-to-date)"
                 SKIPPED_CHARTS_MAIN+=("$chart_name: $remote_ver")
                 rm -f "$downloaded_tgz"
+                rm -rf "$PULL_DIR"
                 continue
               fi
 
-              log_info "Updating $chart_name: ${local_ver:-none} → $remote_ver (oci, overwrite from local extract)"
+              log_info "Updating $chart_name: ${local_ver:-none} → $remote_ver (oci)"
             else
               if ! repo_id=$(add_repo "$repo_url"); then
                 log_error "Failed to add repository: $repo_url"
@@ -200,28 +203,37 @@ jobs:
               fi
             fi
 
-            # 统一的覆盖写入逻辑（传统仓库和 OCI 仓库都走到这里）
             rm -rf "$chart_name"
 
             if tar -xzf "$downloaded_tgz" -C . && rm -f "$downloaded_tgz"; then
               git add "$chart_name"
 
               if [[ -n "$local_ver" ]]; then
-                git commit -m "chore(${chart_name}): update to ${remote_ver}" \
-                           -m "Previous version: ${local_ver}" \
-                           -m "Repository: ${repo_url}"
-                log_success "Updated $chart_name to $remote_ver"
-                UPDATED_CHARTS_MAIN+=("$chart_name: $local_ver → $remote_ver")
+                if git commit -m "chore(${chart_name}): update to ${remote_ver}" \
+                             -m "Previous version: ${local_ver}" \
+                             -m "Repository: ${repo_url}" 2>/dev/null; then
+                  log_success "Updated $chart_name to $remote_ver"
+                  UPDATED_CHARTS_MAIN+=("$chart_name: $local_ver → $remote_ver")
+                else
+                  log_warn "No actual changes for $chart_name"
+                  SKIPPED_CHARTS_MAIN+=("$chart_name: $remote_ver (no changes)")
+                fi
               else
-                git commit -m "feat(${chart_name}): add version ${remote_ver}" \
-                           -m "Repository: ${repo_url}"
-                log_success "Added $chart_name $remote_ver"
-                UPDATED_CHARTS_MAIN+=("$chart_name: $remote_ver (new)")
+                if git commit -m "feat(${chart_name}): add version ${remote_ver}" \
+                             -m "Repository: ${repo_url}" 2>/dev/null; then
+                  log_success "Added $chart_name $remote_ver"
+                  UPDATED_CHARTS_MAIN+=("$chart_name: $remote_ver (new)")
+                else
+                  log_error "Failed to commit new chart"
+                  FAILED_CHARTS+=("$chart_name: commit failed")
+                fi
               fi
             else
               log_error "Failed to extract"
               FAILED_CHARTS+=("$chart_name: extraction failed")
             fi
+
+            rm -rf "$PULL_DIR"
           done < charts.txt
 
           {
@@ -270,7 +282,7 @@ jobs:
             "${#UPDATED_CHARTS_MAIN[@]}" "${#SKIPPED_CHARTS_MAIN[@]}" "${#FAILED_CHARTS[@]}"
 
       - name: Push Main Branch Changes
-        if: steps.sync_main.outputs.UPDATED_COUNT_MAIN > 0
+        if: ${{ steps.sync_main.outputs.UPDATED_COUNT_MAIN > 0 }}
         run: |
           echo "Pushing changes to main branch..."
           git push origin main
@@ -299,5 +311,11 @@ jobs:
           if [[ -f /tmp/failed.txt ]]; then
             echo "## ❌ Failed Charts" >> $GITHUB_STEP_SUMMARY
             cat /tmp/failed.txt | sed 's/^/- /' >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [[ -f /tmp/skipped_main.txt ]]; then
+            echo "## ⏭️ Skipped Charts" >> $GITHUB_STEP_SUMMARY
+            cat /tmp/skipped_main.txt | sed 's/^/- /' >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
           fi
