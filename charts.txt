@@ -6,6 +6,7 @@ argo-rollouts|https://argoproj.github.io/argo-helm
 argo-workflows|https://argoproj.github.io/argo-helm
 cert-manager|https://charts.jetstack.io
 cilium|https://helm.cilium.io
+cloudnative-pg|https://cloudnative-pg.github.io/charts
 confluence|https://atlassian.github.io/data-center-helm-charts
 consul|https://helm.releases.hashicorp.com
 dellhw_exporter|https://galexrt.github.io/dellhw_exporter
@@ -54,6 +55,7 @@ system-upgrade-controller|https://nimbolus.github.io/helm-charts
 tigera-operator|https://docs.tigera.io/calico/charts
 traefik|https://traefik.github.io/charts
 uptime-kuma|https://helm.irsigler.cloud
+valkey|https://valkey.io/valkey-helm
 vault|https://helm.releases.hashicorp.com
 vector|https://helm.vector.dev
 victoria-logs-agent|https://victoriametrics.github.io/helm-charts
