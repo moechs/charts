@@ -7,7 +7,7 @@
 | argo-cd | 10.1.2 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.22 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.0 | A Helm chart for Argo Rollouts |
-| argo-workflows | 1.0.18 | A Helm chart for Argo Workflows |
+| argo-workflows | 1.0.19 | A Helm chart for Argo Workflows |
 | cert-manager | v1.20.3 | A Helm chart for cert-manager |
 | cilium | 1.19.5 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
@@ -61,8 +61,8 @@
 | prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
 | rancher | 2.14.3 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.20.1 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | v1.20.1 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph-cluster | v1.20.2 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph | v1.20.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 0.8.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
