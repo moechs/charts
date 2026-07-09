@@ -3,12 +3,12 @@
 |  Chart  |  Version  |   Description   |
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
-| apisix | 2.15.0 | A Helm chart for Apache APISIX v3 |
+| apisix | 2.16.0 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 10.1.2 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.22 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.0 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.19 | A Helm chart for Argo Workflows |
-| cert-manager | v1.20.3 | A Helm chart for cert-manager |
+| cert-manager | v1.21.0 | A Helm chart for cert-manager |
 | cilium | 1.19.5 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
 | confluence | 2.0.14 | A chart for installing Confluence Data Center on Kubernetes |
@@ -18,7 +18,7 @@
 | external-secrets | 2.7.0 | External secrets management for Kubernetes |
 | forgejo | 17.1.1 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.6.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.1.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 10.1.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.7.2 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.1 | An open source trusted cloud native registry that stores, signs, and |
@@ -30,7 +30,7 @@
 | jira | 2.0.14 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 87.10.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 87.12.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.5 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -48,7 +48,7 @@
 | openebs | 4.5.1 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
-| openobserve-collector | 0.4.4 | An opinionated installation of OTEL Collector for OpenObserve |
+| openobserve-collector | 0.4.5 | An opinionated installation of OTEL Collector for OpenObserve |
 | openobserve-standalone | 0.80.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openobserve | 0.80.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
