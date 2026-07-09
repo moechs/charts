@@ -35,6 +35,22 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
+# If additional RBAC rules are needed for the collector, they can be added here
+# Any valid Kubernetes RBAC PolicyRule fields can be used here.
+# Example use case: Allow the collector to access third-party custom resources
+# and specific non-resource URLs.
+rbac: {}
+# rbac:
+#   extraRules:
+#     - apiGroups: ["thirdparty.api.group"]
+#       resources: ["customresourcename"]
+#       verbs: ["get", "list", "watch"]
+#       resourceNames: ["example-resource-name"]
+#     - nonResourceURLs: ["/custom-metrics"]
+#       verbs: ["get"]
+
+labels: {}
+
 # kube-state-metrics exposes Kubernetes object states as Prometheus metrics.
 # Set enabled: false if you already have kube-state-metrics installed in your cluster.
 kube-state-metrics:
@@ -45,7 +61,7 @@ kube-state-metrics:
     - operator: Exists
   extraArgs:
     - --metric-annotations-allowlist=replicasets=[deployment.kubernetes.io/revision]
-    - --metric-opt-in-list=kube_serviceaccount_info,kube_serviceaccount_created,kube_serviceaccount_secret,kube_serviceaccount_image_pull_secret
+    - --metric-opt-in-list=kube_serviceaccount_info,kube_serviceaccount_created,kube_serviceaccount_secret,kube_serviceaccount_image_pull_secret,kube_pod_container_security_context_privileged,kube_pod_container_security_context_run_as_user,kube_pod_container_security_context_run_as_non_root
   resources:
     requests:
       cpu: 10m
@@ -90,6 +106,21 @@ agent:
   labels: {}
   # Annotations added to the generated collector pods.
   podAnnotations: {}
+  # securityContext applied to the agent collector container.
+  # Required on OpenShift (and other SELinux-enforcing distros) so the filelog
+  # receiver can read host pod logs under /var/log/pods. Without this the collector
+  # logs "open .: permission denied" and no container logs are collected.
+  # Also grant the privileged SCC to the agent's service account, e.g.:
+  #   oc adm policy add-scc-to-user privileged -z <agent-sa> -n <namespace>
+  # Example:
+  #   securityContext:
+  #     privileged: true
+  #     runAsUser: 0
+  #     seLinuxOptions:
+  #       type: spc_t
+  securityContext: {}
+  # podSecurityContext applied to the agent collector pod.
+  podSecurityContext: {}
   tolerations:
     - operator: Exists
   resources: {}
@@ -338,12 +369,12 @@ agent:
         receivers: [filelog/std]
         processors:
           [memory_limiter, resourcedetection, attributes, k8sattributes, batch]
-        exporters: [otlphttp/openobserve] 
+        exporters: [otlphttp/openobserve]
       metrics:
         receivers: [kubeletstats, hostmetrics]
         processors:
           [memory_limiter, resourcedetection, attributes, k8sattributes, batch]
-        exporters: [otlphttp/openobserve] 
+        exporters: [otlphttp/openobserve]
 
 gateway:
   enabled: true
@@ -353,6 +384,11 @@ gateway:
   labels: {}
   # Annotations added to the generated collector pods.
   podAnnotations: {}
+  # securityContext applied to the gateway collector container (e.g. for OpenShift/SELinux).
+  # See agent.securityContext above for details.
+  securityContext: {}
+  # podSecurityContext applied to the gateway collector pod.
+  podSecurityContext: {}
   # Number of replicas when autoscaler is not used
   replicas: 1
   targetAllocator:
@@ -613,7 +649,7 @@ gateway:
             metric_relabel_configs:
               # Keep the most useful kube-state-metrics for a Datadog-equivalent view
               - action: keep
-                regex: "kube_(pod_info|pod_created|pod_status_phase|pod_status_ready|pod_status_reason|pod_container_info|pod_container_status_ready|pod_container_status_restarts_total|pod_container_resource_requests|pod_container_resource_limits|pod_container_status_waiting.*|pod_container_status_terminated_reason|pod_owner|pod_spec_volumes_persistentvolumeclaims_info|deployment_status_replicas.*|deployment_spec_replicas|deployment_created|daemonset_created|daemonset_status.*|statefulset_replicas|statefulset_created|statefulset_status.*|replicaset_status.*|replicaset_spec_replicas|replicaset_created|replicaset_owner|replicaset_annotations|service_info|service_created|service_spec_type|service_status_load_balancer_ingress|endpoint_address|node_status_condition|node_status_allocatable|node_info|node_spec_taint|node_created|namespace_status_phase|namespace_created|persistentvolumeclaim_status_phase|persistentvolumeclaim_info|persistentvolumeclaim_access_mode|persistentvolumeclaim_resource_requests_storage_bytes|persistentvolumeclaim_created|persistentvolume_info|persistentvolume_created|persistentvolume_status_phase|persistentvolume_capacity_bytes|persistentvolume_access_mode|persistentvolume_reclaim_policy|horizontalpodautoscaler_info|horizontalpodautoscaler_created|horizontalpodautoscaler_status.*|horizontalpodautoscaler_spec.*|job_info|job_created|job_status.*|job_spec.*|job_complete|job_failed|job_owner|cronjob_info|cronjob_created|cronjob_status_active|cronjob_spec_suspend|cronjob_next_schedule_time|ingress_info|ingress_created|ingress_path|ingress_tls|ingress_labels|networkpolicy_created|networkpolicy_spec_ingress_rules|networkpolicy_spec_egress_rules|resourcequota|limitrange|serviceaccount_info|serviceaccount_created)"
+                regex: "kube_(pod_info|pod_created|pod_status_phase|pod_status_ready|pod_status_reason|pod_container_info|pod_container_status_ready|pod_container_status_restarts_total|pod_container_resource_requests|pod_container_resource_limits|pod_container_status_waiting.*|pod_container_status_terminated_reason|pod_owner|pod_spec_volumes_persistentvolumeclaims_info|pod_container_security_context_privileged|pod_container_security_context_run_as_user|pod_container_security_context_run_as_non_root|deployment_status_replicas.*|deployment_spec_replicas|deployment_created|daemonset_created|daemonset_status.*|statefulset_replicas|statefulset_created|statefulset_status.*|replicaset_status.*|replicaset_spec_replicas|replicaset_created|replicaset_owner|replicaset_annotations|service_info|service_created|service_spec_type|service_status_load_balancer_ingress|endpoint_address|node_status_condition|node_status_allocatable|node_info|node_spec_taint|node_created|namespace_status_phase|namespace_created|persistentvolumeclaim_status_phase|persistentvolumeclaim_info|persistentvolumeclaim_access_mode|persistentvolumeclaim_resource_requests_storage_bytes|persistentvolumeclaim_created|persistentvolume_info|persistentvolume_created|persistentvolume_status_phase|persistentvolume_capacity_bytes|persistentvolume_access_mode|persistentvolume_reclaim_policy|horizontalpodautoscaler_info|horizontalpodautoscaler_created|horizontalpodautoscaler_status.*|horizontalpodautoscaler_spec.*|job_info|job_created|job_status.*|job_spec.*|job_complete|job_failed|job_owner|cronjob_info|cronjob_created|cronjob_status_active|cronjob_spec_suspend|cronjob_next_schedule_time|ingress_info|ingress_created|ingress_path|ingress_tls|ingress_labels|networkpolicy_created|networkpolicy_spec_ingress_rules|networkpolicy_spec_egress_rules|resourcequota|limitrange|serviceaccount_info|serviceaccount_created)"
                 source_labels: [__name__]
           # CoreDNS metrics (DNS request rate, error rate, cache hit/miss)
           - job_name: coredns
@@ -650,7 +686,7 @@ gateway:
                 regex: kubernetes;https
             metric_relabel_configs:
               - action: keep
-                regex: "apiserver_(request_total|request_duration_seconds_bucket|request_duration_seconds_count|admission_webhook_request_total|current_inflight_requests)|process_resident_memory_bytes|process_cpu_seconds_total|kubernetes_build_info"
+                regex: "apiserver_(request_total|request_duration_seconds_bucket|request_duration_seconds_count|admission_webhook_request_total|current_inflight_requests|client_certificate_expiration_seconds.*)|process_resident_memory_bytes|process_cpu_seconds_total|kubernetes_build_info"
                 source_labels: [__name__]
           # kube-scheduler metrics (scheduling latency, queue depth)
           - job_name: kube-scheduler
@@ -866,7 +902,7 @@ gateway:
         receivers: [otlp, servicegraph, prometheus]
         processors:
           [memory_limiter, resourcedetection, attributes, k8sattributes, batch]
-        exporters: [otlphttp/openobserve] 
+        exporters: [otlphttp/openobserve]
       traces:
         receivers: [otlp]
         processors:
