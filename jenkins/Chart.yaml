@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Update `jenkins/jenkins` to version `2.568.1-jdk21`
+    - Update `configuration-as-code` to version `2100.vb_fd699d2a_09c`
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.568.1-jdk21
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.9.33
+version: 5.9.34
