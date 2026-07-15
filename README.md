@@ -12,7 +12,7 @@
 | cilium | 1.19.5 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
 | confluence | 2.0.14 | A chart for installing Confluence Data Center on Kubernetes |
-| consul | 2.0.1 | Official HashiCorp Consul Chart |
+| consul | 2.0.2 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.7.0 | External secrets management for Kubernetes |
@@ -26,11 +26,11 @@
 | higress | 2.2.3 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.33 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.9.34 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.14 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.16 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 87.15.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 87.16.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.5 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -71,7 +71,7 @@
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.10.0 | A Helm chart for Kubernetes |
 | vault | 0.34.0 | Official HashiCorp Vault Chart |
-| vector | 0.56.0 | A lightweight, ultra-fast tool for building observability pipelines |
+| vector | 0.57.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.2.8 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.2.7 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.3.6 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
