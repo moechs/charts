@@ -14,6 +14,10 @@ global:
   cluster:
     # -- K8s cluster domain suffix, uses for building storage pods' FQDN. Details are [here](https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/)
     dnsDomain: cluster.local.
+  # -- Labels added to all resources
+  extraLabels: {}
+  # -- Annotations added to all resources
+  extraAnnotations: {}
 
 # -- Override chart name
 nameOverride: ""
@@ -72,6 +76,8 @@ server:
   replicaCount: 1
   # -- Name of Priority Class
   priorityClassName: ""
+  # -- Name of the [RuntimeClass](https://kubernetes.io/docs/concepts/containers/runtime-class/) used to run the pod, e.g. "gvisor"
+  runtimeClassName: ""
   # -- Overrides the full name of server component
   fullnameOverride: ""
   # -- Data retention period. Possible units character: h(ours), d(ays), w(eeks), y(ears), if no unit character specified - month. The minimum retention period is 24h. See these [docs](https://docs.victoriametrics.com/victorialogs/#retention)
@@ -396,6 +402,8 @@ server:
     extraLabels: {}
     # -- Service Monitor annotations
     annotations: {}
+    # -- Service Monitor path
+    path: ""
     # -- Basic auth params for Service Monitor
     basicAuth: {}
     # -- Commented. Params to use for scraping (supports helm templates)
