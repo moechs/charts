@@ -138,6 +138,10 @@ global:
   cluster:
     # -- K8s cluster domain suffix, used for building storage Pods' FQDN. Details are [here](https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/).
     dnsDomain: cluster.local.
+  # -- Labels added to all resources
+  extraLabels: {}
+  # -- Annotations added to all resources
+  extraAnnotations: {}
 
 # -- Service account is needed to enrich logs with Pod metadata using Kubernetes API.
 serviceAccount:
@@ -208,6 +212,8 @@ affinity: {}
 
 # -- Priority class to be assigned to the Pod(s).
 priorityClassName: ""
+# -- Name of the [RuntimeClass](https://kubernetes.io/docs/concepts/containers/runtime-class/) used to run the pod, e.g. "gvisor"
+runtimeClassName: ""
 
 podMonitor:
   # -- Enable PodMonitor
