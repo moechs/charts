@@ -1,5 +1,5 @@
 apiVersion: v2
-appVersion: 2024.06.54
+appVersion: 2024.06.55
 dependencies:
 - condition: redis.enabled
   name: redis
@@ -33,4 +33,4 @@ maintainers:
 name: mailu
 sources:
 - https://github.com/Mailu/helm-charts/
-version: 2.7.2
+version: 2.7.3
