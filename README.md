@@ -6,7 +6,7 @@
 | apisix | 2.16.0 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 10.1.4 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.23 | A Helm chart for Argo Events, the event-driven workflow automation framework |
-| argo-rollouts | 2.41.0 | A Helm chart for Argo Rollouts |
+| argo-rollouts | 2.41.1 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.20 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.0 | A Helm chart for cert-manager |
 | cilium | 1.19.6 | eBPF-based Networking, Security, and Observability |
@@ -17,7 +17,7 @@
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.8.0 | External secrets management for Kubernetes |
 | forgejo | 17.1.3 | Forgejo Helm chart for Kubernetes |
-| gitea | 12.6.0 | Gitea Helm chart for Kubernetes |
+| gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.2.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.7.2 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
@@ -35,7 +35,7 @@
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.12.0 | Longhorn is a distributed block storage system for Kubernetes. |
-| mailu | 2.7.2 | This chart installs the Mailu mail system on Kubernetes |
+| mailu | 2.7.3 | This chart installs the Mailu mail system on Kubernetes |
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
