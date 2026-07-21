@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Allow overriding the secondary ingress path type
+    - Evaluate `tpl` on `controller.javaOpts` and `controller.jenkinsOpts` so values can reference other Helm values or named templates, matching the templating already supported by fields such as `controller.ingress.hostName`, `controller.secondaryIngress.hostName`, and `controller.admin.existingSecret`.
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.568.1-jdk21
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.9.38
+version: 5.9.39
