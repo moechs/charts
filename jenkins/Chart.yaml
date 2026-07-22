@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Evaluate `tpl` on `controller.javaOpts` and `controller.jenkinsOpts` so values can reference other Helm values or named templates, matching the templating already supported by fields such as `controller.ingress.hostName`, `controller.secondaryIngress.hostName`, and `controller.admin.existingSecret`.
+    - Evaluate `tpl` on `agent.image.registry`, `agent.image.repository`, and `agent.image.tag` so the default kubernetes-agent pod template can compose its jnlp image from other Helm values or named templates. Complements the `tpl`-support added for `controller.javaOpts` / `controller.jenkinsOpts` in 5.9.39.
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.568.1-jdk21
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.9.39
+version: 5.9.40
