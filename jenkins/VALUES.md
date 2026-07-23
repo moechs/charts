@@ -33,7 +33,7 @@ The following tables list the configurable parameters of the Jenkins chart and t
 | [agent.idleMinutes](./values.yaml#L1188) | int | Allows the Pod to remain active for reuse until the configured number of minutes has passed since the last step was executed on it | `0` |
 | [agent.image.registry](./values.yaml#L1016) | string | Registry to pull the agent jnlp image from | `""` |
 | [agent.image.repository](./values.yaml#L1018) | string | Repository to pull the agent jnlp image from | `"jenkins/inbound-agent"` |
-| [agent.image.tag](./values.yaml#L1020) | string | Tag of the image to pull | `"3383.vc8881d4b_0e76-1"` |
+| [agent.image.tag](./values.yaml#L1020) | string | Tag of the image to pull | `"3383.vc8881d4b_0e76-2"` |
 | [agent.imagePullSecretName](./values.yaml#L1027) | string | Name of the secret to be used to pull the image | `nil` |
 | [agent.inheritYamlMergeStrategy](./values.yaml#L1207) | bool | Controls whether the defined yaml merge strategy will be inherited if another defined pod template is configured to inherit from the current one | `false` |
 | [agent.instanceCap](./values.yaml#L1171) | int | Max number of agents to launch for this type of agent | `2147483647` |
@@ -303,7 +303,7 @@ The following tables list the configurable parameters of the Jenkins chart and t
 | [fullnameOverride](./values.yaml#L13) | string | Override the full resource names | `jenkins-(release-name)` or `jenkins` if the release-name is `jenkins` |
 | [helmtest.bats.image.registry](./values.yaml#L1433) | string | Registry of the image used to test the framework | `"docker.io"` |
 | [helmtest.bats.image.repository](./values.yaml#L1435) | string | Repository of the image used to test the framework | `"bats/bats"` |
-| [helmtest.bats.image.tag](./values.yaml#L1437) | string | Tag of the image to test the framework | `"1.13.0"` |
+| [helmtest.bats.image.tag](./values.yaml#L1437) | string | Tag of the image to test the framework | `"1.14.0"` |
 | [kubernetesURL](./values.yaml#L24) | string | The URL of the Kubernetes API server | `"https://kubernetes.default"` |
 | [nameOverride](./values.yaml#L10) | string | Override the resource name prefix | `Chart.Name` |
 | [namespaceOverride](./values.yaml#L16) | string | Override the deployment namespace | `Release.Namespace` |
