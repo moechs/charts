@@ -7,7 +7,7 @@
 | argo-cd | 10.1.4 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.23 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.1 | A Helm chart for Argo Rollouts |
-| argo-workflows | 1.0.20 | A Helm chart for Argo Workflows |
+| argo-workflows | 1.0.21 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.0 | A Helm chart for cert-manager |
 | cilium | 1.19.6 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
@@ -26,7 +26,7 @@
 | higress | 2.2.3 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.40 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.9.42 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.14 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.17 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
@@ -63,13 +63,13 @@
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.20.2 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.20.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.10.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.11.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.1 | Installs the Tigera operator for Calico |
 | traefik | 41.0.2 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
-| valkey | 0.10.0 | A Helm chart for Kubernetes |
+| valkey | 0.11.0 | A Helm chart for Kubernetes |
 | vault | 0.34.0 | Official HashiCorp Vault Chart |
 | vector | 0.57.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.2.9 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
