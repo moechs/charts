@@ -4,10 +4,10 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.16.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.1.4 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.2.1 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.23 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.1 | A Helm chart for Argo Rollouts |
-| argo-workflows | 1.0.21 | A Helm chart for Argo Workflows |
+| argo-workflows | 1.0.22 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.0 | A Helm chart for cert-manager |
 | cilium | 1.19.6 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
