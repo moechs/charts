@@ -52,6 +52,17 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+# Optional writable cache volume. Enable this when running with
+# securityContext.readOnlyRootFilesystem: true so OpenObserve can create its cache
+# directory (otherwise the process panics with a ReadOnlyFilesystem error).
+# NOTE: also set config.ZO_DATA_CACHE_DIR to the same mountPath so the app writes its
+# cache there. Validate the path for your app version before relying on it.
+cache:
+  enabled: false
+  mountPath: /cache
+  # medium: "Memory"   # use a tmpfs-backed emptyDir instead of node disk
+  # sizeLimit: "2Gi"   # optional emptyDir size limit
+
 persistence:
   enabled: true
   size: 10Gi
@@ -100,6 +111,12 @@ auth:
 
   AZURE_STORAGE_ACCOUNT_KEY: ""
   AZURE_STORAGE_ACCOUNT_NAME: ""
+
+  # External metadata Postgres DSN. Set this to run standalone with Postgres as the
+  # meta store (also set config.ZO_META_STORE: "postgres"). It is a credential, so it
+  # is stored in the Secret, not the ConfigMap. Takes precedence over
+  # config.ZO_META_POSTGRES_DSN if both are set.
+  ZO_META_POSTGRES_DSN: ""
 
 # https://openobserve.ai/docs/environment-variables/
 config:
@@ -329,6 +346,21 @@ extraEnv: []
 #       name: s3credentials-secret
 #       key: S3_KEY
 
+# Prometheus Operator ServiceMonitor to scrape OpenObserve's /metrics endpoint.
+# Requires the Prometheus Operator CRDs (monitoring.coreos.com/v1) to be installed.
+serviceMonitor:
+  enabled: false
+  # namespace: ""            # defaults to the release namespace
+  # additionalLabels: {}     # e.g. { release: kube-prometheus-stack } to match your Prometheus selector
+  interval: 30s
+  scrapeTimeout: 10s
+  path: /metrics
+  scheme: http
+  honorLabels: false
+  # tlsConfig: {}
+  relabelings: []
+  metricRelabelings: []
+
 service:
   type: ClusterIP
   # type: LoadBalancer
@@ -344,12 +376,27 @@ certIssuer:
 secret:
   annotations: {}
 
+# blocked-metrics is a small nginx sidecar deployed when ingress is enabled (and the
+# gateway is not) to block public access to the /metrics endpoints.
+blockedMetrics:
+  # Resources for the blocked-metrics nginx container. Exposed because the previous
+  # hardcoded 32Mi limit could OOMKill the container in some environments.
+  resources:
+    requests:
+      cpu: 10m
+      memory: 32Mi
+    limits:
+      cpu: 50m
+      memory: 128Mi
+
 ingress:
   enabled: false
   className: "nginx"
   # NOTE: /metrics and /api/metrics endpoints are always blocked for public access when ingress is enabled
   annotations:
-    cert-manager.io/issuer: letsencrypt
+    # NOTE: the cert-manager.io/issuer annotation is NOT set here. It is injected
+    # automatically by the ingress template when certIssuer.enabled=true. This lets you
+    # use your own cert-manager.io/cluster-issuer here without a conflicting issuer.
     kubernetes.io/tls-acme: "true"
     nginx.ingress.kubernetes.io/enable-cors: "true"
     # nginx.ingress.kubernetes.io/connection-proxy-header: keep-alive
