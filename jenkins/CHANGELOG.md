@@ -12,6 +12,18 @@ Use the following links to reference issues, PRs, and commits prior to v2.6.0.
 The changelog until v1.5.7 was auto-generated based on git commits.
 Those entries include a reference to the git commit to be able to get more details.
 
+## 5.9.45
+
+Update `kubernetes` to version `4538.v5b_ce7f35b_257`
+
+## 5.9.44
+
+Update `jenkins/inbound-agent` to version `3384.v60d89463d9e0-1`
+
+## 5.9.43
+
+Update `configuration-as-code` to version `2103.vd6f93c3e714a_`
+
 ## 5.9.42
 
 Update `docker.io/bats/bats` to version `1.14.0`
