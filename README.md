@@ -19,7 +19,7 @@
 | forgejo | 17.1.3 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.2.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 12.8.0 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 12.8.1 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.1 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.43.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -28,9 +28,9 @@
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
 | jenkins | 5.9.45 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.14 | A chart for installing Jira Data Center on Kubernetes |
-| jumpserver | v4.10.17 | A Helm chart for Deploying Jumpserver on Kubernetes |
+| jumpserver | v4.10.18 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 87.19.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 87.19.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.6 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -42,7 +42,7 @@
 | nexus-repository-manager | 88.8.1 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
-| ollama | 1.69.0 | Get up and running with large language models locally. |
+| ollama | 1.70.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.28 | OpenCost and OpenCost UI |
 | openebs | 4.5.1 | Containerized Attached Storage for Kubernetes |
