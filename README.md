@@ -8,8 +8,8 @@
 | argo-events | 2.4.23 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.1 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.23 | A Helm chart for Argo Workflows |
-| cert-manager | v1.21.0 | A Helm chart for cert-manager |
-| cilium | 1.19.6 | eBPF-based Networking, Security, and Observability |
+| cert-manager | v1.21.1 | A Helm chart for cert-manager |
+| cilium | 1.20.0 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
 | confluence | 2.0.14 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 2.0.2 | Official HashiCorp Consul Chart |
@@ -18,11 +18,11 @@
 | external-secrets | 2.8.0 | External secrets management for Kubernetes |
 | forgejo | 17.1.3 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.2.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 10.2.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.10.0 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.1 | An open source trusted cloud native registry that stores, signs, and |
-| headlamp | 0.43.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
+| headlamp | 0.44.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.2.3 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
