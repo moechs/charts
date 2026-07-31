@@ -16,7 +16,7 @@
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.8.0 | External secrets management for Kubernetes |
-| forgejo | 17.1.3 | Forgejo Helm chart for Kubernetes |
+| forgejo | 17.1.4 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.2.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.10.0 | The leading tool for querying and visualizing time series and metrics. |
@@ -59,15 +59,15 @@
 | prometheus-blackbox-exporter | 11.16.0 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.7.0 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
-| rancher | 2.14.3 | Install Rancher Server to manage Kubernetes clusters across providers. |
+| rancher | 2.15.0 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.20.3 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.20.3 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.11.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 0.12.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.1 | Installs the Tigera operator for Calico |
-| traefik | 41.0.2 | A Traefik based Kubernetes ingress controller |
+| traefik | 41.1.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.11.0 | A Helm chart for Kubernetes |
 | vault | 0.34.0 | Official HashiCorp Vault Chart |
