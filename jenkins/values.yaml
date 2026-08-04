@@ -418,10 +418,10 @@ controller:
   # Plugins will be installed during Jenkins controller start
   # -- List of Jenkins plugins to install. If you don't want to install plugins, set it to `false`
   installPlugins:
-    - kubernetes:4538.v5b_ce7f35b_257
+    - kubernetes:4540.v612369217f87
     - workflow-aggregator:608.v67378e9d3db_1
     - git:5.10.1
-    - configuration-as-code:2103.vd6f93c3e714a_
+    - configuration-as-code:2111.v475308a_6c93b_
 
   # If set to false, Jenkins will download the minimum required version of all dependencies.
   # -- Download the minimum required version or latest version of all dependencies
@@ -583,7 +583,7 @@ controller:
         # -- Repository of the image that triggers the reload
         repository: kiwigrid/k8s-sidecar
         # -- Tag for the image that triggers the reload
-        tag: 2.8.1
+        tag: 2.10.0
       imagePullPolicy: IfNotPresent
       # -- Port for sidecar health probes
       healthPort: 8060
@@ -701,6 +701,10 @@ controller:
   # ref: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#update-strategies
   # -- Update strategy for StatefulSet
   updateStrategy: {}
+
+  # ref: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#managing-revision-history
+  # -- Maximum number of revisions that will be maintained in the StatefulSet's revision history
+  revisionHistoryLimit:
 
   # -- Topology spread constraints
   topologySpreadConstraints: []
