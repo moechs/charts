@@ -21,12 +21,12 @@
 | gitlab | 10.2.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.10.1 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
-| harbor | 1.19.1 | An open source trusted cloud native registry that stores, signs, and |
+| harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.44.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.2.3 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.45 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.9.49 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.14 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.18 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
@@ -53,7 +53,7 @@
 | openobserve | 0.91.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.62.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
-| photoprism | 1.4.4 | A Photoprism Helm chart for Kubernetes |
+| photoprism | 1.4.5 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
 | prometheus-blackbox-exporter | 11.16.0 | Prometheus Blackbox Exporter |
@@ -67,7 +67,7 @@
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.1 | Installs the Tigera operator for Calico |
-| traefik | 41.1.0 | A Traefik based Kubernetes ingress controller |
+| traefik | 41.1.1 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.11.0 | A Helm chart for Kubernetes |
 | vault | 0.34.0 | Official HashiCorp Vault Chart |
