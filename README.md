@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.16.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.2.3 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.3.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.24 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.1 | A Helm chart for Argo Rollouts |
 | argo-workflows | 1.0.23 | A Helm chart for Argo Workflows |
@@ -39,12 +39,12 @@
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
-| nexus-repository-manager | 88.8.1 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
+| nexus-repository-manager | 88.9.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
 | ollama | 1.71.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.28 | OpenCost and OpenCost UI |
+| opencost | 2.5.29 | OpenCost and OpenCost UI |
 | openebs | 4.5.1 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
