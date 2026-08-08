@@ -33,7 +33,7 @@ The following tables list the configurable parameters of the Jenkins chart and t
 | [agent.idleMinutes](./values.yaml#L1192) | int | Allows the Pod to remain active for reuse until the configured number of minutes has passed since the last step was executed on it | `0` |
 | [agent.image.registry](./values.yaml#L1020) | string | Registry to pull the agent jnlp image from | `""` |
 | [agent.image.repository](./values.yaml#L1022) | string | Repository to pull the agent jnlp image from | `"jenkins/inbound-agent"` |
-| [agent.image.tag](./values.yaml#L1024) | string | Tag of the image to pull | `"3384.v60d89463d9e0-1"` |
+| [agent.image.tag](./values.yaml#L1024) | string | Tag of the image to pull | `"3385.vf1123fb_515da_-1"` |
 | [agent.imagePullSecretName](./values.yaml#L1031) | string | Name of the secret to be used to pull the image | `nil` |
 | [agent.inheritYamlMergeStrategy](./values.yaml#L1211) | bool | Controls whether the defined yaml merge strategy will be inherited if another defined pod template is configured to inherit from the current one | `false` |
 | [agent.instanceCap](./values.yaml#L1175) | int | Max number of agents to launch for this type of agent | `2147483647` |
@@ -180,7 +180,7 @@ The following tables list the configurable parameters of the Jenkins chart and t
 | [controller.initializeOnce](./values.yaml#L439) | bool | Initialize only on first installation. Ensures plugins do not get updated inadvertently. Requires `persistence.enabled` to be set to `true` | `false` |
 | [controller.installLatestPlugins](./values.yaml#L428) | bool | Download the minimum required version or latest version of all dependencies | `true` |
 | [controller.installLatestSpecifiedPlugins](./values.yaml#L431) | bool | Set to true to download the latest version of any plugin that is requested to have the latest version | `false` |
-| [controller.installPlugins](./values.yaml#L420) | list | List of Jenkins plugins to install. If you don't want to install plugins, set it to `false` | `["kubernetes:4540.v612369217f87","workflow-aggregator:608.v67378e9d3db_1","git:5.10.1","configuration-as-code:2111.v475308a_6c93b_"]` |
+| [controller.installPlugins](./values.yaml#L420) | list | List of Jenkins plugins to install. If you don't want to install plugins, set it to `false` | `["kubernetes:4540.v612369217f87","workflow-aggregator:608.v67378e9d3db_1","git:5.10.1","configuration-as-code:2115.vf6de120eef70"]` |
 | [controller.javaOpts](./values.yaml#L171) | string | Append to `JAVA_OPTS` env var | `nil` |
 | [controller.jenkinsAdminEmail](./values.yaml#L105) | string | Email address for the administrator of the Jenkins instance | `nil` |
 | [controller.jenkinsHome](./values.yaml#L110) | string | Custom Jenkins home path | `"/var/jenkins_home"` |
@@ -277,7 +277,7 @@ The following tables list the configurable parameters of the Jenkins chart and t
 | [controller.sidecars.configAutoReload.healthPort](./values.yaml#L589) | int | Port for sidecar health probes | `8060` |
 | [controller.sidecars.configAutoReload.image.registry](./values.yaml#L582) | string | Registry for the image that triggers the reload | `"docker.io"` |
 | [controller.sidecars.configAutoReload.image.repository](./values.yaml#L584) | string | Repository of the image that triggers the reload | `"kiwigrid/k8s-sidecar"` |
-| [controller.sidecars.configAutoReload.image.tag](./values.yaml#L586) | string | Tag for the image that triggers the reload | `"2.10.0"` |
+| [controller.sidecars.configAutoReload.image.tag](./values.yaml#L586) | string | Tag for the image that triggers the reload | `"2.10.1"` |
 | [controller.sidecars.configAutoReload.imagePullPolicy](./values.yaml#L587) | string |  | `"IfNotPresent"` |
 | [controller.sidecars.configAutoReload.logging](./values.yaml#L606) | object | Config auto-reload logging settings | `{"configuration":{"backupCount":3,"formatter":"JSON","logLevel":"INFO","logToConsole":true,"logToFile":false,"maxBytes":1024,"override":false}}` |
 | [controller.sidecars.configAutoReload.logging.configuration.override](./values.yaml#L610) | bool | Enables custom log config utilizing using the settings below. | `false` |
