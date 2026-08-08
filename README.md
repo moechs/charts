@@ -19,18 +19,18 @@
 | forgejo | 17.1.4 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.2.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 12.10.3 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 12.10.4 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.44.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.2.3 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.49 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.9.53 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.14 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.18 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 88.1.5 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 88.2.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.7 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -57,7 +57,7 @@
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
 | prometheus-blackbox-exporter | 11.16.0 | Prometheus Blackbox Exporter |
-| prometheus-pushgateway | 3.7.0 | A Helm chart for prometheus pushgateway |
+| prometheus-pushgateway | 3.8.0 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
 | rancher | 2.15.0 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
@@ -67,7 +67,7 @@
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.1 | Installs the Tigera operator for Calico |
-| traefik | 41.1.1 | A Traefik based Kubernetes ingress controller |
+| traefik | 41.2.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.11.0 | A Helm chart for Kubernetes |
 | vault | 0.34.0 | Official HashiCorp Vault Chart |
