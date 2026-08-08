@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/changes: |
     - kind: added
-      description: Allow sourcing the web configuration (including basic-auth users) from an existing Secret via webConfiguration.existingSecret, so credentials need not be kept in plaintext values. When set, the chart-managed web-config Secret is skipped and the liveness/readiness probes use a tcpSocket check since the chart cannot read the credentials to authenticate HTTP probes.
+      description: Allow configuring the emptyDir volume, used when persistence is disabled.
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Chart Source
@@ -27,4 +27,4 @@ name: prometheus-pushgateway
 sources:
 - https://github.com/prometheus/pushgateway
 type: application
-version: 3.7.0
+version: 3.8.0
