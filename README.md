@@ -12,13 +12,13 @@
 | cilium | 1.20.0 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
 | confluence | 2.0.14 | A chart for installing Confluence Data Center on Kubernetes |
-| consul | 2.0.2 | Official HashiCorp Consul Chart |
+| consul | 2.0.3 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.9.0 | External secrets management for Kubernetes |
 | forgejo | 17.1.4 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.2.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 10.2.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.10.4 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
