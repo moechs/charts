@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.16.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.3.2 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.3.3 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.24 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.1 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.0 | A Helm chart for Argo Workflows |
@@ -23,7 +23,7 @@
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.44.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
-| higress | 2.2.3 | Helm chart for deploying Higress gateways |
+| higress | 2.2.4 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
 | jenkins | 5.9.54 | 'Jenkins - Build great things at any scale! As the leading open source |
@@ -34,12 +34,12 @@
 | kube-starrocks | 1.11.7 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
-| longhorn | 1.12.0 | Longhorn is a distributed block storage system for Kubernetes. |
+| longhorn | 1.12.1 | Longhorn is a distributed block storage system for Kubernetes. |
 | mailu | 2.7.3 | This chart installs the Mailu mail system on Kubernetes |
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
-| nexus-repository-manager | 88.9.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
+| nexus-repository-manager | 88.9.1 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
 | ollama | 1.74.0 | Get up and running with large language models locally. |
@@ -61,16 +61,16 @@
 | prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
 | rancher | 2.15.0 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.20.3 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | v1.20.3 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph-cluster | v1.20.4 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph | v1.20.4 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 0.12.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.1 | Installs the Tigera operator for Calico |
 | traefik | 41.2.0 | A Traefik based Kubernetes ingress controller |
-| uptime-kuma | 4.1.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
+| uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.11.0 | A Helm chart for Kubernetes |
-| vault | 0.34.0 | Official HashiCorp Vault Chart |
+| vault | 0.34.1 | Official HashiCorp Vault Chart |
 | vector | 0.57.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.2.9 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.2.8 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
