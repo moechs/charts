@@ -4,10 +4,10 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.16.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.3.3 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.4.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.24 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.1 | A Helm chart for Argo Rollouts |
-| argo-workflows | 2.0.0 | A Helm chart for Argo Workflows |
+| argo-workflows | 2.0.1 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.1 | A Helm chart for cert-manager |
 | cilium | 1.20.0 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
@@ -18,7 +18,7 @@
 | external-secrets | 2.9.0 | External secrets management for Kubernetes |
 | forgejo | 17.1.4 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.2.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 10.2.4 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 12.10.4 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
@@ -49,8 +49,8 @@
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.4.6 | An opinionated installation of OTEL Collector for OpenObserve |
-| openobserve-standalone | 0.92.0 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
-| openobserve | 0.92.0 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve-standalone | 0.92.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve | 0.92.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.62.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.5 | A Photoprism Helm chart for Kubernetes |
