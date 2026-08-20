@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/prerelease: "true"
 apiVersion: v2
-appVersion: 2.1.0
+appVersion: 2.2.0
 description: Apache APISIX Ingress Controller for Kubernetes
 icon: https://apache.org/logos/res/apisix/apisix.png
 keywords:
@@ -15,4 +15,4 @@ name: apisix-ingress-controller
 sources:
 - https://github.com/apache/apisix-helm-chart
 type: application
-version: 1.2.0
+version: 1.3.0
