@@ -3,7 +3,7 @@
 |  Chart  |  Version  |   Description   |
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
-| apisix | 2.16.0 | A Helm chart for Apache APISIX v3 |
+| apisix | 2.16.1 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 10.4.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.24 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.1 | A Helm chart for Argo Rollouts |
@@ -19,7 +19,7 @@
 | forgejo | 17.1.4 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.2.4 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 12.11.0 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 12.11.1 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.44.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -61,8 +61,8 @@
 | prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
 | rancher | 2.15.0 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.20.4 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | v1.20.4 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph-cluster | v1.20.5 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph | v1.20.5 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 0.12.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
