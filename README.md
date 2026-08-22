@@ -3,11 +3,11 @@
 |  Chart  |  Version  |   Description   |
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
-| apisix | 2.16.1 | A Helm chart for Apache APISIX v3 |
+| apisix | 2.17.0 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 10.4.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.24 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.41.1 | A Helm chart for Argo Rollouts |
-| argo-workflows | 2.0.1 | A Helm chart for Argo Workflows |
+| argo-workflows | 2.0.2 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.1 | A Helm chart for cert-manager |
 | cilium | 1.20.1 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
@@ -30,7 +30,7 @@
 | jira | 2.0.14 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.19 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 88.5.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 88.5.3 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.7 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -39,10 +39,10 @@
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
-| nexus-repository-manager | 88.9.1 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
+| nexus-repository-manager | 88.9.2 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
-| ollama | 1.76.0 | Get up and running with large language models locally. |
+| ollama | 1.77.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.29 | OpenCost and OpenCost UI |
 | openebs | 4.5.1 | Containerized Attached Storage for Kubernetes |
@@ -67,7 +67,7 @@
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.1 | Installs the Tigera operator for Calico |
-| traefik | 41.2.0 | A Traefik based Kubernetes ingress controller |
+| traefik | 41.3.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.11.0 | A Helm chart for Kubernetes |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
