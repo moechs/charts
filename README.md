@@ -44,7 +44,7 @@
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
 | ollama | 1.77.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.29 | OpenCost and OpenCost UI |
+| opencost | 2.5.30 | OpenCost and OpenCost UI |
 | openebs | 4.5.1 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
