@@ -18,8 +18,8 @@
 | external-secrets | 2.9.0 | External secrets management for Kubernetes |
 | forgejo | 17.1.5 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.3.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 12.11.2 | The leading tool for querying and visualizing time series and metrics. |
+| gitlab | 10.3.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| grafana | 13.0.0 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.45.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -42,10 +42,10 @@
 | nexus-repository-manager | 88.9.2 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
-| ollama | 1.77.0 | Get up and running with large language models locally. |
+| ollama | 1.78.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.30 | OpenCost and OpenCost UI |
-| openebs | 4.5.1 | Containerized Attached Storage for Kubernetes |
+| openebs | 4.6.0 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.4.6 | An opinionated installation of OTEL Collector for OpenObserve |
@@ -71,7 +71,7 @@
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.11.0 | A Helm chart for Kubernetes |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
-| vector | 0.57.0 | A lightweight, ultra-fast tool for building observability pipelines |
+| vector | 0.58.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.2.9 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.2.8 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.3.7 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
