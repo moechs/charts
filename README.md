@@ -43,6 +43,7 @@
 | nexus-repository-manager | 88.9.2 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
+| nui | 0.1.6 | NATS Free and open source UI |
 | ollama | 1.78.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.30 | OpenCost and OpenCost UI |
