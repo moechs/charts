@@ -30,6 +30,7 @@ kube-starrocks|https://starrocks.github.io/starrocks-kubernetes-operator
 kubetail|https://kubetail-org.github.io/helm-charts
 longhorn|https://charts.longhorn.io
 mailu|https://mailu.github.io/helm-charts
+nats|https://nats-io.github.io/k8s/helm/charts
 nexus-repository-manager|https://moechs.github.io/nexus-repository-manager
 nfs-subdir-external-provisioner|https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner
 node-feature-discovery|https://kubernetes-sigs.github.io/node-feature-discovery/charts
@@ -39,8 +40,8 @@ opencost|https://opencost.github.io/opencost-helm-chart
 openebs|https://openebs.github.io/openebs
 openldap|https://jp-gouin.github.io/helm-openldap
 openobserve-collector|https://charts.openobserve.ai
-openobserve-standalone|https://charts.openobserve.ai
 openobserve|https://charts.openobserve.ai
+openobserve-standalone|https://charts.openobserve.ai
 pgadmin4|https://moechs.github.io/pgadmin4-helm-charts
 photoprism|https://moechs.github.io/photoprism-helm
 prometheus-blackbox-exporter|https://prometheus-community.github.io/helm-charts
