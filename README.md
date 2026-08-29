@@ -15,11 +15,11 @@
 | consul | 2.0.3 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
-| external-secrets | 2.9.0 | External secrets management for Kubernetes |
+| external-secrets | 2.10.0 | External secrets management for Kubernetes |
 | forgejo | 17.1.5 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.3.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 13.0.0 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 13.0.1 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.45.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -39,7 +39,7 @@
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
-| nats | 2.14.5 | A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications |
+| nats | 2.14.6 | A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications |
 | nexus-repository-manager | 88.9.3 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
