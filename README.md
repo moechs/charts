@@ -6,7 +6,7 @@
 | apisix | 2.17.0 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 10.4.2 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.24 | A Helm chart for Argo Events, the event-driven workflow automation framework |
-| argo-rollouts | 2.41.1 | A Helm chart for Argo Rollouts |
+| argo-rollouts | 2.42.0 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.3 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.1 | A Helm chart for cert-manager |
 | cilium | 1.20.1 | eBPF-based Networking, Security, and Observability |
@@ -68,7 +68,7 @@
 | rustfs | 0.12.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
-| tigera-operator | v3.32.1 | Installs the Tigera operator for Calico |
+| tigera-operator | v3.32.2 | Installs the Tigera operator for Calico |
 | traefik | 41.4.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.11.0 | A Helm chart for Kubernetes |
