@@ -4,9 +4,9 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.17.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.5.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.6.3 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.24 | A Helm chart for Argo Events, the event-driven workflow automation framework |
-| argo-rollouts | 2.42.0 | A Helm chart for Argo Rollouts |
+| argo-rollouts | 2.43.0 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.3 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.1 | A Helm chart for cert-manager |
 | cilium | 1.20.1 | eBPF-based Networking, Security, and Observability |
@@ -40,11 +40,11 @@
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
 | nats | 2.14.6 | A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications |
-| nexus-repository-manager | 88.9.3 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
+| nexus-repository-manager | 88.10.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
 | nui | 0.1.6 | NATS Free and open source UI |
-| ollama | 1.78.0 | Get up and running with large language models locally. |
+| ollama | 1.79.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.30 | OpenCost and OpenCost UI |
 | openebs | 4.6.0 | Containerized Attached Storage for Kubernetes |
