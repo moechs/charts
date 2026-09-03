@@ -4,8 +4,8 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.17.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.6.3 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
-| argo-events | 2.4.24 | A Helm chart for Argo Events, the event-driven workflow automation framework |
+| argo-cd | 10.7.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-events | 2.4.25 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.0 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.3 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.1 | A Helm chart for cert-manager |
@@ -30,7 +30,7 @@
 | jira | 2.0.14 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.19 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 88.6.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 88.6.3 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.7 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -63,15 +63,15 @@
 | prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
 | rancher | 2.15.1 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.20.6 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | v1.20.6 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph-cluster | v1.20.7 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph | v1.20.7 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 0.12.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.2 | Installs the Tigera operator for Calico |
 | traefik | 41.4.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
-| valkey | 0.11.0 | A Helm chart for Kubernetes |
+| valkey | 0.12.0 | A Helm chart for Kubernetes |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
 | vector | 0.58.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.2.9 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
