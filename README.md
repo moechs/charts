@@ -4,8 +4,8 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.17.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.8.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
-| argo-events | 2.4.25 | A Helm chart for Argo Events, the event-driven workflow automation framework |
+| argo-cd | 10.8.1 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-events | 2.4.26 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.0 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.4 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.1 | A Helm chart for cert-manager |
