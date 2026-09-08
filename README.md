@@ -4,8 +4,8 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.17.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.8.1 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
-| argo-events | 2.4.26 | A Helm chart for Argo Events, the event-driven workflow automation framework |
+| argo-cd | 10.8.2 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-events | 2.4.27 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.0 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.4 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.1 | A Helm chart for cert-manager |
@@ -69,7 +69,7 @@
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.2 | Installs the Tigera operator for Calico |
-| traefik | 41.4.0 | A Traefik based Kubernetes ingress controller |
+| traefik | 41.5.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.12.0 | A Helm chart for Kubernetes |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
