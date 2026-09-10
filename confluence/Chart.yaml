@@ -1,10 +1,8 @@
 annotations:
-  artifacthub.io/changes: |-
-    - "Update appVersions for DC apps (#1132)"
-    - "feat(confluence): make synchrony readinessProbe timeoutSeconds configurable (#1117)"
+  artifacthub.io/changes: '- "Update appVersions for DC apps (#1144)"'
   artifacthub.io/containsSecurityUpdates: "true"
 apiVersion: v2
-appVersion: 10.2.13
+appVersion: 10.2.18
 dependencies:
 - name: common
   repository: https://atlassian.github.io/data-center-helm-charts
@@ -28,4 +26,4 @@ sources:
 - https://github.com/atlassian/data-center-helm-charts
 - https://bitbucket.org/atlassian-docker/docker-atlassian-confluence-server/
 type: application
-version: 2.0.14
+version: 2.0.15
