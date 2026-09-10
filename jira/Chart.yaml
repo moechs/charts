@@ -1,8 +1,8 @@
 annotations:
-  artifacthub.io/changes: '- "Update appVersions for DC apps (#1132)"'
+  artifacthub.io/changes: '- "Update appVersions for DC apps (#1144)"'
   artifacthub.io/containsSecurityUpdates: "false"
 apiVersion: v2
-appVersion: 11.3.7
+appVersion: 11.3.11
 dependencies:
 - name: common
   repository: https://atlassian.github.io/data-center-helm-charts
@@ -27,4 +27,4 @@ sources:
 - https://github.com/atlassian/data-center-helm-charts
 - https://bitbucket.org/atlassian-docker/docker-atlassian-jira/
 type: application
-version: 2.0.14
+version: 2.0.15
