@@ -16,9 +16,9 @@
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.10.0 | External secrets management for Kubernetes |
-| forgejo | 17.1.5 | Forgejo Helm chart for Kubernetes |
+| forgejo | 17.1.6 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.3.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 10.3.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 13.2.2 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
@@ -47,7 +47,7 @@
 | ollama | 1.80.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.30 | OpenCost and OpenCost UI |
-| openebs | 4.6.0 | Containerized Attached Storage for Kubernetes |
+| openebs | 4.6.1 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.4.6 | An opinionated installation of OTEL Collector for OpenObserve |
