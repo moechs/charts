@@ -4,33 +4,33 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.17.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.8.4 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.9.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.27 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.1 | A Helm chart for Argo Rollouts |
-| argo-workflows | 2.0.5 | A Helm chart for Argo Workflows |
-| cert-manager | v1.21.1 | A Helm chart for cert-manager |
+| argo-workflows | 2.0.6 | A Helm chart for Argo Workflows |
+| cert-manager | v1.21.2 | A Helm chart for cert-manager |
 | cilium | 1.20.1 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
 | confluence | 2.0.15 | A chart for installing Confluence Data Center on Kubernetes |
-| consul | 2.0.3 | Official HashiCorp Consul Chart |
+| consul | 2.0.4 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
-| external-dns | 1.21.1 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
+| external-dns | 1.22.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.10.0 | External secrets management for Kubernetes |
 | forgejo | 17.1.6 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.3.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 13.2.2 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 13.2.3 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.45.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.2.4 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.56 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.9.58 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.15 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.19 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 90.0.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 90.1.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.7 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -46,7 +46,7 @@
 | nui | 0.1.6 | NATS Free and open source UI |
 | ollama | 1.80.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.30 | OpenCost and OpenCost UI |
+| opencost | 2.5.31 | OpenCost and OpenCost UI |
 | openebs | 4.6.1 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
