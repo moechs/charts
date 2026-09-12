@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Update `jenkins/jenkins` to version `2.568.3-jdk21`
+    - Hash only the ConfigMap data in the `checksum/config` and `checksum/config-init-scripts` pod annotations, so a chart version bump alone no longer restarts the controller. Upgrading to this version restarts the controller once as the annotations change.
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.568.3-jdk21
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.9.56
+version: 5.9.58
