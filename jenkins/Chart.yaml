@@ -1,12 +1,12 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Hash only the ConfigMap data in the `checksum/config` and `checksum/config-init-scripts` pod annotations, so a chart version bump alone no longer restarts the controller. Upgrading to this version restarts the controller once as the annotations change.
+    - Allow configuring timeouts on the default HTTPRoute rule
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.568.3-jdk21
     - name: k8s-sidecar
-      image: docker.io/kiwigrid/k8s-sidecar:2.10.1
+      image: docker.io/kiwigrid/k8s-sidecar:2.11.2
     - name: inbound-agent
       image: jenkins/inbound-agent:3385.vf1123fb_515da_-1
   artifacthub.io/license: Apache-2.0
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.9.58
+version: 5.9.62

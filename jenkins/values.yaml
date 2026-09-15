@@ -418,7 +418,7 @@ controller:
   # Plugins will be installed during Jenkins controller start
   # -- List of Jenkins plugins to install. If you don't want to install plugins, set it to `false`
   installPlugins:
-    - kubernetes:4540.v612369217f87
+    - kubernetes:4547.v52f3080db_8cd
     - workflow-aggregator:608.v67378e9d3db_1
     - git:5.10.1
     - configuration-as-code:2121.v86fe99d4b_b_a_b_
@@ -583,7 +583,7 @@ controller:
         # -- Repository of the image that triggers the reload
         repository: kiwigrid/k8s-sidecar
         # -- Tag for the image that triggers the reload
-        tag: 2.10.1
+        tag: 2.11.2
       imagePullPolicy: IfNotPresent
       # -- Port for sidecar health probes
       healthPort: 8060
@@ -845,6 +845,10 @@ controller:
     extraRules: []
     # -- HTTPRoute annotations
     annotations: {}
+    # -- Filters applied to the default HTTPRoute rule
+    filters: []
+    # -- Timeouts applied to the default HTTPRoute rule. Requires Gateway API v1.2+ and controller support
+    timeouts: {}
 
   # -- Allows for adding entries to Pod /etc/hosts
   hostAliases: []

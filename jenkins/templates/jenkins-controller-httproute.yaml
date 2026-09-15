@@ -37,4 +37,12 @@ spec:
   - backendRefs:
     - name: {{ include "jenkins.fullname" $root }}
       port: {{ $root.Values.controller.servicePort }}
+{{- with .Values.controller.httpRoute.filters }}
+    filters:
+      {{- tpl (toYaml .) $root | nindent 6 }}
+{{- end }}
+{{- with .Values.controller.httpRoute.timeouts }}
+    timeouts:
+      {{- toYaml . | nindent 6 }}
+{{- end }}
 {{- end }}

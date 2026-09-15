@@ -12,6 +12,22 @@ Use the following links to reference issues, PRs, and commits prior to v2.6.0.
 The changelog until v1.5.7 was auto-generated based on git commits.
 Those entries include a reference to the git commit to be able to get more details.
 
+## 5.9.62
+
+Allow configuring timeouts on the default HTTPRoute rule
+
+## 5.9.61
+
+Update `docker.io/kiwigrid/k8s-sidecar` to version `2.11.2`
+
+## 5.9.60
+
+Update `kubernetes` to version `4547.v52f3080db_8cd`
+
+## 5.9.59
+
+Add support for filters on the default HTTPRoute rule.
+
 ## 5.9.58
 
 Hash only the ConfigMap data in the `checksum/config` and `checksum/config-init-scripts` pod annotations, so a chart version bump alone no longer restarts the controller. Upgrading to this version restarts the controller once as the annotations change.
