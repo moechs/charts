@@ -9,7 +9,7 @@
 | argo-rollouts | 2.43.1 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.6 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.2 | A Helm chart for cert-manager |
-| cilium | 1.20.1 | eBPF-based Networking, Security, and Observability |
+| cilium | 1.20.2 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
 | confluence | 2.0.15 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 2.0.4 | Official HashiCorp Consul Chart |
@@ -19,7 +19,7 @@
 | forgejo | 17.1.6 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.3.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 13.2.4 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 13.2.5 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.45.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -30,7 +30,7 @@
 | jira | 2.0.15 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.19 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 91.4.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 91.4.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.7 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
