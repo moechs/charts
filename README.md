@@ -44,7 +44,7 @@
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
 | nui | 0.1.6 | NATS Free and open source UI |
-| ollama | 1.81.0 | Get up and running with large language models locally. |
+| ollama | 1.82.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.31 | OpenCost and OpenCost UI |
 | openebs | 4.6.1 | Containerized Attached Storage for Kubernetes |
@@ -65,11 +65,11 @@
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.20.7 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.20.7 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 0.12.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 1.0.0 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.32.2 | Installs the Tigera operator for Calico |
-| traefik | 41.5.0 | A Traefik based Kubernetes ingress controller |
+| traefik | 41.6.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.12.0 | A Helm chart for Kubernetes |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
