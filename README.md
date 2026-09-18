@@ -4,9 +4,9 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.17.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.9.1 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.9.2 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.27 | A Helm chart for Argo Events, the event-driven workflow automation framework |
-| argo-rollouts | 2.43.1 | A Helm chart for Argo Rollouts |
+| argo-rollouts | 2.43.2 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.6 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.2 | A Helm chart for cert-manager |
 | cilium | 1.20.2 | eBPF-based Networking, Security, and Observability |
@@ -16,9 +16,9 @@
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.22.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.10.0 | External secrets management for Kubernetes |
-| forgejo | 17.1.6 | Forgejo Helm chart for Kubernetes |
+| forgejo | 17.1.7 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.3.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 10.4.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 13.2.5 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
@@ -26,7 +26,7 @@
 | higress | 2.2.4 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.62 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.9.63 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.15 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v4.10.19 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
@@ -51,8 +51,8 @@
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.4.6 | An opinionated installation of OTEL Collector for OpenObserve |
-| openobserve-standalone | 0.92.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
-| openobserve | 0.92.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve-standalone | 1.0.1 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve | 1.0.1 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.62.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.5 | A Photoprism Helm chart for Kubernetes |
