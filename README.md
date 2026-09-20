@@ -35,7 +35,7 @@
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.12.1 | Longhorn is a distributed block storage system for Kubernetes. |
-| mailu | 2.7.3 | This chart installs the Mailu mail system on Kubernetes |
+| mailu | 2.8.0 | This chart installs the Mailu mail system on Kubernetes |
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
@@ -44,7 +44,7 @@
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
 | nui | 0.1.6 | NATS Free and open source UI |
-| ollama | 1.82.0 | Get up and running with large language models locally. |
+| ollama | 1.83.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.31 | OpenCost and OpenCost UI |
 | openebs | 4.6.1 | Containerized Attached Storage for Kubernetes |
