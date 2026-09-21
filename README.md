@@ -20,7 +20,7 @@
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.4.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 13.2.5 | The leading tool for querying and visualizing time series and metrics. |
-| haproxy-ingress | 0.16.1 | Ingress controller for HAProxy loadbalancer |
+| haproxy-ingress | 0.16.2 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.45.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.2.4 | Helm chart for deploying Higress gateways |
