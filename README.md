@@ -7,7 +7,7 @@
 | argo-cd | 10.9.2 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.27 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.2 | A Helm chart for Argo Rollouts |
-| argo-workflows | 2.0.7 | A Helm chart for Argo Workflows |
+| argo-workflows | 2.0.8 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.2 | A Helm chart for cert-manager |
 | cilium | 1.20.2 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
@@ -15,7 +15,7 @@
 | consul | 2.0.4 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.22.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
-| external-secrets | 2.10.0 | External secrets management for Kubernetes |
+| external-secrets | 2.11.0 | External secrets management for Kubernetes |
 | forgejo | 17.1.7 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.4.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
@@ -39,23 +39,23 @@
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
-| nats | 2.14.6 | A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications |
-| nexus-repository-manager | 88.10.2 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
+| nats | 2.15.0 | A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications |
+| nexus-repository-manager | 88.10.3 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
 | nui | 0.1.6 | NATS Free and open source UI |
 | ollama | 1.83.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.31 | OpenCost and OpenCost UI |
+| opencost | 2.5.32 | OpenCost and OpenCost UI |
 | openebs | 4.6.1 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
-| openobserve-collector | 0.4.6 | An opinionated installation of OTEL Collector for OpenObserve |
+| openobserve-collector | 0.4.7 | An opinionated installation of OTEL Collector for OpenObserve |
 | openobserve-standalone | 1.0.1 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openobserve | 1.0.1 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.62.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
-| photoprism | 1.4.5 | A Photoprism Helm chart for Kubernetes |
+| photoprism | 1.4.6 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
 | prometheus-blackbox-exporter | 11.18.0 | Prometheus Blackbox Exporter |
