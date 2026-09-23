@@ -18,7 +18,7 @@
 | external-secrets | 2.11.0 | External secrets management for Kubernetes |
 | forgejo | 17.1.7 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.4.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 10.4.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 13.2.5 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.2 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
