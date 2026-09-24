@@ -10,7 +10,7 @@
 | argo-workflows | 2.0.8 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.2 | A Helm chart for cert-manager |
 | cilium | 1.20.2 | eBPF-based Networking, Security, and Observability |
-| cloudnative-pg | 0.29.0 | CloudNativePG Operator Helm Chart |
+| cloudnative-pg | 0.29.1 | CloudNativePG Operator Helm Chart |
 | confluence | 2.0.15 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 2.0.4 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
@@ -30,7 +30,7 @@
 | jira | 2.0.15 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.0.0 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 91.5.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 91.5.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.7 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -61,7 +61,7 @@
 | prometheus-blackbox-exporter | 11.18.0 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.9.0 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
-| rancher | 2.15.1 | Install Rancher Server to manage Kubernetes clusters across providers. |
+| rancher | 2.15.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.20.7 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.20.7 | File, Block, and Object Storage Services for your Cloud-Native Environment |
