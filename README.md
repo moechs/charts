@@ -19,7 +19,7 @@
 | forgejo | 17.1.7 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.4.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 13.2.5 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 13.2.6 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.2 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.45.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -30,7 +30,7 @@
 | jira | 2.0.15 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.0.0 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 91.7.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 91.8.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.7 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -50,7 +50,7 @@
 | openebs | 4.6.1 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
-| openobserve-collector | 0.4.7 | An opinionated installation of OTEL Collector for OpenObserve |
+| openobserve-collector | 0.5.0 | An opinionated installation of OTEL Collector for OpenObserve |
 | openobserve-standalone | 1.0.1 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openobserve | 1.0.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
