@@ -26,7 +26,7 @@
 | higress | 2.2.4 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.64 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.9.65 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.15 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.0.0 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
@@ -44,7 +44,7 @@
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
 | nui | 0.1.6 | NATS Free and open source UI |
-| ollama | 1.84.0 | Get up and running with large language models locally. |
+| ollama | 1.85.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.32 | OpenCost and OpenCost UI |
 | openebs | 4.6.1 | Containerized Attached Storage for Kubernetes |
