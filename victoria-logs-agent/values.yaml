@@ -59,7 +59,7 @@ persistentVolume:
   accessModes:
     - ReadWriteOnce
 
-  # -- VolumeClassAttribute to user for persistent volume
+  # -- VolumeAttributesClass to use for persistent volume
   volumeAttributesClassName:
 
   # -- Existing Claim name. If defined, PVC must be created manually before volume will be bound
@@ -134,6 +134,9 @@ image:
 
 # Advanced helm-chart configuration below, it is recommended to pass default parameters
 
+# -- Image pull secrets. Overrides `global.imagePullSecrets`
+imagePullSecrets: []
+
 # -- Override chart name
 nameOverride: ""
 
@@ -193,6 +196,9 @@ annotations: {}
 
 # -- Annotations to be added to pod
 podAnnotations: {}
+
+# -- Custom DNS config for pod. Details are [here](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-config)
+dnsConfig: {}
 
 # -- Pod's node selector. Details are [here](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector)
 nodeSelector: {}
@@ -277,6 +283,18 @@ service:
   selectorLabels: {}
   # -- Extra service ports
   extraPorts: []
+
+# -- See `kubectl explain networkpolicy.spec` for more. Details are [here](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
+networkPolicy:
+  enabled: false
+  # -- Ingress rules
+  ingress: []
+  # -- Egress rules
+  egress: []
+  # -- Extra labels for NetworkPolicy
+  labels: {}
+  # -- Extra annotations for NetworkPolicy
+  annotations: {}
 
 # -- Add extra specs dynamically to this chart
 extraObjects: []
