@@ -23,7 +23,7 @@
 | haproxy-ingress | 0.16.2 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.45.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
-| higress | 2.2.4 | Helm chart for deploying Higress gateways |
+| higress | 2.2.5 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
 | jenkins | 5.9.65 | 'Jenkins - Build great things at any scale! As the leading open source |
