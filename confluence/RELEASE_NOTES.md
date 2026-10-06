@@ -1,1 +1,1 @@
-* Update appVersions for DC apps (#1144)
+* Update appVersions for DC apps (#1152)

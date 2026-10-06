@@ -1,8 +1,8 @@
 annotations:
-  artifacthub.io/changes: '- "Update appVersions for DC apps (#1144)"'
+  artifacthub.io/changes: '- "Update appVersions for DC apps (#1152)"'
   artifacthub.io/containsSecurityUpdates: "true"
 apiVersion: v2
-appVersion: 10.2.18
+appVersion: 10.2.19
 dependencies:
 - name: common
   repository: https://atlassian.github.io/data-center-helm-charts
@@ -26,4 +26,4 @@ sources:
 - https://github.com/atlassian/data-center-helm-charts
 - https://bitbucket.org/atlassian-docker/docker-atlassian-confluence-server/
 type: application
-version: 2.0.15
+version: 2.0.17
