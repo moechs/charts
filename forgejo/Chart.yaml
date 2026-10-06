@@ -27,4 +27,4 @@ sources:
 - https://code.forgejo.org/forgejo-helm/forgejo-helm
 - https://codeberg.org/forgejo/forgejo
 type: application
-version: 17.1.7
+version: 17.2.0
