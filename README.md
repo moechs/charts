@@ -6,7 +6,7 @@
 | apisix | 2.18.0 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 10.9.6 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.27 | A Helm chart for Argo Events, the event-driven workflow automation framework |
-| argo-rollouts | 2.43.5 | A Helm chart for Argo Rollouts |
+| argo-rollouts | 2.43.6 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.11 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.2 | A Helm chart for cert-manager |
 | cilium | 1.20.2 | eBPF-based Networking, Security, and Observability |
@@ -15,7 +15,7 @@
 | consul | 2.0.4 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.23.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
-| external-secrets | 2.11.0 | External secrets management for Kubernetes |
+| external-secrets | 2.12.0 | External secrets management for Kubernetes |
 | forgejo | 17.2.0 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.4.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
@@ -30,7 +30,7 @@
 | jira | 2.0.17 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.0.0 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 91.9.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 92.0.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.7 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -63,8 +63,8 @@
 | prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
 | rancher | 2.15.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.20.8 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | v1.20.8 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph-cluster | v1.21.0 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph | 1.21.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.1 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
@@ -73,7 +73,7 @@
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.12.0 | A Helm chart for Kubernetes |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
-| vector | 0.58.0 | A lightweight, ultra-fast tool for building observability pipelines |
+| vector | 0.59.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.2.10 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.2.9 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.3.8 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
