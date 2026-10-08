@@ -48,7 +48,7 @@ controller:
     tag:
 
     # -- Controller image tag label
-    tagLabel: jdk21
+    tagLabel: jdk25
     # -- Controller image pull policy
     pullPolicy: "Always"
 
@@ -421,7 +421,7 @@ controller:
     - kubernetes:4557.ve746270f672f
     - workflow-aggregator:608.v67378e9d3db_1
     - git:5.10.1
-    - configuration-as-code:2131.vb_a_13ed96f755
+    - configuration-as-code:2133.ve570217cdb_cd
 
   # If set to false, Jenkins will download the minimum required version of all dependencies.
   # -- Download the minimum required version or latest version of all dependencies
@@ -1027,7 +1027,7 @@ agent:
     # -- Repository to pull the agent jnlp image from
     repository: "jenkins/inbound-agent"
     # -- Tag of the image to pull
-    tag: "3385.vf1123fb_515da_-1"
+    tag: "3385.vf1123fb_515da_-1-jdk25"
   # -- Configure working directory for default agent
   workingDir: "/home/jenkins/agent"
   nodeUsageMode: "NORMAL"
