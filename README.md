@@ -63,7 +63,7 @@
 | prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
 | rancher | 2.15.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | 1.21.0 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph-cluster | v1.21.0 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | 1.21.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.1 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
