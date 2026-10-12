@@ -18,7 +18,7 @@
 | external-secrets | 2.12.0 | External secrets management for Kubernetes |
 | forgejo | 17.2.0 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.4.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 10.4.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 13.5.0 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.2 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
@@ -44,7 +44,7 @@
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
 | nui | 0.1.6 | NATS Free and open source UI |
-| ollama | 1.87.0 | Get up and running with large language models locally. |
+| ollama | 1.88.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.32 | OpenCost and OpenCost UI |
 | openebs | 4.6.2 | Containerized Attached Storage for Kubernetes |
@@ -63,7 +63,7 @@
 | prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
 | rancher | 2.15.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.21.0 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph-cluster | 1.21.0 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | 1.21.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.1 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
