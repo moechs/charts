@@ -4,9 +4,9 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.18.0 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.10.2 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.10.3 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.27 | A Helm chart for Argo Events, the event-driven workflow automation framework |
-| argo-rollouts | 2.43.6 | A Helm chart for Argo Rollouts |
+| argo-rollouts | 2.43.7 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.12 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.2 | A Helm chart for cert-manager |
 | cilium | 1.20.2 | eBPF-based Networking, Security, and Observability |
@@ -39,7 +39,7 @@
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
-| nats | 2.15.0 | A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications |
+| nats | 2.15.1 | A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications |
 | nexus-repository-manager | 88.10.4 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
@@ -55,7 +55,7 @@
 | openobserve | 1.0.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.62.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
-| photoprism | 1.4.6 | A Photoprism Helm chart for Kubernetes |
+| photoprism | 1.4.7 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
 | prometheus-blackbox-exporter | 11.20.0 | Prometheus Blackbox Exporter |
@@ -63,8 +63,8 @@
 | prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
 | rancher | 2.15.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | 1.21.0 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | 1.21.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph-cluster | v1.21.0 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph | v1.21.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.1 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
