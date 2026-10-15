@@ -3,11 +3,11 @@
 |  Chart  |  Version  |   Description   |
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
-| apisix | 2.18.0 | A Helm chart for Apache APISIX v3 |
+| apisix | 2.18.1 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 10.10.3 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.27 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.7 | A Helm chart for Argo Rollouts |
-| argo-workflows | 2.0.12 | A Helm chart for Argo Workflows |
+| argo-workflows | 2.0.13 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.2 | A Helm chart for cert-manager |
 | cilium | 1.20.2 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.1 | CloudNativePG Operator Helm Chart |
@@ -19,7 +19,7 @@
 | forgejo | 17.3.0 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.4.2 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 13.5.1 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 13.6.0 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.2 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.2 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.45.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -30,7 +30,7 @@
 | jira | 2.0.17 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.0.0 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 92.4.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 92.7.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.7 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -40,13 +40,13 @@
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
 | nats | 2.15.1 | A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications |
-| nexus-repository-manager | 88.10.4 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
+| nexus-repository-manager | 88.11.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.19.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
 | nui | 0.1.6 | NATS Free and open source UI |
 | ollama | 1.88.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.32 | OpenCost and OpenCost UI |
+| opencost | 2.5.33 | OpenCost and OpenCost UI |
 | openebs | 4.6.2 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
@@ -64,7 +64,7 @@
 | rancher | 2.15.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | 1.21.0 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | v1.21.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph | 1.21.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.1 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
