@@ -1,9 +1,7 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Switch images to jdk25 variant:
-    - - `jenkins/jenkins` to version `2.580.1-jdk25`
-    - - `jenkins/inbound-agent` to version `3385.vf1123fb_515da_-1-jdk25`
+    - Update `git` to version `5.11.0`
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.580.1-jdk25
@@ -48,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.9.68
+version: 5.9.69
