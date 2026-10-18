@@ -50,7 +50,7 @@
 | openebs | 4.6.2 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
-| openobserve-collector | 0.5.0 | An opinionated installation of OTEL Collector for OpenObserve |
+| openobserve-collector | 0.5.1 | An opinionated installation of OTEL Collector for OpenObserve |
 | openobserve-standalone | 1.0.1 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openobserve | 1.0.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
@@ -65,7 +65,7 @@
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | 1.21.0 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | 1.21.0 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 1.0.2 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rustfs | 1.0.3 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.33.0 | Installs the Tigera operator for Calico |
