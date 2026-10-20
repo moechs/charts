@@ -73,7 +73,7 @@
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.12.0 | A Helm chart for Kubernetes |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
-| vector | 0.59.0 | A lightweight, ultra-fast tool for building observability pipelines |
+| vector | 0.60.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.2.10 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.2.9 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.3.8 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
