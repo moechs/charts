@@ -18,7 +18,7 @@
 | external-secrets | 2.13.0 | External secrets management for Kubernetes |
 | forgejo | 17.3.1 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.5.0 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 10.5.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 14.0.1 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.2 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.4 | An open source trusted cloud native registry that stores, signs, and |
@@ -58,7 +58,7 @@
 | photoprism | 1.4.7 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
-| prometheus-blackbox-exporter | 11.20.0 | Prometheus Blackbox Exporter |
+| prometheus-blackbox-exporter | 11.20.1 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.9.1 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
 | rancher | 2.15.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
@@ -69,7 +69,7 @@
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.33.0 | Installs the Tigera operator for Calico |
-| traefik | 42.1.0 | A Traefik based Kubernetes ingress controller |
+| traefik | 42.1.2 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.12.0 | A Helm chart for Kubernetes |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
