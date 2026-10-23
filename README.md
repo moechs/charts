@@ -7,12 +7,12 @@
 | argo-cd | 10.10.5 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.27 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.8 | A Helm chart for Argo Rollouts |
-| argo-workflows | 2.0.13 | A Helm chart for Argo Workflows |
+| argo-workflows | 2.0.14 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.2 | A Helm chart for cert-manager |
 | cilium | 1.20.3 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.1 | CloudNativePG Operator Helm Chart |
 | confluence | 2.0.17 | A chart for installing Confluence Data Center on Kubernetes |
-| consul | 2.0.4 | Official HashiCorp Consul Chart |
+| consul | 2.1.0 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.23.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.13.0 | External secrets management for Kubernetes |
@@ -26,12 +26,12 @@
 | higress | 2.2.5 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.9.72 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.9.73 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.17 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.1.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
 | kube-prometheus-stack | 92.11.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
-| kube-starrocks | 1.11.7 | kube-starrocks includes two subcharts, operator and starrocks |
+| kube-starrocks | 1.11.8 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
 | longhorn | 1.13.0 | Longhorn is a distributed block storage system for Kubernetes. |
@@ -50,15 +50,15 @@
 | openebs | 4.6.2 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
-| openobserve-collector | 0.6.0 | An opinionated installation of OTEL Collector for OpenObserve |
-| openobserve-standalone | 1.0.1 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
-| openobserve | 1.0.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve-collector | 0.7.0 | An opinionated installation of OTEL Collector for OpenObserve |
+| openobserve-standalone | 1.0.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve | 1.0.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.62.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.7 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
-| prometheus-blackbox-exporter | 11.20.1 | Prometheus Blackbox Exporter |
+| prometheus-blackbox-exporter | 11.20.2 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.9.1 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
 | rancher | 2.15.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
@@ -69,7 +69,7 @@
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.33.0 | Installs the Tigera operator for Calico |
-| traefik | 42.1.2 | A Traefik based Kubernetes ingress controller |
+| traefik | 42.1.3 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.12.0 | A Helm chart for Kubernetes |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
