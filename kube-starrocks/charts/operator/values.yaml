@@ -30,13 +30,16 @@ starrocksOperator:
   # If enabled, the operator-related resources will be created, including the operator deployment, service account,
   # clusterrole, clusterrolebinding, and service account.
   enabled: true
+  # labels for the starrocks operator Deployment and pod. Values must be strings, numbers, or booleans
+  # and are rendered as strings. The "app", "version", and "app.kubernetes.io/managed-by" keys are reserved.
+  labels: {}
   # annotations for starrocks operator.
   annotations: {}
   namespaceOverride: ""
   image:
     # image sliced by "repository:tag"
     repository: starrocks/operator
-    tag: v1.11.7
+    tag: v1.11.8
   imagePullPolicy: Always
   replicaCount: 1
   resources:
