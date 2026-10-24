@@ -4,18 +4,18 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.18.2 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.10.5 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.11.1 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.27 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.8 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.14 | A Helm chart for Argo Workflows |
-| cert-manager | v1.21.2 | A Helm chart for cert-manager |
-| cilium | 1.20.3 | eBPF-based Networking, Security, and Observability |
+| cert-manager | v1.21.3 | A Helm chart for cert-manager |
+| cilium | 1.20.4 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.1 | CloudNativePG Operator Helm Chart |
-| confluence | 2.0.17 | A chart for installing Confluence Data Center on Kubernetes |
+| confluence | 2.0.18 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 2.1.0 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.23.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
-| external-secrets | 2.13.0 | External secrets management for Kubernetes |
+| external-secrets | 2.14.0 | External secrets management for Kubernetes |
 | forgejo | 17.3.1 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.5.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
@@ -27,7 +27,7 @@
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
 | jenkins | 5.9.73 | 'Jenkins - Build great things at any scale! As the leading open source |
-| jira | 2.0.17 | A chart for installing Jira Data Center on Kubernetes |
+| jira | 2.0.18 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.1.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
 | kube-prometheus-stack | 92.11.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
@@ -40,11 +40,11 @@
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
 | nats | 2.15.1 | A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications |
-| nexus-repository-manager | 88.11.1 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
+| nexus-repository-manager | 88.11.2 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
-| node-feature-discovery | 0.20.0 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
+| node-feature-discovery | 0.20.1 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
 | nui | 0.1.6 | NATS Free and open source UI |
-| ollama | 1.90.0 | Get up and running with large language models locally. |
+| ollama | 1.91.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.33 | OpenCost and OpenCost UI |
 | openebs | 4.6.2 | Containerized Attached Storage for Kubernetes |
