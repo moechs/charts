@@ -1,6 +1,6 @@
 # confluence
 
-![Version: 2.0.17](https://img.shields.io/badge/Version-2.0.17-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 10.2.19](https://img.shields.io/badge/AppVersion-10.2.19-informational?style=flat-square)
+![Version: 2.0.18](https://img.shields.io/badge/Version-2.0.18-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 10.2.19](https://img.shields.io/badge/AppVersion-10.2.19-informational?style=flat-square)
 
 A chart for installing Confluence Data Center on Kubernetes
 
@@ -91,6 +91,7 @@ Kubernetes: `>=1.21.x-0`
 | confluence.seraphConfig.generateByHelm | bool | `false` | Mount seraph-config.xml as a ConfigMap. Override configuration elements if necessary  |
 | confluence.service.annotations | object | `{}` | Additional annotations to apply to the Service  |
 | confluence.service.contextPath | string | `nil` | The Tomcat context path that Confluence will use. The ATL_TOMCAT_CONTEXTPATH will be set automatically.  |
+| confluence.service.externalTrafficPolicy | string | `nil` | The external traffic policy for the Service. Set to "Local" to preserve the client source IP (e.g. for audit logging or when fronted by an AWS ALB/NLB with instance/NodePort targets). Only applied when service.type is "NodePort" or "LoadBalancer"; ignored for ClusterIP, where Kubernetes rejects this field.  |
 | confluence.service.loadBalancerIP | string | `nil` | Use specific loadBalancerIP. Only applies to service type LoadBalancer.  |
 | confluence.service.nodePort | string | `nil` | Only applicable if service.type is NodePort. NodePort for Confluence service  |
 | confluence.service.port | int | `80` | The port on which the Confluence K8s Service will listen  |
