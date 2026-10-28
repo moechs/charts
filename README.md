@@ -19,7 +19,7 @@
 | forgejo | 17.3.2 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.5.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 14.1.0 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 14.2.0 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.3 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.4 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.46.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -30,7 +30,7 @@
 | jira | 2.0.18 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.1.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 92.14.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 92.14.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.8 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -51,8 +51,8 @@
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.7.0 | An opinionated installation of OTEL Collector for OpenObserve |
-| openobserve-standalone | 1.0.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
-| openobserve | 1.0.4 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve-standalone | 1.1.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve | 1.1.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.62.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.7 | A Photoprism Helm chart for Kubernetes |
@@ -60,10 +60,10 @@
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
 | prometheus-blackbox-exporter | 11.20.2 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.10.0 | A Helm chart for prometheus pushgateway |
-| prometheus-smartctl-exporter | 0.17.1 | A Helm chart for Kubernetes |
+| prometheus-smartctl-exporter | 0.18.0 | A Helm chart for Kubernetes |
 | rancher | 2.15.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.21.1 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph-cluster | 1.21.1 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | 1.21.1 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.4 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
@@ -71,7 +71,7 @@
 | tigera-operator | v3.33.0 | Installs the Tigera operator for Calico |
 | traefik | 42.1.3 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
-| valkey | 0.12.0 | A Helm chart for Kubernetes |
+| valkey | 0.12.1 | A Helm chart for Kubernetes |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
 | vector | 0.60.0 | A lightweight, ultra-fast tool for building observability pipelines |
 | victoria-logs-agent | 0.2.10 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
