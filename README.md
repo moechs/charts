@@ -26,7 +26,7 @@
 | higress | 2.2.5 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.10.0 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.10.2 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.18 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.1.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
@@ -44,15 +44,15 @@
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.20.1 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
 | nui | 0.1.6 | NATS Free and open source UI |
-| ollama | 1.92.0 | Get up and running with large language models locally. |
+| ollama | 1.93.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.33 | OpenCost and OpenCost UI |
 | openebs | 4.6.2 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.7.0 | An opinionated installation of OTEL Collector for OpenObserve |
-| openobserve-standalone | 1.1.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
-| openobserve | 1.1.2 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve-standalone | 1.1.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve | 1.1.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.62.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.7 | A Photoprism Helm chart for Kubernetes |
@@ -63,7 +63,7 @@
 | prometheus-smartctl-exporter | 0.18.0 | A Helm chart for Kubernetes |
 | rancher | 2.15.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | 1.21.1 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph-cluster | v1.21.1 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | 1.21.1 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.4 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
