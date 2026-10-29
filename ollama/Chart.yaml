@@ -2,12 +2,12 @@ annotations:
   artifacthub.io/category: ai-machine-learning
   artifacthub.io/changes: |
     - kind: changed
-      description: upgrade app version to v0.40.11
+      description: upgrade app version to v0.40.12
       links:
-        - name: Ollama release v0.40.11
-          url: https://github.com/ollama/ollama/releases/tag/v0.40.11
+        - name: Ollama release v0.40.12
+          url: https://github.com/ollama/ollama/releases/tag/v0.40.12
 apiVersion: v2
-appVersion: 0.40.11
+appVersion: 0.40.12
 description: Get up and running with large language models locally.
 home: https://ollama.ai/
 icon: https://ollama.ai/public/ollama.png
@@ -25,4 +25,4 @@ sources:
 - https://github.com/ollama/ollama
 - https://github.com/otwld/ollama-helm
 type: application
-version: 1.92.0
+version: 1.93.0
