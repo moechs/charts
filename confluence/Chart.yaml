@@ -1,7 +1,5 @@
 annotations:
-  artifacthub.io/changes: |-
-    - "Feat: Add externalTrafficPolicy for DC products (#1160)"
-    - "fix(jira,confluence): apply common labels to local-home and additional PVC templates (#1148)"
+  artifacthub.io/changes: '- "Update Helm chart version"'
   artifacthub.io/containsSecurityUpdates: "true"
 apiVersion: v2
 appVersion: 10.2.19
@@ -28,4 +26,4 @@ sources:
 - https://github.com/atlassian/data-center-helm-charts
 - https://bitbucket.org/atlassian-docker/docker-atlassian-confluence-server/
 type: application
-version: 2.0.18
+version: 2.0.20
