@@ -7,18 +7,18 @@
 | argo-cd | 10.11.6 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.27 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.8 | A Helm chart for Argo Rollouts |
-| argo-workflows | 2.0.14 | A Helm chart for Argo Workflows |
+| argo-workflows | 2.0.15 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.3 | A Helm chart for cert-manager |
 | cilium | 1.20.4 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.1 | CloudNativePG Operator Helm Chart |
-| confluence | 2.0.18 | A chart for installing Confluence Data Center on Kubernetes |
+| confluence | 2.0.20 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 2.1.0 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.23.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.14.0 | External secrets management for Kubernetes |
 | forgejo | 17.3.2 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.5.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 10.5.4 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 14.2.0 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.3 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.4 | An open source trusted cloud native registry that stores, signs, and |
@@ -26,11 +26,11 @@
 | higress | 2.2.5 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.10.2 | 'Jenkins - Build great things at any scale! As the leading open source |
-| jira | 2.0.18 | A chart for installing Jira Data Center on Kubernetes |
+| jenkins | 5.10.5 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jira | 2.0.20 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.1.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 92.14.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 92.16.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.8 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -39,7 +39,7 @@
 | minio | 17.0.22 | MinIO(R) is an object storage server, compatible with Amazon S3 cloud |
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
-| nats | 2.15.1 | A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications |
+| nats | 2.15.2 | A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications |
 | nexus-repository-manager | 88.11.2 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.20.1 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
@@ -60,11 +60,11 @@
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
 | prometheus-blackbox-exporter | 11.20.2 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.10.0 | A Helm chart for prometheus pushgateway |
-| prometheus-smartctl-exporter | 0.18.0 | A Helm chart for Kubernetes |
-| rancher | 2.15.2 | Install Rancher Server to manage Kubernetes clusters across providers. |
+| prometheus-smartctl-exporter | 0.19.0 | A Helm chart for Kubernetes |
+| rancher | 2.15.3 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.21.1 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | 1.21.1 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph | v1.21.1 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.4 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
@@ -73,7 +73,7 @@
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.12.1 | A Helm chart for Kubernetes |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
-| vector | 0.60.0 | A lightweight, ultra-fast tool for building observability pipelines |
+| vector | 0.61.0 | Helm chart for Vector, a lightweight, ultra-fast tool for building observability |
 | victoria-logs-agent | 0.2.10 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.2.9 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.3.8 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
