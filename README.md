@@ -26,7 +26,7 @@
 | higress | 2.2.5 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.10.5 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.10.6 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.20 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.1.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
@@ -50,7 +50,7 @@
 | openebs | 4.6.2 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
-| openobserve-collector | 0.7.0 | An opinionated installation of OTEL Collector for OpenObserve |
+| openobserve-collector | 0.8.0 | An opinionated installation of OTEL Collector for OpenObserve |
 | openobserve-standalone | 1.1.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openobserve | 1.1.3 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
@@ -59,17 +59,17 @@
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
 | prometheus-blackbox-exporter | 11.20.2 | Prometheus Blackbox Exporter |
-| prometheus-pushgateway | 3.10.0 | A Helm chart for prometheus pushgateway |
+| prometheus-pushgateway | 3.10.1 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.19.0 | A Helm chart for Kubernetes |
 | rancher | 2.15.3 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.21.1 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | v1.21.1 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph-cluster | 1.21.1 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph | 1.21.1 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.4 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.33.0 | Installs the Tigera operator for Calico |
-| traefik | 42.1.3 | A Traefik based Kubernetes ingress controller |
+| traefik | 42.2.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.12.1 | A Helm chart for Kubernetes |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
