@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Update `jenkins/inbound-agent` to version `3395.v6e5377b_0fb_3c-2-jdk25`
+    - Keep `false`, `0`, `""` and `[]` values set on an `additionalAgents` entry instead of replacing them with the `agent` defaults, so an additional agent can turn off settings such as `privileged` that are enabled on the default agent.
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.580.2-jdk25
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.10.5
+version: 5.10.6
