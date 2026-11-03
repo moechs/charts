@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Update `configuration-as-code` to version `2143.vc78d4eb_d4174`
+    - Default `controller.httpsKeyStore.fileName` to `keystore.jks` when empty or unset to prevent invalid `KeyToPath` specifications when using `jenkinsHttpsJksSecretName`.
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.580.2-jdk25
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.10.9
+version: 5.10.10
