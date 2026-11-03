@@ -364,8 +364,8 @@ server:
     annotations: {}
     # -- Service labels
     labels: {}
-    # -- Service ClusterIP
-    clusterIP: None
+    # -- Service ClusterIP. When unset, the Service is headless (`None`) with legacy naming and a regular ClusterIP Service with operator naming
+    clusterIP:
     # -- Service external IPs. Details are [here]( https://kubernetes.io/docs/concepts/services-networking/service/#external-ips)
     externalIPs: []
     # -- Service load balancer IP
@@ -388,8 +388,10 @@ server:
     ipFamilyPolicy: ""
     # -- List of service IP families. Check [here](https://kubernetes.io/docs/concepts/services-networking/dual-stack/#services) for details.
     ipFamilies: []
+    # -- Per-port Service overrides, keyed by port name. Each entry may override port, protocol, targetPort, nodePort and/or appProtocol
+    portOverrides: {}
 
-  # -- VictoriaLogs mode: deployment, statefulSet
+  # -- VictoriaLogs mode: deployment, statefulSet. Only `deployment` is supported with `useLegacyNaming: false`
   mode: statefulSet
 
   # -- [K8s Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) specific variables
