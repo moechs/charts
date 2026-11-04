@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.18.2 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.11.6 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.11.7 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.27 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.8 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.16 | A Helm chart for Argo Workflows |
@@ -40,11 +40,11 @@
 | mongodb | 18.1.20 | MongoDB(R) is a relational open source NoSQL database. Easy to use, it |
 | mysql | 14.0.3 | MySQL is a fast, reliable, scalable, and easy to use open source relational |
 | nats | 2.15.2 | A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications |
-| nexus-repository-manager | 88.11.2 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
+| nexus-repository-manager | 88.12.0 | Nexus Repository Manager 3 Single‑Instance Helm Chart |
 | nfs-subdir-external-provisioner | 4.0.18 | nfs-subdir-external-provisioner is an automatic provisioner that used |
 | node-feature-discovery | 0.20.1 | 'Node Feature Discovery (NFD) is a Kubernetes add-on for detecting hardware |
 | nui | 0.1.6 | NATS Free and open source UI |
-| ollama | 1.94.0 | Get up and running with large language models locally. |
+| ollama | 1.95.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
 | opencost | 2.5.33 | OpenCost and OpenCost UI |
 | openebs | 4.6.2 | Containerized Attached Storage for Kubernetes |
@@ -63,7 +63,7 @@
 | prometheus-smartctl-exporter | 0.19.0 | A Helm chart for Kubernetes |
 | rancher | 2.15.3 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | 1.21.1 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph-cluster | v1.21.1 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | v1.21.1 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.4 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
