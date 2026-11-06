@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/changes: |
-    - kind: added
-      description: Pass the new Argo CD v3.6.0 argocd-cmd-params-cm keys to the workloads and mount the optional commit signing key in the commit server
+    - kind: fixed
+      description: "HTTPRoute no longer derives hostnames from the ListenerSet and inherits them from the attached listener; a wildcard listener now matches all its hosts instead of only global.domain"
   artifacthub.io/signKey: |
     fingerprint: 2B8F22F57260EFA67BE1C5824B11F800CD9D2252
     url: https://argoproj.github.io/argo-helm/pgp_keys.asc
@@ -28,4 +28,4 @@ name: argo-cd
 sources:
 - https://github.com/argoproj/argo-cd
 - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
-version: 10.13.1
+version: 10.14.0
