@@ -12,6 +12,18 @@ Use the following links to reference issues, PRs, and commits prior to v2.6.0.
 The changelog until v1.5.7 was auto-generated based on git commits.
 Those entries include a reference to the git commit to be able to get more details.
 
+## 5.10.13
+
+Update `configuration-as-code` to version `2147.v8a_8d38668c72`
+
+## 5.10.12
+
+Update `jenkins/inbound-agent` to version `3395.v6e5377b_0fb_3c-4-jdk25`
+
+## 5.10.11
+
+Fix `values.yaml` and `VALUES.md` documenting the controller Service cluster IP as `controller.clusterIp`. The template reads `controller.clusterIP`, which is unchanged; the old spelling was never used and is still ignored.
+
 ## 5.10.10
 
 Default `controller.httpsKeyStore.fileName` to `keystore.jks` when empty or unset to prevent invalid `KeyToPath` specifications when using `jenkinsHttpsJksSecretName`.

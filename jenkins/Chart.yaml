@@ -1,14 +1,14 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Default `controller.httpsKeyStore.fileName` to `keystore.jks` when empty or unset to prevent invalid `KeyToPath` specifications when using `jenkinsHttpsJksSecretName`.
+    - Update `configuration-as-code` to version `2147.v8a_8d38668c72`
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.580.2-jdk25
     - name: k8s-sidecar
       image: docker.io/kiwigrid/k8s-sidecar:2.14.1
     - name: inbound-agent
-      image: jenkins/inbound-agent:3395.v6e5377b_0fb_3c-2-jdk25
+      image: jenkins/inbound-agent:3395.v6e5377b_0fb_3c-4-jdk25
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Chart Source
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.10.10
+version: 5.10.13

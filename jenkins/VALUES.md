@@ -33,7 +33,7 @@ The following tables list the configurable parameters of the Jenkins chart and t
 | [agent.idleMinutes](./values.yaml#L1208) | int | Allows the Pod to remain active for reuse until the configured number of minutes has passed since the last step was executed on it | `0` |
 | [agent.image.registry](./values.yaml#L1036) | string | Registry to pull the agent jnlp image from | `""` |
 | [agent.image.repository](./values.yaml#L1038) | string | Repository to pull the agent jnlp image from | `"jenkins/inbound-agent"` |
-| [agent.image.tag](./values.yaml#L1040) | string | Tag of the image to pull | `"3395.v6e5377b_0fb_3c-2-jdk25"` |
+| [agent.image.tag](./values.yaml#L1040) | string | Tag of the image to pull | `"3395.v6e5377b_0fb_3c-4-jdk25"` |
 | [agent.imagePullSecretName](./values.yaml#L1047) | string | Name of the secret to be used to pull the image | `nil` |
 | [agent.inheritYamlMergeStrategy](./values.yaml#L1227) | bool | Controls whether the defined yaml merge strategy will be inherited if another defined pod template is configured to inherit from the current one | `false` |
 | [agent.instanceCap](./values.yaml#L1191) | int | Max number of agents to launch for this type of agent | `2147483647` |
@@ -112,7 +112,7 @@ The following tables list the configurable parameters of the Jenkins chart and t
 | [controller.backendconfig.spec](./values.yaml#L829) | object | backendconfig spec | `{}` |
 | [controller.cloudName](./values.yaml#L517) | string | Name of default cloud configuration. | `"kubernetes"` |
 | [controller.cloudTraits](./values.yaml#L519) | list | Traits for the chart-generated Kubernetes cloud (for example, `ephemeralContainer`). Additional clouds inherit these unless overridden by `additionalClouds.<name>.controller.cloudTraits`. | `[]` |
-| [controller.clusterIp](./values.yaml#L243) | string | k8s service clusterIP. Only used if serviceType is ClusterIP | `nil` |
+| [controller.clusterIP](./values.yaml#L243) | string | k8s service clusterIP. Only used if serviceType is ClusterIP | `nil` |
 | [controller.componentName](./values.yaml#L40) | string | Used for label app.kubernetes.io/component | `"jenkins-controller"` |
 | [controller.containerEnv](./values.yaml#L165) | list | Environment variables for Jenkins Container | `[]` |
 | [controller.containerEnvFrom](./values.yaml#L162) | list | Environment variable sources for Jenkins Container | `[]` |
@@ -183,7 +183,7 @@ The following tables list the configurable parameters of the Jenkins chart and t
 | [controller.initializeOnce](./values.yaml#L444) | bool | Initialize only on first installation. Ensures plugins do not get updated inadvertently. Requires `persistence.enabled` to be set to `true` | `false` |
 | [controller.installLatestPlugins](./values.yaml#L433) | bool | Download the minimum required version or latest version of all dependencies | `true` |
 | [controller.installLatestSpecifiedPlugins](./values.yaml#L436) | bool | Set to true to download the latest version of any plugin that is requested to have the latest version | `false` |
-| [controller.installPlugins](./values.yaml#L425) | list | List of Jenkins plugins to install. If you don't want to install plugins, set it to `false` | `["kubernetes:4560.vc25b_83890c34","workflow-aggregator:608.v67378e9d3db_1","git:5.11.0","configuration-as-code:2143.vc78d4eb_d4174"]` |
+| [controller.installPlugins](./values.yaml#L425) | list | List of Jenkins plugins to install. If you don't want to install plugins, set it to `false` | `["kubernetes:4560.vc25b_83890c34","workflow-aggregator:608.v67378e9d3db_1","git:5.11.0","configuration-as-code:2147.v8a_8d38668c72"]` |
 | [controller.javaOpts](./values.yaml#L171) | string | Append to `JAVA_OPTS` env var | `nil` |
 | [controller.jenkinsAdminEmail](./values.yaml#L105) | string | Email address for the administrator of the Jenkins instance | `nil` |
 | [controller.jenkinsHome](./values.yaml#L110) | string | Custom Jenkins home path | `"/var/jenkins_home"` |
