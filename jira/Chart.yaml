@@ -1,8 +1,10 @@
 annotations:
-  artifacthub.io/changes: '- "Update Helm chart version"'
+  artifacthub.io/changes: |-
+    - "Update appVersions for DC apps (#1178)"
+    - "fix: wrap namespace/service variable queries in query_result() (#1171)"
   artifacthub.io/containsSecurityUpdates: "false"
 apiVersion: v2
-appVersion: 11.3.12
+appVersion: 11.3.13
 dependencies:
 - name: common
   repository: https://atlassian.github.io/data-center-helm-charts
@@ -27,4 +29,4 @@ sources:
 - https://github.com/atlassian/data-center-helm-charts
 - https://bitbucket.org/atlassian-docker/docker-atlassian-jira/
 type: application
-version: 2.0.20
+version: 2.0.21
