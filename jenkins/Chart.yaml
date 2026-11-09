@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Update `configuration-as-code` to version `2147.v8a_8d38668c72`
+    - Add `agent.useJenkinsProxy` to make the Kubernetes cloud connect to the API server through the proxy configured in Jenkins.
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.580.2-jdk25
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.10.13
+version: 5.11.0
