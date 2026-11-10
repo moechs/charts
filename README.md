@@ -4,9 +4,9 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.18.2 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.17.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.17.1 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.28 | A Helm chart for Argo Events, the event-driven workflow automation framework |
-| argo-rollouts | 2.43.10 | A Helm chart for Argo Rollouts |
+| argo-rollouts | 2.43.12 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.18 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.3 | A Helm chart for cert-manager |
 | cilium | 1.20.4 | eBPF-based Networking, Security, and Observability |
@@ -23,14 +23,14 @@
 | haproxy-ingress | 0.16.3 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.4 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.46.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
-| higress | 2.2.5 | Helm chart for deploying Higress gateways |
+| higress | 2.2.6 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
 | jenkins | 5.11.0 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.21 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.1.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 93.1.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 93.1.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.8 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -77,6 +77,6 @@
 | victoria-logs-agent | 0.2.10 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.2.11 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.3.8 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
-| victoria-logs-single | 0.13.11 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
+| victoria-logs-single | 0.13.12 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
 | zentao | 2026.7.0901 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
 | zookeeper | 13.8.8 | Apache ZooKeeper provides a reliable, centralized register of configuration |
