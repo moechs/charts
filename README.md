@@ -3,8 +3,8 @@
 |  Chart  |  Version  |   Description   |
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
-| apisix | 2.18.2 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.17.1 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| apisix | 2.18.3 | A Helm chart for Apache APISIX v3 |
+| argo-cd | 10.17.2 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.28 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.12 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.18 | A Helm chart for Argo Workflows |
@@ -15,22 +15,22 @@
 | consul | 2.1.0 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.23.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
-| external-secrets | 2.14.0 | External secrets management for Kubernetes |
+| external-secrets | 2.15.0 | External secrets management for Kubernetes |
 | forgejo | 17.3.2 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.5.4 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 14.4.0 | The leading tool for querying and visualizing time series and metrics. |
+| gitlab | 10.5.5 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| grafana | 14.4.1 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.3 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.4 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.46.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.2.6 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.11.0 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.12.0 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.21 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.1.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 93.1.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 93.2.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.8 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -46,7 +46,7 @@
 | nui | 0.1.6 | NATS Free and open source UI |
 | ollama | 1.95.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.33 | OpenCost and OpenCost UI |
+| opencost | 2.5.34 | OpenCost and OpenCost UI |
 | openebs | 4.6.2 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
@@ -58,18 +58,18 @@
 | photoprism | 1.4.8 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
-| prometheus-blackbox-exporter | 11.21.1 | Prometheus Blackbox Exporter |
+| prometheus-blackbox-exporter | 11.21.2 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.11.2 | A Helm chart for prometheus pushgateway |
-| prometheus-smartctl-exporter | 0.19.1 | A Helm chart for Kubernetes |
+| prometheus-smartctl-exporter | 0.19.2 | A Helm chart for Kubernetes |
 | rancher | 2.15.3 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.21.2 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | 1.21.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 1.0.4 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rook-ceph-cluster | 1.21.2 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph | v1.21.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rustfs | 1.0.5 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.33.0 | Installs the Tigera operator for Calico |
-| traefik | 42.3.1 | A Traefik based Kubernetes ingress controller |
+| traefik | 42.3.2 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 0.12.1 | A Helm chart for Kubernetes |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
