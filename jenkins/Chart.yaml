@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Add `agent.useJenkinsProxy` to make the Kubernetes cloud connect to the API server through the proxy configured in Jenkins.
+    - Use the OpenShift Route host (`controller.route.path`) for the Jenkins URL when `controller.route.enabled` is set and neither `controller.jenkinsUrl` nor `controller.ingress.hostName` is. The URL uses `https`, since the Route terminates TLS at the edge, unless `controller.jenkinsUrlProtocol` is set.
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.580.2-jdk25
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.11.0
+version: 5.12.0
