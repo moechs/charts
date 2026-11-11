@@ -24,6 +24,7 @@ maintainers:
   url: https://github.com/zeritti
 name: prometheus-node-exporter
 sources:
+- https://github.com/prometheus-community/helm-charts
 - https://github.com/prometheus/node_exporter/
 type: application
-version: 5.0.0
+version: 5.1.0
