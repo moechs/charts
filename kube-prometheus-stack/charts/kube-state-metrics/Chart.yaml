@@ -28,6 +28,7 @@ maintainers:
   url: https://github.com/sebastiangaiser
 name: kube-state-metrics
 sources:
+- https://github.com/prometheus-community/helm-charts
 - https://github.com/kubernetes/kube-state-metrics/
 type: application
-version: 9.0.0
+version: 9.0.1
