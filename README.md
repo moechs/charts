@@ -4,7 +4,7 @@
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
 | apisix | 2.18.3 | A Helm chart for Apache APISIX v3 |
-| argo-cd | 10.17.2 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
+| argo-cd | 10.18.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.28 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.12 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.18 | A Helm chart for Argo Workflows |
@@ -18,7 +18,7 @@
 | external-secrets | 2.15.0 | External secrets management for Kubernetes |
 | forgejo | 17.3.2 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.5.5 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| gitlab | 10.5.6 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
 | grafana | 14.4.1 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.3 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.4 | An open source trusted cloud native registry that stores, signs, and |
@@ -30,7 +30,7 @@
 | jira | 2.0.21 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.1.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 93.2.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 93.2.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.8 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -51,8 +51,8 @@
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.8.3 | An opinionated installation of OTEL Collector for OpenObserve |
-| openobserve-standalone | 1.1.5 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
-| openobserve | 1.1.4 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve-standalone | 1.1.6 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve | 1.1.5 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.62.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.8 | A Photoprism Helm chart for Kubernetes |
