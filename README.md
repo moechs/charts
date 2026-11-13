@@ -52,13 +52,13 @@
 | openldap | 2.0.4 | Community developed LDAP software |
 | openobserve-collector | 0.8.3 | An opinionated installation of OTEL Collector for OpenObserve |
 | openobserve-standalone | 1.1.6 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
-| openobserve | 1.1.5 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
+| openobserve | 1.1.6 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
 | pgadmin4 | 1.62.0 | pgAdmin4 is a web based administration tool for PostgreSQL database |
 | photoprism | 1.4.8 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
-| prometheus-blackbox-exporter | 11.21.2 | Prometheus Blackbox Exporter |
+| prometheus-blackbox-exporter | 11.21.3 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.11.2 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.19.2 | A Helm chart for Kubernetes |
 | rancher | 2.15.3 | Install Rancher Server to manage Kubernetes clusters across providers. |
@@ -69,9 +69,9 @@
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.33.0 | Installs the Tigera operator for Calico |
-| traefik | 42.3.2 | A Traefik based Kubernetes ingress controller |
+| traefik | 42.4.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
-| valkey | 0.12.1 | A Helm chart for Kubernetes |
+| valkey | 1.0.0 | Valkey, an open source, high-performance in-memory datastore |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
 | vector | 0.61.0 | Helm chart for Vector, a lightweight, ultra-fast tool for building observability |
 | victoria-logs-agent | 0.2.10 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
