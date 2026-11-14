@@ -3,7 +3,7 @@
 |  Chart  |  Version  |   Description   |
 | ------- | --------- | --------------- |
 | alidns-webhook | 0.8.3 | Deploys alidns webhook for cert-manager. |
-| apisix | 2.18.3 | A Helm chart for Apache APISIX v3 |
+| apisix | 2.19.0 | A Helm chart for Apache APISIX v3 |
 | argo-cd | 10.18.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.28 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.12 | A Helm chart for Argo Rollouts |
@@ -30,7 +30,7 @@
 | jira | 2.0.21 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.1.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 93.2.2 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 93.3.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.8 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -74,9 +74,9 @@
 | valkey | 1.0.0 | Valkey, an open source, high-performance in-memory datastore |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
 | vector | 0.61.0 | Helm chart for Vector, a lightweight, ultra-fast tool for building observability |
-| victoria-logs-agent | 0.2.10 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
-| victoria-logs-cluster | 0.2.11 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
-| victoria-logs-collector | 0.3.8 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
-| victoria-logs-single | 0.13.12 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
+| victoria-logs-agent | 0.2.11 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
+| victoria-logs-cluster | 0.2.12 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
+| victoria-logs-collector | 0.3.9 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
+| victoria-logs-single | 0.13.13 | The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes. |
 | zentao | 2026.7.0901 | 禅道 项目管理软件 是国产的开源项目管理软件，专注研发项目管理，内置需求管理、任务管理、bug管理、缺陷管理、用例管理、计划发布等功能，实现了软件的完整生命周期管理。 |
 | zookeeper | 13.8.8 | Apache ZooKeeper provides a reliable, centralized register of configuration |
