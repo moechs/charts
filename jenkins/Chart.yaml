@@ -1,12 +1,12 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Use the OpenShift Route host (`controller.route.path`) for the Jenkins URL when `controller.route.enabled` is set and neither `controller.jenkinsUrl` nor `controller.ingress.hostName` is. The URL uses `https`, since the Route terminates TLS at the edge, unless `controller.jenkinsUrlProtocol` is set.
+    - Update `docker.io/kiwigrid/k8s-sidecar` to version `2.14.3`
   artifacthub.io/images: |
     - name: jenkins
       image: docker.io/jenkins/jenkins:2.580.2-jdk25
     - name: k8s-sidecar
-      image: docker.io/kiwigrid/k8s-sidecar:2.14.1
+      image: docker.io/kiwigrid/k8s-sidecar:2.14.3
     - name: inbound-agent
       image: jenkins/inbound-agent:3395.v6e5377b_0fb_3c-4-jdk25
   artifacthub.io/license: Apache-2.0
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.12.0
+version: 5.13.1
