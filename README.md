@@ -26,7 +26,7 @@
 | higress | 2.2.6 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.13.1 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jenkins | 5.13.3 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.21 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.1.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
@@ -64,11 +64,11 @@
 | rancher | 2.15.3 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.21.2 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | 1.21.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
-| rustfs | 1.0.5 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
+| rook-ceph | v1.21.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rustfs | 1.0.6 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
-| tigera-operator | v3.33.0 | Installs the Tigera operator for Calico |
+| tigera-operator | v3.33.1 | Installs the Tigera operator for Calico |
 | traefik | 42.4.0 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 1.0.0 | Valkey, an open source, high-performance in-memory datastore |
