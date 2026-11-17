@@ -1,7 +1,7 @@
 annotations:
   artifacthub.io/images: |
     - name: vector
-      image: timberio/vector:0.61.0-distroless-libc
+      image: timberio/vector:0.62.0-distroless-libc
     - name: haproxy
       image: haproxytech/haproxy-alpine:2.6.12
   artifacthub.io/license: MPL-2.0
@@ -10,7 +10,7 @@ annotations:
       url: https://github.com/vectordotdev/helm-charts
   artifacthub.io/prerelease: "false"
 apiVersion: v2
-appVersion: 0.61.0-distroless-libc
+appVersion: 0.62.0-distroless-libc
 description: Helm chart for Vector, a lightweight, ultra-fast tool for building observability
   pipelines
 home: https://vector.dev/
@@ -30,4 +30,4 @@ name: vector
 sources:
 - https://github.com/vectordotdev/vector/
 type: application
-version: 0.61.0
+version: 0.62.1

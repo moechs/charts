@@ -1,6 +1,6 @@
 # Vector
 
-![Version: 0.61.0](https://img.shields.io/badge/Version-0.61.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.61.0-distroless-libc](https://img.shields.io/badge/AppVersion-0.61.0--distroless--libc-informational?style=flat-square)
+![Version: 0.62.1](https://img.shields.io/badge/Version-0.62.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.62.0-distroless-libc](https://img.shields.io/badge/AppVersion-0.62.0--distroless--libc-informational?style=flat-square)
 
 [Vector](https://vector.dev/) is a high-performance, end-to-end observability data pipeline that puts you in control of your observability data. Collect, transform, and route all your logs, metrics, and traces to any vendors you want today and any other vendors you may want tomorrow. Vector enables dramatic cost reduction, novel data enrichment, and data security where you need it, not where is most convenient for your vendors.
 
@@ -275,7 +275,8 @@ helm install <RELEASE_NAME> \
 | haproxy.image.pullPolicy | string | `"IfNotPresent"` | HAProxy image pullPolicy. |
 | haproxy.image.pullSecrets | list | `[]` | The [imagePullSecrets](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod) to reference for the HAProxy Pods. |
 | haproxy.image.repository | string | `"haproxytech/haproxy-alpine"` | Override default registry and name for HAProxy. |
-| haproxy.image.tag | string | `"2.6.12"` | The tag to use for HAProxy's image. |
+| haproxy.image.sha | string | `nil` | The SHA-256 digest to use for HAProxy's image, with or without the sha256: prefix. Overrides any digest in image.tag. |
+| haproxy.image.tag | string | `"2.6.12"` | The tag, SHA-256 digest, or tag@sha256:digest to use for HAProxy's image. |
 | haproxy.initContainers | list | `[]` | Init Containers to be added to the HAProxy Pods. This also supports template content, which will eventually be converted to yaml. |
 | haproxy.livenessProbe | object | `{"tcpSocket":{"port":1024}}` | Override default HAProxy liveness probe settings. |
 | haproxy.nodeSelector | object | `{}` | Configure a [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) for HAProxy Pods |
