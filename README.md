@@ -18,8 +18,8 @@
 | external-secrets | 2.15.0 | External secrets management for Kubernetes |
 | forgejo | 17.3.2 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.5.6 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 14.4.1 | The leading tool for querying and visualizing time series and metrics. |
+| gitlab | 10.5.7 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| grafana | 14.4.2 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.3 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.4 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.46.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -30,7 +30,7 @@
 | jira | 2.0.21 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.1.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 93.3.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 93.3.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.8 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -64,7 +64,7 @@
 | rancher | 2.15.3 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
 | rook-ceph-cluster | v1.21.2 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | v1.21.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph | 1.21.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.6 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
@@ -73,7 +73,7 @@
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 1.0.0 | Valkey, an open source, high-performance in-memory datastore |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
-| vector | 0.61.0 | Helm chart for Vector, a lightweight, ultra-fast tool for building observability |
+| vector | 0.62.1 | Helm chart for Vector, a lightweight, ultra-fast tool for building observability |
 | victoria-logs-agent | 0.2.11 | VictoriaLogs Agent - accepts logs from various protocols and replicates |
 | victoria-logs-cluster | 0.2.12 | The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database |
 | victoria-logs-collector | 0.3.9 | VictoriaLogs Collector - collects logs from Kubernetes containers and |
