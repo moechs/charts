@@ -9,8 +9,8 @@
 | argo-rollouts | 2.43.12 | A Helm chart for Argo Rollouts |
 | argo-workflows | 2.0.18 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.3 | A Helm chart for cert-manager |
-| cilium | 1.20.4 | eBPF-based Networking, Security, and Observability |
-| cloudnative-pg | 0.29.1 | CloudNativePG Operator Helm Chart |
+| cilium | 1.20.5 | eBPF-based Networking, Security, and Observability |
+| cloudnative-pg | 0.29.2 | CloudNativePG Operator Helm Chart |
 | confluence | 2.0.21 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 2.1.0 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
@@ -19,7 +19,7 @@
 | forgejo | 17.3.2 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
 | gitlab | 10.5.7 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 14.4.2 | The leading tool for querying and visualizing time series and metrics. |
+| grafana | 14.5.0 | The leading tool for querying and visualizing time series and metrics. |
 | haproxy-ingress | 0.16.3 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.4 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.46.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
@@ -30,7 +30,7 @@
 | jira | 2.0.21 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.1.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 93.3.1 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 93.4.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.8 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -69,7 +69,7 @@
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
 | tigera-operator | v3.33.1 | Installs the Tigera operator for Calico |
-| traefik | 42.4.0 | A Traefik based Kubernetes ingress controller |
+| traefik | 42.4.1 | A Traefik based Kubernetes ingress controller |
 | uptime-kuma | 4.2.0 | A self-hosted Monitoring tool like "Uptime-Robot". |
 | valkey | 1.0.0 | Valkey, an open source, high-performance in-memory datastore |
 | vault | 0.34.1 | Official HashiCorp Vault Chart |
