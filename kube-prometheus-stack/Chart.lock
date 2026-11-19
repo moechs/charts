@@ -15,4 +15,4 @@ dependencies:
   repository: oci://ghcr.io/prometheus-community/charts
   version: 0.14.0
 digest: sha256:7fe2342e2e5843ca71858eaf9a0cdd8f617b111436f5cc76183f6aae77db35f2
-generated: "2026-11-17T22:46:43.389884022Z"
+generated: "2026-11-18T22:44:29.376596274Z"
