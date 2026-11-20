@@ -48,6 +48,8 @@ deployment:
   # -- Add annotations to Apache APISIX ingress controller resource
   annotations: {}
   podAnnotations: {}
+  # -- Set the [priorityClassName](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/#pod-priority) for the ingress controller pods
+  priorityClassName: ""
   replicas: 1
   nodeSelector: {}
   tolerations: []
@@ -105,6 +107,12 @@ config:
 webhook:
   # -- Enable or disable admission webhook
   enabled: true
+  # -- Annotations for the ValidatingWebhookConfiguration, e.g.
+  # `cert-manager.io/inject-ca-from: <namespace>/<certificate>` so
+  # cert-manager's cainjector maintains the webhook caBundle.
+  # Only use CA injection with `certificate.provided: true` and `certificate.caBundle` unset;
+  # otherwise the injected CA replaces the chart-generated one and the webhook TLS handshake fails.
+  annotations: {}
   # -- The port for the webhook server to listen on
   port: 9443
   # -- Failure policy for the webhook (Fail or Ignore)
@@ -116,7 +124,7 @@ webhook:
     provided: false
     # -- Secret name containing the certificate (required if provided is true)
     # secretName: "my-webhook-cert"
-    # -- CA bundle in base64 format (required if provided is true)
+    # -- CA bundle in base64 format (required if provided is true, unless injected via webhook.annotations)
     # caBundle: ""
 
 # The GatewayProxy resource configures gateway proxy instances including networking,
@@ -124,6 +132,14 @@ webhook:
 gatewayProxy:
   # -- Controls whether to create a default GatewayProxy custom resource.
   createDefault: false
+
+  # -- Name of the GatewayProxy that the IngressClass references, in the release namespace.
+  # Rendered once per chart with `tpl`. An unset name or one that renders to empty
+  # defaults to `<release name>-config` only with `createDefault: true`.
+  # With `createDefault: false`, an empty name omits the IngressClass parameters.
+  # Set a non-empty name with `createDefault: false` to reference a GatewayProxy
+  # created outside this chart, for example by the apisix chart.
+  name: ""
 
   # -- Configuration for the GatewayProxy provider connection
   provider:
@@ -160,25 +176,38 @@ gatewayProxy:
             #   name: apisix-admin-secret
             #   key: admin-key
 
-    # -- List of global plugins to be enabled on the GatewayProxy.
-    plugins: []
-      # - name: cors
-      #   enabled: true
-      #   config:
-      #     allow_origins: "*"
-      #     allow_methods: "GET,POST,PUT,DELETE"
-      # - name: ip-restriction
-      #   enabled: false
-      #   config:
-      #     whitelist:
-      #       - 10.0.0.0/8
-      #       - 192.168.0.0/16
+  # -- List of global plugins to be enabled on the GatewayProxy.
+  plugins: []
+    # - name: cors
+    #   enabled: true
+    #   config:
+    #     allow_origins: "*"
+    #     allow_methods: "GET,POST,PUT,DELETE"
+    # - name: ip-restriction
+    #   enabled: false
+    #   config:
+    #     whitelist:
+    #       - 10.0.0.0/8
+    #       - 192.168.0.0/16
 
-    # -- Global plugin metadata shared by all instances of the same plugin.
-    pluginMetadata: {}
-      # prometheus:
-      #   disable: false
-      #   export_uri: /apisix/prometheus/metrics
+  # -- Global plugin metadata shared by all instances of the same plugin.
+  pluginMetadata: {}
+    # prometheus:
+    #   disable: false
+    #   export_uri: /apisix/prometheus/metrics
+
+  # -- LoadBalancer-type Service whose external address the controller uses to update the status of Ingress resources.
+  publishService: ""
+
+  # -- External IP addresses that the controller uses to populate the status field of GatewayProxy or Ingress resources for developers to access.
+  statusAddress: []
+    # - "10.0.0.1"
+    # - "10.0.0.2"
+
+crds:
+  gatewayAPI:
+    # -- Enable or disable installing the Gateway API standard channel CRDs
+    enabled: true
 
 apisix:
   adminService:

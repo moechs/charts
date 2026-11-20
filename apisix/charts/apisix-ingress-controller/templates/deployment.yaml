@@ -42,6 +42,9 @@ spec:
       labels:
         {{- include "apisix-ingress-controller-manager.selectorLabels" . | nindent 8 }}
     spec:
+      {{- with .Values.deployment.priorityClassName }}
+      priorityClassName: {{ . }}
+      {{- end }}
       {{- $imagePullSecrets := .Values.deployment.imagePullSecrets | default ((.Values.global).imagePullSecrets | default list) }}
       {{- with $imagePullSecrets }}
       imagePullSecrets:
@@ -86,14 +89,14 @@ spec:
         livenessProbe:
           httpGet:
             path: /healthz
-            port: 8081
+            port: {{ include "apisix-ingress-controller-manager.probePort" . }}
           initialDelaySeconds: 15
           periodSeconds: 20
         name: manager
         readinessProbe:
           httpGet:
             path: /readyz
-            port: 8081
+            port: {{ include "apisix-ingress-controller-manager.probePort" . }}
           initialDelaySeconds: 5
           periodSeconds: 10
         resources:
