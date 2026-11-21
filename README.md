@@ -28,9 +28,9 @@
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
 | jenkins | 5.13.3 | 'Jenkins - Build great things at any scale! As the leading open source |
 | jira | 2.0.21 | A chart for installing Jira Data Center on Kubernetes |
-| jumpserver | v5.2.0 | A Helm chart for Deploying Jumpserver on Kubernetes |
+| jumpserver | v5.2.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
-| kube-prometheus-stack | 93.5.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
+| kube-prometheus-stack | 93.6.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
 | kube-starrocks | 1.11.8 | kube-starrocks includes two subcharts, operator and starrocks |
 | kubetail | 0.26.0 | General-purpose logging dashboard for Kubernetes |
 | lobe-chat | 1.143.3 | A Helm chart for deploying lobe-chat on Kubernetes |
@@ -63,7 +63,7 @@
 | prometheus-smartctl-exporter | 0.19.2 | A Helm chart for Kubernetes |
 | rancher | 2.15.3 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.21.2 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph-cluster | 1.21.2 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | 1.21.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.6 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
