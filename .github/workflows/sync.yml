@@ -14,8 +14,6 @@ concurrency:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   sync-and-publish:
@@ -74,8 +72,11 @@ jobs:
 
           get_version_from_tgz() {
             local tgz="$1"
-            tar -xzOf "$tgz" --wildcards '*/Chart.yaml' 2>/dev/null \
-              | awk '/^version: /{print $NF}' | tr -d '"' | tr -d "'"
+            local top_chart
+            top_chart=$(tar -tzf "$tgz" 2>/dev/null | grep -E '^[^/]+/Chart\.yaml$' | head -1 || true)
+            [[ -z "$top_chart" ]] && return 1
+            tar -xzOf "$tgz" "$top_chart" 2>/dev/null \
+              | awk '/^version:/{print $2; exit}' | tr -d '"' | tr -d "'"
           }
 
           add_repo() {
@@ -95,7 +96,7 @@ jobs:
 
           get_chart_version() {
             local chart_dir="$1"
-            awk '/^version: /{print $NF}' "$chart_dir/Chart.yaml" 2>/dev/null | tr -d '"' | tr -d "'"
+            awk '/^version:/{print $2; exit}' "$chart_dir/Chart.yaml" 2>/dev/null | tr -d '"' | tr -d "'"
           }
 
           CHART_COUNT=$(grep -v '^#' charts.txt | grep -v '^[[:space:]]*$' | wc -l)
@@ -147,7 +148,7 @@ jobs:
                 continue
               fi
 
-              remote_ver=$(get_version_from_tgz "$downloaded_tgz")
+              remote_ver=$(get_version_from_tgz "$downloaded_tgz" || true)
 
               if [[ -z "$remote_ver" ]]; then
                 log_error "Could not read version from downloaded chart"
@@ -173,7 +174,7 @@ jobs:
                 continue
               fi
 
-              remote_ver=$(helm search repo "$repo_id/$chart_name" -o json 2>/dev/null | jq -r '.[0].version // empty' 2>/dev/null)
+              remote_ver=$(helm search repo "$repo_id/$chart_name" -o json 2>/dev/null | jq -r '.[0].version // empty' 2>/dev/null || true)
 
               if [[ -z "$remote_ver" ]]; then
                 log_error "Chart not found"
@@ -203,34 +204,56 @@ jobs:
               fi
             fi
 
-            rm -rf "$chart_name"
+            STAGE_DIR="${WORK_DIR}/stage-${CURRENT}"
+            rm -rf "$STAGE_DIR"
+            mkdir -p "$STAGE_DIR"
 
-            if tar -xzf "$downloaded_tgz" -C . && rm -f "$downloaded_tgz"; then
-              git add "$chart_name"
-
-              if [[ -n "$local_ver" ]]; then
-                if git commit -m "chore(${chart_name}): update to ${remote_ver}" \
-                             -m "Previous version: ${local_ver}" \
-                             -m "Repository: ${repo_url}" 2>/dev/null; then
-                  log_success "Updated $chart_name to $remote_ver"
-                  UPDATED_CHARTS_MAIN+=("$chart_name: $local_ver → $remote_ver")
-                else
-                  log_warn "No actual changes for $chart_name"
-                  SKIPPED_CHARTS_MAIN+=("$chart_name: $remote_ver (no changes)")
-                fi
-              else
-                if git commit -m "feat(${chart_name}): add version ${remote_ver}" \
-                             -m "Repository: ${repo_url}" 2>/dev/null; then
-                  log_success "Added $chart_name $remote_ver"
-                  UPDATED_CHARTS_MAIN+=("$chart_name: $remote_ver (new)")
-                else
-                  log_error "Failed to commit new chart"
-                  FAILED_CHARTS+=("$chart_name: commit failed")
-                fi
-              fi
-            else
+            if ! tar -xzf "$downloaded_tgz" -C "$STAGE_DIR"; then
               log_error "Failed to extract"
               FAILED_CHARTS+=("$chart_name: extraction failed")
+              rm -f "$downloaded_tgz"
+              rm -rf "$STAGE_DIR" "$PULL_DIR"
+              continue
+            fi
+            rm -f "$downloaded_tgz"
+
+            staged_root=$(find "$STAGE_DIR" -mindepth 1 -maxdepth 1 -type d -print -quit)
+            staged_ver=""
+            if [[ -n "$staged_root" && -f "$staged_root/Chart.yaml" ]]; then
+              staged_ver=$(get_chart_version "$staged_root")
+            fi
+
+            if [[ -z "$staged_ver" || "$staged_ver" != "$remote_ver" ]]; then
+              log_error "Archive version mismatch: ${staged_ver:-unknown} != $remote_ver"
+              FAILED_CHARTS+=("$chart_name: archive version mismatch")
+              rm -rf "$STAGE_DIR" "$PULL_DIR"
+              continue
+            fi
+
+            rm -rf "$chart_name"
+            mv "$staged_root" "$chart_name"
+            rm -rf "$STAGE_DIR"
+            git add "$chart_name"
+
+            if [[ -n "$local_ver" ]]; then
+              if git commit -m "chore(${chart_name}): update to ${remote_ver}" \
+                           -m "Previous version: ${local_ver}" \
+                           -m "Repository: ${repo_url}" 2>/dev/null; then
+                log_success "Updated $chart_name to $remote_ver"
+                UPDATED_CHARTS_MAIN+=("$chart_name: $local_ver → $remote_ver")
+              else
+                log_warn "No actual changes for $chart_name"
+                SKIPPED_CHARTS_MAIN+=("$chart_name: $remote_ver (no changes)")
+              fi
+            else
+              if git commit -m "feat(${chart_name}): add version ${remote_ver}" \
+                           -m "Repository: ${repo_url}" 2>/dev/null; then
+                log_success "Added $chart_name $remote_ver"
+                UPDATED_CHARTS_MAIN+=("$chart_name: $remote_ver (new)")
+              else
+                log_error "Failed to commit new chart"
+                FAILED_CHARTS+=("$chart_name: commit failed")
+              fi
             fi
 
             rm -rf "$PULL_DIR"
@@ -245,21 +268,40 @@ jobs:
             for dir in */; do
               [[ -f "${dir}Chart.yaml" ]] || continue
               name="${dir%/}"
-              ver=$(get_chart_version "$name")
-              desc=$(helm show chart "$dir" 2>/dev/null | awk -F': ' '/^description:/ {print $2}')
+              ver=$(get_chart_version "$name" || true)
+              desc=$(helm show chart "$dir" 2>/dev/null | awk -F': ' '/^description:/ {print $2}' || true)
               desc=$(echo "$desc" | sed 's/|/\\|/g' | cut -c1-240)
               echo "| $name | $ver | $desc |"
             done
           } > README.md
 
-          if git ls-files --error-unmatch README.md >/dev/null 2>&1; then
-            if ! git diff --quiet README.md; then
-              git add README.md
-              git commit -m "docs: update README" || true
-            fi
+          {
+            echo "# 同步状态清单，由 .github/workflows/sync.yml 自动生成，请勿手动修改"
+            echo "charts:"
+            while IFS='|' read -r chart_name repo_url; do
+              [[ -z "$chart_name" || "$chart_name" == \#* ]] && continue
+              chart_name=$(echo "$chart_name" | xargs)
+              repo_url=$(echo "$repo_url" | xargs)
+              [[ -z "$chart_name" || -z "$repo_url" ]] && continue
+              [[ ! -f "$chart_name/Chart.yaml" ]] && continue
+              ver=$(get_chart_version "$chart_name")
+              echo "  - name: \"${chart_name}\""
+              echo "    version: \"${ver}\""
+              echo "    repository: \"${repo_url}\""
+            done < charts.txt
+          } > charts.lock.yaml
+
+          DOC_CHANGES=""
+          git diff --quiet -- README.md 2>/dev/null || DOC_CHANGES="${DOC_CHANGES} README.md"
+          if ! git ls-files --error-unmatch charts.lock.yaml >/dev/null 2>&1; then
+            DOC_CHANGES="${DOC_CHANGES} charts.lock.yaml"
           else
-            git add README.md
-            git commit -m "docs: add README" || true
+            git diff --quiet -- charts.lock.yaml 2>/dev/null || DOC_CHANGES="${DOC_CHANGES} charts.lock.yaml"
+          fi
+
+          if [[ -n "$DOC_CHANGES" ]]; then
+            git add $DOC_CHANGES
+            git commit -m "docs: update README and charts.lock.yaml" || true
           fi
 
           rm -rf "$WORK_DIR"
@@ -282,8 +324,11 @@ jobs:
             "${#UPDATED_CHARTS_MAIN[@]}" "${#SKIPPED_CHARTS_MAIN[@]}" "${#FAILED_CHARTS[@]}"
 
       - name: Push Main Branch Changes
-        if: ${{ steps.sync_main.outputs.UPDATED_COUNT_MAIN > 0 }}
         run: |
+          if [ -z "$(git log --oneline origin/main..HEAD)" ]; then
+            echo "No local commits to push"
+            exit 0
+          fi
           echo "Pushing changes to main branch..."
           git push origin main
           echo "✓ Successfully pushed to main branch"
