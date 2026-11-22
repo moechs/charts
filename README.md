@@ -58,12 +58,12 @@
 | photoprism | 1.4.8 | A Photoprism Helm chart for Kubernetes |
 | phpmyadmin | 20.0.1 | phpMyAdmin is a free software tool written in PHP, intended to handle |
 | postgresql | 18.2.0 | PostgreSQL (Postgres) is an open source object-relational database known |
-| prometheus-blackbox-exporter | 11.21.3 | Prometheus Blackbox Exporter |
+| prometheus-blackbox-exporter | 11.22.0 | Prometheus Blackbox Exporter |
 | prometheus-pushgateway | 3.11.2 | A Helm chart for prometheus pushgateway |
 | prometheus-smartctl-exporter | 0.19.2 | A Helm chart for Kubernetes |
 | rancher | 2.15.3 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | 1.21.2 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph-cluster | v1.21.2 | Manages a single Ceph cluster namespace for Rook |
 | rook-ceph | 1.21.2 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.6 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
