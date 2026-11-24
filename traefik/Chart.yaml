@@ -1,16 +1,12 @@
 annotations:
   artifacthub.io/changes: |
     - kind: fixed
-      description: "fix(poddisruptionbudget): keep minAvailable and maxUnavailable when set to 0"
+      description: "fix(ports): only use hostIP for entrypoint binding with hostNetwork"
     - kind: fixed
-      description: "fix(daemonset): keep revisionHistoryLimit when set to 0"
+      description: "fix(labels): keep the chart version out of the pod labels"
     - kind: added
-      description: "feat(hub): support traefik hub v3.21.12"
-    - kind: added
-      description: "feat(deps): update traefik docker tag to v3.7.19"
-    - kind: changed
-      description: "chore(deps): update github actions"
-  traefik.io/hub-max-version: v3.21.12
+      description: "feat(hub): support traefik hub v3.21.13"
+  traefik.io/hub-max-version: v3.21.13
   traefik.io/hub-min-version: v3.19.3
   traefik.io/proxy-max-version: v3.7.19
   traefik.io/proxy-min-version: v3.6.0
@@ -35,4 +31,4 @@ sources:
 - https://github.com/traefik/traefik-helm-chart
 - https://github.com/traefik/traefik
 type: application
-version: 42.4.1
+version: 42.4.2
