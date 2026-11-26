@@ -1,2 +1,2 @@
-* Update appVersions for DC apps (#1178)
-* fix: wrap namespace/service variable queries in query_result() (#1171)
+* Release/2.0.22 (#1184)
+* Update appVersions for DC apps (#1183)
