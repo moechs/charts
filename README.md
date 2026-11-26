@@ -7,27 +7,27 @@
 | argo-cd | 10.20.0 | A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool |
 | argo-events | 2.4.28 | A Helm chart for Argo Events, the event-driven workflow automation framework |
 | argo-rollouts | 2.43.12 | A Helm chart for Argo Rollouts |
-| argo-workflows | 2.0.18 | A Helm chart for Argo Workflows |
+| argo-workflows | 2.0.19 | A Helm chart for Argo Workflows |
 | cert-manager | v1.21.3 | A Helm chart for cert-manager |
 | cilium | 1.20.5 | eBPF-based Networking, Security, and Observability |
 | cloudnative-pg | 0.29.2 | CloudNativePG Operator Helm Chart |
-| confluence | 2.0.21 | A chart for installing Confluence Data Center on Kubernetes |
+| confluence | 2.0.22 | A chart for installing Confluence Data Center on Kubernetes |
 | consul | 2.1.0 | Official HashiCorp Consul Chart |
 | dellhw_exporter | 1.0.1 | A Helm chart for the dellhw_exporter |
 | external-dns | 1.24.0 | ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with |
 | external-secrets | 2.15.0 | External secrets management for Kubernetes |
 | forgejo | 17.3.3 | Forgejo Helm chart for Kubernetes |
 | gitea | 12.7.0 | Gitea Helm chart for Kubernetes |
-| gitlab | 10.6.1 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
-| grafana | 14.6.0 | The leading tool for querying and visualizing time series and metrics. |
-| haproxy-ingress | 0.16.3 | Ingress controller for HAProxy loadbalancer |
+| gitlab | 10.6.3 | GitLab is the most comprehensive AI-powered DevSecOps Platform. |
+| grafana | 14.6.1 | The leading tool for querying and visualizing time series and metrics. |
+| haproxy-ingress | 0.16.4 | Ingress controller for HAProxy loadbalancer |
 | harbor | 1.19.4 | An open source trusted cloud native registry that stores, signs, and |
 | headlamp | 0.46.0 | Headlamp is an easy-to-use and extensible Kubernetes web UI. |
 | higress | 2.2.6 | Helm chart for deploying Higress gateways |
 | imgproxy | 1.1.0 | A fast and secure standalone server for resizing and converting remote |
 | ingress-nginx | 4.15.1 | Ingress controller for Kubernetes using NGINX as a reverse proxy and |
-| jenkins | 5.13.3 | 'Jenkins - Build great things at any scale! As the leading open source |
-| jira | 2.0.21 | A chart for installing Jira Data Center on Kubernetes |
+| jenkins | 5.13.4 | 'Jenkins - Build great things at any scale! As the leading open source |
+| jira | 2.0.22 | A chart for installing Jira Data Center on Kubernetes |
 | jumpserver | v5.2.1 | A Helm chart for Deploying Jumpserver on Kubernetes |
 | kafka | 32.5.0 | Apache Kafka is a distributed streaming platform designed to build real-time |
 | kube-prometheus-stack | 93.11.0 | kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, |
@@ -46,11 +46,11 @@
 | nui | 0.1.6 | NATS Free and open source UI |
 | ollama | 1.96.0 | Get up and running with large language models locally. |
 | onedev | 11.9.0 | All-In-One DevOps Platform |
-| opencost | 2.5.34 | OpenCost and OpenCost UI |
+| opencost | 2.5.35 | OpenCost and OpenCost UI |
 | openebs | 4.6.2 | Containerized Attached Storage for Kubernetes |
 | openldap-stack-ha | 4.3.3 | Community developed LDAP software |
 | openldap | 2.0.4 | Community developed LDAP software |
-| openobserve-collector | 0.9.0 | An opinionated installation of OTEL Collector for OpenObserve |
+| openobserve-collector | 0.9.2 | An opinionated installation of OTEL Collector for OpenObserve |
 | openobserve-standalone | 1.1.8 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openobserve | 1.1.10 | Logs, Metrics and Traces, Dashboards, RUM, Error tracking, Session replay |
 | openspeedtest | 2.0.6 | SpeedTest by OpenSpeedTest |
@@ -63,8 +63,8 @@
 | prometheus-smartctl-exporter | 0.19.2 | A Helm chart for Kubernetes |
 | rancher | 2.15.3 | Install Rancher Server to manage Kubernetes clusters across providers. |
 | redis | 24.2.0 | Redis(R) is an open source, advanced key-value store. It is often referred |
-| rook-ceph-cluster | v1.21.3 | Manages a single Ceph cluster namespace for Rook |
-| rook-ceph | 1.21.3 | File, Block, and Object Storage Services for your Cloud-Native Environment |
+| rook-ceph-cluster | 1.21.3 | Manages a single Ceph cluster namespace for Rook |
+| rook-ceph | v1.21.3 | File, Block, and Object Storage Services for your Cloud-Native Environment |
 | rustfs | 1.0.6 | RustFS helm chart to deploy RustFS on kubernetes cluster. |
 | step-certificates | 1.30.1 | An online certificate authority and related tools for secure automated |
 | system-upgrade-controller | 0.7.0 | Kubernetes-native upgrade controller (for nodes) |
