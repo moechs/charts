@@ -1,10 +1,7 @@
 annotations:
   artifacthub.io/category: monitoring-logging
   artifacthub.io/changes: |
-    - bump vlagent version to [v1.54.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.54.0).
-    - 'add `serviceAccount` options. A dedicated ServiceAccount is created by default and the API token isn''t mounted (`serviceAccount.automountToken: false`), as vlagent doesn''t access the Kubernetes API. Pods are restarted once on upgrade.'
-    - add `service.portOverrides`, a map keyed by Service port name to override `port`, `protocol`, `targetPort`, `nodePort` and/or `appProtocol`. It applies to every rendered Service port, including `http[]`, `extraPorts[]` and `syslog-tcp`/`syslog-udp`. See [#3223](https://github.com/VictoriaMetrics/helm-charts/issues/3223).
-    - add `podManagementPolicy` option for the StatefulSet. Set it to `Parallel` to match the StatefulSet created by the VictoriaMetrics operator, so that it can be adopted in place when migrating from a VLAgent custom resource.
+    - bump vlagent version to [v1.55.0](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.55.0).
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Sources
@@ -21,7 +18,7 @@ annotations:
     Chart documentation is available [here](https://docs.victoriametrics.com/helm/victoria-logs-agent/).
     Changelog is [here](https://docs.victoriametrics.com/helm/victoria-logs-agent/changelog/).
 apiVersion: v2
-appVersion: v1.54.0
+appVersion: v1.55.0
 dependencies:
 - name: victoria-metrics-common
   repository: oci://ghcr.io/victoriametrics/helm-charts
@@ -42,4 +39,4 @@ name: victoria-logs-agent
 sources:
 - https://github.com/VictoriaMetrics/helm-charts
 type: application
-version: 0.2.11
+version: 0.2.12
