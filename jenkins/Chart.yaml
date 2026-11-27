@@ -1,14 +1,14 @@
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/changes: |
-    - Copy plugins to the shared volume with `cp -f` instead of `yes n | cp -i`, whose non-zero exit code aborted `apply_config.sh` (`set -e`) and left the init container in a restart loop whenever the pod was restarted in place (e.g. node reboot) with an already populated `plugin-dir`.
+    - Update `configuration-as-code` to version `2151.va_012b_08f3cc4`
   artifacthub.io/images: |
     - name: jenkins
-      image: docker.io/jenkins/jenkins:2.580.2-jdk25
+      image: docker.io/jenkins/jenkins:2.580.3-jdk25
     - name: k8s-sidecar
       image: docker.io/kiwigrid/k8s-sidecar:2.14.3
     - name: inbound-agent
-      image: jenkins/inbound-agent:3395.v6e5377b_0fb_3c-5-jdk25
+      image: jenkins/inbound-agent:3396.ve02b_5cde31b_2-5-jdk25
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Chart Source
@@ -18,7 +18,7 @@ annotations:
     - name: support
       url: https://github.com/jenkinsci/helm-charts/issues
 apiVersion: v2
-appVersion: 2.580.2
+appVersion: 2.580.3
 description: 'Jenkins - Build great things at any scale! As the leading open source
   automation server, Jenkins provides over 2000 plugins to support building, deploying
   and automating any project. '
@@ -46,4 +46,4 @@ sources:
 - https://github.com/maorfr/kube-tasks
 - https://github.com/jenkinsci/configuration-as-code-plugin
 type: application
-version: 5.13.4
+version: 5.13.10

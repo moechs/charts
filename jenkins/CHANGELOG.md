@@ -12,6 +12,30 @@ Use the following links to reference issues, PRs, and commits prior to v2.6.0.
 The changelog until v1.5.7 was auto-generated based on git commits.
 Those entries include a reference to the git commit to be able to get more details.
 
+## 5.13.10
+
+Update `configuration-as-code` to version `2151.va_012b_08f3cc4`
+
+## 5.13.9
+
+Update `jenkins/inbound-agent` to version `3396.ve02b_5cde31b_2-5-jdk25`
+
+## 5.13.8
+
+Update `jenkins/jenkins` to version `2.580.3-jdk25`
+
+## 5.13.7
+
+Update `configuration-as-code` to version `2150.v9cb_6a_756737e`
+
+## 5.13.6
+
+Keep the admin password across upgrades when `namespaceOverride` is set. The existing secret was looked up in the release namespace instead of the one it is created in, so every upgrade generated a new random password.
+
+## 5.13.5
+
+Stop rendering `controller.securityContextCapabilities` in the pod `securityContext`, where Kubernetes does not allow `capabilities`. The value is now ignored and deprecated. Set capabilities with `controller.containerSecurityContext.capabilities` instead.
+
 ## 5.13.4
 
 Copy plugins to the shared volume with `cp -f` instead of `yes n | cp -i`, whose non-zero exit code aborted `apply_config.sh` (`set -e`) and left the init container in a restart loop whenever the pod was restarted in place (e.g. node reboot) with an already populated `plugin-dir`.
